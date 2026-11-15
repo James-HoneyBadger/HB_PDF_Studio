@@ -767,6 +767,17 @@ async fn printer_bedrukbaar(printer: String, papier: Option<String>) -> Result<O
     Ok(None)
 }
 
+/// Het pad van de meegeleverde voorbeeldtekening: een plattegrond op A3,
+/// schaal 1:50, met een meetschaal in het bestand. De Open-pane en de
+/// welkomstbalk gebruiken hem om meteen iets te kunnen meten en markeren.
+/// `None` als de resource ontbreekt (een build zonder `resources/voorbeeld`).
+#[tauri::command]
+fn voorbeeld_tekening_pad(app: tauri::AppHandle) -> Option<String> {
+    let map = app.path().resource_dir().ok()?.join("voorbeeld");
+    let pad = map.join("voorbeeld-plattegrond.pdf");
+    pad.is_file().then(|| pad.to_string_lossy().into_owned())
+}
+
 /// Get the system temp directory path.
 #[tauri::command]
 fn get_temp_dir() -> String {
@@ -2733,6 +2744,7 @@ pub fn run(opts: StartupOpts) {
             open_printer_properties,
             printer_papier,
             printer_bedrukbaar,
+            voorbeeld_tekening_pad,
             get_temp_dir,
             write_temp_pdf,
             delete_file,

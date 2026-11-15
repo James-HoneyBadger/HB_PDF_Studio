@@ -77,7 +77,8 @@
     "noVersions": "Nema verzija",
     "versionsError": "Verzije se nisu mogle učitati",
     "olderVersionsHint": "Starije verzije otvaraju se samo za čitanje; Spremi kao preuzima kopiju.",
-    "save": "Spremi"
+    "save": "Spremi",
+    "sampleDrawing": "Otvori primjer nacrta"
   },
   "importPanel": {
     "title": "Uvoz",

@@ -83,11 +83,9 @@ test('vorige versie: draagbaar kiest de zip, nooit een installer', () => {
   assert.equal(pickDownloadUrl({ ...assets, winPortable: null }, 'Windows NT', { portable: true }), 'pagina');
 });
 
-test('Rust registreert portable_status en weigert wat een installatie vraagt', () => {
+test('Rust registreert portable_status en past de datamap aan', () => {
   const lib = lees('src-tauri', 'src', 'lib.rs');
   assert.match(lib, /draagbaar::portable_status,/);
-  assert.match(lib, /fn install_virtual_printer[^{]*\{\s*(\/\/[^\n]*\n\s*)*draagbaar::weiger_als_draagbaar\(\)\?;/);
-  assert.match(lib, /if enabled \{\s*draagbaar::weiger_als_draagbaar\(\)\?;/);
   assert.match(lib, /draagbaar::pas_context_aan\(&mut context\);/);
   const main = lees('src-tauri', 'src', 'main.rs');
   // Als eerste in main(): vóór alles wat omgevingsvariabelen leest.

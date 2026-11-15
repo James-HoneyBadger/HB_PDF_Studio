@@ -77,7 +77,8 @@
     "noVersions": "Brak wersji",
     "versionsError": "Nie udało się wczytać wersji",
     "olderVersionsHint": "Starsze wersje otwierają się tylko do odczytu; Zapisz jako pobiera kopię.",
-    "save": "Zapisz"
+    "save": "Zapisz",
+    "sampleDrawing": "Otwórz rysunek przykładowy"
   },
   "importPanel": {
     "title": "Importuj",

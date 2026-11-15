@@ -40,7 +40,7 @@ What the LGPL means in practice:
 | Component | Licence |
 | --- | --- |
 | Application (`open-pdf-studio/`, frontend and `src-tauri`) | LGPL-3.0-or-later |
-| `pdfium-worker`, `open-pdf-thumbnails`, `open-pdf-cad`, `open-pdf-cmyk`, `open-pdf-signatures` | LGPL-3.0-or-later |
+| `pdfium-worker`, `open-pdf-cad`, `open-pdf-cmyk`, `open-pdf-signatures` | LGPL-3.0-or-later |
 | `open-pdf-render`, `open-pdf-security` | MIT |
 | Python client (`python/`), MCP bundle (`mcpb/`) | LGPL-3.0-or-later |
 | Flatpak, Snap and AUR packaging | LGPL-3.0-or-later |
@@ -85,7 +85,7 @@ What the LGPL means in practice:
 ### Rust crates
 
 The desktop binaries (`open-pdf-studio`, `pdfium-worker`,
-`open-pdf-thumbnails`) pull in about 800 crates. A census with
+`open-pdf-signatures`) pull in about 800 crates. A census with
 `cargo metadata` (normal and build dependencies, all platforms, release
 2026.44.x) gives:
 

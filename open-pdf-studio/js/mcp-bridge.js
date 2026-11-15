@@ -126,15 +126,11 @@ async function compositeCurrentView(maxWidth = 2000) {
   };
 }
 
-/** Capture the whole window natively (the Tauri command
- *  `capture_webview_png`, WebView2 CapturePreview on Windows) and crop it
- *  to `bounds`. The crop and downscale rules live in
- *  core/mcp-schermafdruk.js; here only the DOM, the canvas and the PNG. */
-async function captureWindowView({ scope, selector, width }) {
-  const { berekenUitsnede, rechthoek } = await import('./core/mcp-schermafdruk.js');
-  const viewport = { width: window.innerWidth, height: window.innerHeight };
-  let bounds = { x: 0, y: 0, width: viewport.width, height: viewport.height };
-  let elementBounds = null;
+/** Capture the whole window and crop it to `bounds`. This build has no
+ *  native window capture (it relied on Win32/WebView2), so it reports that
+ *  clearly; `scope: "document"` composites the page canvas in JS and keeps
+ *  working. */
+async function captureWindowView({ scope, selector }) {
   if (scope === 'element') {
     let el;
     try {
@@ -143,40 +139,8 @@ async function captureWindowView({ scope, selector, width }) {
       throw new Error(`invalid selector: ${e?.message ?? e}`);
     }
     if (!el) throw new Error(`no element matches: ${selector}`);
-    elementBounds = rechthoek(el.getBoundingClientRect());
-    bounds = elementBounds;
   }
-  const invoke = tauriInvoke();
-  if (!invoke) throw new Error('window capture needs the desktop app');
-  let png;
-  try {
-    png = await invoke('capture_webview_png');
-  } catch (e) {
-    throw new Error(`${e?.message ?? e}`);
-  }
-  const bytes = png instanceof ArrayBuffer ? png : (Array.isArray(png) ? new Uint8Array(png) : png);
-  const beeld = await createImageBitmap(new Blob([bytes], { type: 'image/png' }));
-  try {
-    const u = berekenUitsnede({ bounds, viewport, beeld: { width: beeld.width, height: beeld.height }, maxBreedte: width });
-    if (u.error) throw new Error(u.error);
-    const out = document.createElement('canvas');
-    out.width = u.outW;
-    out.height = u.outH;
-    const ctx = out.getContext('2d');
-    ctx.imageSmoothingQuality = 'high';
-    ctx.drawImage(beeld, u.sx, u.sy, u.sw, u.sh, 0, 0, u.outW, u.outH);
-    const dataURL = out.toDataURL('image/png');
-    const b64 = dataURL.startsWith('data:') ? dataURL.split(',', 2)[1] : dataURL;
-    return {
-      png_base64: b64, width: u.outW, height: u.outH,
-      bounds: u.bounds,
-      ...(elementBounds ? { elementBounds } : {}),
-      devicePixelRatio: window.devicePixelRatio || 1,
-      capture: { width: beeld.width, height: beeld.height },
-    };
-  } finally {
-    beeld.close?.();
-  }
+  throw new Error('window capture is not available in the Linux build; use scope "document"');
 }
 
 // ─── Per-event handlers ─────────────────────────────────────────────────

@@ -153,23 +153,15 @@ test('de brug leest de argumenten via deze module en vraagt de vensteropname aan
   assert.match(handler, /args\.scope === 'document'[\s\S]*compositeCurrentView\(args\.width\)/);
   assert.match(handler, /captureWindowView\(args\)/);
   const opname = brug.slice(brug.indexOf('async function captureWindowView'), brug.indexOf('// ─── Per-event handlers'));
-  assert.match(opname, /invoke\('capture_webview_png'\)/);
-  assert.match(opname, /berekenUitsnede\(\{ bounds, viewport, beeld: \{ width: beeld\.width, height: beeld\.height \}, maxBreedte: width \}\)/);
+  // De native vensteropname bestond alleen op Windows; deze build meldt dat
+  // en verwijst naar scope "document".
+  assert.match(opname, /window capture is not available in the Linux build/);
+  assert.match(opname, /scope === 'element'[\s\S]*no element matches/);
   assert.match(brug, /'mcp:screenshot-view':\s+handleScreenshotView,/);
 });
 
-test('het native commando staat in de invoke_handler; Windows-afhankelijkheden op de versie uit Cargo.lock', () => {
+test('de vensteropname vraagt geen native commando meer aan', () => {
   const lib = lees('../../src-tauri/src/lib.rs');
-  assert.match(lib, /^pub mod webview_opname;$/m);
-  assert.match(lib, /webview_opname::capture_webview_png,/);
-  const opname = lees('../../src-tauri/src/webview_opname.rs');
-  assert.match(opname, /#\[cfg\(not\(target_os = "windows"\)\)\]\nasync fn neem_op[\s\S]*?Err\(NIET_ONDERSTEUND\.to_string\(\)\)/);
-  assert.match(opname, /CapturePreview\(COREWEBVIEW2_CAPTURE_PREVIEW_IMAGE_FORMAT_PNG/);
-  const cargo = lees('../../src-tauri/Cargo.toml');
-  const windowsBlok = cargo.slice(cargo.indexOf(`[target.'cfg(target_os = "windows")'.dependencies]`));
-  assert.match(windowsBlok, /^webview2-com = "0\.38\.2"$/m);
-  assert.match(windowsBlok, /^windows = \{ version = "0\.61\.3"/m);
-  const lock = lees('../../../Cargo.lock');
-  assert.match(lock, /name = "webview2-com"\nversion = "0\.38\.2"/);
-  assert.match(lock, /name = "windows"\nversion = "0\.61\.3"/);
+  assert.doesNotMatch(lib, /webview_opname/);
+  assert.doesNotMatch(lib, /capture_webview_png/);
 });

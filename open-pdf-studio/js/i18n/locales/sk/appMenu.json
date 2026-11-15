@@ -77,7 +77,8 @@
     "noVersions": "Žiadne verzie",
     "versionsError": "Verzie sa nepodarilo načítať",
     "olderVersionsHint": "Staršie verzie sa otvárajú len na čítanie; Uložiť ako stiahne kópiu.",
-    "save": "Uložiť"
+    "save": "Uložiť",
+    "sampleDrawing": "Otvoriť vzorovú výkres"
   },
   "importPanel": {
     "title": "Importovať",

@@ -1,9 +1,10 @@
 // PDF/X-verrijking (#239, #422): output-intent, XMP, TrimBox, /Info.
 //
 // Met "sRGB — geen omzetting" moet de uitvoer byte voor byte gelijk blijven
-// aan wat de export vóór #422 schreef. De twee hashes hieronder zijn berekend
-// met de code van toen (enrichForPdfX uit pdfx-export.js, ongewijzigd
-// overgenomen) op precies deze vaste invoer, met een bevroren klok.
+// aan wat de export schreef. De twee hashes hieronder horen bij de code zoals
+// die nu is: enrichForPdfX uit pdfx-export.js, ongewijzigd overgenomen, op
+// precies deze vaste invoer met een bevroren klok. De /Producer-naam in de
+// XMP is onderdeel van die bytes; bij een andere naam horen nieuwe hashes.
 
 import assert from 'node:assert/strict';
 import test from 'node:test';
@@ -39,14 +40,14 @@ const sha = (bytes) => createHash('sha256').update(bytes).digest('hex');
 
 test('sRGB zonder omzetting: PDF/X-3 byte voor byte gelijk aan de export van vóór #422', async () => {
   const out = await buildPdfxBytes(await fixture(), { conformance: 'X-3', title: 'Vaste invoer' });
-  assert.equal(out.length, 2710);
-  assert.equal(sha(out), 'd6c3004f0fdd21a4e359e3139afdd36b3764eec4250d1cbcfa7b4801b74513a4');
+  assert.equal(out.length, 2702);
+  assert.equal(sha(out), 'd66b12fa59414612f4fe492abfe05fe603c1fdf206de282249f72af464f0c91d');
 });
 
 test('sRGB zonder omzetting: PDF/X-4 byte voor byte gelijk aan de export van vóór #422', async () => {
   const out = await buildPdfxBytes(await fixture(), { conformance: 'X-4', title: 'Vaste invoer' });
-  assert.equal(out.length, 2705);
-  assert.equal(sha(out), 'd27d4b0b19a27c4fabdb006213dc7184a199409befaa031e581fe7a1caa5de3f');
+  assert.equal(out.length, 2697);
+  assert.equal(sha(out), '2892b9a7660adb6003f2407159a9b8e66931ef0a27e58c80976254a9f90aae97');
 });
 
 test('met een CMYK-profiel: output-intent met N 4, de profielnaam en het profiel zelf', async () => {

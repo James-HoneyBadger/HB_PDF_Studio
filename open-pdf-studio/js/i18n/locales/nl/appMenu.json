@@ -76,7 +76,8 @@
     "noVersions": "Geen versies",
     "versionsError": "De versies konden niet worden geladen",
     "olderVersionsHint": "Oudere versies openen alleen-lezen; Opslaan als downloadt een kopie.",
-    "save": "Opslaan"
+    "save": "Opslaan",
+    "sampleDrawing": "Voorbeeldtekening openen"
   },
   "importPanel": {
     "title": "Importeren",

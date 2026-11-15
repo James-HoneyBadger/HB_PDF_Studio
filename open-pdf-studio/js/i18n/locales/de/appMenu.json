@@ -77,7 +77,8 @@
     "noVersions": "Keine Versionen",
     "versionsError": "Die Versionen konnten nicht geladen werden",
     "olderVersionsHint": "Ältere Versionen öffnen schreibgeschützt; „Speichern unter“ lädt eine Kopie herunter.",
-    "save": "Speichern"
+    "save": "Speichern",
+    "sampleDrawing": "Beispielzeichnung öffnen"
   },
   "importPanel": {
     "title": "Importieren",

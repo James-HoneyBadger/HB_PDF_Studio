@@ -78,7 +78,7 @@ test('elk manifest noemt de licentie uit LICENSING.md', () => {
   const lgpl = 'LGPL-3.0-or-later';
   const krat = (naam) => tomlLicentie(`${naam}/Cargo.toml`);
   // Rust-kratten van deze repository.
-  for (const naam of ['pdfium-worker', 'open-pdf-thumbnails', 'open-pdf-cad', 'open-pdf-cmyk', 'open-pdf-signatures']) {
+  for (const naam of ['pdfium-worker', 'open-pdf-cad', 'open-pdf-cmyk', 'open-pdf-signatures']) {
     assert.equal(krat(naam), lgpl, `${naam}/Cargo.toml`);
     assert.equal(licentieVoor(naam), lgpl, `${naam} in LICENSING.md`);
   }

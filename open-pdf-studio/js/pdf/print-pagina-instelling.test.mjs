@@ -125,10 +125,10 @@ test('lijst: dezelfde maten als de formulierentabel van de printer (Rust)', asyn
   const { dirname, join } = await import('node:path');
   const { fileURLToPath } = await import('node:url');
   const bron = readFileSync(
-    join(dirname(fileURLToPath(import.meta.url)), '../../src-tauri/src/print_formulieren.rs'), 'utf8',
+    join(dirname(fileURLToPath(import.meta.url)), '../../src-tauri/src/papierformaten.rs'), 'utf8',
   );
   const regels = [...bron.matchAll(
-    /Formulier \{ sleutel: "(\w+)", naam: "(\w+)", breedte_mm: (\d+), hoogte_mm: (\d+),/g,
+    /Formulier \{ sleutel: "(\w+)", naam: "(\w+)", breedte_mm: (\d+), hoogte_mm: (\d+) \}/g,
   )];
   assert.equal(regels.length, 6, 'de formulierentabel heeft zes regels');
   for (const [, sleutel, naam, breedte, hoogte] of regels) {

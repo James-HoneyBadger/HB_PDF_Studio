@@ -77,7 +77,8 @@
     "noVersions": "Ei versioita",
     "versionsError": "Versioita ei voitu ladata",
     "olderVersionsHint": "Vanhemmat versiot avautuvat vain luku -tilassa; Tallenna nimellä lataa kopion.",
-    "save": "Tallenna"
+    "save": "Tallenna",
+    "sampleDrawing": "Avaa esimerkkipiirustus"
   },
   "importPanel": {
     "title": "Tuo",

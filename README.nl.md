@@ -18,7 +18,16 @@
 
 </div>
 
+> **Over deze build.** HB PDF Studio is de Linux AArch64-editie van
+> [Open PDF Studio](https://github.com/OpenAEC-Foundation/open-pdf-studio), de
+> gratis PDF-editor van de OpenAEC Foundation. Deze repository bouwt die editor
+> uitsluitend voor ARM64 Linux: native AArch64-pakketten, geen ander
+> desktopplatform. De applicatiecode blijft dicht bij upstream; de verpakking,
+> de bouw en de platformspecifieke code zijn tot ARM64 beperkt.
+
 HB PDF Studio is een PDF-editor voor architecten, constructeurs, aannemers en iedereen die tekeningen en documenten controleert. Je markeert, meet met de schaal die de tekening meedraagt, vergelijkt revisies, plaatst symbolen, telt hoeveelheden en ordent pagina's, zonder abonnement, account of watermerk.
+
+**Gebouwd voor ARM.** Pagina's worden getekend door een workerpool van PDFium-processen, zodat een grote tekening de interface niet meer blokkeert op één ARM-kern: inlezen, tegelen en verscherpen gebeuren in aparte werkprocessen, afgeschermd tegen crashes. Die pool gaat als native `aarch64`-sidecar mee in elk pakket.
 
 De desktop-app ondersteunt alleen Linux op AArch64. Hij voegt toe wat je computer nodig heeft: afdrukken, OCR, DWG- en DXF-import en -export, digitale handtekeningen en een lokale AI-koppeling (MCP).
 
@@ -42,8 +51,47 @@ Elke release staat op de [releasepagina](https://github.com/OpenAEC-Foundation/o
 - **Meteen op schaal meten.** Een tekening die haar eigen schaal meedraagt, zoals een CAD-plot of een ingelezen DWG, meet je zonder te kalibreren.
 - **Zie wat er veranderde.** Vergelijk twee revisies naast of over elkaar, met een lijst van elke wijziging.
 - **CAD erin en eruit.** Lees DWG en DXF in als vector-PDF met lagen en meetschaal, en exporteer een pagina terug naar DXF of DWG (desktop).
-- **Werkt met een AI-assistent.** Een lokale MCP-server met 94 gereedschappen laat een assistent documenten voor je openen, markeren, meten en opslaan (desktop).
+- **Laat een assistent de hoeveelheden opnemen.** Vraag je AI-assistent een ruimte op te meten, elementen te tellen, de verschillen tussen twee revisies te noemen of een staat te vullen; een lokale MCP-server met 94 gereedschappen doet het klikwerk (desktop).
 - **Beschikbaar op Linux AArch64**, in 40 talen.
+
+## Waarom Linux ARM64?
+
+Op ARM64 Linux gebeurt veel tekenwerk: Raspberry Pi- en Pine64-borden op de
+bouwplaats en in de werkplaats, Snapdragon-laptops, en Apple Silicon-Macs die
+Linux in een virtuele machine draaien. Die machines zijn stil, gebruiken weinig
+stroom en zijn goedkoop genoeg voor elke werkplek — maar desktopsoftware
+behandelt ze vaak als bijzaak, als ze er al voor bouwt.
+
+Deze build behandelt AArch64 als doel, niet als port: de native pakketten worden
+op ARM-runners gebouwd, PDFium en Tesseract zijn de ARM-builds, en het tekenen
+gebeurt in een workerpool zodat één trage kern het venster niet bevriest. Het
+resultaat is een teksteditor die native aanvoelt op de hardware die je al hebt.
+
+## Onderdeel van de OpenAEC-toolkit
+
+HB PDF Studio is het documenteinde van de open-source toolkit van de OpenAEC
+Foundation voor bouwprofessionals:
+
+| Stap | Gereedschap |
+|---|---|
+| Tekenen en modelleren | **Open CAD Studio** — DWG en DXF bewerken |
+| Plannen en visualiseren | **Open 2D Studio** |
+| Controleren, markeren en meten | **HB PDF Studio** — dit project |
+| Hoeveelheden opnemen en rekenen | **Open Calc Studio** — staten en berekeningen |
+
+Een typische rondgang: exporteer een DWG of DXF uit Open CAD Studio, lees hem
+hier in met lagen en meetschaal, markeer de tekening, neem oppervlakten, lengtes
+en aantallen op, en geef de hoeveelheden door aan een staat. Via de MCP-server
+kan een AI-assistent dezelfde stappen voor je doen.
+
+## Binnen 30 seconden proberen
+
+Elke installatie heeft een voorbeeldplattegrond bij zich: een A3-vel op 1:50 met
+een meetschaal in het bestand. Kies **Bestand ▸ Openen ▸ Voorbeeldtekening
+openen**, pak het afstandsgereedschap en meet een wand — de waarde klopt zonder
+kalibreren. Trek een wolk om een ruimte, zet er een tekstballon bij en sla op. Je
+hoeft niets te downloaden en geen eigen tekening te zoeken om te zien of het
+gereedschap bij je werk past.
 
 ## Schermafbeeldingen
 

@@ -77,7 +77,8 @@
     "noVersions": "没有版本",
     "versionsError": "无法加载版本",
     "olderVersionsHint": "较早版本以只读方式打开；“另存为”会下载一个副本。",
-    "save": "保存"
+    "save": "保存",
+    "sampleDrawing": "打开示例图纸"
   },
   "importPanel": {
     "title": "导入",

@@ -95,7 +95,10 @@ test('Rust: elke focus-aanroep in lib.rs staat achter de headless-toets', () => 
   const focusRegels = regels
     .map((r, i) => ({ r, i }))
     .filter(({ r }) => /\.set_focus\(\)/.test(r) && !r.trim().startsWith('//'));
-  assert.ok(focusRegels.length >= 3);
+  // Twee plekken: de tweede start van de app en het openen van bestanden.
+  // De derde (het openen via een URL op macOS, iOS en Android) is met het
+  // vervallen van die platforms weggevallen.
+  assert.ok(focusRegels.length >= 2);
   for (const { i } of focusRegels) {
     const ervoor = regels.slice(Math.max(0, i - 6), i).join('\n');
     assert.match(ervoor, /headless::actief\(\)/, `set_focus op regel ${i + 1}`);

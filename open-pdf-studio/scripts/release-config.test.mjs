@@ -86,7 +86,7 @@ test('the only platform layer is Linux', async () => {
   const linux = await readJson('src-tauri/tauri.linux.conf.json');
   const resources = { ...config.bundle.resources, ...linux.bundle.resources };
 
-  assert.equal(resources['libpdfium.so'], 'libpdfium.so');
+  assert.equal(resources['binaries/linux-arm64/libpdfium.so'], 'libpdfium.so');
   for (const name of Object.keys(resources)) {
     assert.doesNotMatch(name, /\\.dll$|\\.dylib$/);
   }

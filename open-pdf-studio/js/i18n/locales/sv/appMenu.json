@@ -77,7 +77,8 @@
     "noVersions": "Inga versioner",
     "versionsError": "Det gick inte att läsa in versionerna",
     "olderVersionsHint": "Äldre versioner öppnas skrivskyddade; Spara som laddar ned en kopia.",
-    "save": "Spara"
+    "save": "Spara",
+    "sampleDrawing": "Öppna en exempelritning"
   },
   "importPanel": {
     "title": "Importera",

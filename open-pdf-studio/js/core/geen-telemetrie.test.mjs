@@ -100,7 +100,7 @@ test('geen telemetrie- of analysepakket tussen de npm-afhankelijkheden', () => {
 });
 
 test('geen telemetrie- of analysekrat tussen de Rust-afhankelijkheden', () => {
-  const kratten = ['open-pdf-studio/src-tauri', 'pdfium-worker', 'open-pdf-thumbnails', 'open-pdf-render', 'open-pdf-cad',
+  const kratten = ['open-pdf-studio/src-tauri', 'pdfium-worker', 'open-pdf-render', 'open-pdf-cad',
     'open-pdf-cmyk', 'open-pdf-signatures', 'open-pdf-security'];
   for (const krat of kratten) {
     const toml = fs.readFileSync(path.join(repo, krat, 'Cargo.toml'), 'utf8');

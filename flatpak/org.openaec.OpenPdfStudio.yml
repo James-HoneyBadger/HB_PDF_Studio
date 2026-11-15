@@ -88,7 +88,7 @@ modules:
         res="${FLATPAK_DEST}/lib/HB PDF Studio"
         install -Dm644 open-pdf-studio/src-tauri/binaries/linux-arm64/libpdfium.so "$res/libpdfium.so"
         install -Dm644 open-pdf-studio/src-tauri/icons/file-icon.ico "$res/file-icon.ico"
-        for dir in kaders onderhoeken tessdata fonts; do
+        for dir in kaders onderhoeken tessdata fonts voorbeeld; do
           mkdir -p "$res/$dir"
           cp -r "open-pdf-studio/src-tauri/resources/$dir/." "$res/$dir/"
         done
