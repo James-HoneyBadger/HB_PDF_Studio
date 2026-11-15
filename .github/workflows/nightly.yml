@@ -117,7 +117,7 @@ jobs:
       - name: Install Linux dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y libwebkit2gtk-4.1-dev libappindicator3-dev librsvg2-dev patchelf pkg-config
+          sudo apt-get install -y libwebkit2gtk-4.1-dev libappindicator3-dev librsvg2-dev patchelf pkg-config xdg-utils
 
       # tesseract-rs compiles Leptonica/Tesseract from source and links them
       # statically (#620). It keeps the sources and static libs in
