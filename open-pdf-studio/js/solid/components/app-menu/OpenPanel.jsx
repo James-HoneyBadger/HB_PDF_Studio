@@ -278,6 +278,19 @@ export default function OpenPanel() {
     await loadPDFIfNeeded(filePath, index);
   }
 
+  // De meegeleverde voorbeeldtekening (A3, 1:50, meetschaal in het bestand):
+  // binnen een paar tellen meten, markeren en vergelijken zonder eerst een
+  // eigen tekening te zoeken.
+  async function handleOpenSample() {
+    if (!isTauri() || !window.__TAURI__) return;
+    let pad = null;
+    try { pad = await window.__TAURI__.core.invoke('voorbeeld_tekening_pad'); } catch (e) {
+      console.warn('[voorbeeld] pad onbekend:', e);
+    }
+    if (!pad) return;
+    await handleOpenPlaceFile(pad);
+  }
+
   function extractFileName(path) {
     return path.replace(/\\/g, '/').split('/').pop() || path;
   }
@@ -663,6 +676,18 @@ export default function OpenPanel() {
               <line x1="12" y1="9" x2="12" y2="15"/>
             </svg>
             <span>{t('openPanel.site')}</span>
+          </button>
+        </Show>
+        <Show when={isTauri()}>
+          <button
+            class="open-panel-nav-item"
+            data-testid="open-sample-drawing"
+            onClick={() => handleOpenSample()}
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 3h18v18H3z"/><path d="M3 9h18M9 21V9"/><path d="M12 15h6"/>
+            </svg>
+            <span>{t('openPanel.sampleDrawing')}</span>
           </button>
         </Show>
         <button

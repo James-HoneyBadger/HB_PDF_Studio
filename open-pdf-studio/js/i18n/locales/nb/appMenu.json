@@ -77,7 +77,8 @@
     "noVersions": "Ingen versjoner",
     "versionsError": "Kunne ikke laste inn versjonene",
     "olderVersionsHint": "Eldre versjoner åpnes skrivebeskyttet; Lagre som laster ned en kopi.",
-    "save": "Lagre"
+    "save": "Lagre",
+    "sampleDrawing": "Åpne eksempeltegning"
   },
   "importPanel": {
     "title": "Importer",

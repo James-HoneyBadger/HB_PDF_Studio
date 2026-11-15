@@ -77,7 +77,8 @@
     "noVersions": "Ingen versioner",
     "versionsError": "Versionerne kunne ikke indlæses",
     "olderVersionsHint": "Ældre versioner åbnes skrivebeskyttet; Gem som downloader en kopi.",
-    "save": "Gem"
+    "save": "Gem",
+    "sampleDrawing": "Åbn en eksempeltegning"
   },
   "importPanel": {
     "title": "Importer",

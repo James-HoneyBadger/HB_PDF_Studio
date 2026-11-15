@@ -77,7 +77,8 @@
     "noVersions": "Không có phiên bản",
     "versionsError": "Không thể tải các phiên bản",
     "olderVersionsHint": "Các phiên bản cũ hơn mở ở chế độ chỉ đọc; Lưu thành tải xuống một bản sao.",
-    "save": "Lưu"
+    "save": "Lưu",
+    "sampleDrawing": "Mở bản vẽ mẫu"
   },
   "importPanel": {
     "title": "Nhập",

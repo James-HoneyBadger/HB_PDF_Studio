@@ -18,9 +18,21 @@
 
 </div>
 
+> **About this build.** HB PDF Studio is a Linux AArch64 edition of
+> [Open PDF Studio](https://github.com/OpenAEC-Foundation/open-pdf-studio), the
+> free PDF editor by the OpenAEC Foundation. This repository builds that editor
+> for ARM64 Linux only — native AArch64 packages, no other desktop platform. The
+> application code stays close to upstream; the packaging, the build and the
+> platform-specific code are narrowed to ARM64.
+
 HB PDF Studio is a PDF editor for architects, engineers, contractors and everyone else who reviews drawings and documents. You mark up, measure with the scale the drawing carries, compare revisions, place symbols, count quantities and organise pages, with no subscription, account or watermark.
 
 The desktop app supports Linux on AArch64 only. It brings what needs your computer: printing, OCR, DWG and DXF import and export, digital signatures and a local AI connection (MCP).
+
+**Built for ARM.** Pages render through a multi-process PDFium worker pool, so a
+large drawing no longer blocks the interface on a single ARM core: parsing,
+tiling and sharpening run in separate worker processes, isolated from crashes.
+That pool ships as a native `aarch64` sidecar in every package.
 
 ## Download
 
@@ -42,8 +54,46 @@ Every release is on the [releases page](https://github.com/OpenAEC-Foundation/op
 - **Measure to scale at once.** A drawing that carries its own scale, such as a CAD plot or an imported DWG, measures correctly without calibrating.
 - **See what changed.** Compare two revisions side by side or on top of each other, with a list of every change.
 - **CAD in and out.** Import DWG and DXF as a vector PDF with layers and a measuring scale, and export a page back to DXF or DWG (desktop).
-- **Works with an AI assistant.** A local MCP server with 94 tools lets an assistant open, mark up, measure and save documents for you (desktop).
+- **Let an assistant do the take-off.** Ask your AI assistant to measure a room, count fixtures, list what changed between two revisions or fill a schedule; a local MCP server with 94 tools does the clicking (desktop).
 - **Available on Linux AArch64**, in 40 languages.
+
+## Why Linux ARM64?
+
+ARM64 Linux is where a lot of drawing work now happens: Raspberry Pi and
+Pine64 boards on site and in the workshop, Snapdragon laptops, and Apple
+Silicon Macs running Linux in a virtual machine. Those machines are quiet, draw
+little power and are cheap enough to put on every desk — but desktop software
+often treats them as an afterthought, if it builds for them at all.
+
+This build treats AArch64 as the target, not a port: the native packages are
+compiled on ARM runners, PDFium and Tesseract are the ARM builds, and rendering
+runs in a worker pool so one slow core does not freeze the window. The result is
+a drawing editor that feels native on the hardware you already have.
+
+## Part of the OpenAEC toolkit
+
+HB PDF Studio is the document end of the OpenAEC Foundation's open-source
+toolkit for building professionals:
+
+| Step | Tool |
+|---|---|
+| Draw and model | **Open CAD Studio** — DWG and DXF editing |
+| Plan and visualise | **Open 2D Studio** |
+| Review, mark up and measure | **HB PDF Studio** — this project |
+| Take off and calculate | **Open Calc Studio** — quantities and schedules |
+
+A typical round trip: export a DWG or DXF from Open CAD Studio, import it here
+with its layers and measuring scale, annotate the drawing, take off areas,
+lengths and counts, and hand the quantities to a schedule. The MCP server means
+an AI assistant can drive the same steps on your behalf.
+
+## Try it in 30 seconds
+
+Every installation ships with a sample floor plan: an A3 sheet at 1:50 with a
+measuring scale in the file. Choose **File ▸ Open ▸ Open sample drawing**, pick
+the distance tool and measure a wall — the value is right without calibrating.
+Draw a cloud around a room, add a callout, then save. Nothing to download and no
+drawing of your own needed to see whether the tool fits your work.
 
 ## Screenshots
 

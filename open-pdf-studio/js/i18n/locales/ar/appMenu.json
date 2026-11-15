@@ -77,7 +77,8 @@
     "noVersions": "لا توجد إصدارات",
     "versionsError": "تعذّر تحميل الإصدارات",
     "olderVersionsHint": "تُفتح الإصدارات الأقدم للقراءة فقط؛ ويُنزّل «حفظ باسم» نسخة.",
-    "save": "حفظ"
+    "save": "حفظ",
+    "sampleDrawing": "فتح رسم نموذجي"
   },
   "importPanel": {
     "title": "استيراد",

@@ -77,7 +77,8 @@
     "noVersions": "Sem versões",
     "versionsError": "Não foi possível carregar as versões",
     "olderVersionsHint": "As versões anteriores abrem só de leitura; Guardar como transfere uma cópia.",
-    "save": "Salvar"
+    "save": "Salvar",
+    "sampleDrawing": "Abrir desenho de exemplo"
   },
   "importPanel": {
     "title": "Importar",

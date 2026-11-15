@@ -7,7 +7,7 @@ import { readFileSync, readdirSync } from 'node:fs';
 
 const LOCALES = new URL('./locales/', import.meta.url);
 const lees = (taal) => JSON.parse(readFileSync(new URL(`${taal}/common.json`, LOCALES), 'utf8'));
-const SLEUTELS = ['updateTitle', 'updateAvailable', 'fileAssoc', 'explorerThumbnails', 'virtualPrinter', 'notWritable'];
+const SLEUTELS = ['updateTitle', 'updateAvailable', 'fileAssoc', 'notWritable'];
 const talen = readdirSync(LOCALES);
 
 test('alle 40 talen hebben de draagbare teksten, niet leeg', () => {

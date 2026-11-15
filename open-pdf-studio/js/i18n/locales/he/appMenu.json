@@ -77,7 +77,8 @@
     "noVersions": "אין גרסאות",
     "versionsError": "לא ניתן היה לטעון את הגרסאות",
     "olderVersionsHint": "גרסאות ישנות יותר נפתחות לקריאה בלבד; 'שמירה בשם' מורידה עותק.",
-    "save": "שמור"
+    "save": "שמור",
+    "sampleDrawing": "פתיחת שרטוט לדוגמה"
   },
   "importPanel": {
     "title": "ייבוא",

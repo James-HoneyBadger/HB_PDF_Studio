@@ -77,7 +77,8 @@
     "noVersions": "Tidak ada versi",
     "versionsError": "Versi tidak dapat dimuat",
     "olderVersionsHint": "Versi lama dibuka hanya-baca; Simpan Sebagai mengunduh salinan.",
-    "save": "Simpan"
+    "save": "Simpan",
+    "sampleDrawing": "Buka gambar contoh"
   },
   "importPanel": {
     "title": "Impor",

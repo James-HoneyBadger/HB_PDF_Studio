@@ -64,7 +64,8 @@
       "resources/kaders": "kaders",
       "resources/onderhoeken": "onderhoeken",
       "resources/tessdata": "tessdata",
-      "resources/fonts": "fonts"
+      "resources/fonts": "fonts",
+      "resources/voorbeeld": "voorbeeld"
     },
     "externalBin": [
       "binaries/pdfium-worker"
