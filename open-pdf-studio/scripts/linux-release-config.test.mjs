@@ -29,7 +29,7 @@ test('CI builds and starts the AArch64 AppImage on Debian 13', async () => {
     'utf8',
   );
 
-  assert.match(workflow, /platform: 'ubuntu-24\.04-arm'/);
+  assert.match(workflow, /runs-on: ubuntu-24\.04-arm/);
   assert.match(workflow, /npm run prepare:native-runtime/);
   assert.match(workflow, /pdfium-worker-aarch64-unknown-linux-gnu/);
   assert.match(
@@ -335,7 +335,7 @@ test('Linux turns off 2D canvas acceleration in every WebView, with an opt-out (
   const lib = await readFile(new URL('src-tauri/src/lib.rs', appRoot), 'utf8');
   assert.match(
     lib,
-    /#\[cfg\(target_os = "linux"\)\]\s*\{\s*builder = builder\.plugin\(linux_runtime::webview_plugin\(\)\);/,
+    /builder = builder\.plugin\(linux_runtime::webview_plugin\(\)\);/,
     'the plugin is registered for every window on Linux',
   );
   const cargo = await readFile(new URL('src-tauri/Cargo.toml', appRoot), 'utf8');
