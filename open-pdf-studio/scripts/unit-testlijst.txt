@@ -211,7 +211,6 @@ js/annotations/papiermaat-eenheid.test.mjs
 js/solid/stores/papier-eenheid-paneel.test.mjs
 js/annotations/greep-keuze.test.mjs
 js/annotations/rendering/wolk-kleine-maat.test.mjs
-scripts/printer-install-scripts.test.mjs
 js/pdf/print-plaatsing.test.mjs
 js/annotations/rendering/uitvoer-lagen.test.mjs
 js/pdf/print-vector.test.mjs

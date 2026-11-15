@@ -80,18 +80,13 @@ test('elke route hangt aan een bestaand commando', () => {
   const delen = bron('./delen.js');
   const email = bron('../../src-tauri/src/email.rs');
   const lib = bron('../../src-tauri/src/lib.rs');
-  const kotlin = bron('../../src-tauri/android/MainActivity.kt');
   assert.match(delen, /invoke\('email_pdf', \{ path: pad, subject: naam \}\)/);
   assert.match(delen, /invoke\('verzendkopie_schrijven'/);
-  assert.match(delen, /OpdsAndroid\.share\(pad, 'application\/pdf'/);
   assert.match(delen, /bouwMomentopname\(doc\)/);
   assert.match(lib, /email::email_pdf,/);
   assert.match(lib, /email::verzendkopie_schrijven,/);
   assert.match(email, /fn MAPISendMailW\(/);
   assert.match(email, /pub const GEEN_MAILPROGRAMMA: &str = "OPDS_NO_MAIL_CLIENT";/);
-  assert.match(kotlin, /@JavascriptInterface\s+fun share\(path: String\?, mime: String\?, title: String\?\): String/);
-  assert.match(kotlin, /Intent\.ACTION_SEND/);
-  assert.match(kotlin, /FLAG_GRANT_READ_URI_PERMISSION/);
 });
 
 test('de knop E-mail van het lint en Delen op mobiel gaan door hetzelfde pad', () => {

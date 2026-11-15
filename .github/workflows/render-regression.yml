@@ -39,7 +39,7 @@ jobs:
       - name: Install Linux build dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y libwebkit2gtk-4.1-dev libappindicator3-dev librsvg2-dev patchelf pkg-config
+          sudo apt-get install -y libwebkit2gtk-4.1-dev libappindicator3-dev librsvg2-dev patchelf pkg-config xvfb
 
       - name: Restore cargo registry + target
         id: cargo-cache
@@ -85,12 +85,14 @@ jobs:
           scripts/.venv-test/bin/python -m pip install -U pip
           scripts/.venv-test/bin/python -m pip install -r scripts/requirements-test.txt
 
+      # The app opens a real window, so the runner needs a display: xvfb
+      # gives it one without a compositor or GPU.
       - name: Run render regression
         working-directory: open-pdf-studio
         env:
           OPS_ENABLE_MCP: '1'
           OPS_TEST_PDFS_DIR: ${{ github.workspace }}/open-pdf-studio/src-tauri/resources/kaders
-        run: npm run test:render:auto -- --pdf grootformaat_a1_liggend.pdf --out-root "../test pdf-bestanden/render-regression-runs"
+        run: xvfb-run -a npm run test:render:auto -- --pdf grootformaat_a1_liggend.pdf --out-root "../test pdf-bestanden/render-regression-runs"
 
       - name: Upload regression report
         if: always()
