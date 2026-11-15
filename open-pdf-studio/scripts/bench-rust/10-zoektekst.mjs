@@ -50,7 +50,7 @@ const optie = (naam, standaard) => {
   const i = argv.indexOf(`--${naam}`);
   return i >= 0 ? argv[i + 1] : standaard;
 };
-const platformMap = process.platform === 'win32' ? 'win-x64' : process.platform === 'darwin' ? 'macos-universal' : 'linux-x64';
+const platformMap = 'linux-arm64';
 const exeNaam = process.platform === 'win32' ? 'pdfium-worker.exe' : 'pdfium-worker';
 const WORKER = optie('worker', join(process.env.CARGO_TARGET_DIR || 'C:\\opds-cargo-target-449', 'release', exeNaam));
 const PDFIUM_MAP = join(app, 'src-tauri', 'binaries', platformMap);

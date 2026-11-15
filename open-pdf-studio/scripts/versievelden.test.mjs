@@ -10,7 +10,7 @@
 
 import assert from 'node:assert/strict';
 import { execFileSync, spawnSync } from 'node:child_process';
-import { copyFileSync, mkdirSync, mkdtempSync, readdirSync, readFileSync, rmSync } from 'node:fs';
+import { copyFileSync, mkdirSync, mkdtempSync, readFileSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
 import test from 'node:test';
@@ -88,9 +88,6 @@ const VELDEN = {
   'Cargo.lock': lockVersies,
   'open-pdf-studio/src-tauri/Cargo.lock': lockVersies,
   'open-pdf-render/Cargo.lock': lockVersies,
-  'open-pdf-studio/scripts/print-native-tests/Cargo.toml': (tekst) => [pakketVersie(tekst)],
-  'open-pdf-studio/scripts/print-native-tests/Cargo.lock': (tekst) => lockPakketten(tekst)
-    .filter((p) => p.naam === 'print-native-tests').map((p) => p.versie),
   'mcp-stdio/package.json': jsonVersie,
   'python/pyproject.toml': (tekst) => [projectVersie(tekst)],
   'mcpb/manifest.json': jsonVersie,
@@ -98,13 +95,6 @@ const VELDEN = {
   'snap/snapcraft.yaml': (tekst) => [/^version:\s*'([^']*)'/m.exec(tekst)?.[1]],
   // De bovenste <release> van de AppStream-metadata (Flatpak, #389).
   'flatpak/org.openaec.OpenPdfStudio.metainfo.xml': (tekst) => [/<release\s[^>]*version="([^"]*)"/.exec(tekst)?.[1]],
-};
-
-// Recepten van een al gepubliceerde release (met de hash van die download):
-// die lopen een release achter, maar volgen wel het schema.
-const GEPUBLICEERD = {
-  'flake.nix': (tekst) => [/^\s*version = "([^"]*)";/m.exec(tekst)?.[1]],
-  'packaging/aur/PKGBUILD': (tekst) => [/^pkgver=(\S*)/m.exec(tekst)?.[1]],
 };
 
 test('het versieschema is JJJJ.W.N: jaar, ISO-week 1-53 zonder voorloopnul, volgnummer vanaf 0', () => {
@@ -124,7 +114,6 @@ test('het versieschema is JJJJ.W.N: jaar, ISO-week 1-53 zonder voorloopnul, volg
     assert.equal(bump.isGeldigeTag(fout), false, fout);
   }
 });
-
 test('alle versievelden hebben het appnummer en volgen het schema', () => {
   assert.ok(bump.isGeldigeVersie(appVersie), `package.json: ${appVersie}`);
   for (const [pad, leesVersies] of Object.entries(VELDEN)) {
@@ -133,7 +122,6 @@ test('alle versievelden hebben het appnummer en volgen het schema', () => {
     for (const v of versies) assert.equal(v, appVersie, `${pad}: ${v}, verwacht ${appVersie}`);
   }
 });
-
 test('elke workspace-crate staat met het appnummer in Cargo.lock', () => {
   const pakketten = lockPakketten(lees('Cargo.lock'));
   for (const { naam } of crates) {
@@ -143,15 +131,8 @@ test('elke workspace-crate staat met het appnummer in Cargo.lock', () => {
   }
 });
 
-test('de pakketrecepten van een gepubliceerde release volgen het schema', () => {
-  for (const [pad, leesVersies] of Object.entries(GEPUBLICEERD)) {
-    for (const v of leesVersies(lees(pad))) assert.ok(bump.isGeldigeVersie(v), `${pad}: ${v}`);
-  }
-});
-
 test('bump-version kent precies dezelfde versievelden', () => {
   assert.deepEqual(bump.versievelden().map((v) => v.pad).sort(), Object.keys(VELDEN).sort());
-  assert.deepEqual(bump.GEPUBLICEERDE_RELEASES.map((v) => v.pad).sort(), Object.keys(GEPUBLICEERD).sort());
   assert.deepEqual(bump.workspaceCrates().map((c) => c.naam).sort(), [...crateNamen].sort());
 });
 
@@ -193,7 +174,7 @@ test('bump-version verandert alleen de versievelden', () => {
 test('bump-version zet alle velden in een kopie van de repo', () => {
   const basis = mkdtempSync(path.join(tmpdir(), 'opds-versievelden-'));
   try {
-    const paden = new Set(['Cargo.toml', ...Object.keys(VELDEN), ...Object.keys(GEPUBLICEERD)]);
+    const paden = new Set(['Cargo.toml', ...Object.keys(VELDEN)]);
     for (const pad of paden) {
       mkdirSync(path.dirname(path.join(basis, pad)), { recursive: true });
       copyFileSync(path.join(repoDir, pad), path.join(basis, pad));
@@ -203,8 +184,6 @@ test('bump-version zet alle velden in een kopie van de repo', () => {
     for (const [pad, leesVersies] of Object.entries(VELDEN)) {
       for (const v of leesVersies(lees(pad, basis))) assert.equal(v, '2031.2.0', pad);
     }
-    // Recepten van een gepubliceerde release blijven staan.
-    for (const pad of Object.keys(GEPUBLICEERD)) assert.equal(lees(pad, basis), lees(pad), pad);
     assert.deepEqual(bump.controleer({ basis, verwacht: '2031.2.0' }).fouten, []);
     assert.ok(bump.controleer({ basis, verwacht: appVersie }).fouten.length > 0);
     assert.throws(() => bump.zetVersie('2031.02.0', { basis, log: () => {} }), /Invalid version/);
@@ -258,41 +237,9 @@ test('de release-workflow controleert de tag tegen de versievelden voordat er ie
   assert.ok(controle < createRelease.indexOf('name: Create release'), 'voor het aanmaken van de release');
   assert.match(createRelease, /VERSION: \$\{\{ steps\.get-version\.outputs\.version \}\}/);
   // Alle bouwjobs wachten op create-release.
-  for (const job of ['build', 'build-android', 'mcpb', 'python-library']) {
+  for (const job of ['build', 'mcpb', 'python-library', 'flatpak']) {
     const kop = workflow.indexOf(`\n  ${job}:\n`);
     assert.ok(kop > 0, job);
-    assert.match(workflow.slice(kop, kop + 300), /needs: create-release/, job);
-  }
-});
-
-// Een MSI (WiX) laat in de ProductVersion een hoofdnummer van hoogstens 255
-// toe; met 2026 als eerste getal kan er dus geen MSI gebouwd worden. Windows
-// krijgt alleen de NSIS-installers. Deze test houdt msi uit elke plek waar
-// een bundeldoel gekozen wordt.
-test('Windows bouwt alleen NSIS-installers, nooit een MSI', () => {
-  const srcTauri = path.join(projectDir, 'src-tauri');
-  const confs = readdirSync(srcTauri).filter((f) => /^tauri(\..+)?\.conf\.json$/.test(f));
-  assert.ok(confs.includes('tauri.conf.json') && confs.includes('tauri.windows.conf.json'));
-  const basis = JSON.parse(readFileSync(path.join(srcTauri, 'tauri.conf.json'), 'utf8'));
-  assert.ok(Array.isArray(basis.bundle.targets), 'bundle.targets is een lijst, niet "all"');
-  assert.ok(basis.bundle.targets.includes('nsis'));
-  for (const conf of confs) {
-    const bundle = JSON.parse(readFileSync(path.join(srcTauri, conf), 'utf8')).bundle ?? {};
-    if (bundle.targets !== undefined) {
-      assert.ok(Array.isArray(bundle.targets), `${conf}: bundle.targets is een lijst, niet "all"`);
-      assert.ok(!bundle.targets.includes('msi'), `${conf}: geen msi in bundle.targets`);
-    }
-    assert.equal(bundle.windows?.wix, undefined, `${conf}: geen WiX-instellingen`);
-  }
-
-  const workflows = path.join(repoDir, '.github', 'workflows');
-  for (const naam of readdirSync(workflows).filter((f) => f.endsWith('.yml'))) {
-    const zonderCommentaar = readFileSync(path.join(workflows, naam), 'utf8')
-      .split(/\r?\n/).filter((r) => !/^\s*#/.test(r)).join('\n');
-    assert.doesNotMatch(zonderCommentaar, /\b(msi|wix)\b/i, `${naam} bouwt geen MSI`);
-  }
-  const pkg = JSON.parse(lees('open-pdf-studio/package.json'));
-  for (const [naam, script] of Object.entries(pkg.scripts)) {
-    assert.doesNotMatch(script, /\bmsi\b/i, `npm run ${naam} bouwt geen MSI`);
+    assert.match(workflow.slice(kop, kop + 800), /needs: create-release/, job);
   }
 });

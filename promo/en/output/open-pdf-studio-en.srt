@@ -1,6 +1,6 @@
 1
 00:00:00,350 --> 00:00:09,038
-Your drawings. Your tools. Meet Open PDF Studio. Free and open source.
+Your drawings. Your tools. Meet HB PDF Studio. Free and open source.
 
 2
 00:00:09,850 --> 00:00:17,554
@@ -24,4 +24,4 @@ Professional PDF tools, without a subscription. No watermarks. Open source, with
 
 7
 00:00:57,350 --> 00:01:05,294
-Your next project starts here. Open PDF Studio. Download it free, and get to work.
+Your next project starts here. HB PDF Studio. Download it free, and get to work.

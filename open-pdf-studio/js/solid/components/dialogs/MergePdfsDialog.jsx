@@ -9,7 +9,7 @@ import { mergeVensterModus, combineerTotNieuwDocument } from '../../../core/shel
 
 // props.data.files: paden die er meteen in staan; props.data.combineNew: ze
 // combineren tot een NIEUW document (Verkenner "Combineren tot één PDF",
-// core/shell-acties.js) in plaats van samenvoegen in het open document.
+// core/shell-acties-logica.js) in plaats van samenvoegen in het open document.
 export default function MergePdfsDialog(props) {
   const { t } = useTranslation('dialogs');
   const { t: tCommon } = useTranslation('common');

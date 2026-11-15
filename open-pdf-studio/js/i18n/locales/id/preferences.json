@@ -204,19 +204,19 @@
   "fileAssoc": {
     "defaultPdfApplication": "Aplikasi PDF Bawaan",
     "currentDefault": "Bawaan saat ini:",
-    "setDefault": "Atur Open PDF Studio sebagai Penampil PDF Bawaan",
-    "setDefaultHelp": "Ini akan membuka pengaturan sistem di mana Anda dapat memilih Open PDF Studio sebagai aplikasi bawaan untuk membuka file PDF.",
-    "windowsInstructions": "Pengaturan Windows dibuka.\n\nUntuk mengatur Open PDF Studio sebagai bawaan:\n1. Gulir ke bawah ke \"Pilih aplikasi bawaan berdasarkan jenis file\"\n2. Temukan .pdf\n3. Klik dan pilih Open PDF Studio",
+    "setDefault": "Atur HB PDF Studio sebagai Penampil PDF Bawaan",
+    "setDefaultHelp": "Ini akan membuka pengaturan sistem di mana Anda dapat memilih HB PDF Studio sebagai aplikasi bawaan untuk membuka file PDF.",
+    "windowsInstructions": "Pengaturan Windows dibuka.\n\nUntuk mengatur HB PDF Studio sebagai bawaan:\n1. Gulir ke bawah ke \"Pilih aplikasi bawaan berdasarkan jenis file\"\n2. Temukan .pdf\n3. Klik dan pilih HB PDF Studio",
     "windowsFailed": "Tidak dapat membuka Pengaturan Windows.\n\nSilakan buka secara manual Pengaturan > Aplikasi > Aplikasi Bawaan.",
-    "macInstructions": "Untuk mengatur Open PDF Studio sebagai penampil PDF bawaan di macOS:\n\n1. Klik kanan file PDF mana pun di Finder\n2. Pilih \"Dapatkan Info\"\n3. Di bawah \"Buka dengan\", pilih Open PDF Studio\n4. Klik \"Ubah Semua...\"",
-    "linuxInstructions": "Untuk mengatur Open PDF Studio sebagai penampil PDF bawaan di Linux:\n\nJalankan di terminal:\nxdg-mime default openpdfstudio.desktop application/pdf",
+    "macInstructions": "Untuk mengatur HB PDF Studio sebagai penampil PDF bawaan di macOS:\n\n1. Klik kanan file PDF mana pun di Finder\n2. Pilih \"Dapatkan Info\"\n3. Di bawah \"Buka dengan\", pilih HB PDF Studio\n4. Klik \"Ubah Semua...\"",
+    "linuxInstructions": "Untuk mengatur HB PDF Studio sebagai penampil PDF bawaan di Linux:\n\nJalankan di terminal:\nxdg-mime default openpdfstudio.desktop application/pdf",
     "checkFinder": "Periksa Finder > Dapatkan Info",
     "notSet": "Belum diatur",
     "chosenInSystemSettings": "Dipilih di pengaturan sistem",
-    "sandboxInstructions": "Open PDF Studio berjalan sebagai paket {{package}} dan tidak dapat mengubah aplikasi PDF default sendiri.\n\nPilih Open PDF Studio di pengaturan sistem pada Aplikasi Default, atau klik kanan file PDF dan gunakan Buka Dengan.",
-    "xdgMimeMissing": "xdg-mime (paket xdg-utils) tidak terpasang, sehingga aplikasi PDF default tidak dapat diatur dari sini.\n\nPasang xdg-utils, atau pilih Open PDF Studio di pengaturan sistem pada Aplikasi Default.",
-    "linuxDone": "Open PDF Studio sekarang menjadi aplikasi default untuk file PDF.",
-    "linuxFailed": "Tidak dapat menjadikan Open PDF Studio sebagai aplikasi PDF default.\n\n{{error}}"
+    "sandboxInstructions": "HB PDF Studio berjalan sebagai paket {{package}} dan tidak dapat mengubah aplikasi PDF default sendiri.\n\nPilih HB PDF Studio di pengaturan sistem pada Aplikasi Default, atau klik kanan file PDF dan gunakan Buka Dengan.",
+    "xdgMimeMissing": "xdg-mime (paket xdg-utils) tidak terpasang, sehingga aplikasi PDF default tidak dapat diatur dari sini.\n\nPasang xdg-utils, atau pilih HB PDF Studio di pengaturan sistem pada Aplikasi Default.",
+    "linuxDone": "HB PDF Studio sekarang menjadi aplikasi default untuk file PDF.",
+    "linuxFailed": "Tidak dapat menjadikan HB PDF Studio sebagai aplikasi PDF default.\n\n{{error}}"
   },
   "explorerThumbnails": {
     "title": "Penjelajah File",
@@ -226,7 +226,7 @@
     "otherHandler": "Gambar mini PDF saat ini disediakan oleh {{name}}.",
     "defaultApp": "Aplikasi PDF default Anda menampilkan gambar mininya sendiri ({{name}}). Windows memakainya selama aplikasi itu menjadi aplikasi PDF default Anda.",
     "replaceTitle": "Gambar mini PDF",
-    "replaceConfirm": "{{name}} sudah menyediakan gambar mini PDF di Penjelajah File.\n\nTampilkan gambar mini dari Open PDF Studio sebagai gantinya untuk akun Windows Anda? Menonaktifkan opsi ini akan memulihkan gambar mini sebelumnya.",
+    "replaceConfirm": "{{name}} sudah menyediakan gambar mini PDF di Penjelajah File.\n\nTampilkan gambar mini dari HB PDF Studio sebagai gantinya untuk akun Windows Anda? Menonaktifkan opsi ini akan memulihkan gambar mini sebelumnya.",
     "failed": "Pengaturan gambar mini Penjelajah File tidak dapat diubah."
   },
   "virtualPrinter": {
@@ -251,7 +251,7 @@
     "stateUnknownDetail": "Status printer tidak dapat dibaca.",
     "howTitle": "Cara kerjanya",
     "how1": "Di program mana pun, pilih Cetak lalu pilih {{printer}}.",
-    "how2": "Cetakan muncul di jendela printer Open PDF Studio.",
+    "how2": "Cetakan muncul di jendela printer HB PDF Studio.",
     "how3": "Pratinjau, urutkan ulang, gabungkan, dan simpan pekerjaan sebagai satu PDF, atau buka di Studio.",
     "openWindow": "Buka jendela printer",
     "openWindowTip": "Tampilkan pekerjaan cetak yang ditangkap"

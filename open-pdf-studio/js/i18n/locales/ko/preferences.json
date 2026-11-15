@@ -204,19 +204,19 @@
   "fileAssoc": {
     "defaultPdfApplication": "기본 PDF 응용 프로그램",
     "currentDefault": "현재 기본값:",
-    "setDefault": "Open PDF Studio를 기본 PDF 뷰어로 설정",
-    "setDefaultHelp": "시스템 설정이 열리며, Open PDF Studio를 PDF 파일을 여는 기본 응용 프로그램으로 선택할 수 있습니다.",
-    "windowsInstructions": "Windows 설정이 열렸습니다.\n\nOpen PDF Studio를 기본값으로 설정하려면:\n1. \"파일 형식별 기본 앱 선택\"까지 아래로 스크롤합니다\n2. .pdf를 찾습니다\n3. 클릭하여 Open PDF Studio를 선택합니다",
+    "setDefault": "HB PDF Studio를 기본 PDF 뷰어로 설정",
+    "setDefaultHelp": "시스템 설정이 열리며, HB PDF Studio를 PDF 파일을 여는 기본 응용 프로그램으로 선택할 수 있습니다.",
+    "windowsInstructions": "Windows 설정이 열렸습니다.\n\nHB PDF Studio를 기본값으로 설정하려면:\n1. \"파일 형식별 기본 앱 선택\"까지 아래로 스크롤합니다\n2. .pdf를 찾습니다\n3. 클릭하여 HB PDF Studio를 선택합니다",
     "windowsFailed": "Windows 설정을 열 수 없습니다.\n\n설정 > 앱 > 기본 앱을 수동으로 여십시오.",
-    "macInstructions": "macOS에서 Open PDF Studio를 기본 PDF 뷰어로 설정하려면:\n\n1. Finder에서 아무 PDF 파일을 우클릭합니다\n2. \"정보 가져오기\"를 선택합니다\n3. \"다음으로 열기\"에서 Open PDF Studio를 선택합니다\n4. \"모두 변경...\"을 클릭합니다",
-    "linuxInstructions": "Linux에서 Open PDF Studio를 기본 PDF 뷰어로 설정하려면:\n\n터미널에서 실행:\nxdg-mime default openpdfstudio.desktop application/pdf",
+    "macInstructions": "macOS에서 HB PDF Studio를 기본 PDF 뷰어로 설정하려면:\n\n1. Finder에서 아무 PDF 파일을 우클릭합니다\n2. \"정보 가져오기\"를 선택합니다\n3. \"다음으로 열기\"에서 HB PDF Studio를 선택합니다\n4. \"모두 변경...\"을 클릭합니다",
+    "linuxInstructions": "Linux에서 HB PDF Studio를 기본 PDF 뷰어로 설정하려면:\n\n터미널에서 실행:\nxdg-mime default openpdfstudio.desktop application/pdf",
     "checkFinder": "Finder > 정보 가져오기 확인",
     "notSet": "설정되지 않음",
     "chosenInSystemSettings": "시스템 설정에서 선택됨",
-    "sandboxInstructions": "Open PDF Studio는 {{package}} 패키지로 실행 중이어서 기본 PDF 앱을 직접 변경할 수 없습니다.\n\n시스템 설정의 기본 응용 프로그램에서 Open PDF Studio를 선택하거나, PDF 파일을 마우스 오른쪽 단추로 클릭하고 연결 프로그램을 사용하세요.",
-    "xdgMimeMissing": "xdg-mime(xdg-utils 패키지)이 설치되어 있지 않아 여기에서 기본 PDF 앱을 설정할 수 없습니다.\n\nxdg-utils를 설치하거나 시스템 설정의 기본 응용 프로그램에서 Open PDF Studio를 선택하세요.",
-    "linuxDone": "이제 Open PDF Studio가 PDF 파일의 기본 앱입니다.",
-    "linuxFailed": "Open PDF Studio를 기본 PDF 앱으로 설정할 수 없습니다.\n\n{{error}}"
+    "sandboxInstructions": "HB PDF Studio는 {{package}} 패키지로 실행 중이어서 기본 PDF 앱을 직접 변경할 수 없습니다.\n\n시스템 설정의 기본 응용 프로그램에서 HB PDF Studio를 선택하거나, PDF 파일을 마우스 오른쪽 단추로 클릭하고 연결 프로그램을 사용하세요.",
+    "xdgMimeMissing": "xdg-mime(xdg-utils 패키지)이 설치되어 있지 않아 여기에서 기본 PDF 앱을 설정할 수 없습니다.\n\nxdg-utils를 설치하거나 시스템 설정의 기본 응용 프로그램에서 HB PDF Studio를 선택하세요.",
+    "linuxDone": "이제 HB PDF Studio가 PDF 파일의 기본 앱입니다.",
+    "linuxFailed": "HB PDF Studio를 기본 PDF 앱으로 설정할 수 없습니다.\n\n{{error}}"
   },
   "explorerThumbnails": {
     "title": "파일 탐색기",
@@ -226,7 +226,7 @@
     "otherHandler": "현재 PDF 미리 보기 이미지는 {{name}}에서 제공합니다.",
     "defaultApp": "기본 PDF 앱이 자체 미리 보기 이미지를 표시합니다({{name}}). 해당 앱이 기본 PDF 앱인 동안에는 Windows가 그 이미지를 사용합니다.",
     "replaceTitle": "PDF 미리 보기 이미지",
-    "replaceConfirm": "{{name}}에서 이미 파일 탐색기의 PDF 미리 보기 이미지를 제공하고 있습니다.\n\n사용자의 Windows 계정에서 대신 Open PDF Studio의 미리 보기 이미지를 표시할까요? 이 옵션을 끄면 이전 미리 보기 이미지가 복원됩니다.",
+    "replaceConfirm": "{{name}}에서 이미 파일 탐색기의 PDF 미리 보기 이미지를 제공하고 있습니다.\n\n사용자의 Windows 계정에서 대신 HB PDF Studio의 미리 보기 이미지를 표시할까요? 이 옵션을 끄면 이전 미리 보기 이미지가 복원됩니다.",
     "failed": "파일 탐색기의 미리 보기 이미지 설정을 변경하지 못했습니다."
   },
   "virtualPrinter": {
@@ -251,7 +251,7 @@
     "stateUnknownDetail": "프린터 상태를 읽을 수 없습니다.",
     "howTitle": "작동 방식",
     "how1": "아무 프로그램에서나 인쇄를 선택하고 {{printer}}을(를) 선택합니다.",
-    "how2": "인쇄물이 Open PDF Studio의 프린터 창에 표시됩니다.",
+    "how2": "인쇄물이 HB PDF Studio의 프린터 창에 표시됩니다.",
     "how3": "작업을 미리 보고, 순서를 바꾸고, 병합하여 하나의 PDF로 저장하거나 Studio에서 엽니다.",
     "openWindow": "프린터 창 열기",
     "openWindowTip": "캡처된 인쇄 작업 표시"

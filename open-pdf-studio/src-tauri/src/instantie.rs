@@ -217,7 +217,7 @@ mod tests {
 
     #[test]
     fn drop_doel_indeling() {
-        let exe = r"C:\Program Files\Open PDF Studio\open-pdf-studio.exe";
+        let exe = r"C:\Program Files\HB PDF Studio\open-pdf-studio.exe";
         assert_eq!(classificeer_drop(10, exe, Some(10), None), DropDoel::Zelf);
         assert_eq!(
             classificeer_drop(10, exe, Some(20), Some(r"c:/program files/open pdf studio/OPEN-PDF-STUDIO.exe")),

@@ -35,7 +35,7 @@
   "printQueue": {
     "toolbarLabel": "Ενέργειες εργασιών εκτύπωσης",
     "openInStudio": "Άνοιγμα στο Studio",
-    "openInStudioTip": "Άνοιγμα της επιλεγμένης εργασίας στο Open PDF Studio (Enter ή διπλό κλικ). Αν επιλεγούν περισσότερες εργασίες, ανοίγουν ως ένα συγχωνευμένο έγγραφο.",
+    "openInStudioTip": "Άνοιγμα της επιλεγμένης εργασίας στο HB PDF Studio (Enter ή διπλό κλικ). Αν επιλεγούν περισσότερες εργασίες, ανοίγουν ως ένα συγχωνευμένο έγγραφο.",
     "mergeSelected": "Συγχώνευση επιλεγμένων…",
     "mergeSelectedTip": "Συγχώνευση των επιλεγμένων εργασιών, με τη σειρά της λίστας, σε ένα PDF και αποθήκευσή του",
     "saveAs": "Αποθήκευση ως…",
@@ -75,11 +75,11 @@
     "adding": "Προσθήκη αρχείων PDF…",
     "saving": "Αποθήκευση…",
     "merging": "Συγχώνευση {{done}} από {{count}}…",
-    "opening": "Άνοιγμα στο Open PDF Studio…",
+    "opening": "Άνοιγμα στο HB PDF Studio…",
     "deleting": "Διαγραφή…",
     "saved": "Αποθηκεύτηκε ως {{name}}",
     "merged": "Συγχωνεύτηκε και αποθηκεύτηκε ως {{name}}",
-    "opened": "Άνοιξε στο Open PDF Studio",
+    "opened": "Άνοιξε στο HB PDF Studio",
     "deleted": "Διαγράφηκαν: {{count}}",
     "failed": "Αποτυχία: {{message}}",
     "mergedFileName": "Συγχωνευμένο",
@@ -452,7 +452,7 @@
   },
   "update": {
     "title": "Ενημέρωση λογισμικού",
-    "newVersionAvailable": "Μια νέα έκδοση του Open PDF Studio είναι διαθέσιμη.",
+    "newVersionAvailable": "Μια νέα έκδοση του HB PDF Studio είναι διαθέσιμη.",
     "currentVersion": "Τρέχουσα έκδοση:",
     "newVersion": "Νέα έκδοση:",
     "releaseNotes": "Σημειώσεις έκδοσης:",
@@ -616,7 +616,7 @@
   },
   "defaultPdfApp": {
     "title": "Προεπιλεγμένη εφαρμογή PDF",
-    "message": "Το Open PDF Studio δεν έχει οριστεί ως προεπιλεγμένη εφαρμογή για το άνοιγμα αρχείων PDF. Θέλετε να το ορίσετε ως προεπιλογή;",
+    "message": "Το HB PDF Studio δεν έχει οριστεί ως προεπιλεγμένη εφαρμογή για το άνοιγμα αρχείων PDF. Θέλετε να το ορίσετε ως προεπιλογή;",
     "setAsDefault": "Ορισμός ως προεπιλογή",
     "dontAskAgain": "Να μην ερωτηθώ ξανά",
     "notNow": "Όχι τώρα"
@@ -1322,7 +1322,7 @@
   },
   "recovery": {
     "title": "Ανάκτηση μη αποθηκευμένης εργασίας",
-    "intro": "Το Open PDF Studio δεν έκλεισε κανονικά την τελευταία φορά. Η μη αποθηκευμένη εργασία αυτών των εγγράφων διατηρήθηκε:",
+    "intro": "Το HB PDF Studio δεν έκλεισε κανονικά την τελευταία φορά. Η μη αποθηκευμένη εργασία αυτών των εγγράφων διατηρήθηκε:",
     "savedAt": "Διατηρήθηκε στις {{time}}",
     "pages": "Σελίδες: {{count}}",
     "untitled": "Έγγραφο χωρίς τίτλο",
@@ -1343,7 +1343,7 @@
     "deleteFailed": "Η διαγραφή απέτυχε: {{error}}",
     "tabLabel": "ανακτήθηκε",
     "tabTip": "Ανακτήθηκε μετά από απρόσμενο κλείσιμο. Η αποθήκευση γράφει στο αρχικό αρχείο.",
-    "reloadStopped": "Το παράθυρο του Open PDF Studio σταμάτησε να λειτουργεί αρκετές φορές στη σειρά και δεν επαναφορτώνεται πλέον αυτόματα. Αποθηκεύστε την εργασία σας και επανεκκινήστε την εφαρμογή."
+    "reloadStopped": "Το παράθυρο του HB PDF Studio σταμάτησε να λειτουργεί αρκετές φορές στη σειρά και δεν επαναφορτώνεται πλέον αυτόματα. Αποθηκεύστε την εργασία σας και επανεκκινήστε την εφαρμογή."
   },
   "protectPdf": {
     "title": "Ασφάλεια εγγράφου",
@@ -1919,7 +1919,7 @@
       "routing": "Routing",
       "howToRespond": "Reply to this mail with \"Approved\" or \"Rejected\" and keep {{ref}} in the subject.",
       "howToSign": "Signers: return the signed PDF and keep {{ref}} in the file name.",
-      "disclaimer": "The SHA-256 above identifies the exact document version. This mail was prepared in Open PDF Studio; it is not a legally binding signature service and does not verify identities."
+      "disclaimer": "The SHA-256 above identifies the exact document version. This mail was prepared in HB PDF Studio; it is not a legally binding signature service and does not verify identities."
     },
     "errors": {
       "CONFIGURE_ADAPTER_FIRST": "Enable the provider first.",

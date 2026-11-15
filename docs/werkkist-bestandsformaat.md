@@ -96,7 +96,7 @@ gereedschap staan.
   "format": "open-pdf-studio/tool-set",
   "version": 1,
   "exportedAt": "2026-11-06T09:00:00.000Z",
-  "app": "Open PDF Studio",
+  "app": "HB PDF Studio",
   "toolSet": {
     "name": "Ruwbouw meten",
     "items": [

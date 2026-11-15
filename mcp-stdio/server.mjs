@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 /**
- * Open PDF Studio — MCP stdio bridge
+ * HB PDF Studio — MCP stdio bridge
  * ==================================
  *
- * Claude Desktop and Claude Code speak MCP over **stdio**. Open PDF Studio
+ * Claude Desktop and Claude Code speak MCP over **stdio**. HB PDF Studio
  * ships a full MCP server *inside* the running app that speaks **HTTP
  * JSON-RPC** on `127.0.0.1:<port>/mcp` (default port 9223).
  *
@@ -13,7 +13,7 @@
  * logic is reimplemented here — `tools/list` and `tools/call` are answered by
  * the live app.
  *
- *   Claude Desktop/Code  ──stdio──►  this proxy  ──HTTP──►  Open PDF Studio
+ *   Claude Desktop/Code  ──stdio──►  this proxy  ──HTTP──►  HB PDF Studio
  *                        ◄─stdio──               ◄──HTTP──  (Rust mcp_server)
  *
  * When the app is not running, the bridge answers `initialize` and

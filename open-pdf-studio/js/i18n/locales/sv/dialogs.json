@@ -35,7 +35,7 @@
   "printQueue": {
     "toolbarLabel": "Åtgärder för utskriftsjobb",
     "openInStudio": "Öppna i Studio",
-    "openInStudioTip": "Öppna det markerade jobbet i Open PDF Studio (Retur eller dubbelklick). Flera markerade jobb öppnas som ett sammanfogat dokument.",
+    "openInStudioTip": "Öppna det markerade jobbet i HB PDF Studio (Retur eller dubbelklick). Flera markerade jobb öppnas som ett sammanfogat dokument.",
     "mergeSelected": "Sammanfoga markerade…",
     "mergeSelectedTip": "Sammanfoga de markerade jobben, i listordning, till en PDF och spara den",
     "saveAs": "Spara som…",
@@ -75,11 +75,11 @@
     "adding": "Lägger till PDF-filer…",
     "saving": "Sparar…",
     "merging": "Sammanfogar {{done}} av {{count}}…",
-    "opening": "Öppnar i Open PDF Studio…",
+    "opening": "Öppnar i HB PDF Studio…",
     "deleting": "Raderar…",
     "saved": "Sparad som {{name}}",
     "merged": "Sammanfogad och sparad som {{name}}",
-    "opened": "Öppnad i Open PDF Studio",
+    "opened": "Öppnad i HB PDF Studio",
     "deleted": "Raderade: {{count}}",
     "failed": "Misslyckades: {{message}}",
     "mergedFileName": "Sammanfogad",
@@ -452,7 +452,7 @@
   },
   "update": {
     "title": "Programuppdatering",
-    "newVersionAvailable": "En ny version av Open PDF Studio är tillgänglig.",
+    "newVersionAvailable": "En ny version av HB PDF Studio är tillgänglig.",
     "currentVersion": "Nuvarande version:",
     "newVersion": "Ny version:",
     "releaseNotes": "Versionsanteckningar:",
@@ -616,7 +616,7 @@
   },
   "defaultPdfApp": {
     "title": "Standard-PDF-app",
-    "message": "Open PDF Studio är inte angiven som standardapp för att öppna PDF-filer. Vill du ange den som standard?",
+    "message": "HB PDF Studio är inte angiven som standardapp för att öppna PDF-filer. Vill du ange den som standard?",
     "setAsDefault": "Ange som standard",
     "dontAskAgain": "Fråga inte igen",
     "notNow": "Inte nu"
@@ -1322,7 +1322,7 @@
   },
   "recovery": {
     "title": "Återställ osparat arbete",
-    "intro": "Open PDF Studio avslutades inte normalt förra gången. Osparat arbete har bevarats för dessa dokument:",
+    "intro": "HB PDF Studio avslutades inte normalt förra gången. Osparat arbete har bevarats för dessa dokument:",
     "savedAt": "Bevarat {{time}}",
     "pages": "Sidor: {{count}}",
     "untitled": "Namnlöst dokument",
@@ -1343,7 +1343,7 @@
     "deleteFailed": "Borttagningen misslyckades: {{error}}",
     "tabLabel": "återställt",
     "tabTip": "Återställt efter en oväntad avstängning. Spara skriver till originalfilen.",
-    "reloadStopped": "Open PDF Studio-fönstret slutade fungera flera gånger i rad och läses inte längre in automatiskt igen. Spara ditt arbete och starta om appen."
+    "reloadStopped": "HB PDF Studio-fönstret slutade fungera flera gånger i rad och läses inte längre in automatiskt igen. Spara ditt arbete och starta om appen."
   },
   "protectPdf": {
     "title": "Dokumentsäkerhet",
@@ -1919,7 +1919,7 @@
       "routing": "Routing",
       "howToRespond": "Reply to this mail with \"Approved\" or \"Rejected\" and keep {{ref}} in the subject.",
       "howToSign": "Signers: return the signed PDF and keep {{ref}} in the file name.",
-      "disclaimer": "The SHA-256 above identifies the exact document version. This mail was prepared in Open PDF Studio; it is not a legally binding signature service and does not verify identities."
+      "disclaimer": "The SHA-256 above identifies the exact document version. This mail was prepared in HB PDF Studio; it is not a legally binding signature service and does not verify identities."
     },
     "errors": {
       "CONFIGURE_ADAPTER_FIRST": "Enable the provider first.",

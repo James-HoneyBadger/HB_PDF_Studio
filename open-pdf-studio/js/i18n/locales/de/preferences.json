@@ -204,19 +204,19 @@
   "fileAssoc": {
     "defaultPdfApplication": "Standard-PDF-Anwendung",
     "currentDefault": "Aktuelle Standardanwendung:",
-    "setDefault": "Open PDF Studio als Standard-PDF-Betrachter festlegen",
-    "setDefaultHelp": "Dies öffnet Ihre Systemeinstellungen, wo Sie Open PDF Studio als Standardanwendung zum Öffnen von PDF-Dateien auswählen können.",
-    "windowsInstructions": "Windows-Einstellungen geöffnet.\n\nUm Open PDF Studio als Standard festzulegen:\n1. Scrollen Sie nach unten zu „Standard-Apps nach Dateityp auswählen“\n2. Suchen Sie .pdf\n3. Klicken Sie und wählen Sie Open PDF Studio",
+    "setDefault": "HB PDF Studio als Standard-PDF-Betrachter festlegen",
+    "setDefaultHelp": "Dies öffnet Ihre Systemeinstellungen, wo Sie HB PDF Studio als Standardanwendung zum Öffnen von PDF-Dateien auswählen können.",
+    "windowsInstructions": "Windows-Einstellungen geöffnet.\n\nUm HB PDF Studio als Standard festzulegen:\n1. Scrollen Sie nach unten zu „Standard-Apps nach Dateityp auswählen“\n2. Suchen Sie .pdf\n3. Klicken Sie und wählen Sie HB PDF Studio",
     "windowsFailed": "Windows-Einstellungen konnten nicht geöffnet werden.\n\nBitte öffnen Sie manuell Einstellungen > Apps > Standard-Apps.",
-    "macInstructions": "Um Open PDF Studio als Standard-PDF-Betrachter auf macOS festzulegen:\n\n1. Klicken Sie mit der rechten Maustaste auf eine PDF-Datei im Finder\n2. Wählen Sie „Informationen“\n3. Unter „Öffnen mit“ wählen Sie Open PDF Studio\n4. Klicken Sie auf „Alle ändern...“",
-    "linuxInstructions": "Um Open PDF Studio als Standard-PDF-Betrachter auf Linux festzulegen:\n\nFühren Sie im Terminal aus:\nxdg-mime default openpdfstudio.desktop application/pdf",
+    "macInstructions": "Um HB PDF Studio als Standard-PDF-Betrachter auf macOS festzulegen:\n\n1. Klicken Sie mit der rechten Maustaste auf eine PDF-Datei im Finder\n2. Wählen Sie „Informationen“\n3. Unter „Öffnen mit“ wählen Sie HB PDF Studio\n4. Klicken Sie auf „Alle ändern...“",
+    "linuxInstructions": "Um HB PDF Studio als Standard-PDF-Betrachter auf Linux festzulegen:\n\nFühren Sie im Terminal aus:\nxdg-mime default openpdfstudio.desktop application/pdf",
     "checkFinder": "Überprüfen Sie Finder > Informationen",
     "notSet": "Nicht festgelegt",
     "chosenInSystemSettings": "In den Systemeinstellungen festgelegt",
-    "sandboxInstructions": "Open PDF Studio läuft als {{package}}-Paket und kann die Standard-PDF-App nicht selbst ändern.\n\nWählen Sie Open PDF Studio in den Systemeinstellungen unter Standardanwendungen, oder klicken Sie mit der rechten Maustaste auf eine PDF-Datei und verwenden Sie Öffnen mit.",
-    "xdgMimeMissing": "xdg-mime (Paket xdg-utils) ist nicht installiert, daher kann die Standard-PDF-App hier nicht festgelegt werden.\n\nInstallieren Sie xdg-utils oder wählen Sie Open PDF Studio in den Systemeinstellungen unter Standardanwendungen.",
-    "linuxDone": "Open PDF Studio ist jetzt die Standard-App für PDF-Dateien.",
-    "linuxFailed": "Open PDF Studio konnte nicht als Standard-PDF-App festgelegt werden.\n\n{{error}}"
+    "sandboxInstructions": "HB PDF Studio läuft als {{package}}-Paket und kann die Standard-PDF-App nicht selbst ändern.\n\nWählen Sie HB PDF Studio in den Systemeinstellungen unter Standardanwendungen, oder klicken Sie mit der rechten Maustaste auf eine PDF-Datei und verwenden Sie Öffnen mit.",
+    "xdgMimeMissing": "xdg-mime (Paket xdg-utils) ist nicht installiert, daher kann die Standard-PDF-App hier nicht festgelegt werden.\n\nInstallieren Sie xdg-utils oder wählen Sie HB PDF Studio in den Systemeinstellungen unter Standardanwendungen.",
+    "linuxDone": "HB PDF Studio ist jetzt die Standard-App für PDF-Dateien.",
+    "linuxFailed": "HB PDF Studio konnte nicht als Standard-PDF-App festgelegt werden.\n\n{{error}}"
   },
   "explorerThumbnails": {
     "title": "Datei-Explorer",
@@ -226,7 +226,7 @@
     "otherHandler": "PDF-Miniaturansichten werden derzeit von {{name}} bereitgestellt.",
     "defaultApp": "Ihre Standard-PDF-App zeigt eigene Miniaturansichten ({{name}}). Windows verwendet diese, solange diese App Ihre Standard-PDF-App ist.",
     "replaceTitle": "PDF-Miniaturansichten",
-    "replaceConfirm": "{{name}} stellt bereits PDF-Miniaturansichten im Datei-Explorer bereit.\n\nStattdessen für Ihr Windows-Konto die Miniaturansichten von Open PDF Studio anzeigen? Wenn Sie diese Option wieder ausschalten, werden die vorherigen Miniaturansichten wiederhergestellt.",
+    "replaceConfirm": "{{name}} stellt bereits PDF-Miniaturansichten im Datei-Explorer bereit.\n\nStattdessen für Ihr Windows-Konto die Miniaturansichten von HB PDF Studio anzeigen? Wenn Sie diese Option wieder ausschalten, werden die vorherigen Miniaturansichten wiederhergestellt.",
     "failed": "Die Einstellung für Miniaturansichten im Datei-Explorer konnte nicht geändert werden."
   },
   "virtualPrinter": {
@@ -251,7 +251,7 @@
     "stateUnknownDetail": "Der Druckerstatus konnte nicht gelesen werden.",
     "howTitle": "So funktioniert es",
     "how1": "Wählen Sie in einem beliebigen Programm Drucken und wählen Sie {{printer}} aus.",
-    "how2": "Der Ausdruck erscheint im Druckerfenster von Open PDF Studio.",
+    "how2": "Der Ausdruck erscheint im Druckerfenster von HB PDF Studio.",
     "how3": "Zeigen Sie die Aufträge in der Vorschau an, ordnen Sie sie neu an, führen Sie sie zusammen und speichern Sie sie als eine PDF, oder öffnen Sie sie in Studio.",
     "openWindow": "Druckerfenster öffnen",
     "openWindowTip": "Die erfassten Druckaufträge anzeigen"

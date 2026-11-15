@@ -35,7 +35,7 @@
   "printQueue": {
     "toolbarLabel": "Print job actions",
     "openInStudio": "Open in Studio",
-    "openInStudioTip": "Open the selected job in Open PDF Studio (Enter or double-click). Several selected jobs open as one merged document.",
+    "openInStudioTip": "Open the selected job in HB PDF Studio (Enter or double-click). Several selected jobs open as one merged document.",
     "mergeSelected": "Merge selected…",
     "mergeSelectedTip": "Merge the selected jobs, in list order, into one PDF and save it",
     "saveAs": "Save as…",
@@ -75,11 +75,11 @@
     "adding": "Adding PDF files…",
     "saving": "Saving…",
     "merging": "Merging {{done}} of {{count}}…",
-    "opening": "Opening in Open PDF Studio…",
+    "opening": "Opening in HB PDF Studio…",
     "deleting": "Deleting…",
     "saved": "Saved as {{name}}",
     "merged": "Merged and saved as {{name}}",
-    "opened": "Opened in Open PDF Studio",
+    "opened": "Opened in HB PDF Studio",
     "deleted": "Deleted: {{count}}",
     "failed": "Failed: {{message}}",
     "mergedFileName": "Merged",
@@ -452,7 +452,7 @@
   },
   "update": {
     "title": "Software Update",
-    "newVersionAvailable": "A new version of Open PDF Studio is available.",
+    "newVersionAvailable": "A new version of HB PDF Studio is available.",
     "currentVersion": "Current version:",
     "newVersion": "New version:",
     "releaseNotes": "Release Notes:",
@@ -707,7 +707,7 @@
   },
   "defaultPdfApp": {
     "title": "Default PDF App",
-    "message": "Open PDF Studio is not set as the default app for opening PDF files. Would you like to set it as the default?",
+    "message": "HB PDF Studio is not set as the default app for opening PDF files. Would you like to set it as the default?",
     "setAsDefault": "Set as Default",
     "dontAskAgain": "Don't Ask Again",
     "notNow": "Not Now"
@@ -1321,7 +1321,7 @@
   },
   "recovery": {
     "title": "Recover unsaved work",
-    "intro": "Open PDF Studio did not close normally last time. Unsaved work was kept for these documents:",
+    "intro": "HB PDF Studio did not close normally last time. Unsaved work was kept for these documents:",
     "savedAt": "Kept on {{time}}",
     "pages": "Pages: {{count}}",
     "untitled": "Untitled document",
@@ -1342,7 +1342,7 @@
     "deleteFailed": "Deleting failed: {{error}}",
     "tabLabel": "recovered",
     "tabTip": "Recovered after an unexpected shutdown. Saving writes to the original file.",
-    "reloadStopped": "The Open PDF Studio window stopped working several times in a row and is no longer reloaded automatically. Save your work and restart the app."
+    "reloadStopped": "The HB PDF Studio window stopped working several times in a row and is no longer reloaded automatically. Save your work and restart the app."
   },
   "protectPdf": {
     "title": "Document Security",
@@ -1918,7 +1918,7 @@
       "routing": "Routing",
       "howToRespond": "Reply to this mail with \"Approved\" or \"Rejected\" and keep {{ref}} in the subject.",
       "howToSign": "Signers: return the signed PDF and keep {{ref}} in the file name.",
-      "disclaimer": "The SHA-256 above identifies the exact document version. This mail was prepared in Open PDF Studio; it is not a legally binding signature service and does not verify identities."
+      "disclaimer": "The SHA-256 above identifies the exact document version. This mail was prepared in HB PDF Studio; it is not a legally binding signature service and does not verify identities."
     },
     "errors": {
       "CONFIGURE_ADAPTER_FIRST": "Enable the provider first.",

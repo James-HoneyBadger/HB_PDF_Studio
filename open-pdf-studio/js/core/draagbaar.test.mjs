@@ -62,7 +62,7 @@ test('leesDraagbaar: een fout (oudere backend, browser) telt als niet draagbaar'
 });
 
 test('zipnaam en releasepagina', () => {
-  assert.equal(zipNaam('v2026.45.1'), 'Open.PDF.Studio_2026.45.1_x64_portable.zip');
+  assert.equal(zipNaam('v2026.45.1'), 'HB.PDF.Studio_2026.45.1_x64_portable.zip');
   assert.match(RELEASES_URL, /^https:\/\/github\.com\/OpenAEC-Foundation\/open-pdf-studio\/releases\/latest$/);
 });
 
@@ -70,10 +70,10 @@ test('vorige versie: draagbaar kiest de zip, nooit een installer', () => {
   const assets = pickAssets({
     html_url: 'pagina',
     assets: [
-      { name: 'Open.PDF.Studio_2026.44.4_x64-setup.exe', browser_download_url: 'sys' },
-      { name: 'Open.PDF.Studio_2026.44.4_x64_user-setup.exe', browser_download_url: 'usr' },
-      { name: 'Open.PDF.Studio_2026.44.4_x64_portable.zip', browser_download_url: 'zip' },
-      { name: 'Open.PDF.Studio_2026.44.4_x64_portable.zip.sha256', browser_download_url: 'hash' },
+      { name: 'HB.PDF.Studio_2026.44.4_x64-setup.exe', browser_download_url: 'sys' },
+      { name: 'HB.PDF.Studio_2026.44.4_x64_user-setup.exe', browser_download_url: 'usr' },
+      { name: 'HB.PDF.Studio_2026.44.4_x64_portable.zip', browser_download_url: 'zip' },
+      { name: 'HB.PDF.Studio_2026.44.4_x64_portable.zip.sha256', browser_download_url: 'hash' },
     ],
   });
   assert.equal(assets.winPortable, 'zip');
@@ -116,12 +116,7 @@ test('geen vraag om standaard-PDF-app te worden en een melding bij een alleen-le
   assert.match(main, /common:portable\.notWritable/);
 });
 
-test('voorkeuren: uitleg in plaats van knoppen voor koppeling, miniaturen en printer', () => {
+test('voorkeuren: uitleg in plaats van knoppen voor de bestandskoppeling', () => {
   const assoc = lees('js', 'solid', 'components', 'preferences', 'FileAssocTab.jsx');
   assert.match(assoc, /tCommon\('portable\.fileAssoc'\)/);
-  assert.match(assoc, /tCommon\('portable\.explorerThumbnails'\)/);
-  assert.match(assoc, /<Show when=\{miniaturen\(\)\.supported && !draagbaar\(\)\.portable\}>/);
-  const printer = lees('js', 'solid', 'components', 'preferences', 'VirtualPrinterTab.jsx');
-  assert.match(printer, /tCommon\('portable\.virtualPrinter'\)/);
-  assert.match(printer, /if \(!s\.portable\) checkStatus\(\);/);
 });

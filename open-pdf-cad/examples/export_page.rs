@@ -39,16 +39,9 @@ fn default_pdfium() -> PathBuf {
     if let Ok(path) = std::env::var("OPDS_PDFIUM_LIB") {
         return PathBuf::from(path);
     }
-    let platform = if cfg!(target_os = "windows") {
-        if cfg!(target_arch = "aarch64") { "win-arm64" } else { "win-x64" }
-    } else if cfg!(target_os = "macos") {
-        "macos-universal"
-    } else {
-        "linux-x64"
-    };
     PathBuf::from(env!("CARGO_MANIFEST_DIR"))
         .join("../open-pdf-studio/src-tauri/binaries")
-        .join(platform)
+        .join("linux-arm64")
         .join(pdfium_library_name())
 }
 

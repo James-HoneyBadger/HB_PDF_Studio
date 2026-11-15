@@ -1,4 +1,4 @@
-# Open PDF Studio
+# HB PDF Studio
 
 > Desktop PDF annotation editor built with Tauri 2 + SolidJS + Vite + PDF.js + pdf-lib + i18next.
 > Version: 1.33.0 | License: MIT | Author: OpenAEC Foundation
@@ -173,7 +173,7 @@ Install these Claude skill packages for deep technology knowledge at each bounda
 
 | Package | Skills | Repository |
 |---------|--------|------------|
-| **Open PDF Studio Cross-Tech** | 6 | https://github.com/OpenAEC-Foundation/Open-PDF-Studio-Claude-Skill-Package |
+| **HB PDF Studio Cross-Tech** | 6 | https://github.com/OpenAEC-Foundation/Open-PDF-Studio-Claude-Skill-Package |
 | **Tauri 2** | 27 | https://github.com/OpenAEC-Foundation/Tauri-2-Claude-Skill-Package |
 | **SolidJS** | 16 | https://github.com/OpenAEC-Foundation/SolidJS-Claude-Skill-Package |
 | **pdf-lib** | 17 | https://github.com/OpenAEC-Foundation/pdf-lib-Claude-Skill-Package |

@@ -62,8 +62,8 @@ An existing production certificate must be reused. If no production keystore exi
 
 CI runs Tauri in non-interactive mode for ARM64 and produces both formats:
 
-- `Open.PDF.Studio_<version>_arm64.apk` for GitHub sideloading.
-- `Open.PDF.Studio_<version>_arm64.aab` for store/internal testing.
+- `HB.PDF.Studio_<version>_arm64.apk` for GitHub sideloading.
+- `HB.PDF.Studio_<version>_arm64.aab` for store/internal testing.
 
 Both files are signed by Gradle with the same configured certificate. CI verifies the APK signature and verifies the AAB JAR signature before upload. Artifact discovery must require exactly one matching output per format; missing or ambiguous output is a failure.
 

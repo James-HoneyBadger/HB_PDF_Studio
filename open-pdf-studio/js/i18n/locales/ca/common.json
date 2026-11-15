@@ -110,7 +110,7 @@
     "readOnly": {
       "title": "Opened read-only",
       "kenmerk": "{{name}} is read-only: it has the read-only attribute, or you only have read permission on this location.",
-      "in-gebruik": "{{name}} is open in another application or is being synchronized, so Open PDF Studio cannot reserve it.",
+      "in-gebruik": "{{name}} is open in another application or is being synchronized, so HB PDF Studio cannot reserve it.",
       "geweigerd": "{{name}} cannot be reserved: Windows denied it.",
       "mislukt": "{{name}} could not be reserved.",
       "saveAs": "It has been opened read-only. You can make changes; use Save As to save them to another file."
@@ -118,7 +118,7 @@
   },
   "hostOpenFailed": "No s'ha pogut llegir el fitxer de l'emmagatzematge. Torneu-ho a provar.",
   "hostInvalidPdf": "{{name}} no és un fitxer PDF vàlid i no s'ha pogut obrir.",
-  "hostNoContact": "La pàgina que conté Open PDF Studio no respon, de manera que no es poden obrir ni desar fitxers. Torneu a carregar la pàgina i torneu-ho a provar.",
+  "hostNoContact": "La pàgina que conté HB PDF Studio no respon, de manera que no es poden obrir ni desar fitxers. Torneu a carregar la pàgina i torneu-ho a provar.",
   "hostSaveConflict": "Una altra persona ha desat aquest fitxer mentrestant. Els vostres canvis s'han desat com a còpia separada: {{name}}. Les properes desades aniran a aquesta còpia.",
   "hostSaveNotLocked": "Aquest fitxer no està reservat per a vós, de manera que altres persones el poden modificar alhora. Els vostres canvis es desen com a versions noves; no se sobreescriu res.",
   "hostReadOnlySave": "Aquest fitxer està obert només per a lectura, així que no s'hi poden desar canvis. Feu servir Desa com a per baixar-ne una còpia.",
@@ -162,7 +162,7 @@
   "failedToReplacePage": "No s'ha pogut substituir la pàgina: {{error}}",
   "failedToMergeFile": "No s'ha pogut combinar: {{file}}\n{{error}}",
   "invalidPageRange": "Interval de pàgines no vàlid. Introduïu números de pàgina vàlids.",
-  "appName": "Open PDF Studio",
+  "appName": "HB PDF Studio",
   "noDocuments": "Cap PDF seleccionat",
   "noDocumentsHint": "Feu clic a \"Obre PDF\" per explorar i anotar un PDF",
   "solid": "Sòlid",
@@ -350,7 +350,7 @@
     "fileAssoc": "Aquesta còpia portàtil no està registrada al Windows. Per obrir fitxers PDF amb ella, feu clic amb el botó dret en un PDF, trieu Obre amb > Tria una altra aplicació i seleccioneu open-pdf-studio.exe en aquesta carpeta.",
     "explorerThumbnails": "Les miniatures de PDF a l'Explorador de fitxers només estan disponibles a la versió instal·lada.",
     "virtualPrinter": "La impressora virtual només està disponible a la versió instal·lada: s'afegeix al Windows amb drets d'administrador.",
-    "notWritable": "L'Open PDF Studio no pot escriure a la carpeta {{dir}}, així que aquesta vegada la configuració es desa al vostre perfil d'usuari. Moveu la carpeta portàtil a una ubicació on es pugui escriure, com una memòria USB o la carpeta Documents."
+    "notWritable": "L'HB PDF Studio no pot escriure a la carpeta {{dir}}, així que aquesta vegada la configuració es desa al vostre perfil d'usuari. Moveu la carpeta portàtil a una ubicació on es pugui escriure, com una memòria USB o la carpeta Documents."
   },
   "protectedPdfNoPrint": "Els permisos d'aquest document no permeten imprimir.",
   "share": {

@@ -35,7 +35,7 @@
   "printQueue": {
     "toolbarLabel": "پرنٹ جاب کے اقدامات",
     "openInStudio": "Studio میں کھولیں",
-    "openInStudioTip": "منتخب جاب کو Open PDF Studio میں کھولیں (Enter یا ڈبل کلک)۔ ایک سے زیادہ منتخب جابز ایک ضم شدہ دستاویز کے طور پر کھلتی ہیں۔",
+    "openInStudioTip": "منتخب جاب کو HB PDF Studio میں کھولیں (Enter یا ڈبل کلک)۔ ایک سے زیادہ منتخب جابز ایک ضم شدہ دستاویز کے طور پر کھلتی ہیں۔",
     "mergeSelected": "منتخب کو ضم کریں…",
     "mergeSelectedTip": "منتخب جابز کو فہرست کی ترتیب میں ایک PDF میں ضم کر کے محفوظ کریں",
     "saveAs": "بطور محفوظ کریں…",
@@ -75,11 +75,11 @@
     "adding": "PDF فائلیں شامل ہو رہی ہیں…",
     "saving": "محفوظ ہو رہا ہے…",
     "merging": "{{count}} میں سے {{done}} ضم ہو رہی ہیں…",
-    "opening": "Open PDF Studio میں کھل رہا ہے…",
+    "opening": "HB PDF Studio میں کھل رہا ہے…",
     "deleting": "حذف ہو رہا ہے…",
     "saved": "{{name}} کے طور پر محفوظ ہو گیا",
     "merged": "ضم ہو کر {{name}} کے طور پر محفوظ ہو گیا",
-    "opened": "Open PDF Studio میں کھل گیا",
+    "opened": "HB PDF Studio میں کھل گیا",
     "deleted": "حذف شدہ: {{count}}",
     "failed": "ناکام: {{message}}",
     "mergedFileName": "ضم شدہ",
@@ -452,7 +452,7 @@
   },
   "update": {
     "title": "سافٹ ویئر اپ ڈیٹ",
-    "newVersionAvailable": "Open PDF Studio کا نیا ورژن دستیاب ہے۔",
+    "newVersionAvailable": "HB PDF Studio کا نیا ورژن دستیاب ہے۔",
     "currentVersion": "موجودہ ورژن:",
     "newVersion": "نیا ورژن:",
     "releaseNotes": "ریلیز نوٹس:",
@@ -616,7 +616,7 @@
   },
   "defaultPdfApp": {
     "title": "پہلے سے طے شدہ PDF ایپ",
-    "message": "Open PDF Studio PDF فائلیں کھولنے کے لیے پہلے سے طے شدہ ایپ نہیں ہے۔ کیا آپ اسے ڈیفالٹ بنانا چاہتے ہیں؟",
+    "message": "HB PDF Studio PDF فائلیں کھولنے کے لیے پہلے سے طے شدہ ایپ نہیں ہے۔ کیا آپ اسے ڈیفالٹ بنانا چاہتے ہیں؟",
     "setAsDefault": "ڈیفالٹ بنائیں",
     "dontAskAgain": "دوبارہ مت پوچھیں",
     "notNow": "ابھی نہیں"
@@ -1322,7 +1322,7 @@
   },
   "recovery": {
     "title": "غیر محفوظ شدہ کام بحال کریں",
-    "intro": "Open PDF Studio پچھلی بار معمول کے مطابق بند نہیں ہوا۔ ان دستاویزات کا غیر محفوظ شدہ کام سنبھال لیا گیا ہے:",
+    "intro": "HB PDF Studio پچھلی بار معمول کے مطابق بند نہیں ہوا۔ ان دستاویزات کا غیر محفوظ شدہ کام سنبھال لیا گیا ہے:",
     "savedAt": "{{time}} کو سنبھالا گیا",
     "pages": "صفحات: {{count}}",
     "untitled": "بے عنوان دستاویز",
@@ -1343,7 +1343,7 @@
     "deleteFailed": "حذف کرنا ناکام رہا: {{error}}",
     "tabLabel": "بحال شدہ",
     "tabTip": "غیر متوقع بندش کے بعد بحال کیا گیا۔ محفوظ کرنا اصل فائل میں لکھتا ہے۔",
-    "reloadStopped": "Open PDF Studio کی ونڈو لگاتار کئی بار کام کرنا بند کر گئی اور اب خود بخود دوبارہ لوڈ نہیں ہوتی۔ اپنا کام محفوظ کریں اور ایپ دوبارہ شروع کریں۔"
+    "reloadStopped": "HB PDF Studio کی ونڈو لگاتار کئی بار کام کرنا بند کر گئی اور اب خود بخود دوبارہ لوڈ نہیں ہوتی۔ اپنا کام محفوظ کریں اور ایپ دوبارہ شروع کریں۔"
   },
   "protectPdf": {
     "title": "دستاویز کی حفاظت",
@@ -1919,7 +1919,7 @@
       "routing": "Routing",
       "howToRespond": "Reply to this mail with \"Approved\" or \"Rejected\" and keep {{ref}} in the subject.",
       "howToSign": "Signers: return the signed PDF and keep {{ref}} in the file name.",
-      "disclaimer": "The SHA-256 above identifies the exact document version. This mail was prepared in Open PDF Studio; it is not a legally binding signature service and does not verify identities."
+      "disclaimer": "The SHA-256 above identifies the exact document version. This mail was prepared in HB PDF Studio; it is not a legally binding signature service and does not verify identities."
     },
     "errors": {
       "CONFIGURE_ADAPTER_FIRST": "Enable the provider first.",

@@ -110,7 +110,7 @@
     "readOnly": {
       "title": "Opened read-only",
       "kenmerk": "{{name}} is read-only: it has the read-only attribute, or you only have read permission on this location.",
-      "in-gebruik": "{{name}} is open in another application or is being synchronized, so Open PDF Studio cannot reserve it.",
+      "in-gebruik": "{{name}} is open in another application or is being synchronized, so HB PDF Studio cannot reserve it.",
       "geweigerd": "{{name}} cannot be reserved: Windows denied it.",
       "mislukt": "{{name}} could not be reserved.",
       "saveAs": "It has been opened read-only. You can make changes; use Save As to save them to another file."
@@ -118,7 +118,7 @@
   },
   "hostOpenFailed": "Датотека није могла да се прочита из складишта. Покушајте поново.",
   "hostInvalidPdf": "{{name}} није важећа PDF датотека и није могла да се отвори.",
-  "hostNoContact": "Страница око Open PDF Studio не одговара, па датотеке не могу да се отворе ни сачувају. Поново учитајте страницу и покушајте поново.",
+  "hostNoContact": "Страница око HB PDF Studio не одговара, па датотеке не могу да се отворе ни сачувају. Поново учитајте страницу и покушајте поново.",
   "hostSaveConflict": "Неко други је у међувремену сачувао ову датотеку. Ваше измене су сачуване као засебна копија: {{name}}. Наредна чувања иду у ту копију.",
   "hostSaveNotLocked": "Ова датотека није резервисана за вас, па други могу да је мењају у исто време. Ваше измене се чувају као нове верзије; ништа се не преписује.",
   "hostReadOnlySave": "Ова датотека је отворена само за читање, па се у њу не могу сачувати измене. Користите Сачувај као да бисте преузели копију.",
@@ -162,7 +162,7 @@
   "failedToReplacePage": "Замена странице није успела: {{error}}",
   "failedToMergeFile": "Спајање није успело: {{file}}\n{{error}}",
   "invalidPageRange": "Неважећи опсег страница. Молимо унесите важеће бројеве страница.",
-  "appName": "Open PDF Studio",
+  "appName": "HB PDF Studio",
   "noDocuments": "PDF није изабран",
   "noDocumentsHint": "Кликните на \"Отвори PDF\" да прегледате и означите PDF",
   "solid": "Пуна",
@@ -350,7 +350,7 @@
     "fileAssoc": "Ова преносива копија није регистрована у оперативном систему Windows. Да бисте њоме отварали PDF датотеке, кликните десним тастером на PDF, изаберите Отвори помоћу > Изабери другу апликацију и изаберите open-pdf-studio.exe у овој фасцикли.",
     "explorerThumbnails": "Сличице PDF-а у Истраживачу датотека доступне су само у инсталираној верзији.",
     "virtualPrinter": "Виртуелни штампач је доступан само у инсталираној верзији: додаје се у Windows са администраторским правима.",
-    "notWritable": "Open PDF Studio не може да пише у фасциклу {{dir}}, па се ваша подешавања овог пута чувају у вашем корисничком профилу. Преместите преносиву фасциклу на место са дозволом писања, на пример на USB диск или у фасциклу Документи."
+    "notWritable": "HB PDF Studio не може да пише у фасциклу {{dir}}, па се ваша подешавања овог пута чувају у вашем корисничком профилу. Преместите преносиву фасциклу на место са дозволом писања, на пример на USB диск или у фасциклу Документи."
   },
   "protectedPdfNoPrint": "Дозволе овог документа не дозвољавају штампање.",
   "share": {

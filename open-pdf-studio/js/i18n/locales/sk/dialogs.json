@@ -35,7 +35,7 @@
   "printQueue": {
     "toolbarLabel": "Akcie tlačových úloh",
     "openInStudio": "Otvoriť v Studio",
-    "openInStudioTip": "Otvoriť vybranú úlohu v Open PDF Studio (Enter alebo dvojité kliknutie). Viaceré vybrané úlohy sa otvoria ako jeden zlúčený dokument.",
+    "openInStudioTip": "Otvoriť vybranú úlohu v HB PDF Studio (Enter alebo dvojité kliknutie). Viaceré vybrané úlohy sa otvoria ako jeden zlúčený dokument.",
     "mergeSelected": "Zlúčiť vybrané…",
     "mergeSelectedTip": "Zlúčiť vybrané úlohy v poradí zoznamu do jedného PDF a uložiť ho",
     "saveAs": "Uložiť ako…",
@@ -75,11 +75,11 @@
     "adding": "Pridávajú sa súbory PDF…",
     "saving": "Ukladá sa…",
     "merging": "Zlučuje sa {{done}} z {{count}}…",
-    "opening": "Otvára sa v Open PDF Studio…",
+    "opening": "Otvára sa v HB PDF Studio…",
     "deleting": "Odstraňuje sa…",
     "saved": "Uložené ako {{name}}",
     "merged": "Zlúčené a uložené ako {{name}}",
-    "opened": "Otvorené v Open PDF Studio",
+    "opened": "Otvorené v HB PDF Studio",
     "deleted": "Odstránené: {{count}}",
     "failed": "Zlyhalo: {{message}}",
     "mergedFileName": "Zlúčené",
@@ -452,7 +452,7 @@
   },
   "update": {
     "title": "Aktualizácia softvéru",
-    "newVersionAvailable": "K dispozícii je nová verzia Open PDF Studio.",
+    "newVersionAvailable": "K dispozícii je nová verzia HB PDF Studio.",
     "currentVersion": "Aktuálna verzia:",
     "newVersion": "Nová verzia:",
     "releaseNotes": "Poznámky k vydaniu:",
@@ -616,7 +616,7 @@
   },
   "defaultPdfApp": {
     "title": "Predvolená PDF aplikácia",
-    "message": "Open PDF Studio nie je nastavený ako predvolená aplikácia na otváranie PDF súborov. Chcete ho nastaviť ako predvolený?",
+    "message": "HB PDF Studio nie je nastavený ako predvolená aplikácia na otváranie PDF súborov. Chcete ho nastaviť ako predvolený?",
     "setAsDefault": "Nastaviť ako predvolený",
     "dontAskAgain": "Už sa nepýtať",
     "notNow": "Teraz nie"
@@ -1322,7 +1322,7 @@
   },
   "recovery": {
     "title": "Obnoviť neuloženú prácu",
-    "intro": "Open PDF Studio sa naposledy neukončil normálne. Neuložená práca z týchto dokumentov bola zachovaná:",
+    "intro": "HB PDF Studio sa naposledy neukončil normálne. Neuložená práca z týchto dokumentov bola zachovaná:",
     "savedAt": "Zachované {{time}}",
     "pages": "Strany: {{count}}",
     "untitled": "Dokument bez názvu",
@@ -1343,7 +1343,7 @@
     "deleteFailed": "Odstránenie zlyhalo: {{error}}",
     "tabLabel": "obnovené",
     "tabTip": "Obnovené po neočakávanom ukončení. Uloženie zapisuje do pôvodného súboru.",
-    "reloadStopped": "Okno Open PDF Studio niekoľkokrát po sebe prestalo fungovať a už sa automaticky znova nenačíta. Uložte svoju prácu a aplikáciu reštartujte."
+    "reloadStopped": "Okno HB PDF Studio niekoľkokrát po sebe prestalo fungovať a už sa automaticky znova nenačíta. Uložte svoju prácu a aplikáciu reštartujte."
   },
   "protectPdf": {
     "title": "Zabezpečenie dokumentu",
@@ -1919,7 +1919,7 @@
       "routing": "Routing",
       "howToRespond": "Reply to this mail with \"Approved\" or \"Rejected\" and keep {{ref}} in the subject.",
       "howToSign": "Signers: return the signed PDF and keep {{ref}} in the file name.",
-      "disclaimer": "The SHA-256 above identifies the exact document version. This mail was prepared in Open PDF Studio; it is not a legally binding signature service and does not verify identities."
+      "disclaimer": "The SHA-256 above identifies the exact document version. This mail was prepared in HB PDF Studio; it is not a legally binding signature service and does not verify identities."
     },
     "errors": {
       "CONFIGURE_ADAPTER_FIRST": "Enable the provider first.",

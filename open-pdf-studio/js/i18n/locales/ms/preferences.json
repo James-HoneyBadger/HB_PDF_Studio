@@ -204,19 +204,19 @@
   "fileAssoc": {
     "defaultPdfApplication": "Aplikasi PDF Lalai",
     "currentDefault": "Lalai semasa:",
-    "setDefault": "Tetapkan Open PDF Studio sebagai Pemapar PDF Lalai",
-    "setDefaultHelp": "Ini akan membuka tetapan sistem anda di mana anda boleh memilih Open PDF Studio sebagai aplikasi lalai untuk membuka fail PDF.",
-    "windowsInstructions": "Tetapan Windows dibuka.\n\nUntuk menetapkan Open PDF Studio sebagai lalai:\n1. Tatal ke bawah ke \"Pilih aplikasi lalai mengikut jenis fail\"\n2. Cari .pdf\n3. Klik dan pilih Open PDF Studio",
+    "setDefault": "Tetapkan HB PDF Studio sebagai Pemapar PDF Lalai",
+    "setDefaultHelp": "Ini akan membuka tetapan sistem anda di mana anda boleh memilih HB PDF Studio sebagai aplikasi lalai untuk membuka fail PDF.",
+    "windowsInstructions": "Tetapan Windows dibuka.\n\nUntuk menetapkan HB PDF Studio sebagai lalai:\n1. Tatal ke bawah ke \"Pilih aplikasi lalai mengikut jenis fail\"\n2. Cari .pdf\n3. Klik dan pilih HB PDF Studio",
     "windowsFailed": "Tidak dapat membuka Tetapan Windows.\n\nSila buka Tetapan > Aplikasi > Aplikasi Lalai secara manual.",
-    "macInstructions": "Untuk menetapkan Open PDF Studio sebagai pemapar PDF lalai pada macOS:\n\n1. Klik kanan mana-mana fail PDF dalam Finder\n2. Pilih \"Dapatkan Maklumat\"\n3. Di bawah \"Buka dengan\", pilih Open PDF Studio\n4. Klik \"Tukar Semua...\"",
-    "linuxInstructions": "Untuk menetapkan Open PDF Studio sebagai pemapar PDF lalai pada Linux:\n\nJalankan dalam terminal:\nxdg-mime default openpdfstudio.desktop application/pdf",
+    "macInstructions": "Untuk menetapkan HB PDF Studio sebagai pemapar PDF lalai pada macOS:\n\n1. Klik kanan mana-mana fail PDF dalam Finder\n2. Pilih \"Dapatkan Maklumat\"\n3. Di bawah \"Buka dengan\", pilih HB PDF Studio\n4. Klik \"Tukar Semua...\"",
+    "linuxInstructions": "Untuk menetapkan HB PDF Studio sebagai pemapar PDF lalai pada Linux:\n\nJalankan dalam terminal:\nxdg-mime default openpdfstudio.desktop application/pdf",
     "checkFinder": "Semak Finder > Dapatkan Maklumat",
     "notSet": "Tidak ditetapkan",
     "chosenInSystemSettings": "Dipilih dalam tetapan sistem",
-    "sandboxInstructions": "Open PDF Studio berjalan sebagai pakej {{package}} dan tidak boleh menukar aplikasi PDF lalai dengan sendiri.\n\nPilih Open PDF Studio dalam tetapan sistem di bawah Aplikasi Lalai, atau klik kanan fail PDF dan gunakan Buka Dengan.",
-    "xdgMimeMissing": "xdg-mime (pakej xdg-utils) tidak dipasang, jadi aplikasi PDF lalai tidak boleh ditetapkan dari sini.\n\nPasang xdg-utils, atau pilih Open PDF Studio dalam tetapan sistem di bawah Aplikasi Lalai.",
-    "linuxDone": "Open PDF Studio kini aplikasi lalai untuk fail PDF.",
-    "linuxFailed": "Tidak dapat menetapkan Open PDF Studio sebagai aplikasi PDF lalai.\n\n{{error}}"
+    "sandboxInstructions": "HB PDF Studio berjalan sebagai pakej {{package}} dan tidak boleh menukar aplikasi PDF lalai dengan sendiri.\n\nPilih HB PDF Studio dalam tetapan sistem di bawah Aplikasi Lalai, atau klik kanan fail PDF dan gunakan Buka Dengan.",
+    "xdgMimeMissing": "xdg-mime (pakej xdg-utils) tidak dipasang, jadi aplikasi PDF lalai tidak boleh ditetapkan dari sini.\n\nPasang xdg-utils, atau pilih HB PDF Studio dalam tetapan sistem di bawah Aplikasi Lalai.",
+    "linuxDone": "HB PDF Studio kini aplikasi lalai untuk fail PDF.",
+    "linuxFailed": "Tidak dapat menetapkan HB PDF Studio sebagai aplikasi PDF lalai.\n\n{{error}}"
   },
   "explorerThumbnails": {
     "title": "Penjelajah Fail",
@@ -226,7 +226,7 @@
     "otherHandler": "Lakaran kecil PDF kini disediakan oleh {{name}}.",
     "defaultApp": "Aplikasi PDF lalai anda menunjukkan lakaran kecilnya sendiri ({{name}}). Windows menggunakannya selagi aplikasi itu menjadi aplikasi PDF lalai anda.",
     "replaceTitle": "Lakaran kecil PDF",
-    "replaceConfirm": "{{name}} sudah menyediakan lakaran kecil PDF dalam Penjelajah Fail.\n\nTunjukkan lakaran kecil Open PDF Studio sebagai gantinya untuk akaun Windows anda? Mematikan pilihan ini akan memulihkan lakaran kecil sebelumnya.",
+    "replaceConfirm": "{{name}} sudah menyediakan lakaran kecil PDF dalam Penjelajah Fail.\n\nTunjukkan lakaran kecil HB PDF Studio sebagai gantinya untuk akaun Windows anda? Mematikan pilihan ini akan memulihkan lakaran kecil sebelumnya.",
     "failed": "Tetapan lakaran kecil Penjelajah Fail tidak dapat ditukar."
   },
   "virtualPrinter": {
@@ -251,7 +251,7 @@
     "stateUnknownDetail": "Status pencetak tidak dapat dibaca.",
     "howTitle": "Cara ia berfungsi",
     "how1": "Dalam mana-mana program, pilih Cetak dan pilih {{printer}}.",
-    "how2": "Cetakan dipaparkan dalam tetingkap pencetak Open PDF Studio.",
+    "how2": "Cetakan dipaparkan dalam tetingkap pencetak HB PDF Studio.",
     "how3": "Pratonton, susun semula, gabung dan simpan kerja sebagai satu PDF, atau buka dalam Studio.",
     "openWindow": "Buka tetingkap pencetak",
     "openWindowTip": "Tunjukkan kerja cetak yang ditangkap"

@@ -25,7 +25,7 @@ function report(name, ok, detail) {
   });
   page.on('pageerror', err => consoleErrors.push(err.message));
 
-  console.log('=== Open PDF Studio Integration Test ===\n');
+  console.log('=== HB PDF Studio Integration Test ===\n');
 
   // 1. Load app
   console.log('--- Loading app ---');

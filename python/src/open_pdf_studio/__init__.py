@@ -1,6 +1,6 @@
-"""Open PDF Studio from Python.
+"""HB PDF Studio from Python.
 
-A thin client over the MCP tools of the Open PDF Studio app: every PDF
+A thin client over the MCP tools of the HB PDF Studio app: every PDF
 operation runs in the app itself (one source of truth), this package only
 starts or connects to it and calls its tools.
 

@@ -452,7 +452,7 @@
   },
   "update": {
     "title": "Szoftverfrissítés",
-    "newVersionAvailable": "A Open PDF Studio új verziója érhető el.",
+    "newVersionAvailable": "A HB PDF Studio új verziója érhető el.",
     "currentVersion": "Jelenlegi verzió:",
     "newVersion": "Új verzió:",
     "releaseNotes": "Kiadási megjegyzések:",
@@ -616,7 +616,7 @@
   },
   "defaultPdfApp": {
     "title": "Alapértelmezett PDF alkalmazás",
-    "message": "A Open PDF Studio nem az alapértelmezett alkalmazás a PDF fájlok megnyitásához. Szeretné beállítani alapértelmezettként?",
+    "message": "A HB PDF Studio nem az alapértelmezett alkalmazás a PDF fájlok megnyitásához. Szeretné beállítani alapértelmezettként?",
     "setAsDefault": "Beállítás alapértelmezettként",
     "dontAskAgain": "Ne kérdezze többé",
     "notNow": "Most nem"
@@ -1322,7 +1322,7 @@
   },
   "recovery": {
     "title": "Nem mentett munka helyreállítása",
-    "intro": "Az Open PDF Studio legutóbb nem állt le szabályosan. Ezeknek a dokumentumoknak a nem mentett munkája megmaradt:",
+    "intro": "Az HB PDF Studio legutóbb nem állt le szabályosan. Ezeknek a dokumentumoknak a nem mentett munkája megmaradt:",
     "savedAt": "Megőrizve: {{time}}",
     "pages": "Oldalak: {{count}}",
     "untitled": "Névtelen dokumentum",
@@ -1343,7 +1343,7 @@
     "deleteFailed": "A törlés nem sikerült: {{error}}",
     "tabLabel": "helyreállítva",
     "tabTip": "Váratlan leállás után helyreállítva. A mentés az eredeti fájlba ír.",
-    "reloadStopped": "Az Open PDF Studio ablaka többször egymás után leállt, ezért már nem töltődik újra automatikusan. Mentse a munkáját, és indítsa újra az alkalmazást."
+    "reloadStopped": "Az HB PDF Studio ablaka többször egymás után leállt, ezért már nem töltődik újra automatikusan. Mentse a munkáját, és indítsa újra az alkalmazást."
   },
   "protectPdf": {
     "title": "Dokumentumvédelem",
@@ -1919,7 +1919,7 @@
       "routing": "Routing",
       "howToRespond": "Reply to this mail with \"Approved\" or \"Rejected\" and keep {{ref}} in the subject.",
       "howToSign": "Signers: return the signed PDF and keep {{ref}} in the file name.",
-      "disclaimer": "The SHA-256 above identifies the exact document version. This mail was prepared in Open PDF Studio; it is not a legally binding signature service and does not verify identities."
+      "disclaimer": "The SHA-256 above identifies the exact document version. This mail was prepared in HB PDF Studio; it is not a legally binding signature service and does not verify identities."
     },
     "errors": {
       "CONFIGURE_ADAPTER_FIRST": "Enable the provider first.",

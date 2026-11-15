@@ -2,9 +2,9 @@
 
 <div align="center">
 
-# Open PDF Studio
+# HB PDF Studio
 
-**Een gratis, open-source PDF-editor voor wie met tekeningen werkt: markeren, meten op schaal, revisies vergelijken en CAD inlezen, op Windows, macOS, Linux, Android en in de browser.**
+**Een gratis, open-source PDF-editor voor wie met tekeningen werkt: markeren, meten op schaal, revisies vergelijken en CAD inlezen, met een Linux AArch64-desktopapp.**
 
 [![Release](https://img.shields.io/github/v/release/OpenAEC-Foundation/open-pdf-studio?label=release&color=D97706)](https://github.com/OpenAEC-Foundation/open-pdf-studio/releases/latest)
 [![CI](https://github.com/OpenAEC-Foundation/open-pdf-studio/actions/workflows/ci.yml/badge.svg)](https://github.com/OpenAEC-Foundation/open-pdf-studio/actions/workflows/ci.yml)
@@ -12,19 +12,15 @@
 [![Talen](https://img.shields.io/badge/talen-40-informational)](open-pdf-studio/js/i18n/locales/)
 [![MCP-gereedschappen](https://img.shields.io/badge/MCP--gereedschappen-94-informational)](mcp-stdio/tools.json)
 
-### [Probeer in de browser](https://open-pdf-studio.open-aec.com/) &nbsp;·&nbsp; [Download](https://github.com/OpenAEC-Foundation/open-pdf-studio/releases/latest)
+### [Download](https://github.com/OpenAEC-Foundation/open-pdf-studio/releases/latest)
 
 ![Een plattegrond met een revisiewolk, een tekstballon en een gemeten afstand; het lintblad Format en de eigenschappen van de geselecteerde tekstballon staan open](docs/images/readme/hero.png)
 
 </div>
 
-Open PDF Studio is een PDF-editor voor architecten, constructeurs, aannemers en iedereen die tekeningen en documenten controleert. Je markeert, meet met de schaal die de tekening meedraagt, vergelijkt revisies, plaatst symbolen, telt hoeveelheden en ordent pagina's, zonder abonnement, account of watermerk.
+HB PDF Studio is een PDF-editor voor architecten, constructeurs, aannemers en iedereen die tekeningen en documenten controleert. Je markeert, meet met de schaal die de tekening meedraagt, vergelijkt revisies, plaatst symbolen, telt hoeveelheden en ordent pagina's, zonder abonnement, account of watermerk.
 
-Het draait als desktop-app op Windows, macOS en Linux, als Android-app, en in je browser zonder iets te installeren. De desktop-app voegt toe wat je computer nodig heeft: afdrukken, OCR, DWG- en DXF-import en -export, digitale handtekeningen en een lokale AI-koppeling (MCP).
-
-## Probeer het
-
-**[Open de browserversie](https://open-pdf-studio.open-aec.com/)** en open een PDF van je computer. Je krijgt hetzelfde lint en dezelfde gereedschappen voor markeren, meten, vergelijken, symbolen en pagina's als in de desktop-app. Je document blijft in je browser en wordt niet geüpload; na herladen begint de pagina leeg. Knoppen voor functies die alleen op de desktop werken, staan uit en zeggen waarom.
+De desktop-app ondersteunt alleen Linux op AArch64. Hij voegt toe wat je computer nodig heeft: afdrukken, OCR, DWG- en DXF-import en -export, digitale handtekeningen en een lokale AI-koppeling (MCP).
 
 ## Downloaden
 
@@ -32,15 +28,12 @@ Elke release staat op de [releasepagina](https://github.com/OpenAEC-Foundation/o
 
 | Platform | Bestanden |
 |----------|-----------|
-| **Windows** | `…_x64-setup.exe` (alle gebruikers, beheerdersrechten nodig), `…_x64_user-setup.exe` (alleen de huidige gebruiker), `…_x64_portable.zip` (zonder installatie, [details](docs/portable-windows.md)) |
-| **macOS** | `…_universal.dmg` (Apple silicon en Intel, macOS 10.15 of nieuwer) |
-| **Linux** | `.deb`, `.AppImage` en `.snap` voor x86_64, ook in de [Snap Store](https://snapcraft.io/open-pdf-studio); Nix-flake. Zie [docs/install-linux.md](docs/install-linux.md) |
-| **Android** | `open-pdf-studio-release.apk` (64-bit ARM) |
-| **Overig** | `open-pdf-studio.mcpb` (AI-koppeling voor MCP-clients), `open-pdf-studio-web-<versie>.tar.gz` (webversie om zelf te hosten), winget-manifesten, de Python-bibliotheek (`.whl` en `.tar.gz`) |
+| **Linux AArch64** | `.deb`, `.AppImage` en `.snap`, ook in de [Snap Store](https://snapcraft.io/open-pdf-studio). Zie [docs/install-linux.md](docs/install-linux.md) |
+| **Overig** | `open-pdf-studio.mcpb` (AI-koppeling voor MCP-clients), `open-pdf-studio-web-<versie>.tar.gz` (webversie om zelf te hosten), de Python-bibliotheek (`.whl` en `.tar.gz`) |
 
-**Bijwerken.** De Windows-installers, de macOS-app, de `.deb` en de AppImage zoeken en installeren updates met de ingebouwde updater, die alleen updates accepteert die met de updatesleutel van het project zijn ondertekend. De snap wordt bijgewerkt via de Snap Store. De draagbare versie en de Android-app werken zichzelf niet bij.
+**Bijwerken.** De `.deb` en de AppImage zoeken en installeren updates met de ingebouwde updater, die alleen updates accepteert die met de updatesleutel van het project zijn ondertekend. De snap wordt bijgewerkt via de Snap Store.
 
-**Ondertekening.** De Windows-installers en de programmabestanden die ze installeren, zijn met Authenticode ondertekend via Azure Trusted Signing; de releaseworkflow installeert de ondertekende installer en controleert elke handtekening. De macOS-app is ondertekend met een Developer ID en door Apple genotariseerd; de workflow controleert dat met `codesign`, `spctl` en `stapler`. Vanaf de eerste release na 2026.45.0 (de ondertekenstap kwam later) hebben de `.deb`, de AppImage en de snap elk een losse OpenPGP-handtekening (`.asc`) met de releasesleutel van de OpenAEC Foundation, vingerafdruk `13F6D414ADEE4ED4CD09AC60601D86C93C504D29`, en `SHA256SUMS` met `SHA256SUMS.asc` dekt de Linux-bestanden; controleer ze met `gpg --verify <bestand>.asc <bestand>` tegen [`docs/keys/openaec-signing-public-key.asc`](docs/keys/openaec-signing-public-key.asc) (zie [docs/install-linux.md](docs/install-linux.md#verifying-the-download-openpgp)). De `.sig`-bestanden zijn de updatehandtekeningen die de ingebouwde updater controleert. De Android-APK is ondertekend, maar met een nieuwe sleutel voor elke release (zie [Huidige beperkingen](#huidige-beperkingen)). De draagbare zip en de webbundel hebben een `.sha256`-bestand.
+**Ondertekening.** De `.deb`, de AppImage en de snap hebben elk een losse OpenPGP-handtekening (`.asc`) met de releasesleutel van de OpenAEC Foundation, vingerafdruk `13F6D414ADEE4ED4CD09AC60601D86C93C504D29`, en `SHA256SUMS` met `SHA256SUMS.asc` dekt de Linux-bestanden; controleer ze met `gpg --verify <bestand>.asc <bestand>` tegen [`docs/keys/openaec-signing-public-key.asc`](docs/keys/openaec-signing-public-key.asc) (zie [docs/install-linux.md](docs/install-linux.md#verifying-the-download-openpgp)). De `.sig`-bestanden zijn de updatehandtekeningen die de ingebouwde updater controleert.
 
 ## Waarom gebruiken?
 
@@ -50,7 +43,7 @@ Elke release staat op de [releasepagina](https://github.com/OpenAEC-Foundation/o
 - **Zie wat er veranderde.** Vergelijk twee revisies naast of over elkaar, met een lijst van elke wijziging.
 - **CAD erin en eruit.** Lees DWG en DXF in als vector-PDF met lagen en meetschaal, en exporteer een pagina terug naar DXF of DWG (desktop).
 - **Werkt met een AI-assistent.** Een lokale MCP-server met 94 gereedschappen laat een assistent documenten voor je openen, markeren, meten en opslaan (desktop).
-- **Overal.** Windows, macOS, Linux, Android en de browser, in 40 talen.
+- **Beschikbaar op Linux AArch64**, in 40 talen.
 
 ## Schermafbeeldingen
 
@@ -60,7 +53,7 @@ Elke release staat op de [releasepagina](https://github.com/OpenAEC-Foundation/o
 | ![Brandveiligheidssymbolen uit de NEN 1414-bibliotheek op een plattegrond, met het symboolpalet open](docs/images/readme/symbols.png) **Symbolen uit het palet** | ![Het venster Edit Pages met zes pagina's: een voorblad, twee plattegronden en drie pagina's tekst](docs/images/readme/pages.png) **Pagina's ordenen** |
 | ![Zoekresultaten voor "wall" in de tekst en de markeringen, thema Dark](docs/images/readme/search.png) **Zoeken in tekst en markeringen, thema Dark** | ![Het lintblad View met het venster in tweeën: links een plattegrond, rechts het bestek, thema Blue](docs/images/readme/split.png) **Gesplitste weergave, thema Blue** |
 
-De schermafbeeldingen zijn in het Engels. Ze komen uit de browserversie, met demo-PDF's die het script zelf maakt: `open-pdf-studio/scripts/generate-readme-screenshots.mjs`.
+De schermafbeeldingen zijn in het Engels. Ze komen uit de interface van de app, met demo-PDF's die het script zelf maakt: `open-pdf-studio/scripts/generate-readme-screenshots.mjs`.
 
 ## Markeren en meten
 
@@ -112,10 +105,10 @@ Jij houdt de regie. De server staat aan bij een nieuwe installatie en luistert a
 
 ## Testen en betrouwbaarheid
 
-- **798 unittestbestanden** draaien met `npm run test:unit` op Windows, Linux en macOS in [CI](.github/workflows/ci.yml) bij elke pull request, plus 3 testbestanden voor kwaliteitsregressie (`npm run test:quality`).
-- **CI bouwt de app op alle drie de desktopplatforms** en start hem: de AppImage op Debian 13, Fedora 44 en onder OpenAEC Linux-omstandigheden, en de macOS-app. Daarnaast test CI de Python-bibliotheek, controleert de Flatpak als die verandert, en laadt de gehoste webbundel in headless Chromium onder een strikte content security policy.
+- **798 unittestbestanden** draaien met `npm run test:unit` op Linux AArch64 in [CI](.github/workflows/ci.yml) bij elke pull request, plus 3 testbestanden voor kwaliteitsregressie (`npm run test:quality`).
+- **CI bouwt en start de Linux AArch64-app**: de AppImage op Debian 13, Fedora 44 en onder OpenAEC Linux-omstandigheden. Daarnaast test CI de Python-bibliotheek en controleert de Flatpak als die verandert.
 - **Pull requests die aan het tekenen van pagina's komen**, draaien ook een renderregressie op een tekening op groot formaat en bewaren het rapport ([render-regression.yml](.github/workflows/render-regression.yml)).
-- **Releases worden gecontroleerd voordat ze uitkomen.** De releaseworkflow installeert de ondertekende Windows-installer en controleert elke handtekening, start de draagbare zip, controleert ondertekening, notarisatie en opstarten van de macOS-app, en controleert de OpenPGP-handtekeningen van de Linux-pakketten tegen de publieke sleutel in de repository.
+- **Releases worden gecontroleerd voordat ze uitkomen.** De releaseworkflow bouwt Linux AArch64-pakketten en controleert hun OpenPGP-handtekeningen tegen de publieke sleutel in de repository.
 - **Privacy wordt getest.** Een unittest faalt als de meegeleverde broncode een internetadres bevat dat niet in [PRIVACY.md](PRIVACY.md) staat, of als er een telemetriepakket bijkomt.
 - **De README-beelden worden gecontroleerd.** `node open-pdf-studio/scripts/check-readme-images.mjs` faalt als een beeld ontbreekt, niet gebruikt wordt of groter is dan 150 kB.
 
@@ -125,18 +118,15 @@ Bron van de getallen: de unittestbestanden zijn de regels zonder `#` in [`open-p
 
 - **Linux-pakketten tot en met 2026.44.8 tekenen zonder de workerpool.** Ze misten de `pdfium-worker`, dus elke pagina werd in het hoofdproces getekend en grote documenten waren traag ([#923](https://github.com/OpenAEC-Foundation/open-pdf-studio/issues/923)). De oplossing staat op `main` en komt mee met de volgende release.
 - **Op sommige Linux-systemen kan de app nog vastlopen bij zoomen.** De app verlaagt nu de realtime-grens en zet de GPU-versnelling van het paginacanvas uit, de twee bekende oorzaken; het issue blijft open tot dat op getroffen systemen bevestigd is ([#924](https://github.com/OpenAEC-Foundation/open-pdf-studio/issues/924), oplossingen in [docs/install-linux.md](docs/install-linux.md)).
-- **Een Android-update installeert niet over de vorige versie.** Elke release ondertekent de APK met een nieuwe sleutel, dus Android weigert de update; verwijder eerst de oude versie ([#601](https://github.com/OpenAEC-Foundation/open-pdf-studio/issues/601)). De Android-app heeft geen OCR en tekent met PDF.js.
-- **De browserversie heeft geen desktopfuncties.** Afdrukken, OCR, CAD-import en -export, comprimeren, PDF/X, IFC-export, documentbeveiliging, extensies, updates, de MCP-server en het controleren van handtekeningen vragen de desktop-app.
-- **Sommige virusscanners slaan aan op de Windows-installer.** De installers zijn ondertekend, maar een nieuwe release heeft eerst weinig reputatie bij de virusscanner van Windows en vergelijkbare scanners ([#761](https://github.com/OpenAEC-Foundation/open-pdf-studio/issues/761), [docs/windows-distribution.md](docs/windows-distribution.md)).
-- **Afdrukken naar sommige virtuele PDF-printers van derden laat het programma van die printer vastlopen** ([#699](https://github.com/OpenAEC-Foundation/open-pdf-studio/issues/699)).
-- **Alleen x86_64 op Windows en Linux.** Een build voor Windows op ARM bestaat alleen als experimentele workflow, er is geen `.rpm`, en de Flatpak staat nog niet op Flathub ([docs/flathub.md](docs/flathub.md)).
+- **De desktop-app is alleen beschikbaar voor Linux AArch64.** Er worden geen Windows-, macOS- of Android-builds en geen zelf te hosten webbundel meer gemaakt uit deze repository.
+- **De Flatpak staat nog niet op Flathub** ([docs/flathub.md](docs/flathub.md)).
 - **De knop Table op het lintblad Drawing werkt nog niet.** Plaats in plaats daarvan een hoeveelhedenstaat als tabel.
 
 Iets gevonden? [Maak een issue](https://github.com/OpenAEC-Foundation/open-pdf-studio/issues).
 
 ## Onder de motorkap
 
-De app is een [Tauri 2](https://tauri.app/)-desktop-app met een Rust-achterkant en een [SolidJS](https://www.solidjs.com/)-voorkant, gebouwd met [Vite](https://vitejs.dev/). Pagina's worden getekend door een workerpool van [PDFium](https://pdfium.googlesource.com/pdfium/)-processen, buiten de UI-thread en afgeschermd tegen crashes, met tegels die geleidelijk verschijnen bij heel grote tekeningen; de browser- en Android-versie tekenen met [PDF.js](https://mozilla.github.io/pdf.js/), dat ook de tekstlaag levert. [pdf-lib](https://pdf-lib.js.org/) schrijft de wijzigingen in de PDF. De browserversie is dezelfde voorkant, gebouwd zonder de Tauri-schil. De licenties van alle onderdelen staan in [LICENSING.md](LICENSING.md).
+De app is een [Tauri 2](https://tauri.app/)-desktop-app met een Rust-achterkant en een [SolidJS](https://www.solidjs.com/)-voorkant, gebouwd met [Vite](https://vitejs.dev/). Pagina's worden getekend door een workerpool van [PDFium](https://pdfium.googlesource.com/pdfium/)-processen, buiten de UI-thread en afgeschermd tegen crashes, met tegels die geleidelijk verschijnen bij heel grote tekeningen . [pdf-lib](https://pdf-lib.js.org/) schrijft de wijzigingen in de PDF. De licenties van alle onderdelen staan in [LICENSING.md](LICENSING.md).
 
 ## Bijdragen
 
@@ -159,8 +149,8 @@ Vereist Node.js 22, Rust stable, CMake en een C/C++-toolchain, plus de WebKitGTK
 
 Versies volgen het OpenAEC-schema `JJJJ.W.N`: jaar, ISO-week zonder voorloopnul, en een volgnummer binnen de week dat bij 0 begint, zoals `2026.44.8`.
 
-Open PDF Studio hoort bij de familie van apps van de [OpenAEC Foundation](https://github.com/OpenAEC-Foundation).
+HB PDF Studio hoort bij de familie van apps van de [OpenAEC Foundation](https://github.com/OpenAEC-Foundation).
 
 ## Licentie
 
-Open PDF Studio valt onder de [GNU Lesser General Public License v3.0 of later](LICENSE.md). De LGPL bouwt voort op de [GNU General Public License v3.0](GPL-3.0.txt), waarvan de tekst erbij zit. [LICENSING.md](LICENSING.md) legt in gewone taal uit wat dat betekent, noemt de licentie van elk onderdeel en van de onderdelen van derden die de app meelevert, en beantwoordt de AGPL-vraag rond de MuPDF-afhankelijkheid.
+HB PDF Studio valt onder de [GNU Lesser General Public License v3.0 of later](LICENSE.md). De LGPL bouwt voort op de [GNU General Public License v3.0](GPL-3.0.txt), waarvan de tekst erbij zit. [LICENSING.md](LICENSING.md) legt in gewone taal uit wat dat betekent, noemt de licentie van elk onderdeel en van de onderdelen van derden die de app meelevert, en beantwoordt de AGPL-vraag rond de MuPDF-afhankelijkheid.

@@ -6,7 +6,7 @@ let page;
 
 try {
   const context = browser.contexts()[0];
-  assert.ok(context, 'Open PDF Studio browser context is not available on CDP port 9222');
+  assert.ok(context, 'HB PDF Studio browser context is not available on CDP port 9222');
   page = await context.newPage();
   await page.goto('http://localhost:3041');
   await page.waitForSelector('#annotation-canvas', { state: 'attached' });

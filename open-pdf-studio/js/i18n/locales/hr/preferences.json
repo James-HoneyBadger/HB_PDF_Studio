@@ -204,19 +204,19 @@
   "fileAssoc": {
     "defaultPdfApplication": "Zadana PDF aplikacija",
     "currentDefault": "Trenutna zadana:",
-    "setDefault": "Postavi Open PDF Studio kao zadani PDF preglednik",
-    "setDefaultHelp": "Ovo će otvoriti vaše postavke sustava gdje možete odabrati Open PDF Studio kao zadanu aplikaciju za otvaranje PDF datoteka.",
-    "windowsInstructions": "Windows postavke su otvorene.\n\nZa postavljanje Open PDF Studio kao zadane aplikacije:\n1. Pomaknite se prema dolje do \"Odaberite zadane aplikacije po vrsti datoteke\"\n2. Pronađite .pdf\n3. Kliknite i odaberite Open PDF Studio",
+    "setDefault": "Postavi HB PDF Studio kao zadani PDF preglednik",
+    "setDefaultHelp": "Ovo će otvoriti vaše postavke sustava gdje možete odabrati HB PDF Studio kao zadanu aplikaciju za otvaranje PDF datoteka.",
+    "windowsInstructions": "Windows postavke su otvorene.\n\nZa postavljanje HB PDF Studio kao zadane aplikacije:\n1. Pomaknite se prema dolje do \"Odaberite zadane aplikacije po vrsti datoteke\"\n2. Pronađite .pdf\n3. Kliknite i odaberite HB PDF Studio",
     "windowsFailed": "Nije moguće otvoriti Windows postavke.\n\nMolimo ručno otvorite Postavke > Aplikacije > Zadane aplikacije.",
-    "macInstructions": "Za postavljanje Open PDF Studio kao zadanog PDF preglednika na macOS:\n\n1. Desnom tipkom kliknite na bilo koji PDF u Finderu\n2. Odaberite \"Get Info\"\n3. Pod \"Open with\" odaberite Open PDF Studio\n4. Kliknite \"Change All...\"",
-    "linuxInstructions": "Za postavljanje Open PDF Studio kao zadanog PDF preglednika na Linuxu:\n\nPokrenite u terminalu:\nxdg-mime default openpdfstudio.desktop application/pdf",
+    "macInstructions": "Za postavljanje HB PDF Studio kao zadanog PDF preglednika na macOS:\n\n1. Desnom tipkom kliknite na bilo koji PDF u Finderu\n2. Odaberite \"Get Info\"\n3. Pod \"Open with\" odaberite HB PDF Studio\n4. Kliknite \"Change All...\"",
+    "linuxInstructions": "Za postavljanje HB PDF Studio kao zadanog PDF preglednika na Linuxu:\n\nPokrenite u terminalu:\nxdg-mime default openpdfstudio.desktop application/pdf",
     "checkFinder": "Provjerite Finder > Get Info",
     "notSet": "Nije postavljeno",
     "chosenInSystemSettings": "Odabrano u postavkama sustava",
-    "sandboxInstructions": "Open PDF Studio radi kao {{package}} paket i ne može sam promijeniti zadanu PDF aplikaciju.\n\nOdaberite Open PDF Studio u postavkama sustava pod Zadane aplikacije ili desnom tipkom kliknite PDF datoteku i upotrijebite Otvori pomoću.",
-    "xdgMimeMissing": "xdg-mime (paket xdg-utils) nije instaliran, pa se zadana PDF aplikacija ne može postaviti odavde.\n\nInstalirajte xdg-utils ili odaberite Open PDF Studio u postavkama sustava pod Zadane aplikacije.",
-    "linuxDone": "Open PDF Studio sada je zadana aplikacija za PDF datoteke.",
-    "linuxFailed": "Nije moguće postaviti Open PDF Studio kao zadanu PDF aplikaciju.\n\n{{error}}"
+    "sandboxInstructions": "HB PDF Studio radi kao {{package}} paket i ne može sam promijeniti zadanu PDF aplikaciju.\n\nOdaberite HB PDF Studio u postavkama sustava pod Zadane aplikacije ili desnom tipkom kliknite PDF datoteku i upotrijebite Otvori pomoću.",
+    "xdgMimeMissing": "xdg-mime (paket xdg-utils) nije instaliran, pa se zadana PDF aplikacija ne može postaviti odavde.\n\nInstalirajte xdg-utils ili odaberite HB PDF Studio u postavkama sustava pod Zadane aplikacije.",
+    "linuxDone": "HB PDF Studio sada je zadana aplikacija za PDF datoteke.",
+    "linuxFailed": "Nije moguće postaviti HB PDF Studio kao zadanu PDF aplikaciju.\n\n{{error}}"
   },
   "explorerThumbnails": {
     "title": "Eksplorer za datoteke",
@@ -226,7 +226,7 @@
     "otherHandler": "Minijature PDF-ova trenutačno pruža {{name}}.",
     "defaultApp": "Vaša zadana aplikacija za PDF prikazuje vlastite minijature ({{name}}). Windows ih koristi dok je ta aplikacija vaša zadana aplikacija za PDF.",
     "replaceTitle": "Minijature PDF-ova",
-    "replaceConfirm": "{{name}} već pruža minijature PDF-ova u Eksploreru za datoteke.\n\nŽelite li umjesto toga za svoj Windows račun prikazivati minijature iz aplikacije Open PDF Studio? Isključivanjem ove mogućnosti vraćaju se prethodne minijature.",
+    "replaceConfirm": "{{name}} već pruža minijature PDF-ova u Eksploreru za datoteke.\n\nŽelite li umjesto toga za svoj Windows račun prikazivati minijature iz aplikacije HB PDF Studio? Isključivanjem ove mogućnosti vraćaju se prethodne minijature.",
     "failed": "Postavka minijatura u Eksploreru za datoteke nije se mogla promijeniti."
   },
   "virtualPrinter": {
@@ -251,7 +251,7 @@
     "stateUnknownDetail": "Nije moguće pročitati stanje pisača.",
     "howTitle": "Kako radi",
     "how1": "U bilo kojem programu odaberite Ispis i odaberite {{printer}}.",
-    "how2": "Ispis se pojavljuje u prozoru pisača programa Open PDF Studio.",
+    "how2": "Ispis se pojavljuje u prozoru pisača programa HB PDF Studio.",
     "how3": "Pregledajte, preuredite, spojite i spremite zadatke kao jedan PDF ili ih otvorite u Studiju.",
     "openWindow": "Otvori prozor pisača",
     "openWindowTip": "Prikaži uhvaćene zadatke ispisa"

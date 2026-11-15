@@ -35,7 +35,7 @@
   "printQueue": {
     "toolbarLabel": "Tulostustyön toiminnot",
     "openInStudio": "Avaa Studiossa",
-    "openInStudioTip": "Avaa valittu työ Open PDF Studiossa (Enter tai kaksoisnapsautus). Useampi valittu työ avautuu yhdistettynä asiakirjana.",
+    "openInStudioTip": "Avaa valittu työ HB PDF Studiossa (Enter tai kaksoisnapsautus). Useampi valittu työ avautuu yhdistettynä asiakirjana.",
     "mergeSelected": "Yhdistä valitut…",
     "mergeSelectedTip": "Yhdistä valitut työt luettelon järjestyksessä yhdeksi PDF-tiedostoksi ja tallenna se",
     "saveAs": "Tallenna nimellä…",
@@ -75,11 +75,11 @@
     "adding": "Lisätään PDF-tiedostoja…",
     "saving": "Tallennetaan…",
     "merging": "Yhdistetään {{done}} / {{count}}…",
-    "opening": "Avataan Open PDF Studiossa…",
+    "opening": "Avataan HB PDF Studiossa…",
     "deleting": "Poistetaan…",
     "saved": "Tallennettu nimellä {{name}}",
     "merged": "Yhdistetty ja tallennettu nimellä {{name}}",
-    "opened": "Avattu Open PDF Studiossa",
+    "opened": "Avattu HB PDF Studiossa",
     "deleted": "Poistettu: {{count}}",
     "failed": "Epäonnistui: {{message}}",
     "mergedFileName": "Yhdistetty",
@@ -452,7 +452,7 @@
   },
   "update": {
     "title": "Ohjelmistopäivitys",
-    "newVersionAvailable": "Uusi versio Open PDF Studiosta on saatavilla.",
+    "newVersionAvailable": "Uusi versio HB PDF Studiosta on saatavilla.",
     "currentVersion": "Nykyinen versio:",
     "newVersion": "Uusi versio:",
     "releaseNotes": "Julkaisutiedot:",
@@ -616,7 +616,7 @@
   },
   "defaultPdfApp": {
     "title": "Oletus-PDF-sovellus",
-    "message": "Open PDF Studio ei ole asetettu oletussovellukseksi PDF-tiedostojen avaamiseen. Haluatko asettaa sen oletukseksi?",
+    "message": "HB PDF Studio ei ole asetettu oletussovellukseksi PDF-tiedostojen avaamiseen. Haluatko asettaa sen oletukseksi?",
     "setAsDefault": "Aseta oletukseksi",
     "dontAskAgain": "Älä kysy uudelleen",
     "notNow": "Ei nyt"
@@ -1322,7 +1322,7 @@
   },
   "recovery": {
     "title": "Palauta tallentamaton työ",
-    "intro": "Open PDF Studio ei sulkeutunut normaalisti viime kerralla. Näiden asiakirjojen tallentamaton työ on säilytetty:",
+    "intro": "HB PDF Studio ei sulkeutunut normaalisti viime kerralla. Näiden asiakirjojen tallentamaton työ on säilytetty:",
     "savedAt": "Säilytetty {{time}}",
     "pages": "Sivuja: {{count}}",
     "untitled": "Nimetön asiakirja",
@@ -1343,7 +1343,7 @@
     "deleteFailed": "Poistaminen epäonnistui: {{error}}",
     "tabLabel": "palautettu",
     "tabTip": "Palautettu odottamattoman sulkeutumisen jälkeen. Tallennus kirjoittaa alkuperäiseen tiedostoon.",
-    "reloadStopped": "Open PDF Studion ikkuna lakkasi toimimasta useita kertoja peräkkäin, eikä sitä enää ladata automaattisesti uudelleen. Tallenna työsi ja käynnistä sovellus uudelleen."
+    "reloadStopped": "HB PDF Studion ikkuna lakkasi toimimasta useita kertoja peräkkäin, eikä sitä enää ladata automaattisesti uudelleen. Tallenna työsi ja käynnistä sovellus uudelleen."
   },
   "protectPdf": {
     "title": "Asiakirjan suojaus",
@@ -1919,7 +1919,7 @@
       "routing": "Routing",
       "howToRespond": "Reply to this mail with \"Approved\" or \"Rejected\" and keep {{ref}} in the subject.",
       "howToSign": "Signers: return the signed PDF and keep {{ref}} in the file name.",
-      "disclaimer": "The SHA-256 above identifies the exact document version. This mail was prepared in Open PDF Studio; it is not a legally binding signature service and does not verify identities."
+      "disclaimer": "The SHA-256 above identifies the exact document version. This mail was prepared in HB PDF Studio; it is not a legally binding signature service and does not verify identities."
     },
     "errors": {
       "CONFIGURE_ADAPTER_FIRST": "Enable the provider first.",

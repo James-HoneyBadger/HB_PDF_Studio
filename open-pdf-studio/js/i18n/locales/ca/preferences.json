@@ -204,19 +204,19 @@
   "fileAssoc": {
     "defaultPdfApplication": "Aplicació PDF per defecte",
     "currentDefault": "Aplicació per defecte actual:",
-    "setDefault": "Estableix Open PDF Studio com a visualitzador PDF per defecte",
-    "setDefaultHelp": "Això obrirà la configuració del sistema on podeu seleccionar Open PDF Studio com a aplicació per defecte per obrir fitxers PDF.",
-    "windowsInstructions": "S'ha obert la configuració de Windows.\n\nPer establir Open PDF Studio com a aplicació per defecte:\n1. Desplaceu-vos fins a \"Trieu aplicacions per defecte per tipus de fitxer\"\n2. Cerqueu .pdf\n3. Feu clic i seleccioneu Open PDF Studio",
+    "setDefault": "Estableix HB PDF Studio com a visualitzador PDF per defecte",
+    "setDefaultHelp": "Això obrirà la configuració del sistema on podeu seleccionar HB PDF Studio com a aplicació per defecte per obrir fitxers PDF.",
+    "windowsInstructions": "S'ha obert la configuració de Windows.\n\nPer establir HB PDF Studio com a aplicació per defecte:\n1. Desplaceu-vos fins a \"Trieu aplicacions per defecte per tipus de fitxer\"\n2. Cerqueu .pdf\n3. Feu clic i seleccioneu HB PDF Studio",
     "windowsFailed": "No s'ha pogut obrir la configuració de Windows.\n\nObriu manualment Configuració > Aplicacions > Aplicacions per defecte.",
-    "macInstructions": "Per establir Open PDF Studio com a visualitzador PDF per defecte al macOS:\n\n1. Feu clic dret sobre qualsevol fitxer PDF al Finder\n2. Seleccioneu \"Obtenir informació\"\n3. A \"Obrir amb\", seleccioneu Open PDF Studio\n4. Feu clic a \"Canvia-ho tot...\"",
-    "linuxInstructions": "Per establir Open PDF Studio com a visualitzador PDF per defecte al Linux:\n\nExecuteu al terminal:\nxdg-mime default openpdfstudio.desktop application/pdf",
+    "macInstructions": "Per establir HB PDF Studio com a visualitzador PDF per defecte al macOS:\n\n1. Feu clic dret sobre qualsevol fitxer PDF al Finder\n2. Seleccioneu \"Obtenir informació\"\n3. A \"Obrir amb\", seleccioneu HB PDF Studio\n4. Feu clic a \"Canvia-ho tot...\"",
+    "linuxInstructions": "Per establir HB PDF Studio com a visualitzador PDF per defecte al Linux:\n\nExecuteu al terminal:\nxdg-mime default openpdfstudio.desktop application/pdf",
     "checkFinder": "Comproveu Finder > Obtenir informació",
     "notSet": "No establert",
     "chosenInSystemSettings": "Triat a la configuració del sistema",
-    "sandboxInstructions": "Open PDF Studio s'executa com a paquet {{package}} i no pot canviar per si mateix l'aplicació PDF predeterminada.\n\nTrieu Open PDF Studio a la configuració del sistema, a Aplicacions predeterminades, o feu clic dret en un fitxer PDF i useu Obre amb.",
-    "xdgMimeMissing": "xdg-mime (paquet xdg-utils) no està instal·lat, per tant l'aplicació PDF predeterminada no es pot establir des d'aquí.\n\nInstal·leu xdg-utils o trieu Open PDF Studio a la configuració del sistema, a Aplicacions predeterminades.",
-    "linuxDone": "Open PDF Studio és ara l'aplicació predeterminada per als fitxers PDF.",
-    "linuxFailed": "No s'ha pogut establir Open PDF Studio com a aplicació PDF predeterminada.\n\n{{error}}"
+    "sandboxInstructions": "HB PDF Studio s'executa com a paquet {{package}} i no pot canviar per si mateix l'aplicació PDF predeterminada.\n\nTrieu HB PDF Studio a la configuració del sistema, a Aplicacions predeterminades, o feu clic dret en un fitxer PDF i useu Obre amb.",
+    "xdgMimeMissing": "xdg-mime (paquet xdg-utils) no està instal·lat, per tant l'aplicació PDF predeterminada no es pot establir des d'aquí.\n\nInstal·leu xdg-utils o trieu HB PDF Studio a la configuració del sistema, a Aplicacions predeterminades.",
+    "linuxDone": "HB PDF Studio és ara l'aplicació predeterminada per als fitxers PDF.",
+    "linuxFailed": "No s'ha pogut establir HB PDF Studio com a aplicació PDF predeterminada.\n\n{{error}}"
   },
   "explorerThumbnails": {
     "title": "Explorador de fitxers",
@@ -226,7 +226,7 @@
     "otherHandler": "Actualment, les miniatures dels PDF les proporciona {{name}}.",
     "defaultApp": "La vostra aplicació PDF predeterminada mostra les seves pròpies miniatures ({{name}}). Windows les fa servir mentre aquesta aplicació sigui l'aplicació PDF predeterminada.",
     "replaceTitle": "Miniatures dels PDF",
-    "replaceConfirm": "{{name}} ja proporciona miniatures dels PDF a l'Explorador de fitxers.\n\nVoleu mostrar-hi en canvi les miniatures d'Open PDF Studio per al vostre compte de Windows? Si desactiveu aquesta opció, es restauren les miniatures anteriors.",
+    "replaceConfirm": "{{name}} ja proporciona miniatures dels PDF a l'Explorador de fitxers.\n\nVoleu mostrar-hi en canvi les miniatures d'HB PDF Studio per al vostre compte de Windows? Si desactiveu aquesta opció, es restauren les miniatures anteriors.",
     "failed": "No s'ha pogut canviar la configuració de miniatures de l'Explorador de fitxers."
   },
   "virtualPrinter": {
@@ -251,7 +251,7 @@
     "stateUnknownDetail": "No s'ha pogut llegir l'estat de la impressora.",
     "howTitle": "Com funciona",
     "how1": "En qualsevol programa, trieu Imprimeix i seleccioneu {{printer}}.",
-    "how2": "La impressió apareix a la finestra d'impressora d'Open PDF Studio.",
+    "how2": "La impressió apareix a la finestra d'impressora d'HB PDF Studio.",
     "how3": "Previsualitzeu, reordeneu, combineu i deseu les tasques com a un sol PDF, o obriu-les a Studio.",
     "openWindow": "Obre la finestra d'impressora",
     "openWindowTip": "Mostra les tasques d'impressió capturades"

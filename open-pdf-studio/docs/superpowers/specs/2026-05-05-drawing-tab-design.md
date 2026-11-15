@@ -5,7 +5,7 @@ Source: User screenshot of Open 2D Studio's Drawing tab + user request "Maak een
 
 ## Goal
 
-Add a new top-level ribbon tab **"Tekenen"** (Drawing) to Open PDF Studio, structured identically to Open 2D Studio's Drawing tab. Reuses existing PDF Studio tools where they map; greys out / hides items that don't exist yet (no new tool implementations in this pass).
+Add a new top-level ribbon tab **"Tekenen"** (Drawing) to HB PDF Studio, structured identically to Open 2D Studio's Drawing tab. Reuses existing PDF Studio tools where they map; greys out / hides items that don't exist yet (no new tool implementations in this pass).
 
 The existing **"Opmerkingen en tekenen"** tab is left untouched — the new Drawing tab is additive.
 

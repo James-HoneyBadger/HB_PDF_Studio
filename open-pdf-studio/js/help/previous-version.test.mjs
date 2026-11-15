@@ -40,16 +40,25 @@ test('pickAssets kiest per platform en verwart user/system niet', () => {
   const uit = pickAssets({
     html_url: 'pagina',
     assets: [
-      { name: 'Open.PDF.Studio_1.92.0_x64-setup.exe', browser_download_url: 'sys' },
-      { name: 'Open.PDF.Studio_1.92.0_x64_user-setup.exe', browser_download_url: 'usr' },
-      { name: 'Open.PDF.Studio_1.92.0_universal.dmg', browser_download_url: 'mac' },
-      { name: 'Open.PDF.Studio_1.92.0_amd64.AppImage', browser_download_url: 'lin' },
+      { name: 'HB.PDF.Studio_1.92.0_x64-setup.exe', browser_download_url: 'sys' },
+      { name: 'HB.PDF.Studio_1.92.0_x64_user-setup.exe', browser_download_url: 'usr' },
+      { name: 'HB.PDF.Studio_1.92.0_universal.dmg', browser_download_url: 'mac' },
+      { name: 'HB.PDF.Studio_1.92.0_arm64.AppImage', browser_download_url: 'lin' },
     ],
   });
   assert.equal(uit.winSystem, 'sys');
   assert.equal(uit.winUser, 'usr');
   assert.equal(uit.dmg, 'mac');
   assert.equal(uit.pageUrl, 'pagina');
+});
+
+test('pickAssets still recognizes legacy Open PDF Studio release assets', () => {
+  const uit = pickAssets({
+    assets: [
+      { name: 'Open.PDF.Studio_1.80.0_x64_user-setup.exe', browser_download_url: 'legacy' },
+    ],
+  });
+  assert.equal(uit.winUser, 'legacy');
 });
 
 test('pickAssets zonder assets geeft alleen de release-pagina', () => {

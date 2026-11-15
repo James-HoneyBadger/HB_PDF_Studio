@@ -60,7 +60,7 @@
   "onlineSymbolLibrary": "Online symboolbibliotheek",
   "noDocumentOpen": "Er is geen document geopend.",
   "invalidPageRange": "Ongeldig paginabereik. Voer geldige paginanummers in.",
-  "appName": "Open PDF Studio",
+  "appName": "HB PDF Studio",
   "noDocuments": "Geen PDF geselecteerd",
   "noDocumentsHint": "Klik op \"PDF openen\" om een PDF te bekijken en te annoteren",
   "solid": "Doorlopend",
@@ -186,7 +186,7 @@
     "readOnly": {
       "title": "Alleen-lezen geopend",
       "kenmerk": "{{name}} is alleen-lezen: het bestand heeft het kenmerk alleen-lezen, of je hebt op deze locatie alleen leesrechten.",
-      "in-gebruik": "{{name}} is geopend in een andere app of wordt gesynchroniseerd, daarom kan Open PDF Studio het niet reserveren.",
+      "in-gebruik": "{{name}} is geopend in een andere app of wordt gesynchroniseerd, daarom kan HB PDF Studio het niet reserveren.",
       "geweigerd": "{{name}} kan niet worden gereserveerd: Windows weigerde dat.",
       "mislukt": "{{name}} kon niet worden gereserveerd.",
       "saveAs": "Het is alleen-lezen geopend. Je kunt wijzigingen maken; sla ze met Opslaan als op in een ander bestand."
@@ -194,7 +194,7 @@
   },
   "hostOpenFailed": "Het bestand kon niet uit de opslag worden gelezen. Probeer het opnieuw.",
   "hostInvalidPdf": "{{name}} is geen geldig PDF-bestand en kon niet worden geopend.",
-  "hostNoContact": "De pagina rond Open PDF Studio reageert niet, dus bestanden kunnen niet worden geopend of opgeslagen. Laad de pagina opnieuw en probeer het nog eens.",
+  "hostNoContact": "De pagina rond HB PDF Studio reageert niet, dus bestanden kunnen niet worden geopend of opgeslagen. Laad de pagina opnieuw en probeer het nog eens.",
   "hostSaveConflict": "Iemand anders heeft dit bestand intussen opgeslagen. Je wijzigingen zijn als aparte kopie opgeslagen: {{name}}. Volgende keren opslaan gaat naar die kopie.",
   "hostSaveNotLocked": "Dit bestand is niet voor jou vastgezet, dus anderen kunnen het tegelijk wijzigen. Je wijzigingen worden als nieuwe versies opgeslagen; er wordt niets overschreven.",
   "hostReadOnlySave": "Dit bestand is alleen-lezen geopend, dus wijzigingen kunnen er niet in opgeslagen worden. Gebruik Opslaan als om een kopie te downloaden.",
@@ -350,7 +350,7 @@
     "fileAssoc": "Deze draagbare versie is niet bij Windows geregistreerd. Wil je er PDF-bestanden mee openen, klik dan met rechts op een PDF, kies Openen met > Een andere app kiezen en selecteer open-pdf-studio.exe in deze map.",
     "explorerThumbnails": "PDF-miniaturen in Verkenner zijn alleen beschikbaar in de geïnstalleerde versie.",
     "virtualPrinter": "De virtuele printer is alleen beschikbaar in de geïnstalleerde versie: hij wordt met beheerdersrechten aan Windows toegevoegd.",
-    "notWritable": "Open PDF Studio kan niet schrijven in de map {{dir}}, dus je instellingen staan deze keer in je gebruikersprofiel. Zet de draagbare map op een beschrijfbare plek, zoals een USB-stick of je map Documenten."
+    "notWritable": "HB PDF Studio kan niet schrijven in de map {{dir}}, dus je instellingen staan deze keer in je gebruikersprofiel. Zet de draagbare map op een beschrijfbare plek, zoals een USB-stick of je map Documenten."
   },
   "protectedPdfNoPrint": "De rechten van dit document staan afdrukken niet toe.",
   "share": {

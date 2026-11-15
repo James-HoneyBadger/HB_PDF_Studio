@@ -18,7 +18,7 @@
 // Maten in mm op papier met de oorsprong linksonder, net als in een PDF. Van
 // een kader maakt maakKaderPdf() één vel: het sjabloon over het hele vel, het
 // logo op zijn plek en de velden (projectnaam, projectnummer, ...) als
-// invulvelden, zodat je ze in Open PDF Studio meteen kunt invullen.
+// invulvelden, zodat je ze in HB PDF Studio meteen kunt invullen.
 
 import { PDFDocument, PDFHexString, PDFName, StandardFonts } from 'pdf-lib';
 import { gastObject } from '../core/gehost.js';

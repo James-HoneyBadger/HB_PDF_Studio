@@ -188,7 +188,7 @@ export function enrichForPdfX(pdfDocLib, { conformance = 'X-3', title = 'Documen
   const now = new Date();
   try {
     pdfDocLib.setTitle(title);
-    pdfDocLib.setProducer('Open PDF Studio');
+    pdfDocLib.setProducer('HB PDF Studio');
     pdfDocLib.setModificationDate(now);
     if (!context.lookup(context.trailerInfo.Info)?.get?.(PDFName.of('CreationDate'))) {
       pdfDocLib.setCreationDate(now);

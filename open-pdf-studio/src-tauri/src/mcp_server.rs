@@ -2697,7 +2697,7 @@ pub fn tools_list_voor(profiel: Profiel) -> Value {
     v
 }
 
-/// Het voorvoegsel van Open PDF Studio in de OpenAEC SuperCloud (#977): daar
+/// Het voorvoegsel van HB PDF Studio in de OpenAEC SuperCloud (#977): daar
 /// heten de tools `pdf_*` (js/core/werkplek-app.js), zodat ze niet botsen met
 /// die van andere tools in hetzelfde gesprek. De desktop aanvaardt dezelfde
 /// namen als alias van `app_*`; tools/list blijft alleen `app_*` noemen.
@@ -3460,7 +3460,7 @@ async fn mcp_handler(
                 rpc_error(
                     id,
                     jsonrpc_error::INVALID_PARAMS,
-                    format!("tool '{gevraagd}' is not available in this Open PDF Studio configuration"),
+                    format!("tool '{gevraagd}' is not available in this HB PDF Studio configuration"),
                 )
             } else {
                 match handle_tools_call(&state, params).await {

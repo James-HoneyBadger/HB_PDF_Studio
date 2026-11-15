@@ -1,4 +1,4 @@
-# Open PDF Studio — Testing MCP Server
+# HB PDF Studio — Testing MCP Server
 
 CDP-based test tools for automating the Tauri desktop app.
 

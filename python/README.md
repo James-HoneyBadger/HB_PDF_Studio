@@ -1,6 +1,6 @@
 # open-pdf-studio (Python)
 
-Script [Open PDF Studio](https://github.com/OpenAEC-Foundation/open-pdf-studio)
+Script [HB PDF Studio](https://github.com/OpenAEC-Foundation/open-pdf-studio)
 from Python. The package is a thin, dependency-free client over the app's MCP
 tools: every PDF operation runs in the app itself, so a script gets exactly the
 output the app produces. The typed API is generated from the app's tool
@@ -20,7 +20,7 @@ app = ops.connect()                          # or: the app that is already runni
 print(app.tools.list_tabs())                 # every MCP tool as a typed method
 ```
 
-Requirements: Python 3.10+ and an installed Open PDF Studio (found on `PATH`, in
+Requirements: Python 3.10+ and an installed HB PDF Studio (found on `PATH`, in
 the standard install location, or via `OPDS_APP`). On Linux without a display,
 install `xvfb`; the launcher then runs the app under `xvfb-run`.
 

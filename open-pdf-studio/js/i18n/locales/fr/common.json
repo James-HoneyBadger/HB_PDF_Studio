@@ -110,7 +110,7 @@
     "readOnly": {
       "title": "Ouvert en lecture seule",
       "kenmerk": "{{name}} est en lecture seule : le fichier a l'attribut lecture seule, ou vous n'avez que le droit de lecture à cet emplacement.",
-      "in-gebruik": "{{name}} est ouvert dans une autre application ou en cours de synchronisation, Open PDF Studio ne peut donc pas le réserver.",
+      "in-gebruik": "{{name}} est ouvert dans une autre application ou en cours de synchronisation, HB PDF Studio ne peut donc pas le réserver.",
       "geweigerd": "{{name}} ne peut pas être réservé : Windows l’a refusé.",
       "mislukt": "{{name}} n'a pas pu être réservé.",
       "saveAs": "Il a été ouvert en lecture seule. Vous pouvez faire des modifications ; utilisez Enregistrer sous pour les enregistrer dans un autre fichier."
@@ -118,7 +118,7 @@
   },
   "hostOpenFailed": "Le fichier n'a pas pu être lu depuis le stockage. Réessayez.",
   "hostInvalidPdf": "{{name}} n'est pas un fichier PDF valide et n'a pas pu être ouvert.",
-  "hostNoContact": "La page qui contient Open PDF Studio ne répond pas : les fichiers ne peuvent être ni ouverts ni enregistrés. Rechargez la page et réessayez.",
+  "hostNoContact": "La page qui contient HB PDF Studio ne répond pas : les fichiers ne peuvent être ni ouverts ni enregistrés. Rechargez la page et réessayez.",
   "hostSaveConflict": "Quelqu'un d'autre a enregistré ce fichier entre-temps. Vos modifications ont été enregistrées dans une copie distincte : {{name}}. Les prochains enregistrements iront dans cette copie.",
   "hostSaveNotLocked": "Ce fichier ne vous est pas réservé : d'autres personnes peuvent le modifier en même temps. Vos modifications sont enregistrées comme nouvelles versions ; rien n'est écrasé.",
   "hostReadOnlySave": "Ce fichier est ouvert en lecture seule : les modifications ne peuvent pas y être enregistrées. Utilisez Enregistrer sous pour télécharger une copie.",
@@ -162,7 +162,7 @@
   "failedToReplacePage": "Impossible de remplacer la page : {{error}}",
   "failedToMergeFile": "Échec de la fusion : {{file}}\n{{error}}",
   "invalidPageRange": "Plage de pages invalide. Veuillez entrer des numéros de page valides.",
-  "appName": "Open PDF Studio",
+  "appName": "HB PDF Studio",
   "noDocuments": "Aucun PDF sélectionné",
   "noDocumentsHint": "Cliquez sur « Ouvrir un PDF » pour parcourir et annoter un PDF",
   "solid": "Continu",
@@ -350,7 +350,7 @@
     "fileAssoc": "Cette version portable n'est pas enregistrée auprès de Windows. Pour ouvrir des fichiers PDF avec elle, faites un clic droit sur un PDF, choisissez Ouvrir avec > Choisir une autre application, puis sélectionnez open-pdf-studio.exe dans ce dossier.",
     "explorerThumbnails": "Les miniatures PDF dans l'Explorateur de fichiers ne sont disponibles que dans la version installée.",
     "virtualPrinter": "L'imprimante virtuelle n'est disponible que dans la version installée : elle est ajoutée à Windows avec des droits d'administrateur.",
-    "notWritable": "Open PDF Studio ne peut pas écrire dans le dossier {{dir}} ; vos paramètres sont donc enregistrés cette fois dans votre profil utilisateur. Déplacez le dossier portable vers un emplacement accessible en écriture, comme une clé USB ou votre dossier Documents."
+    "notWritable": "HB PDF Studio ne peut pas écrire dans le dossier {{dir}} ; vos paramètres sont donc enregistrés cette fois dans votre profil utilisateur. Déplacez le dossier portable vers un emplacement accessible en écriture, comme une clé USB ou votre dossier Documents."
   },
   "protectedPdfNoPrint": "Les droits de ce document n'autorisent pas l'impression.",
   "share": {

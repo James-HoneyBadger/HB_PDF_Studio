@@ -1,15 +1,10 @@
 //! Printkeuzes uit de Pagina-instelling vertaald naar wat de printer begrijpt.
 //!
-//! Puur en platformonafhankelijk, zodat de regels zonder printer te testen
-//! zijn. `print_pdf` gebruikt ze voor de DEVMODE op Windows en voor de
-//! `lp`-opties op Linux en macOS. `PapierInfo` beschrijft het vel dat een
-//! printer gaat gebruiken (voor de Printdialoog); `PrinterDevmodes` onthoudt
-//! per printer de keuzes uit het eigenschappenvenster van de driver.
+//! Puur en zonder printer te testen. `print_pdf` gebruikt ze voor de
+//! `lp`-opties. `PapierInfo` beschrijft het vel dat een printer gaat
+//! gebruiken (voor de Printdialoog).
 
-use std::collections::HashMap;
-use std::sync::Mutex;
-
-use crate::print_formulieren::{formulier, Formulier};
+use crate::papierformaten::{formulier, Formulier};
 use crate::print_plaatsing::Plaatsing;
 
 /// Gevraagde oriëntatie. `Auto` = per pagina afleiden (breder dan hoog → liggend).
@@ -35,7 +30,7 @@ impl Orientatie {
 ///
 /// A0, A1 en de verlengde vellen (A3L = A3 plus één A4-breedte in de lengte,
 /// enzovoort) hebben geen vaste `DMPAPER_*`-code: hun maat staat in
-/// `print_formulieren::FORMULIEREN` en ze gaan als eigen maat naar de driver
+/// `papierformaten::FORMULIEREN` en ze gaan als eigen maat naar de driver
 /// (`eigen_maat_tiende_mm`).
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum Papier {
@@ -166,7 +161,7 @@ impl Papier {
         }
     }
 
-    /// De regel in `print_formulieren::FORMULIEREN` voor een vel zonder vaste
+    /// De regel in `papierformaten::FORMULIEREN` voor een vel zonder vaste
     /// `DMPAPER_*`-code; `None` voor de andere vellen en voor `Printer`.
     pub fn formulier(self) -> Option<&'static Formulier> {
         match self {
@@ -409,8 +404,7 @@ pub fn velkeuze_regel(k: &VelKeuze) -> String {
 /// De omgevingsvariabele die het liggende vel bij een printer die een
 /// document schrijft regelt: 0/uit = altijd de liggende stand, 1/aan/altijd =
 /// ook bij standaardvellen een liggend vel (het gedrag van vóór issue 699),
-/// niet gezet = alleen bij vellen zonder standaardmaat
-/// (`print_plan::liggend_vel_modus`).
+/// niet gezet = alleen bij vellen zonder standaardmaat.
 pub const LIGGEND_VEL_OMGEVING: &str = "OPDS_LIGGEND_VEL";
 
 /// Het liggende vel als eigen maat voor een staande DEVMODE:
@@ -579,26 +573,6 @@ pub struct EigenschappenKeuze {
     pub orientatie_gewijzigd: bool,
 }
 
-/// Sessiegeheugen: per printernaam de volledige DEVMODE (publiek deel plus
-/// driverdeel, als bytes) die de gebruiker in het eigenschappenvenster van de
-/// driver met OK bevestigde. Alleen in het geheugen: nooit bewaard, nooit
-/// naar de printer- of systeemstandaard geschreven. Tauri-state.
-#[derive(Default)]
-pub struct PrinterDevmodes(pub Mutex<HashMap<String, Vec<u8>>>);
-
-impl PrinterDevmodes {
-    pub fn ophalen(&self, printer: &str) -> Option<Vec<u8>> {
-        self.0.lock().unwrap_or_else(|p| p.into_inner()).get(printer).cloned()
-    }
-
-    pub fn bewaren(&self, printer: &str, devmode: Vec<u8>) {
-        self.0
-            .lock()
-            .unwrap_or_else(|p| p.into_inner())
-            .insert(printer.to_string(), devmode);
-    }
-}
-
 /// Extra `lp`-argumenten (CUPS). Bij `Auto` geen oriëntatie-optie, bij `Printer` geen media.
 ///
 /// Bij plaatsing `Vel` heeft de printdialoog elke pagina al op papiergrootte
@@ -735,7 +709,7 @@ mod tests {
 
     #[test]
     fn formulierentabel_en_papier_dekken_elkaar() {
-        use crate::print_formulieren::FORMULIEREN;
+        use crate::papierformaten::FORMULIEREN;
         for f in FORMULIEREN {
             let p = Papier::uit_keuze(Some(f.sleutel));
             assert_ne!(p, Papier::Printer, "{} ontbreekt in Papier", f.sleutel);
@@ -765,20 +739,7 @@ mod tests {
         assert_eq!(dmpaper(Papier::A4), Some(9));
     }
 
-    #[cfg(windows)]
-    #[test]
-    fn papiercodes_gelijk_aan_windows_constanten() {
-        use windows_sys::Win32::Graphics::Gdi::{
-            DMPAPER_A2, DMPAPER_A3, DMPAPER_A4, DMPAPER_A5, DMPAPER_LEGAL, DMPAPER_LETTER, DMPAPER_TABLOID,
-        };
-        assert_eq!(dmpaper(Papier::A2), Some(DMPAPER_A2 as i16));
-        assert_eq!(dmpaper(Papier::A3), Some(DMPAPER_A3 as i16));
-        assert_eq!(dmpaper(Papier::A4), Some(DMPAPER_A4 as i16));
-        assert_eq!(dmpaper(Papier::A5), Some(DMPAPER_A5 as i16));
-        assert_eq!(dmpaper(Papier::Letter), Some(DMPAPER_LETTER as i16));
-        assert_eq!(dmpaper(Papier::Legal), Some(DMPAPER_LEGAL as i16));
-        assert_eq!(dmpaper(Papier::Tabloid), Some(DMPAPER_TABLOID as i16));
-    }
+
 
     #[test]
     fn orientatie_ook_op_pdf_punten() {
@@ -1036,40 +997,7 @@ mod tests {
         assert!(!beschrijft_vel(Some(&PapierInfo::onbekend(None, 1)), Papier::A4));
     }
 
-    #[test]
-    fn sessiegeheugen_per_printer() {
-        let s = PrinterDevmodes::default();
-        assert_eq!(s.ophalen("P"), None);
-        s.bewaren("P", vec![1, 2, 3]);
-        s.bewaren("Q", vec![4]);
-        s.bewaren("P", vec![5]);
-        assert_eq!(s.ophalen("P"), Some(vec![5]));
-        assert_eq!(s.ophalen("Q"), Some(vec![4]));
-    }
-
-    #[cfg(windows)]
-    #[test]
-    fn variantcodes_gelijk_aan_windows_constanten() {
-        use windows_sys::Win32::Graphics::Gdi::{
-            DMPAPER_A3_EXTRA, DMPAPER_A3_ROTATED, DMPAPER_A3_TRANSVERSE, DMPAPER_A4SMALL, DMPAPER_A4_PLUS,
-            DMPAPER_A4_ROTATED, DMPAPER_A4_TRANSVERSE, DMPAPER_A5_ROTATED, DMPAPER_A5_TRANSVERSE, DMPAPER_LEDGER,
-            DMPAPER_LETTERSMALL, DMPAPER_LETTER_ROTATED, DMPAPER_LETTER_TRANSVERSE,
-        };
-        let s = |c: u32| papier_uit_dmpaper(c as i16);
-        assert_eq!(s(DMPAPER_A3_ROTATED), Some(Papier::A3));
-        assert_eq!(s(DMPAPER_A3_TRANSVERSE), Some(Papier::A3));
-        assert_eq!(s(DMPAPER_A4_ROTATED), Some(Papier::A4));
-        assert_eq!(s(DMPAPER_A4_TRANSVERSE), Some(Papier::A4));
-        assert_eq!(s(DMPAPER_A4SMALL), Some(Papier::A4));
-        assert_eq!(s(DMPAPER_A5_ROTATED), Some(Papier::A5));
-        assert_eq!(s(DMPAPER_A5_TRANSVERSE), Some(Papier::A5));
-        assert_eq!(s(DMPAPER_LETTER_ROTATED), Some(Papier::Letter));
-        assert_eq!(s(DMPAPER_LETTER_TRANSVERSE), Some(Papier::Letter));
-        assert_eq!(s(DMPAPER_LETTERSMALL), Some(Papier::Letter));
-        assert_eq!(s(DMPAPER_LEDGER), Some(Papier::Tabloid));
-        assert_eq!(s(DMPAPER_A3_EXTRA), None);
-        assert_eq!(s(DMPAPER_A4_PLUS), None);
-    }
+    
 
     #[test]
     fn lp_opties_per_keuze() {

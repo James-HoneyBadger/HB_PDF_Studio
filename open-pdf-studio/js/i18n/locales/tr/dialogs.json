@@ -35,7 +35,7 @@
   "printQueue": {
     "toolbarLabel": "Yazdırma işi eylemleri",
     "openInStudio": "Studio'da aç",
-    "openInStudioTip": "Seçili işi Open PDF Studio'da açar (Enter veya çift tıklama). Birden çok iş seçilirse tek bir birleştirilmiş belge olarak açılır.",
+    "openInStudioTip": "Seçili işi HB PDF Studio'da açar (Enter veya çift tıklama). Birden çok iş seçilirse tek bir birleştirilmiş belge olarak açılır.",
     "mergeSelected": "Seçilenleri birleştir…",
     "mergeSelectedTip": "Seçili işleri liste sırasına göre tek bir PDF'de birleştirir ve kaydeder",
     "saveAs": "Farklı kaydet…",
@@ -75,11 +75,11 @@
     "adding": "PDF dosyaları ekleniyor…",
     "saving": "Kaydediliyor…",
     "merging": "Birleştiriliyor: {{done}} / {{count}}…",
-    "opening": "Open PDF Studio'da açılıyor…",
+    "opening": "HB PDF Studio'da açılıyor…",
     "deleting": "Siliniyor…",
     "saved": "{{name}} olarak kaydedildi",
     "merged": "Birleştirildi ve {{name}} olarak kaydedildi",
-    "opened": "Open PDF Studio'da açıldı",
+    "opened": "HB PDF Studio'da açıldı",
     "deleted": "Silinen: {{count}}",
     "failed": "Başarısız: {{message}}",
     "mergedFileName": "Birleştirilmiş",
@@ -452,7 +452,7 @@
   },
   "update": {
     "title": "Yazılım Güncellemesi",
-    "newVersionAvailable": "Open PDF Studio'nun yeni bir sürümü mevcut.",
+    "newVersionAvailable": "HB PDF Studio'nun yeni bir sürümü mevcut.",
     "currentVersion": "Mevcut sürüm:",
     "newVersion": "Yeni sürüm:",
     "releaseNotes": "Sürüm Notları:",
@@ -616,7 +616,7 @@
   },
   "defaultPdfApp": {
     "title": "Varsayılan PDF Uygulaması",
-    "message": "Open PDF Studio, PDF dosyalarını açmak için varsayılan uygulama olarak ayarlanmamış. Varsayılan olarak ayarlamak ister misiniz?",
+    "message": "HB PDF Studio, PDF dosyalarını açmak için varsayılan uygulama olarak ayarlanmamış. Varsayılan olarak ayarlamak ister misiniz?",
     "setAsDefault": "Varsayılan Olarak Ayarla",
     "dontAskAgain": "Bir Daha Sorma",
     "notNow": "Şimdi Değil"
@@ -1322,7 +1322,7 @@
   },
   "recovery": {
     "title": "Kaydedilmemiş çalışmayı kurtar",
-    "intro": "Open PDF Studio geçen sefer normal şekilde kapanmadı. Bu belgelerdeki kaydedilmemiş çalışma korundu:",
+    "intro": "HB PDF Studio geçen sefer normal şekilde kapanmadı. Bu belgelerdeki kaydedilmemiş çalışma korundu:",
     "savedAt": "Korunma zamanı: {{time}}",
     "pages": "Sayfa: {{count}}",
     "untitled": "Adsız belge",
@@ -1343,7 +1343,7 @@
     "deleteFailed": "Silme başarısız oldu: {{error}}",
     "tabLabel": "kurtarıldı",
     "tabTip": "Beklenmedik bir kapanmanın ardından kurtarıldı. Kaydetme özgün dosyaya yazar.",
-    "reloadStopped": "Open PDF Studio penceresi art arda birkaç kez çalışmayı durdurdu ve artık otomatik olarak yeniden yüklenmiyor. Çalışmanızı kaydedin ve uygulamayı yeniden başlatın."
+    "reloadStopped": "HB PDF Studio penceresi art arda birkaç kez çalışmayı durdurdu ve artık otomatik olarak yeniden yüklenmiyor. Çalışmanızı kaydedin ve uygulamayı yeniden başlatın."
   },
   "protectPdf": {
     "title": "Belge Güvenliği",
@@ -1919,7 +1919,7 @@
       "routing": "Routing",
       "howToRespond": "Reply to this mail with \"Approved\" or \"Rejected\" and keep {{ref}} in the subject.",
       "howToSign": "Signers: return the signed PDF and keep {{ref}} in the file name.",
-      "disclaimer": "The SHA-256 above identifies the exact document version. This mail was prepared in Open PDF Studio; it is not a legally binding signature service and does not verify identities."
+      "disclaimer": "The SHA-256 above identifies the exact document version. This mail was prepared in HB PDF Studio; it is not a legally binding signature service and does not verify identities."
     },
     "errors": {
       "CONFIGURE_ADAPTER_FIRST": "Enable the provider first.",

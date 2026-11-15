@@ -111,7 +111,7 @@
     "readOnly": {
       "title": "Opened read-only",
       "kenmerk": "{{name}} is read-only: it has the read-only attribute, or you only have read permission on this location.",
-      "in-gebruik": "{{name}} is open in another application or is being synchronized, so Open PDF Studio cannot reserve it.",
+      "in-gebruik": "{{name}} is open in another application or is being synchronized, so HB PDF Studio cannot reserve it.",
       "geweigerd": "{{name}} cannot be reserved: Windows denied it.",
       "mislukt": "{{name}} could not be reserved.",
       "saveAs": "It has been opened read-only. You can make changes; use Save As to save them to another file."
@@ -119,7 +119,7 @@
   },
   "hostOpenFailed": "The file could not be read from storage. Try again.",
   "hostInvalidPdf": "{{name}} is not a valid PDF file and could not be opened.",
-  "hostNoContact": "The page around Open PDF Studio does not respond, so files cannot be opened or saved. Reload the page and try again.",
+  "hostNoContact": "The page around HB PDF Studio does not respond, so files cannot be opened or saved. Reload the page and try again.",
   "hostSaveConflict": "Someone else saved this file in the meantime. Your changes were saved as a separate copy: {{name}}. Later saves go to that copy.",
   "hostSaveNotLocked": "This file is not reserved for you, so others can change it at the same time. Your changes are saved as new versions; nothing is overwritten.",
   "hostReadOnlySave": "This file is open read-only, so changes cannot be saved to it. Use Save As to download a copy.",
@@ -163,7 +163,7 @@
   "failedToReplacePage": "Failed to replace page: {{error}}",
   "failedToMergeFile": "Failed to merge: {{file}}\n{{error}}",
   "invalidPageRange": "Invalid page range. Please enter valid page numbers.",
-  "appName": "Open PDF Studio",
+  "appName": "HB PDF Studio",
   "noDocuments": "No PDF Selected",
   "noDocumentsHint": "Click \"Open PDF\" to browse and annotate a PDF",
   "solid": "Solid",
@@ -350,7 +350,7 @@
     "fileAssoc": "This portable copy is not registered with Windows. To open PDF files with it, right-click a PDF, choose Open with > Choose another app, and select open-pdf-studio.exe in this folder.",
     "explorerThumbnails": "PDF thumbnails in File Explorer are only available in the installed version.",
     "virtualPrinter": "The virtual printer is only available in the installed version: it is added to Windows with administrator rights.",
-    "notWritable": "Open PDF Studio cannot write to the folder {{dir}}, so your settings are stored in your user profile this time. Move the portable folder to a writable location, such as a USB drive or your Documents folder."
+    "notWritable": "HB PDF Studio cannot write to the folder {{dir}}, so your settings are stored in your user profile this time. Move the portable folder to a writable location, such as a USB drive or your Documents folder."
   },
   "protectedPdfNoPrint": "The permissions of this document do not allow printing.",
   "share": {

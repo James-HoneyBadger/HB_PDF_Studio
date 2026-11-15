@@ -190,10 +190,10 @@ mod tests {
     #[test]
     fn strips_verbatim_disk_prefix() {
         let out = tessdata_path_for_tesseract(Path::new(
-            r"\\?\C:\Program Files\Open PDF Studio\tessdata",
+            r"\\?\C:\Program Files\HB PDF Studio\tessdata",
         ))
         .unwrap();
-        assert_eq!(out, r"C:\Program Files\Open PDF Studio\tessdata\");
+        assert_eq!(out, r"C:\Program Files\HB PDF Studio\tessdata\");
     }
 
     #[cfg(windows)]
@@ -219,7 +219,7 @@ mod tests {
     #[cfg(windows)]
     #[test]
     fn result_never_mixes_verbatim_prefix_with_forward_slash_join() {
-        let dir = Path::new(r"\\?\C:\Users\x\AppData\Local\Open PDF Studio").join("tessdata");
+        let dir = Path::new(r"\\?\C:\Users\x\AppData\Local\HB PDF Studio").join("tessdata");
         let out = tessdata_path_for_tesseract(&dir).unwrap();
         assert!(!out.starts_with(r"\\?\"));
         assert!(out.ends_with('\\'));

@@ -38,7 +38,7 @@ def backup(store, destination):
 
 
 def main(argv=None):
-    parser = argparse.ArgumentParser(description="Open PDF Studio collaboration operator")
+    parser = argparse.ArgumentParser(description="HB PDF Studio collaboration operator")
     parser.add_argument("--database", default=os.environ.get("OPDS_DATABASE", "review.db"))
     sub = parser.add_subparsers(dest="command", required=True)
     sub.add_parser("serve")

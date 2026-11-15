@@ -110,7 +110,7 @@
     "readOnly": {
       "title": "Opened read-only",
       "kenmerk": "{{name}} is read-only: it has the read-only attribute, or you only have read permission on this location.",
-      "in-gebruik": "{{name}} is open in another application or is being synchronized, so Open PDF Studio cannot reserve it.",
+      "in-gebruik": "{{name}} is open in another application or is being synchronized, so HB PDF Studio cannot reserve it.",
       "geweigerd": "{{name}} cannot be reserved: Windows denied it.",
       "mislukt": "{{name}} could not be reserved.",
       "saveAs": "It has been opened read-only. You can make changes; use Save As to save them to another file."
@@ -118,7 +118,7 @@
   },
   "hostOpenFailed": "无法从存储中读取该文件。请重试。",
   "hostInvalidPdf": "{{name}} 不是有效的 PDF 文件，无法打开。",
-  "hostNoContact": "包含 Open PDF Studio 的页面没有响应，因此无法打开或保存文件。请重新加载页面后重试。",
+  "hostNoContact": "包含 HB PDF Studio 的页面没有响应，因此无法打开或保存文件。请重新加载页面后重试。",
   "hostSaveConflict": "在此期间有其他人保存了此文件。你的更改已另存为一个副本：{{name}}。之后的保存都会写入该副本。",
   "hostSaveNotLocked": "此文件没有为你锁定，因此其他人可以同时修改它。你的更改会保存为新版本，不会覆盖任何内容。",
   "hostReadOnlySave": "此文件以只读方式打开，无法保存更改。请使用“另存为”下载一个副本。",
@@ -162,7 +162,7 @@
   "failedToReplacePage": "替换页面失败：{{error}}",
   "failedToMergeFile": "合并失败：{{file}}\n{{error}}",
   "invalidPageRange": "无效的页码范围。请输入有效的页码。",
-  "appName": "Open PDF Studio",
+  "appName": "HB PDF Studio",
   "noDocuments": "未选择 PDF",
   "noDocumentsHint": "点击“打开 PDF”浏览并批注 PDF",
   "solid": "实线",
@@ -350,7 +350,7 @@
     "fileAssoc": "此便携版未在 Windows 中注册。若要用它打开 PDF 文件，请右键单击 PDF，选择“打开方式”>“选择其他应用”，然后选择此文件夹中的 open-pdf-studio.exe。",
     "explorerThumbnails": "文件资源管理器中的 PDF 缩略图仅在安装版中可用。",
     "virtualPrinter": "虚拟打印机仅在安装版中可用：它需要以管理员权限添加到 Windows。",
-    "notWritable": "Open PDF Studio 无法写入文件夹 {{dir}}，因此这次你的设置保存在用户配置文件中。请将便携版文件夹移到可写入的位置，例如 U 盘或“文档”文件夹。"
+    "notWritable": "HB PDF Studio 无法写入文件夹 {{dir}}，因此这次你的设置保存在用户配置文件中。请将便携版文件夹移到可写入的位置，例如 U 盘或“文档”文件夹。"
   },
   "protectedPdfNoPrint": "此文档的权限不允许打印。",
   "share": {

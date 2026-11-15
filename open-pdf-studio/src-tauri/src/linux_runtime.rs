@@ -278,7 +278,7 @@ mod tests {
 
         assert_eq!(
             packaged_gio_module_dir(
-                Some(OsStr::new("Open.PDF.Studio.AppImage")),
+                Some(OsStr::new("HB PDF Studio_2026.46.3_aarch64.AppImage")),
                 Some(app_dir.as_os_str()),
                 None,
                 Some(extra_modules.as_os_str()),
@@ -291,7 +291,7 @@ mod tests {
     #[test]
     fn selects_the_packaged_directory_for_an_extracted_appimage() {
         let app_dir = PathBuf::from("squashfs-root");
-        let packaged_modules = app_dir.join("usr/lib/x86_64-linux-gnu/gio/modules");
+        let packaged_modules = app_dir.join("usr/lib/aarch64-linux-gnu/gio/modules");
         let exe = app_dir.join("usr/bin/open-pdf-studio");
 
         assert_eq!(
@@ -324,7 +324,7 @@ mod tests {
 
         assert_eq!(
             packaged_gio_module_dir(
-                Some(OsStr::new("Open.PDF.Studio.AppImage")),
+                Some(OsStr::new("HB PDF Studio_2026.46.3_aarch64.AppImage")),
                 Some(app_dir.as_os_str()),
                 Some(OsStr::new("custom-gio-modules")),
                 Some(packaged_modules.as_os_str()),
@@ -348,7 +348,7 @@ mod tests {
         );
         assert_eq!(
             packaged_gio_module_dir(
-                Some(OsStr::new("Open.PDF.Studio.AppImage")),
+                Some(OsStr::new("HB PDF Studio_2026.46.3_aarch64.AppImage")),
                 Some(OsStr::new("app-image-root")),
                 None,
                 Some(OsStr::new("host-gio-modules")),

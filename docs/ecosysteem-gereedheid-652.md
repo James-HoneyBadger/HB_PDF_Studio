@@ -14,21 +14,12 @@ niet handmatig op een schone machine getest, tenzij dat er staat.
 
 Deze tabel is de productspecifieke matrix waar het issue om vraagt.
 
-| Runtime / levering | Architectuur | Kanaal | Asset of bron in v2026.45.0 | Opmerking |
+| Runtime / levering | Architectuur | Kanaal | Asset of bron | Opmerking |
 |---|---|---|---|---|
-| Windows, installer voor alle gebruikers | x86_64 | stabiel + nightly | `Open.PDF.Studio_2026.45.0_x64-setup.exe` (+ `.nsis.zip` en `.sig` voor de updater) | Authenticode via Azure Trusted Signing |
-| Windows, installer per gebruiker | x86_64 | stabiel | `…_x64_user-setup.exe` | idem |
-| Windows, draagbaar | x86_64 | stabiel | `…_x64_portable.zip` + `.sha256` | `docs/portable-windows.md` |
-| Windows, winget | x86_64 | stabiel | `open-pdf-studio-winget-manifests-2026.45.0.zip` | indienen bij winget is een losse stap |
-| Windows on ARM | arm64 | geen | alleen `windows-arm64.yml` (handmatig, experimenteel) | niet in de releasematrix |
-| macOS | universal (arm64 + x86_64), macOS 10.15+ | stabiel + nightly | `…_universal.dmg`, `Open.PDF.Studio_universal.app.tar.gz` (+ `.sig`) | Developer ID + notarisatie |
-| Linux `.deb` | x86_64 | stabiel + nightly | `…_amd64.deb` (+ `.sig`) | |
-| Linux AppImage | x86_64 | stabiel + nightly | `…_amd64.AppImage`, `.AppImage.tar.gz` (+ `.sig`) | ook basis van OpenAEC Linux |
-| Linux snap | x86_64 | stabiel (Snap Store) | `open-pdf-studio_2026.45.0_amd64.snap` | `snap.yml` |
-| Linux Flatpak | x86_64 | geen | `flatpak/` (manifest) | job `flatpak` faalde in de run van v2026.45.0; niet op Flathub (`docs/flathub.md`) |
-| Linux Nix / AUR | x86_64 | bron | `flake.nix`, `packaging/aur` | |
-| Android | arm64 | stabiel | `open-pdf-studio-release.apk` | nieuwe sleutel per release (#601) |
-| Web (zelf hosten) | n.v.t. | stabiel | `open-pdf-studio-web-2026.45.0.tar.gz` + `.sha256` | zonder desktopfuncties |
+| Linux `.deb` | aarch64 | stabiel + nightly | `…_arm64.deb` (+ `.sig`) | enige desktopdoel |
+| Linux AppImage | aarch64 | stabiel + nightly | `…_arm64.AppImage`, `.AppImage.tar.gz` (+ `.sig`) | ook basis van OpenAEC Linux |
+| Linux snap | aarch64 | stabiel (Snap Store) | `open-pdf-studio_<versie>_arm64.snap` | `snap.yml` |
+| Linux Flatpak | aarch64 | geen | `flatpak/` (manifest) | `flatpak/ci-check.sh` in CI; niet op Flathub (`docs/flathub.md`) |
 | MCP-bundel Claude Desktop | n.v.t. | stabiel | `open-pdf-studio.mcpb` | stdio-brug naar de app |
 | Python-bibliotheek | py3, elk OS | stabiel (release-asset) | `open_pdf_studio-2026.45.0-py3-none-any.whl`, `.tar.gz` | nog niet op PyPI |
 | Rust-renderer `open-pdf-render` | elk Rust-doel | bron (crate in de workspace) | `open-pdf-render/Cargo.toml` (MIT) | niet gepubliceerd op crates.io |
@@ -41,18 +32,17 @@ het product).
 
 | Gebied | Status | Bewijs | Wat nog nodig is |
 |---|---|---|---|
-| Windows | PARTIAL | Assets hierboven; `release.yml` ondertekent met Azure Trusted Signing en controleert elke handtekening met `Get-AuthenticodeSignature` (regels ±515–590); job `build (windows-latest, windows-system/user)` geslaagd in run 42226863516 | Installatie op een schone VM vastleggen voor één release (vinkje 2) |
-| macOS | PARTIAL | `…_universal.dmg`; notarisatie met App Store Connect-API-sleutel en `spctl`/`stapler validate` in `release.yml` (±440–500); job geslaagd | Installatie op een schone Mac vastleggen; Sonoma-test (#361) |
+| Windows, macOS, Android, web | VERWIJDERD | Niet meer gebouwd: `release.yml`, `nightly.yml` en `ci.yml` bouwen alleen Linux AArch64 | — |
 | Linux | PARTIAL | `.deb`, AppImage, snap; rooktests `scripts/linux-appimage-smoke.sh` en `scripts/openaec-linux-smoke.test.sh` in `ci.yml` | Schone-VM-resultaat; Flatpak-job repareren; OpenPGP-handtekeningen pas vanaf de volgende release (vinkje 9) |
 | Productbibliotheek / SDK | PARTIAL | Python-bibliotheek `python/` met `docs/python-library.md` (release-assets); `open-pdf-render` crate (MIT) | Bibliotheekgrens, versie- en compatibiliteitsbeleid en een extern voorbeeld per bibliotheek; PyPI-publicatie (vinkje 3) |
-| Losse product-DLL | OPEN | Alleen interne cdylibs: `open-pdf-studio/src-tauri` (Tauri-app), `open-pdf-thumbnails` (Verkenner-miniaturen); geen publieke C-ABI | Besluit of een DLL nodig is; zo ja exports, ABI, buffer- en foutconventies (vinkje 4) |
+| Losse product-DLL | OPEN | Alleen een interne cdylib: `open-pdf-studio/src-tauri` (Tauri-app); geen publieke C-ABI | Besluit of een DLL nodig is; zo ja exports, ABI, buffer- en foutconventies (vinkje 4) |
 | Eigen API | PARTIAL | De MCP-server van de app is de API: HTTP JSON-RPC op `127.0.0.1:9223/mcp` (`src-tauri/src/mcp_server.rs`), 94 publieke tools in `mcp-stdio/tools.json`; beheerde modus met bearer-geheim (`docs/managed-deployments.md`) | Een gepubliceerd interfacecontract met versiebeleid en een reproduceerbare rooktest tegen een draaiende app (vinkje 5) |
 | Product-MCP-server | PARTIAL | `mcp-stdio/README.md`, `mcp-stdio/server.mjs --probe`, `mcp-stdio/brug.test.mjs`; MCP-annotaties per tool (`mcp_tool_meta.rs`) | Verificatie met een externe client vastleggen (transport, tools, rechten, mutatie en undo) (vinkje 6) |
 | Claude Desktop / Code | PARTIAL | Instructies in `mcp-stdio/README.md`, `open-pdf-studio.mcpb` per release (job `mcpb`), `mcpb/manifest.json` met test | Verbinding vastleggen; indienen bij de extensiebibliotheek (`mcpb/INDIENEN.md`) doet de Foundation (vinkje 7) |
 | Interactieve Claude-app / connector | OPEN | Geen MCP App of remote connector; alleen de lokale bundel | Besluit of een connector (remote MCP) gewenst is; dat vraagt een gehoste API (vinkjes 7 en 10) |
 | UI / stijlbron | PARTIAL | Eigen CSS in `open-pdf-studio/styles/` met thema's (`themes.css`, `data-theme`, licht/donker/systeem in `js/core/preferences.js`); Windows-stijl volgens `CLAUDE.md` | Geen afhankelijkheid van de pakketten of tokens van de OpenAEC Style Repo; relatie en plan vastleggen (vinkje 8) |
 | AWS-gereedheid | OPEN | Niets voor AWS. Het dichtstbij: OpenAEC Linux, de app als AppImage in een container per gebruiker (`docs/openaec-linux.md`), met beheerde modus en MCP met geheim | Runtimekeuze, headless build, deploymentdefinitie, IAM, health/logging en een rooktest in AWS (vinkje 10) |
-| Release-ondertekening | PARTIAL | Updater: minisign-`.sig` per bundel, publieke sleutel in `tauri.conf.json` (`plugins.updater.pubkey`); Windows en macOS zie boven; Linux OpenPGP-job `sign-linux` staat op `main` (commit c526c8d85) maar nog niet in v2026.45.0, dus die release heeft geen `.asc` en geen `SHA256SUMS` | Eerste release met `sign-linux` controleren; handtekeningen per release met commando en resultaat vastleggen (vinkje 9) |
+| Release-ondertekening | PARTIAL | Updater: minisign-`.sig` per bundel, publieke sleutel in `tauri.conf.json` (`plugins.updater.pubkey`); Linux OpenPGP-job `sign-linux` staat op `main` (commit c526c8d85) | Eerste release met `sign-linux` controleren; handtekeningen per release met commando en resultaat vastleggen (vinkje 9) |
 
 ## 3. Vinkjes uit "Required work"
 
@@ -66,7 +56,7 @@ het product).
 | 6 | MCP-server met externe client verifiëren | PARTIAL | `--probe` van de brug; Python-tests tegen een nep-MCP-server (`python/tests/fake_mcp_server.py`); rig-gebruik in `docs/release-testprotocol.md` | Een vastgelegde run met een externe client: transport, tools/resources, rechten (publiek profiel vs. ontwikkelprofiel), mutatie en undo |
 | 7 | Claude Desktop/Code-verbinding; bundel los van connector | PARTIAL | Bundel: `open-pdf-studio.mcpb` per release; Code: `claude mcp add` of een eigen `.mcp.json` (`mcp-stdio/README.md`); connector: geen | Verbinding vastleggen; de connector apart volgen (vinkje 10) |
 | 8 | UI en relatie met de Style Repo | PARTIAL | Eigen thema's en componenten; geen pakketten of tokens van de Style Repo | Vastleggen welke tokens/componenten overeenkomen, en een besluit over adoptie (volledige adoptie, geen hybride) |
-| 9 | Ondertekening op echte release-artefacten | PARTIAL | Windows: Authenticode + RFC 3161-tijdstempel (`timestamp.acs.microsoft.com`) en controle in CI; macOS: Developer ID, notarisatie, `spctl`, `stapler validate` in CI; updater: minisign-sleutel in `tauri.conf.json`; Linux OpenPGP: sleutel `docs/keys/openaec-signing-public-key.asc`, vingerafdruk `13F6D414ADEE4ED4CD09AC60601D86C93C504D29`, job vanaf de volgende release | Per release vastleggen: ondertekenaar, sleutel, commando (`Get-AuthenticodeSignature`, `spctl -a -vv`, `gpg --verify`, `minisign -V`) en uitkomst, buiten CI herhaald |
+| 9 | Ondertekening op echte release-artefacten | PARTIAL | Updater: minisign-sleutel in `tauri.conf.json`; Linux OpenPGP: sleutel `docs/keys/openaec-signing-public-key.asc`, vingerafdruk `13F6D414ADEE4ED4CD09AC60601D86C93C504D29`, job vanaf de volgende release | Per release vastleggen: ondertekenaar, sleutel, commando (`gpg --verify`, `minisign -V`) en uitkomst, buiten CI herhaald |
 | 10 | AWS-gereedheid | OPEN | Geen | Zie rij "AWS-gereedheid"; hangt af van vinkje 5 (een API die zonder desktop draait) |
 | 11 | Versiebewijs per eis | PARTIAL | Dit document noemt commit en release | Bij afvinken per vinkje de release en het bewijs koppelen |
 

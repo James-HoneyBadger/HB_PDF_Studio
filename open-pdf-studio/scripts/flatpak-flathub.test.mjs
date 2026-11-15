@@ -18,6 +18,7 @@ import {
   parseCargoLock,
 } from '../../flatpak/generate-sources.mjs';
 import { flathubManifest } from '../../flatpak/flathub-manifest.mjs';
+import { PDFIUM_RUNTIME } from './native-runtime.mjs';
 import { OCR_RUNTIME_ASSETS } from './ocr-runtime.mjs';
 
 const appDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -187,12 +188,14 @@ test('the generators parse lockfiles without network and reject what they cannot
   assert.throws(() => npmSources({ packages: { '': {}, 'node_modules/x': { version: '1.0.0' } } }), /no resolved URL/);
 });
 
-test('the manifest pins the same PDFium and OCR assets as the release builds', () => {
+test('the manifest pins the same PDFium runtime and OCR assets as the desktop builds', () => {
   const sources = manifestSources();
   const pdfium = sources.find((s) => s.dest === 'pdfium');
+  assert.equal(pdfium.url, PDFIUM_RUNTIME.url);
+  assert.equal(pdfium.sha256, PDFIUM_RUNTIME.sha256);
   for (const name of ['ci.yml', 'release.yml', 'nightly.yml']) {
     const workflow = read(`.github/workflows/${name}`);
-    assert.ok(workflow.includes(pdfium.url), `${name} bundles ${pdfium.url}`);
+    assert.match(workflow, /npm run prepare:native-runtime/, `${name} prepares ${pdfium.url}`);
   }
   for (const asset of OCR_RUNTIME_ASSETS) {
     const source = sources.find((s) => s['dest-filename'] === asset.name);

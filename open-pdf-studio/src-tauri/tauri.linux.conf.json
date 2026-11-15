@@ -5,7 +5,7 @@
       "binaries/pdfium-worker"
     ],
     "resources": {
-      "binaries/linux-x64/libpdfium.so": "libpdfium.so"
+      "binaries/linux-arm64/libpdfium.so": "libpdfium.so"
     }
   }
 }

@@ -92,7 +92,7 @@ function markupXml(topic, opts) {
  * @returns {Uint8Array} .bcfzip bytes
  */
 export function buildBcfZip(annotations, options = {}) {
-  const projectName = options.projectName || 'Open PDF Studio project';
+  const projectName = options.projectName || 'HB PDF Studio project';
   const snapshots = options.snapshots || new Map();
 
   const entries = [

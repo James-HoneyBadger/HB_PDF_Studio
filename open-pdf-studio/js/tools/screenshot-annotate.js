@@ -1,6 +1,6 @@
 // Screenshot Capture & Annotate mode.
 //
-// Turns Open PDF Studio into a lightweight screenshot annotator: it takes the
+// Turns HB PDF Studio into a lightweight screenshot annotator: it takes the
 // bitmap that Windows (PrtScn / Snipping Tool) or any app placed on the
 // clipboard, drops it onto a fresh page-sized canvas and hands it to the full
 // annotation toolset. The resulting document is an ordinary (untitled) PDF, so

@@ -585,7 +585,7 @@ export function moveItem(catalog, itemId, toSetId, index = null) {
 // ── Exchange file ─────────────────────────────────────────────────────────
 
 /** One tool set as the text of an exchange file. */
-export function serializeToolSet(set, { now = null, app = 'Open PDF Studio' } = {}) {
+export function serializeToolSet(set, { now = null, app = 'HB PDF Studio' } = {}) {
   const clean = normalizeSet(set);
   if (!clean) throw new Error('invalid tool set');
   return JSON.stringify({

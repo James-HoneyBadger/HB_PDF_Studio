@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://raw.githubusercontent.com/OpenAEC-Foundation/open-pdf-studio/main/extensions.schema.json",
-  "title": "Open PDF Studio extension catalogue",
+  "title": "HB PDF Studio extension catalogue",
   "description": "The list shown under File > Extensions > Browse. Add your extension with a pull request; see CONTRIBUTING.md. The app's own check (open-pdf-studio/js/plugins/extension-catalog.js) is the reference and runs in CI.",
   "type": "object",
   "required": ["version", "extensions"],

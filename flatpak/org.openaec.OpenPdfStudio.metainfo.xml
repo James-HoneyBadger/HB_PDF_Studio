@@ -2,7 +2,7 @@
 <component type="desktop-application">
   <id>org.openaec.OpenPdfStudio</id>
 
-  <name>Open PDF Studio</name>
+  <name>HB PDF Studio</name>
   <summary>Edit and annotate PDF drawings</summary>
 
   <developer id="org.openaec">
@@ -19,7 +19,7 @@
 
   <description>
     <p>
-      Open PDF Studio is a free, open-source PDF editor and annotator for people
+      HB PDF Studio is a free, open-source PDF editor and annotator for people
       who work with drawings and documents every day: architects, engineers,
       contractors, and anyone who needs solid tools without a subscription.
     </p>
@@ -106,6 +106,7 @@
   </screenshots>
 
   <releases>
+    <release version="2026.47.0" date="2026-11-15"/>
     <release version="2026.46.3" date="2026-11-14"/>
     <release version="2026.46.2" date="2026-11-12"/>
     <release version="2026.46.1" date="2026-11-12"/>

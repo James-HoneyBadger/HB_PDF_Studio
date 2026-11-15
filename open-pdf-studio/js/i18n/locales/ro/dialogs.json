@@ -35,7 +35,7 @@
   "printQueue": {
     "toolbarLabel": "Acțiuni pentru lucrările de tipărire",
     "openInStudio": "Deschidere în Studio",
-    "openInStudioTip": "Deschide lucrarea selectată în Open PDF Studio (Enter sau dublu clic). Mai multe lucrări selectate se deschid ca un singur document îmbinat.",
+    "openInStudioTip": "Deschide lucrarea selectată în HB PDF Studio (Enter sau dublu clic). Mai multe lucrări selectate se deschid ca un singur document îmbinat.",
     "mergeSelected": "Îmbinare selectate…",
     "mergeSelectedTip": "Îmbină lucrările selectate, în ordinea listei, într-un singur PDF și îl salvează",
     "saveAs": "Salvare ca…",
@@ -75,11 +75,11 @@
     "adding": "Se adaugă fișiere PDF…",
     "saving": "Se salvează…",
     "merging": "Se îmbină {{done}} din {{count}}…",
-    "opening": "Se deschide în Open PDF Studio…",
+    "opening": "Se deschide în HB PDF Studio…",
     "deleting": "Se șterge…",
     "saved": "Salvat ca {{name}}",
     "merged": "Îmbinat și salvat ca {{name}}",
-    "opened": "Deschis în Open PDF Studio",
+    "opened": "Deschis în HB PDF Studio",
     "deleted": "Șterse: {{count}}",
     "failed": "Eșuat: {{message}}",
     "mergedFileName": "Îmbinat",
@@ -452,7 +452,7 @@
   },
   "update": {
     "title": "Actualizare software",
-    "newVersionAvailable": "O noua versiune a Open PDF Studio este disponibila.",
+    "newVersionAvailable": "O noua versiune a HB PDF Studio este disponibila.",
     "currentVersion": "Versiunea curenta:",
     "newVersion": "Versiunea noua:",
     "releaseNotes": "Note de lansare:",
@@ -616,7 +616,7 @@
   },
   "defaultPdfApp": {
     "title": "Aplicatie PDF implicita",
-    "message": "Open PDF Studio nu este setat ca aplicatia implicita pentru deschiderea fisierelor PDF. Doriti sa o setati ca implicita?",
+    "message": "HB PDF Studio nu este setat ca aplicatia implicita pentru deschiderea fisierelor PDF. Doriti sa o setati ca implicita?",
     "setAsDefault": "Setare ca implicita",
     "dontAskAgain": "Nu mai intreba",
     "notNow": "Nu acum"
@@ -1322,7 +1322,7 @@
   },
   "recovery": {
     "title": "Recuperează munca nesalvată",
-    "intro": "Open PDF Studio nu s-a închis normal data trecută. Munca nesalvată din aceste documente a fost păstrată:",
+    "intro": "HB PDF Studio nu s-a închis normal data trecută. Munca nesalvată din aceste documente a fost păstrată:",
     "savedAt": "Păstrat la {{time}}",
     "pages": "Pagini: {{count}}",
     "untitled": "Document fără titlu",
@@ -1343,7 +1343,7 @@
     "deleteFailed": "Ștergerea a eșuat: {{error}}",
     "tabLabel": "recuperat",
     "tabTip": "Recuperat după o închidere neașteptată. Salvarea scrie în fișierul original.",
-    "reloadStopped": "Fereastra Open PDF Studio a încetat să funcționeze de mai multe ori la rând și nu mai este reîncărcată automat. Salvați-vă munca și reporniți aplicația."
+    "reloadStopped": "Fereastra HB PDF Studio a încetat să funcționeze de mai multe ori la rând și nu mai este reîncărcată automat. Salvați-vă munca și reporniți aplicația."
   },
   "protectPdf": {
     "title": "Securitatea documentului",
@@ -1919,7 +1919,7 @@
       "routing": "Routing",
       "howToRespond": "Reply to this mail with \"Approved\" or \"Rejected\" and keep {{ref}} in the subject.",
       "howToSign": "Signers: return the signed PDF and keep {{ref}} in the file name.",
-      "disclaimer": "The SHA-256 above identifies the exact document version. This mail was prepared in Open PDF Studio; it is not a legally binding signature service and does not verify identities."
+      "disclaimer": "The SHA-256 above identifies the exact document version. This mail was prepared in HB PDF Studio; it is not a legally binding signature service and does not verify identities."
     },
     "errors": {
       "CONFIGURE_ADAPTER_FIRST": "Enable the provider first.",

@@ -61,7 +61,7 @@ export default function MobileApp() {
   const totalPages = () => state.documents[state.activeDocumentIndex]?.pdfDoc?.numPages || 0;
   const fileName = () => {
     const doc = currentDoc();
-    if (!doc || !doc.filePath) return 'Open PDF Studio';
+    if (!doc || !doc.filePath) return 'HB PDF Studio';
     // Ook voor een content://-URI van Android een leesbare naam.
     return extractFileName(doc.filePath);
   };
@@ -734,7 +734,7 @@ export default function MobileApp() {
       <div class="mobile-drawer-overlay" classList={{ open: drawerOpen() }} onClick={() => setDrawerOpen(false)}>
         <div class="mobile-drawer" classList={{ open: drawerOpen() }} onClick={(e) => e.stopPropagation()}>
           <div class="mobile-drawer-header">
-            <span>Open PDF Studio</span>
+            <span>HB PDF Studio</span>
             <button class="mobile-drawer-close" onClick={() => setDrawerOpen(false)}>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <line x1="18" y1="6" x2="6" y2="18" />

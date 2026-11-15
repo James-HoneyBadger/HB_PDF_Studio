@@ -199,31 +199,14 @@ fn has_profile_extension(path: &Path) -> bool {
         .unwrap_or(false)
 }
 
-/// De systeemmappen voor kleurprofielen op dit besturingssysteem.
+/// De systeemmappen voor kleurprofielen op Linux.
 pub fn system_profile_dirs() -> Vec<PathBuf> {
-    if cfg!(windows) {
-        let windir = std::env::var_os("WINDIR")
-            .or_else(|| std::env::var_os("SystemRoot"))
-            .map(PathBuf::from)
-            .unwrap_or_else(|| PathBuf::from("C:\\Windows"));
-        return vec![windir.join("System32").join("spool").join("drivers").join("color")];
+    let mut dirs = vec![PathBuf::from("/usr/share/color/icc")];
+    if let Some(home) = std::env::var_os("HOME").map(PathBuf::from) {
+        dirs.push(home.join(".local/share/icc"));
+        dirs.push(home.join(".color/icc"));
     }
-    let home = std::env::var_os("HOME").map(PathBuf::from);
-    if cfg!(target_os = "macos") {
-        let mut dirs = vec![PathBuf::from("/Library/ColorSync/Profiles")];
-        if let Some(home) = &home {
-            dirs.push(home.join("Library/ColorSync/Profiles"));
-        }
-        dirs.push(PathBuf::from("/System/Library/ColorSync/Profiles"));
-        dirs
-    } else {
-        let mut dirs = vec![PathBuf::from("/usr/share/color/icc")];
-        if let Some(home) = &home {
-            dirs.push(home.join(".local/share/icc"));
-            dirs.push(home.join(".color/icc"));
-        }
-        dirs
-    }
+    dirs
 }
 
 #[cfg(test)]
@@ -384,13 +367,6 @@ pub(crate) mod tests {
             .iter()
             .map(|d| d.to_string_lossy().replace('\\', "/").to_lowercase())
             .collect();
-        if cfg!(windows) {
-            assert!(dirs.iter().any(|d| d.ends_with("system32/spool/drivers/color")), "{dirs:?}");
-        } else if cfg!(target_os = "macos") {
-            assert!(dirs.contains(&"/library/colorsync/profiles".to_string()), "{dirs:?}");
-            assert!(dirs.contains(&"/system/library/colorsync/profiles".to_string()), "{dirs:?}");
-        } else {
-            assert!(dirs.contains(&"/usr/share/color/icc".to_string()), "{dirs:?}");
-        }
+        assert!(dirs.contains(&"/usr/share/color/icc".to_string()), "{dirs:?}");
     }
 }

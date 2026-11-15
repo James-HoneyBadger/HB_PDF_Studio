@@ -460,7 +460,7 @@
     "extensionsTitle": "Administrer utvidelser",
     "extensions": "Utvidelser",
     "information": "Informasjon",
-    "aboutTitle": "Om Open PDF Studio",
+    "aboutTitle": "Om HB PDF Studio",
     "about": "Om",
     "whatsNewTitle": "Nyheter i denne versjonen",
     "whatsNew": "Nyheter",
@@ -477,7 +477,7 @@
     "fileAssociation": "Filtilknytning",
     "setDefaultPdf": "Angi standard PDF-program",
     "fileAssociations": "Filtilknytninger",
-    "previousVersionTitle": "Installer forrige versjon av Open PDF Studio",
+    "previousVersionTitle": "Installer forrige versjon av HB PDF Studio",
     "previousVersion": "Forrige versjon"
   },
   "format": {

@@ -600,7 +600,7 @@ test('alle locales noemen de virtuele printer bij zijn naam', async () => {
   for (const taal of readdirSync(map)) {
     const tekst = JSON.parse(readFileSync(join(map, taal, 'preferences.json'), 'utf8')).virtualPrinter.description;
     assert.ok(tekst.includes('Open PDF Printer'), `${taal}: naam van de printer ontbreekt`);
-    assert.ok(!tekst.includes('Open PDF Studio'), `${taal}: oude printernaam staat er nog`);
+    assert.ok(!tekst.includes('HB PDF Studio'), `${taal}: oude printernaam staat er nog`);
   }
 });
 

@@ -92,7 +92,6 @@ test('elk manifest noemt de licentie uit LICENSING.md', () => {
   assert.equal(JSON.parse(lees('mcpb/manifest.json')).license, lgpl);
   assert.match(lees('snap/snapcraft.yaml'), /^license: LGPL-3\.0-or-later$/m);
   assert.match(lees('flatpak/org.openaec.OpenPdfStudio.metainfo.xml'), /<project_license>LGPL-3\.0-or-later<\/project_license>/);
-  assert.match(lees('packaging/aur/PKGBUILD'), /^license=\('LGPL-3\.0-or-later'\)$/m);
   assert.match(LICENSING, /Licence of the application \| \*\*LGPL-3\.0-or-later\*\*/);
 });
 

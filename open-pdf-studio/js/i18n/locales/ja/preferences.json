@@ -204,19 +204,19 @@
   "fileAssoc": {
     "defaultPdfApplication": "既定の PDF アプリケーション",
     "currentDefault": "現在の既定：",
-    "setDefault": "Open PDF Studio を既定の PDF ビューアーに設定",
-    "setDefaultHelp": "システム設定が開きます。そこで Open PDF Studio を PDF ファイルを開く既定のアプリケーションとして選択できます。",
-    "windowsInstructions": "Windows 設定が開きました。\n\nOpen PDF Studio を既定に設定するには：\n1. 「ファイルの種類ごとに既定のアプリを選ぶ」まで下にスクロール\n2. .pdf を見つける\n3. クリックして Open PDF Studio を選択",
+    "setDefault": "HB PDF Studio を既定の PDF ビューアーに設定",
+    "setDefaultHelp": "システム設定が開きます。そこで HB PDF Studio を PDF ファイルを開く既定のアプリケーションとして選択できます。",
+    "windowsInstructions": "Windows 設定が開きました。\n\nHB PDF Studio を既定に設定するには：\n1. 「ファイルの種類ごとに既定のアプリを選ぶ」まで下にスクロール\n2. .pdf を見つける\n3. クリックして HB PDF Studio を選択",
     "windowsFailed": "Windows 設定を開けませんでした。\n\n手動で 設定 > アプリ > 既定のアプリ を開いてください。",
-    "macInstructions": "macOS で Open PDF Studio を既定の PDF ビューアーに設定するには：\n\n1. Finder で任意の PDF ファイルを右クリック\n2. 「情報を見る」を選択\n3. 「このアプリケーションで開く」で Open PDF Studio を選択\n4. 「すべてを変更...」をクリック",
-    "linuxInstructions": "Linux で Open PDF Studio を既定の PDF ビューアーに設定するには：\n\nターミナルで実行：\nxdg-mime default openpdfstudio.desktop application/pdf",
+    "macInstructions": "macOS で HB PDF Studio を既定の PDF ビューアーに設定するには：\n\n1. Finder で任意の PDF ファイルを右クリック\n2. 「情報を見る」を選択\n3. 「このアプリケーションで開く」で HB PDF Studio を選択\n4. 「すべてを変更...」をクリック",
+    "linuxInstructions": "Linux で HB PDF Studio を既定の PDF ビューアーに設定するには：\n\nターミナルで実行：\nxdg-mime default openpdfstudio.desktop application/pdf",
     "checkFinder": "Finder > 情報を見る を確認",
     "notSet": "未設定",
     "chosenInSystemSettings": "システム設定で選択",
-    "sandboxInstructions": "Open PDF Studio は {{package}} パッケージとして実行されているため、既定の PDF アプリを自分で変更できません。\n\nシステム設定の「既定のアプリケーション」で Open PDF Studio を選択するか、PDF ファイルを右クリックして「プログラムから開く」を使用してください。",
-    "xdgMimeMissing": "xdg-mime（パッケージ xdg-utils）がインストールされていないため、ここから既定の PDF アプリを設定できません。\n\nxdg-utils をインストールするか、システム設定の「既定のアプリケーション」で Open PDF Studio を選択してください。",
-    "linuxDone": "Open PDF Studio が PDF ファイルの既定のアプリになりました。",
-    "linuxFailed": "Open PDF Studio を既定の PDF アプリに設定できませんでした。\n\n{{error}}"
+    "sandboxInstructions": "HB PDF Studio は {{package}} パッケージとして実行されているため、既定の PDF アプリを自分で変更できません。\n\nシステム設定の「既定のアプリケーション」で HB PDF Studio を選択するか、PDF ファイルを右クリックして「プログラムから開く」を使用してください。",
+    "xdgMimeMissing": "xdg-mime（パッケージ xdg-utils）がインストールされていないため、ここから既定の PDF アプリを設定できません。\n\nxdg-utils をインストールするか、システム設定の「既定のアプリケーション」で HB PDF Studio を選択してください。",
+    "linuxDone": "HB PDF Studio が PDF ファイルの既定のアプリになりました。",
+    "linuxFailed": "HB PDF Studio を既定の PDF アプリに設定できませんでした。\n\n{{error}}"
   },
   "explorerThumbnails": {
     "title": "エクスプローラー",
@@ -226,7 +226,7 @@
     "otherHandler": "現在、PDF のサムネイルは {{name}} によって提供されています。",
     "defaultApp": "既定の PDF アプリが独自のサムネイルを表示します ({{name}})。そのアプリが既定の PDF アプリである間は、Windows はそちらを使用します。",
     "replaceTitle": "PDF のサムネイル",
-    "replaceConfirm": "{{name}} がすでにエクスプローラーで PDF のサムネイルを提供しています。\n\nお使いの Windows アカウントでは、代わりに Open PDF Studio のサムネイルを表示しますか? このオプションをオフにすると、以前のサムネイルに戻ります。",
+    "replaceConfirm": "{{name}} がすでにエクスプローラーで PDF のサムネイルを提供しています。\n\nお使いの Windows アカウントでは、代わりに HB PDF Studio のサムネイルを表示しますか? このオプションをオフにすると、以前のサムネイルに戻ります。",
     "failed": "エクスプローラーのサムネイル設定を変更できませんでした。"
   },
   "virtualPrinter": {
@@ -251,7 +251,7 @@
     "stateUnknownDetail": "プリンターの状態を読み取れませんでした。",
     "howTitle": "使い方",
     "how1": "任意のプログラムで［印刷］を選択し、{{printer}} を選びます。",
-    "how2": "印刷物が Open PDF Studio のプリンターウィンドウに表示されます。",
+    "how2": "印刷物が HB PDF Studio のプリンターウィンドウに表示されます。",
     "how3": "ジョブをプレビュー、並べ替え、結合して 1 つの PDF として保存するか、Studio で開きます。",
     "openWindow": "プリンターウィンドウを開く",
     "openWindowTip": "キャッチした印刷ジョブを表示します"

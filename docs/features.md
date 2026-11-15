@@ -1,9 +1,9 @@
 # Features
 
-The full list of what Open PDF Studio does. The [README](../README.md) gives the
-overview; this page has the detail. Features marked *desktop* need the desktop
-app and are not available in the [browser version](https://open-pdf-studio.open-aec.com/)
-(the list of those is in `open-pdf-studio/js/core/webfuncties.js`).
+The full list of what HB PDF Studio does. The [README](../README.md) gives the
+overview; this page has the detail. Features marked *desktop* need a computer:
+they are not available where the interface runs without the Tauri shell (the
+list of those is in `open-pdf-studio/js/core/webfuncties.js`).
 
 ## Annotations and markup
 
@@ -77,7 +77,6 @@ app and are not available in the [browser version](https://open-pdf-studio.open-
 - Make scanned pages searchable and selectable with an invisible text layer.
 - Current page or the whole document, with automatic language detection or a
   chosen language.
-- The Android build ships without OCR.
 
 ## Digital signatures — *desktop*
 
@@ -168,7 +167,6 @@ app and are not available in the [browser version](https://open-pdf-studio.open-
 - A page perpendicular to the sheet is turned a quarter so that it fills the sheet.
 - Page range, odd or even pages, reverse order, copies and collation.
 - Print the document only, the markups only, or both; print as image.
-- Virtual printer installation on Windows.
 
 ## Export
 
@@ -209,7 +207,7 @@ app and are not available in the [browser version](https://open-pdf-studio.open-
 
 - Native rendering through a multi-process PDFium worker pool, off the UI thread
   and isolated from crashes, with progressive tiles for very large CAD drawings
-  (desktop; the browser and Android versions render with PDF.js).
+  (desktop).
 - View modes: single page, continuous, facing and book, and a split view with
   two panes.
 - Zoom: fit page, fit width, actual size, a custom percentage, and mouse-wheel

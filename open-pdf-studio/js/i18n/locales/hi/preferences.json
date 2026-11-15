@@ -204,19 +204,19 @@
   "fileAssoc": {
     "defaultPdfApplication": "डिफ़ॉल्ट PDF एप्लिकेशन",
     "currentDefault": "वर्तमान डिफ़ॉल्ट:",
-    "setDefault": "Open PDF Studio को डिफ़ॉल्ट PDF व्यूअर के रूप में सेट करें",
-    "setDefaultHelp": "यह आपकी सिस्टम सेटिंग्स खोलेगा जहां आप PDF फ़ाइलें खोलने के लिए Open PDF Studio को डिफ़ॉल्ट एप्लिकेशन के रूप में चुन सकते हैं।",
-    "windowsInstructions": "Windows सेटिंग्स खोली गईं।\n\nOpen PDF Studio को डिफ़ॉल्ट के रूप में सेट करने के लिए:\n1. \"फ़ाइल प्रकार के अनुसार डिफ़ॉल्ट ऐप्स चुनें\" तक स्क्रॉल करें\n2. .pdf खोजें\n3. क्लिक करें और Open PDF Studio चुनें",
+    "setDefault": "HB PDF Studio को डिफ़ॉल्ट PDF व्यूअर के रूप में सेट करें",
+    "setDefaultHelp": "यह आपकी सिस्टम सेटिंग्स खोलेगा जहां आप PDF फ़ाइलें खोलने के लिए HB PDF Studio को डिफ़ॉल्ट एप्लिकेशन के रूप में चुन सकते हैं।",
+    "windowsInstructions": "Windows सेटिंग्स खोली गईं।\n\nHB PDF Studio को डिफ़ॉल्ट के रूप में सेट करने के लिए:\n1. \"फ़ाइल प्रकार के अनुसार डिफ़ॉल्ट ऐप्स चुनें\" तक स्क्रॉल करें\n2. .pdf खोजें\n3. क्लिक करें और HB PDF Studio चुनें",
     "windowsFailed": "Windows सेटिंग्स नहीं खोल सके।\n\nकृपया मैन्युअल रूप से सेटिंग्स > ऐप्स > डिफ़ॉल्ट ऐप्स खोलें।",
-    "macInstructions": "macOS पर Open PDF Studio को डिफ़ॉल्ट PDF व्यूअर के रूप में सेट करने के लिए:\n\n1. Finder में किसी भी PDF फ़ाइल पर राइट-क्लिक करें\n2. \"जानकारी प्राप्त करें\" चुनें\n3. \"इसके साथ खोलें\" के अंतर्गत Open PDF Studio चुनें\n4. \"सभी बदलें...\" पर क्लिक करें",
-    "linuxInstructions": "Linux पर Open PDF Studio को डिफ़ॉल्ट PDF व्यूअर के रूप में सेट करने के लिए:\n\nटर्मिनल में चलाएं:\nxdg-mime default openpdfstudio.desktop application/pdf",
+    "macInstructions": "macOS पर HB PDF Studio को डिफ़ॉल्ट PDF व्यूअर के रूप में सेट करने के लिए:\n\n1. Finder में किसी भी PDF फ़ाइल पर राइट-क्लिक करें\n2. \"जानकारी प्राप्त करें\" चुनें\n3. \"इसके साथ खोलें\" के अंतर्गत HB PDF Studio चुनें\n4. \"सभी बदलें...\" पर क्लिक करें",
+    "linuxInstructions": "Linux पर HB PDF Studio को डिफ़ॉल्ट PDF व्यूअर के रूप में सेट करने के लिए:\n\nटर्मिनल में चलाएं:\nxdg-mime default openpdfstudio.desktop application/pdf",
     "checkFinder": "Finder > जानकारी प्राप्त करें जांचें",
     "notSet": "सेट नहीं है",
     "chosenInSystemSettings": "सिस्टम सेटिंग्स में चुना गया",
-    "sandboxInstructions": "Open PDF Studio एक {{package}} पैकेज के रूप में चल रहा है और डिफ़ॉल्ट PDF ऐप को स्वयं नहीं बदल सकता।\n\nसिस्टम सेटिंग्स में डिफ़ॉल्ट एप्लिकेशन के अंतर्गत Open PDF Studio चुनें, या किसी PDF फ़ाइल पर राइट-क्लिक करके इसके साथ खोलें का उपयोग करें।",
-    "xdgMimeMissing": "xdg-mime (पैकेज xdg-utils) इंस्टॉल नहीं है, इसलिए डिफ़ॉल्ट PDF ऐप यहाँ से सेट नहीं किया जा सकता।\n\nxdg-utils इंस्टॉल करें, या सिस्टम सेटिंग्स में डिफ़ॉल्ट एप्लिकेशन के अंतर्गत Open PDF Studio चुनें।",
-    "linuxDone": "Open PDF Studio अब PDF फ़ाइलों के लिए डिफ़ॉल्ट ऐप है।",
-    "linuxFailed": "Open PDF Studio को डिफ़ॉल्ट PDF ऐप के रूप में सेट नहीं किया जा सका।\n\n{{error}}"
+    "sandboxInstructions": "HB PDF Studio एक {{package}} पैकेज के रूप में चल रहा है और डिफ़ॉल्ट PDF ऐप को स्वयं नहीं बदल सकता।\n\nसिस्टम सेटिंग्स में डिफ़ॉल्ट एप्लिकेशन के अंतर्गत HB PDF Studio चुनें, या किसी PDF फ़ाइल पर राइट-क्लिक करके इसके साथ खोलें का उपयोग करें।",
+    "xdgMimeMissing": "xdg-mime (पैकेज xdg-utils) इंस्टॉल नहीं है, इसलिए डिफ़ॉल्ट PDF ऐप यहाँ से सेट नहीं किया जा सकता।\n\nxdg-utils इंस्टॉल करें, या सिस्टम सेटिंग्स में डिफ़ॉल्ट एप्लिकेशन के अंतर्गत HB PDF Studio चुनें।",
+    "linuxDone": "HB PDF Studio अब PDF फ़ाइलों के लिए डिफ़ॉल्ट ऐप है।",
+    "linuxFailed": "HB PDF Studio को डिफ़ॉल्ट PDF ऐप के रूप में सेट नहीं किया जा सका।\n\n{{error}}"
   },
   "explorerThumbnails": {
     "title": "फ़ाइल एक्सप्लोरर",
@@ -226,7 +226,7 @@
     "otherHandler": "PDF थंबनेल अभी {{name}} द्वारा दिए जा रहे हैं।",
     "defaultApp": "आपका डिफ़ॉल्ट PDF ऐप अपने थंबनेल दिखाता है ({{name}})। जब तक वह ऐप आपका डिफ़ॉल्ट PDF ऐप है, Windows उन्हीं का उपयोग करता है।",
     "replaceTitle": "PDF थंबनेल",
-    "replaceConfirm": "{{name}} पहले से ही फ़ाइल एक्सप्लोरर में PDF थंबनेल देता है।\n\nक्या आपके Windows खाते के लिए उनकी जगह Open PDF Studio के थंबनेल दिखाए जाएँ? यह विकल्प बंद करने पर पिछले थंबनेल वापस आ जाते हैं।",
+    "replaceConfirm": "{{name}} पहले से ही फ़ाइल एक्सप्लोरर में PDF थंबनेल देता है।\n\nक्या आपके Windows खाते के लिए उनकी जगह HB PDF Studio के थंबनेल दिखाए जाएँ? यह विकल्प बंद करने पर पिछले थंबनेल वापस आ जाते हैं।",
     "failed": "फ़ाइल एक्सप्लोरर की थंबनेल सेटिंग नहीं बदली जा सकी।"
   },
   "virtualPrinter": {
@@ -251,7 +251,7 @@
     "stateUnknownDetail": "प्रिंटर की स्थिति पढ़ी नहीं जा सकी।",
     "howTitle": "यह कैसे काम करता है",
     "how1": "किसी भी प्रोग्राम में प्रिंट चुनें और {{printer}} चुनें।",
-    "how2": "प्रिंट Open PDF Studio की प्रिंटर विंडो में दिखाई देता है।",
+    "how2": "प्रिंट HB PDF Studio की प्रिंटर विंडो में दिखाई देता है।",
     "how3": "जॉब का पूर्वावलोकन करें, क्रम बदलें, मर्ज करें और एक PDF के रूप में सहेजें, या उन्हें Studio में खोलें।",
     "openWindow": "प्रिंटर विंडो खोलें",
     "openWindowTip": "कैप्चर किए गए प्रिंट जॉब दिखाएं"

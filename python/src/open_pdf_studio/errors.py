@@ -1,4 +1,4 @@
-"""Exceptions raised by the Open PDF Studio client."""
+"""Exceptions raised by the HB PDF Studio client."""
 
 from __future__ import annotations
 
@@ -10,7 +10,7 @@ class OpenPdfStudioError(Exception):
 
 
 class AppNotFoundError(OpenPdfStudioError):
-    """No Open PDF Studio executable was found to launch."""
+    """No HB PDF Studio executable was found to launch."""
 
 
 class AppLaunchError(OpenPdfStudioError):

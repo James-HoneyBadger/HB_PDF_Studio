@@ -1,4 +1,4 @@
-"""A fake Open PDF Studio MCP server for the tests (no app needed).
+"""A fake HB PDF Studio MCP server for the tests (no app needed).
 
 It speaks the same wire protocol as the app (``src-tauri/src/mcp_server.rs``):
 JSON-RPC 2.0, ``initialize`` / ``tools/list`` / ``tools/call``, tool results as
@@ -247,7 +247,7 @@ def handle(msg, *, app_mode=False):
         params = msg.get("params") or {}
         name = params.get("name", "")
         if name not in KNOWN:
-            return err(-32602, f"tool '{name}' is not available in this Open PDF Studio configuration")
+            return err(-32602, f"tool '{name}' is not available in this HB PDF Studio configuration")
         if app_mode and not READY.is_set():
             time.sleep(0.2)
             return err(-32603, "timed out waiting for the WebView")

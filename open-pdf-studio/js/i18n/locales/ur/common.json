@@ -110,7 +110,7 @@
     "readOnly": {
       "title": "Opened read-only",
       "kenmerk": "{{name}} is read-only: it has the read-only attribute, or you only have read permission on this location.",
-      "in-gebruik": "{{name}} is open in another application or is being synchronized, so Open PDF Studio cannot reserve it.",
+      "in-gebruik": "{{name}} is open in another application or is being synchronized, so HB PDF Studio cannot reserve it.",
       "geweigerd": "{{name}} cannot be reserved: Windows denied it.",
       "mislukt": "{{name}} could not be reserved.",
       "saveAs": "It has been opened read-only. You can make changes; use Save As to save them to another file."
@@ -118,7 +118,7 @@
   },
   "hostOpenFailed": "فائل اسٹوریج سے نہیں پڑھی جا سکی۔ دوبارہ کوشش کریں۔",
   "hostInvalidPdf": "{{name}} درست PDF فائل نہیں ہے اور کھولی نہیں جا سکی۔",
-  "hostNoContact": "Open PDF Studio والا صفحہ جواب نہیں دے رہا، اس لیے فائلیں نہ کھولی جا سکتی ہیں نہ محفوظ کی جا سکتی ہیں۔ صفحہ دوبارہ لوڈ کریں اور دوبارہ کوشش کریں۔",
+  "hostNoContact": "HB PDF Studio والا صفحہ جواب نہیں دے رہا، اس لیے فائلیں نہ کھولی جا سکتی ہیں نہ محفوظ کی جا سکتی ہیں۔ صفحہ دوبارہ لوڈ کریں اور دوبارہ کوشش کریں۔",
   "hostSaveConflict": "اس دوران کسی اور نے یہ فائل محفوظ کر لی۔ آپ کی تبدیلیاں ایک الگ نقل کے طور پر محفوظ کی گئیں: {{name}}۔ آئندہ محفوظ کرنا اسی نقل میں ہوگا۔",
   "hostSaveNotLocked": "یہ فائل آپ کے لیے مخصوص نہیں ہے، اس لیے دوسرے بھی اسے ایک ہی وقت میں بدل سکتے ہیں۔ آپ کی تبدیلیاں نئے ورژن کے طور پر محفوظ ہوتی ہیں؛ کچھ بھی اوور رائٹ نہیں ہوتا۔",
   "hostReadOnlySave": "یہ فائل صرف پڑھنے کے لیے کھولی گئی ہے، اس لیے اس میں تبدیلیاں محفوظ نہیں کی جا سکتیں۔ نقل ڈاؤن لوڈ کرنے کے لیے \"بطور محفوظ کریں\" استعمال کریں۔",
@@ -162,7 +162,7 @@
   "failedToReplacePage": "صفحہ تبدیل کرنے میں ناکامی: {{error}}",
   "failedToMergeFile": "ضم کرنے میں ناکامی: {{file}}\n{{error}}",
   "invalidPageRange": "غلط صفحہ کی حد۔ براہ کرم درست صفحہ نمبر درج کریں۔",
-  "appName": "Open PDF Studio",
+  "appName": "HB PDF Studio",
   "noDocuments": "کوئی PDF منتخب نہیں",
   "noDocumentsHint": "PDF براؤز اور تشریح کرنے کے لیے \"PDF کھولیں\" پر کلک کریں",
   "solid": "ٹھوس",
@@ -350,7 +350,7 @@
     "fileAssoc": "یہ پورٹیبل کاپی Windows میں رجسٹرڈ نہیں ہے۔ اس سے PDF فائلیں کھولنے کے لیے کسی PDF پر رائٹ کلک کریں، Open with > Choose another app منتخب کریں، اور اس فولڈر میں open-pdf-studio.exe چنیں۔",
     "explorerThumbnails": "File Explorer میں PDF کے تھمب نیل صرف انسٹال شدہ ورژن میں دستیاب ہیں۔",
     "virtualPrinter": "ورچوئل پرنٹر صرف انسٹال شدہ ورژن میں دستیاب ہے: اسے ایڈمنسٹریٹر کے حقوق کے ساتھ Windows میں شامل کیا جاتا ہے۔",
-    "notWritable": "Open PDF Studio فولڈر {{dir}} میں نہیں لکھ سکتا، اس لیے اس بار آپ کی ترتیبات آپ کی صارف پروفائل میں محفوظ ہو رہی ہیں۔ پورٹیبل فولڈر کو کسی قابلِ تحریر جگہ پر منتقل کریں، جیسے USB ڈرائیو یا آپ کا Documents فولڈر۔"
+    "notWritable": "HB PDF Studio فولڈر {{dir}} میں نہیں لکھ سکتا، اس لیے اس بار آپ کی ترتیبات آپ کی صارف پروفائل میں محفوظ ہو رہی ہیں۔ پورٹیبل فولڈر کو کسی قابلِ تحریر جگہ پر منتقل کریں، جیسے USB ڈرائیو یا آپ کا Documents فولڈر۔"
   },
   "protectedPdfNoPrint": "اس دستاویز کی اجازتیں پرنٹ کرنے کی اجازت نہیں دیتیں۔",
   "share": {

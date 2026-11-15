@@ -35,7 +35,7 @@
   "printQueue": {
     "toolbarLabel": "打印作业操作",
     "openInStudio": "在 Studio 中打开",
-    "openInStudioTip": "在 Open PDF Studio 中打开所选作业（Enter 或双击）。选择多个作业时将合并为一个文档打开。",
+    "openInStudioTip": "在 HB PDF Studio 中打开所选作业（Enter 或双击）。选择多个作业时将合并为一个文档打开。",
     "mergeSelected": "合并所选…",
     "mergeSelectedTip": "按列表顺序将所选作业合并为一个 PDF 并保存",
     "saveAs": "另存为…",
@@ -75,11 +75,11 @@
     "adding": "正在添加 PDF 文件…",
     "saving": "正在保存…",
     "merging": "正在合并 {{done}}/{{count}}…",
-    "opening": "正在 Open PDF Studio 中打开…",
+    "opening": "正在 HB PDF Studio 中打开…",
     "deleting": "正在删除…",
     "saved": "已另存为 {{name}}",
     "merged": "已合并并另存为 {{name}}",
-    "opened": "已在 Open PDF Studio 中打开",
+    "opened": "已在 HB PDF Studio 中打开",
     "deleted": "已删除：{{count}}",
     "failed": "失败：{{message}}",
     "mergedFileName": "已合并",
@@ -452,7 +452,7 @@
   },
   "update": {
     "title": "软件更新",
-    "newVersionAvailable": "Open PDF Studio 有新版本可用。",
+    "newVersionAvailable": "HB PDF Studio 有新版本可用。",
     "currentVersion": "当前版本：",
     "newVersion": "新版本：",
     "releaseNotes": "版本说明：",
@@ -616,7 +616,7 @@
   },
   "defaultPdfApp": {
     "title": "默认 PDF 应用",
-    "message": "Open PDF Studio 未被设为打开 PDF 文件的默认应用程序。是否要将其设为默认应用？",
+    "message": "HB PDF Studio 未被设为打开 PDF 文件的默认应用程序。是否要将其设为默认应用？",
     "setAsDefault": "设为默认",
     "dontAskAgain": "不再询问",
     "notNow": "暂时不"
@@ -1322,7 +1322,7 @@
   },
   "recovery": {
     "title": "恢复未保存的工作",
-    "intro": "Open PDF Studio 上次没有正常关闭。已为以下文档保留未保存的工作：",
+    "intro": "HB PDF Studio 上次没有正常关闭。已为以下文档保留未保存的工作：",
     "savedAt": "保留于 {{time}}",
     "pages": "页数：{{count}}",
     "untitled": "无标题文档",
@@ -1343,7 +1343,7 @@
     "deleteFailed": "删除失败：{{error}}",
     "tabLabel": "已恢复",
     "tabTip": "在意外关闭后恢复。保存时将写入原始文件。",
-    "reloadStopped": "Open PDF Studio 窗口连续多次停止工作，将不再自动重新加载。请保存您的工作并重新启动应用。"
+    "reloadStopped": "HB PDF Studio 窗口连续多次停止工作，将不再自动重新加载。请保存您的工作并重新启动应用。"
   },
   "protectPdf": {
     "title": "文档安全性",
@@ -1919,7 +1919,7 @@
       "routing": "Routing",
       "howToRespond": "Reply to this mail with \"Approved\" or \"Rejected\" and keep {{ref}} in the subject.",
       "howToSign": "Signers: return the signed PDF and keep {{ref}} in the file name.",
-      "disclaimer": "The SHA-256 above identifies the exact document version. This mail was prepared in Open PDF Studio; it is not a legally binding signature service and does not verify identities."
+      "disclaimer": "The SHA-256 above identifies the exact document version. This mail was prepared in HB PDF Studio; it is not a legally binding signature service and does not verify identities."
     },
     "errors": {
       "CONFIGURE_ADAPTER_FIRST": "Enable the provider first.",

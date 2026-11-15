@@ -110,7 +110,7 @@
     "readOnly": {
       "title": "Opened read-only",
       "kenmerk": "{{name}} is read-only: it has the read-only attribute, or you only have read permission on this location.",
-      "in-gebruik": "{{name}} is open in another application or is being synchronized, so Open PDF Studio cannot reserve it.",
+      "in-gebruik": "{{name}} is open in another application or is being synchronized, so HB PDF Studio cannot reserve it.",
       "geweigerd": "{{name}} cannot be reserved: Windows denied it.",
       "mislukt": "{{name}} could not be reserved.",
       "saveAs": "It has been opened read-only. You can make changes; use Save As to save them to another file."
@@ -118,7 +118,7 @@
   },
   "hostOpenFailed": "Fail tidak dapat dibaca daripada storan. Cuba lagi.",
   "hostInvalidPdf": "{{name}} bukan fail PDF yang sah dan tidak dapat dibuka.",
-  "hostNoContact": "Halaman yang memuatkan Open PDF Studio tidak bertindak balas, jadi fail tidak dapat dibuka atau disimpan. Muat semula halaman dan cuba lagi.",
+  "hostNoContact": "Halaman yang memuatkan HB PDF Studio tidak bertindak balas, jadi fail tidak dapat dibuka atau disimpan. Muat semula halaman dan cuba lagi.",
   "hostSaveConflict": "Orang lain telah menyimpan fail ini sementara itu. Perubahan anda disimpan sebagai salinan berasingan: {{name}}. Simpanan seterusnya akan pergi ke salinan itu.",
   "hostSaveNotLocked": "Fail ini tidak dikhaskan untuk anda, jadi orang lain boleh mengubahnya pada masa yang sama. Perubahan anda disimpan sebagai versi baharu; tiada apa-apa yang ditulis ganti.",
   "hostReadOnlySave": "Fail ini dibuka baca sahaja, jadi perubahan tidak boleh disimpan ke dalamnya. Gunakan Simpan Sebagai untuk memuat turun salinan.",
@@ -162,7 +162,7 @@
   "failedToReplacePage": "Gagal menggantikan halaman: {{error}}",
   "failedToMergeFile": "Gagal menggabungkan: {{file}}\n{{error}}",
   "invalidPageRange": "Julat halaman tidak sah. Sila masukkan nombor halaman yang sah.",
-  "appName": "Open PDF Studio",
+  "appName": "HB PDF Studio",
   "noDocuments": "Tiada PDF Dipilih",
   "noDocumentsHint": "Klik \"Buka PDF\" untuk menyemak imbas dan menganotasi PDF",
   "solid": "Pejal",
@@ -350,7 +350,7 @@
     "fileAssoc": "Salinan mudah alih ini tidak didaftarkan dengan Windows. Untuk membuka fail PDF dengannya, klik kanan pada PDF, pilih Buka dengan > Pilih aplikasi lain, dan pilih open-pdf-studio.exe dalam folder ini.",
     "explorerThumbnails": "Lakaran kecil PDF dalam File Explorer hanya tersedia dalam versi yang dipasang.",
     "virtualPrinter": "Pencetak maya hanya tersedia dalam versi yang dipasang: ia ditambahkan ke Windows dengan hak pentadbir.",
-    "notWritable": "Open PDF Studio tidak dapat menulis ke folder {{dir}}, jadi kali ini tetapan anda disimpan dalam profil pengguna anda. Alihkan folder mudah alih ke lokasi yang boleh ditulis, seperti pemacu USB atau folder Dokumen anda."
+    "notWritable": "HB PDF Studio tidak dapat menulis ke folder {{dir}}, jadi kali ini tetapan anda disimpan dalam profil pengguna anda. Alihkan folder mudah alih ke lokasi yang boleh ditulis, seperti pemacu USB atau folder Dokumen anda."
   },
   "protectedPdfNoPrint": "Kebenaran dokumen ini tidak membenarkan pencetakan.",
   "share": {

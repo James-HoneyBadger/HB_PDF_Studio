@@ -460,7 +460,7 @@
     "extensionsTitle": "Hallitse laajennuksia",
     "extensions": "Laajennukset",
     "information": "Tiedot",
-    "aboutTitle": "Tietoja - Open PDF Studio",
+    "aboutTitle": "Tietoja - HB PDF Studio",
     "about": "Tietoja",
     "whatsNewTitle": "Uutta tässä versiossa",
     "whatsNew": "Uutta",
@@ -477,7 +477,7 @@
     "fileAssociation": "Tiedostoyhteys",
     "setDefaultPdf": "Aseta oletus-PDF-sovellus",
     "fileAssociations": "Tiedostoyhteydet",
-    "previousVersionTitle": "Asenna Open PDF Studion edellinen versio",
+    "previousVersionTitle": "Asenna HB PDF Studion edellinen versio",
     "previousVersion": "Edellinen versio"
   },
   "format": {

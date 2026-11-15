@@ -460,7 +460,7 @@
     "extensionsTitle": "管理扩展",
     "extensions": "扩展",
     "information": "信息",
-    "aboutTitle": "关于 Open PDF Studio",
+    "aboutTitle": "关于 HB PDF Studio",
     "about": "关于",
     "whatsNewTitle": "此版本的新功能",
     "whatsNew": "新功能",
@@ -477,7 +477,7 @@
     "fileAssociation": "文件关联",
     "setDefaultPdf": "设为默认 PDF 应用程序",
     "fileAssociations": "文件关联",
-    "previousVersionTitle": "安装 Open PDF Studio 的上一版本",
+    "previousVersionTitle": "安装 HB PDF Studio 的上一版本",
     "previousVersion": "上一版本"
   },
   "format": {

@@ -753,7 +753,6 @@ mod tests {
         assert!(paths.resolve("verwijzingen\\gevel.dxf", &KINDS).is_some());
         // Alleen de bestandsnaam telt van een absoluut pad van een andere machine.
         assert!(paths.resolve("Z:/projecten/2026/blad.dwg", &KINDS).is_some());
-        assert!(paths.resolve("Z:\\projecten\\2026\\BLAD.DWG", &KINDS).is_some() || cfg!(not(windows)));
         assert!(paths.resolve("geheim.txt", &KINDS).is_none(), "verkeerde soort");
         assert!(paths.resolve("../buiten/elders.dwg", &KINDS).is_none(), "padtraversal");
         assert!(paths.resolve("verwijzingen/../../buiten/elders.dwg", &KINDS).is_none());
@@ -835,26 +834,9 @@ mod tests {
         }
     }
 
-    /// Maakt een koppeling naar een map: eerst een symlink, en waar dat zonder
-    /// rechten niet mag (Windows) een junction. `false` als geen van beide lukt.
+    /// Maakt een koppeling naar een map; `false` als dat niet lukt.
     fn link_dir(target: &Path, link: &Path) -> bool {
-        #[cfg(windows)]
-        {
-            if std::os::windows::fs::symlink_dir(target, link).is_ok() {
-                return true;
-            }
-            std::process::Command::new("cmd")
-                .args(["/C", "mklink", "/J"])
-                .arg(link)
-                .arg(target)
-                .output()
-                .map(|o| o.status.success())
-                .unwrap_or(false)
-        }
-        #[cfg(not(windows))]
-        {
-            std::os::unix::fs::symlink(target, link).is_ok()
-        }
+        std::os::unix::fs::symlink(target, link).is_ok()
     }
 
     #[test]
@@ -877,9 +859,6 @@ mod tests {
         assert!(matches!(chosen.locate("uitweg/elders.dwg", None, &KINDS), Located::Found(_)));
         // Ook een koppeling naar één bestand (als het systeem die toestaat).
         let file_link = root.join("kopie.dwg");
-        #[cfg(windows)]
-        let linked = std::os::windows::fs::symlink_file(buiten.join("elders.dwg"), &file_link).is_ok();
-        #[cfg(not(windows))]
         let linked = std::os::unix::fs::symlink(buiten.join("elders.dwg"), &file_link).is_ok();
         if linked {
             assert_eq!(paths.locate("kopie.dwg", None, &KINDS), Located::Refused);

@@ -204,19 +204,19 @@
   "fileAssoc": {
     "defaultPdfApplication": "Aplicación PDF predeterminada",
     "currentDefault": "Predeterminada actual:",
-    "setDefault": "Establecer Open PDF Studio como visor PDF predeterminado",
-    "setDefaultHelp": "Esto abrirá la configuración del sistema donde puede seleccionar Open PDF Studio como la aplicación predeterminada para abrir archivos PDF.",
-    "windowsInstructions": "Se abrió la Configuración de Windows.\n\nPara establecer Open PDF Studio como predeterminado:\n1. Desplácese hacia abajo hasta \"Elegir aplicaciones predeterminadas por tipo de archivo\"\n2. Busque .pdf\n3. Haga clic y seleccione Open PDF Studio",
+    "setDefault": "Establecer HB PDF Studio como visor PDF predeterminado",
+    "setDefaultHelp": "Esto abrirá la configuración del sistema donde puede seleccionar HB PDF Studio como la aplicación predeterminada para abrir archivos PDF.",
+    "windowsInstructions": "Se abrió la Configuración de Windows.\n\nPara establecer HB PDF Studio como predeterminado:\n1. Desplácese hacia abajo hasta \"Elegir aplicaciones predeterminadas por tipo de archivo\"\n2. Busque .pdf\n3. Haga clic y seleccione HB PDF Studio",
     "windowsFailed": "No se pudo abrir la Configuración de Windows.\n\nAbra manualmente Configuración > Aplicaciones > Aplicaciones predeterminadas.",
-    "macInstructions": "Para establecer Open PDF Studio como visor PDF predeterminado en macOS:\n\n1. Haga clic derecho en cualquier archivo PDF en Finder\n2. Seleccione \"Obtener información\"\n3. En \"Abrir con\", seleccione Open PDF Studio\n4. Haga clic en \"Cambiar todo...\"",
-    "linuxInstructions": "Para establecer Open PDF Studio como visor PDF predeterminado en Linux:\n\nEjecute en la terminal:\nxdg-mime default openpdfstudio.desktop application/pdf",
+    "macInstructions": "Para establecer HB PDF Studio como visor PDF predeterminado en macOS:\n\n1. Haga clic derecho en cualquier archivo PDF en Finder\n2. Seleccione \"Obtener información\"\n3. En \"Abrir con\", seleccione HB PDF Studio\n4. Haga clic en \"Cambiar todo...\"",
+    "linuxInstructions": "Para establecer HB PDF Studio como visor PDF predeterminado en Linux:\n\nEjecute en la terminal:\nxdg-mime default openpdfstudio.desktop application/pdf",
     "checkFinder": "Verificar Finder > Obtener información",
     "notSet": "No establecido",
     "chosenInSystemSettings": "Elegido en la configuración del sistema",
-    "sandboxInstructions": "Open PDF Studio se ejecuta como paquete {{package}} y no puede cambiar por sí mismo la aplicación PDF predeterminada.\n\nElija Open PDF Studio en la configuración del sistema, en Aplicaciones predeterminadas, o haga clic derecho en un archivo PDF y use Abrir con.",
-    "xdgMimeMissing": "xdg-mime (paquete xdg-utils) no está instalado, por lo que la aplicación PDF predeterminada no se puede establecer desde aquí.\n\nInstale xdg-utils o elija Open PDF Studio en la configuración del sistema, en Aplicaciones predeterminadas.",
-    "linuxDone": "Open PDF Studio es ahora la aplicación predeterminada para archivos PDF.",
-    "linuxFailed": "No se pudo establecer Open PDF Studio como aplicación PDF predeterminada.\n\n{{error}}"
+    "sandboxInstructions": "HB PDF Studio se ejecuta como paquete {{package}} y no puede cambiar por sí mismo la aplicación PDF predeterminada.\n\nElija HB PDF Studio en la configuración del sistema, en Aplicaciones predeterminadas, o haga clic derecho en un archivo PDF y use Abrir con.",
+    "xdgMimeMissing": "xdg-mime (paquete xdg-utils) no está instalado, por lo que la aplicación PDF predeterminada no se puede establecer desde aquí.\n\nInstale xdg-utils o elija HB PDF Studio en la configuración del sistema, en Aplicaciones predeterminadas.",
+    "linuxDone": "HB PDF Studio es ahora la aplicación predeterminada para archivos PDF.",
+    "linuxFailed": "No se pudo establecer HB PDF Studio como aplicación PDF predeterminada.\n\n{{error}}"
   },
   "explorerThumbnails": {
     "title": "Explorador de archivos",
@@ -226,7 +226,7 @@
     "otherHandler": "Las miniaturas de PDF las proporciona actualmente {{name}}.",
     "defaultApp": "Su aplicación PDF predeterminada muestra sus propias miniaturas ({{name}}). Windows las usa mientras esa aplicación sea su aplicación PDF predeterminada.",
     "replaceTitle": "Miniaturas de PDF",
-    "replaceConfirm": "{{name}} ya proporciona miniaturas de PDF en el Explorador de archivos.\n\n¿Mostrar en su lugar las miniaturas de Open PDF Studio para su cuenta de Windows? Al desactivar esta opción se restauran las miniaturas anteriores.",
+    "replaceConfirm": "{{name}} ya proporciona miniaturas de PDF en el Explorador de archivos.\n\n¿Mostrar en su lugar las miniaturas de HB PDF Studio para su cuenta de Windows? Al desactivar esta opción se restauran las miniaturas anteriores.",
     "failed": "No se pudo cambiar la configuración de miniaturas del Explorador de archivos."
   },
   "virtualPrinter": {
@@ -251,7 +251,7 @@
     "stateUnknownDetail": "No se pudo leer el estado de la impresora.",
     "howTitle": "Cómo funciona",
     "how1": "En cualquier programa, elija Imprimir y seleccione {{printer}}.",
-    "how2": "La impresión aparece en la ventana de impresora de Open PDF Studio.",
+    "how2": "La impresión aparece en la ventana de impresora de HB PDF Studio.",
     "how3": "Previsualice, reordene, combine y guarde los trabajos como un solo PDF, o ábralos en Studio.",
     "openWindow": "Abrir ventana de impresora",
     "openWindowTip": "Mostrar los trabajos de impresión capturados"

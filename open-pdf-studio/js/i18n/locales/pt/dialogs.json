@@ -35,7 +35,7 @@
   "printQueue": {
     "toolbarLabel": "Ações dos trabalhos de impressão",
     "openInStudio": "Abrir no Studio",
-    "openInStudioTip": "Abrir o trabalho selecionado no Open PDF Studio (Enter ou clique duplo). Vários trabalhos selecionados são abertos como um único documento mesclado.",
+    "openInStudioTip": "Abrir o trabalho selecionado no HB PDF Studio (Enter ou clique duplo). Vários trabalhos selecionados são abertos como um único documento mesclado.",
     "mergeSelected": "Mesclar selecionados…",
     "mergeSelectedTip": "Mesclar os trabalhos selecionados, na ordem da lista, em um único PDF e salvá-lo",
     "saveAs": "Salvar como…",
@@ -75,11 +75,11 @@
     "adding": "Adicionando arquivos PDF…",
     "saving": "Salvando…",
     "merging": "Mesclando {{done}} de {{count}}…",
-    "opening": "Abrindo no Open PDF Studio…",
+    "opening": "Abrindo no HB PDF Studio…",
     "deleting": "Excluindo…",
     "saved": "Salvo como {{name}}",
     "merged": "Mesclado e salvo como {{name}}",
-    "opened": "Aberto no Open PDF Studio",
+    "opened": "Aberto no HB PDF Studio",
     "deleted": "Excluídos: {{count}}",
     "failed": "Falha: {{message}}",
     "mergedFileName": "Mesclado",
@@ -452,7 +452,7 @@
   },
   "update": {
     "title": "Atualização de software",
-    "newVersionAvailable": "Uma nova versão do Open PDF Studio está disponível.",
+    "newVersionAvailable": "Uma nova versão do HB PDF Studio está disponível.",
     "currentVersion": "Versão atual:",
     "newVersion": "Nova versão:",
     "releaseNotes": "Notas da versão:",
@@ -616,7 +616,7 @@
   },
   "defaultPdfApp": {
     "title": "Aplicativo PDF padrão",
-    "message": "O Open PDF Studio não está definido como o aplicativo padrão para abrir arquivos PDF. Deseja defini-lo como padrão?",
+    "message": "O HB PDF Studio não está definido como o aplicativo padrão para abrir arquivos PDF. Deseja defini-lo como padrão?",
     "setAsDefault": "Definir como padrão",
     "dontAskAgain": "Não perguntar novamente",
     "notNow": "Agora não"
@@ -1322,7 +1322,7 @@
   },
   "recovery": {
     "title": "Recuperar trabalho não salvo",
-    "intro": "O Open PDF Studio não foi fechado normalmente da última vez. O trabalho não salvo destes documentos foi preservado:",
+    "intro": "O HB PDF Studio não foi fechado normalmente da última vez. O trabalho não salvo destes documentos foi preservado:",
     "savedAt": "Preservado em {{time}}",
     "pages": "Páginas: {{count}}",
     "untitled": "Documento sem título",
@@ -1343,7 +1343,7 @@
     "deleteFailed": "Falha ao excluir: {{error}}",
     "tabLabel": "recuperado",
     "tabTip": "Recuperado após um encerramento inesperado. Salvar grava no arquivo original.",
-    "reloadStopped": "A janela do Open PDF Studio parou de funcionar várias vezes seguidas e não é mais recarregada automaticamente. Salve seu trabalho e reinicie o aplicativo."
+    "reloadStopped": "A janela do HB PDF Studio parou de funcionar várias vezes seguidas e não é mais recarregada automaticamente. Salve seu trabalho e reinicie o aplicativo."
   },
   "protectPdf": {
     "title": "Segurança do documento",
@@ -1919,7 +1919,7 @@
       "routing": "Routing",
       "howToRespond": "Reply to this mail with \"Approved\" or \"Rejected\" and keep {{ref}} in the subject.",
       "howToSign": "Signers: return the signed PDF and keep {{ref}} in the file name.",
-      "disclaimer": "The SHA-256 above identifies the exact document version. This mail was prepared in Open PDF Studio; it is not a legally binding signature service and does not verify identities."
+      "disclaimer": "The SHA-256 above identifies the exact document version. This mail was prepared in HB PDF Studio; it is not a legally binding signature service and does not verify identities."
     },
     "errors": {
       "CONFIGURE_ADAPTER_FIRST": "Enable the provider first.",

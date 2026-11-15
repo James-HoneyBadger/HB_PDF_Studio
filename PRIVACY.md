@@ -1,6 +1,6 @@
 # Privacy
 
-Open PDF Studio is a desktop application that works on your files, on your
+HB PDF Studio is a desktop application that works on your files, on your
 computer. This page lists everything the app sends over the network, what it
 writes into your files, and how you can check both yourself.
 

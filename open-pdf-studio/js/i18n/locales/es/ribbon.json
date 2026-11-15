@@ -460,7 +460,7 @@
     "extensionsTitle": "Gestionar extensiones",
     "extensions": "Extensiones",
     "information": "Información",
-    "aboutTitle": "Acerca de Open PDF Studio",
+    "aboutTitle": "Acerca de HB PDF Studio",
     "about": "Acerca de",
     "whatsNewTitle": "Novedades de esta versión",
     "whatsNew": "Novedades",
@@ -477,7 +477,7 @@
     "fileAssociation": "Asociación de archivos",
     "setDefaultPdf": "Establecer aplicación PDF predeterminada",
     "fileAssociations": "Asociaciones de archivos",
-    "previousVersionTitle": "Instalar la versión anterior de Open PDF Studio",
+    "previousVersionTitle": "Instalar la versión anterior de HB PDF Studio",
     "previousVersion": "Versión anterior"
   },
   "format": {

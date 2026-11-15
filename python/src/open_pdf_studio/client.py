@@ -69,7 +69,7 @@ class Tools(ToolMethods):
 
 
 class Client:
-    """A connection to one Open PDF Studio MCP server.
+    """A connection to one HB PDF Studio MCP server.
 
     Use :func:`connect` (running app), :func:`launch` (own headless instance)
     or :func:`connect_stdio` (any MCP stdio server) instead of constructing
@@ -145,7 +145,7 @@ class Client:
     def require_tool(self, name: str, what: str) -> None:
         if not self.has_tool(name):
             raise UnsupportedOperationError(
-                f"{what} needs the MCP tool '{name}', which this Open PDF Studio does not offer yet "
+                f"{what} needs the MCP tool '{name}', which this HB PDF Studio does not offer yet "
                 "(see docs/python-library.md, 'Missing tools')."
             )
 
@@ -197,7 +197,7 @@ def _version() -> str:
 
 
 def connect(port: Optional[int] = None, *, host: str = "127.0.0.1", timeout: float = 120.0) -> Client:
-    """Connect to a running Open PDF Studio (Settings > General > AI link (MCP)).
+    """Connect to a running HB PDF Studio (Settings > General > AI link (MCP)).
 
     The port defaults to ``OPS_MCP_PORT`` or 9223, as for the stdio bridge.
     """

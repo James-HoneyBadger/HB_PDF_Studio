@@ -177,8 +177,6 @@ function versievelden(basis = repoRoot) {
     { pad: 'open-pdf-render/Cargo.lock', ...cargoLock(crates) },
     // Independent native print harness: keep its version aligned without
     // making it a member of the application workspace.
-    { pad: 'open-pdf-studio/scripts/print-native-tests/Cargo.toml', ...cargoPakketVersie },
-    { pad: 'open-pdf-studio/scripts/print-native-tests/Cargo.lock', ...cargoLock([{ naam: 'print-native-tests' }]) },
     // De stdio-brug meldt deze versie als serverInfo.version.
     { pad: 'mcp-stdio/package.json', ...jsonVersie },
     // De Python-bibliotheek (#518) krijgt het appnummer.
@@ -210,33 +208,15 @@ function versievelden(basis = repoRoot) {
   ];
 }
 
-// Pakketrecepten die een AL GEPUBLICEERDE release inpakken, met de hash van
-// die download. Ze lopen bewust een release achter en worden na de release
-// bijgewerkt (flake.nix met scripts/nix-flake-bijwerken.mjs, PKGBUILD en
-// .SRCINFO met de hand); bump-version raakt ze niet aan. Ze volgen wel het
-// schema.
-const GEPUBLICEERDE_RELEASES = [
-  {
-    pad: 'flake.nix',
-    lees: (tekst) => [...tekst.matchAll(/^\s*version = "([^"]*)";/gm)].map((m) => m[1]),
-  },
-  {
-    pad: 'packaging/aur/PKGBUILD',
-    lees: (tekst) => [...tekst.matchAll(/^pkgver=(.*?)\s*$/gm)].map((m) => m[1]),
-  },
-];
-
 function leesBestand(basis, pad) {
   return fs.readFileSync(path.join(basis, pad), 'utf-8');
 }
 
 // Leest alle versievelden. fouten: een veld dat ontbreekt, niet aan het schema
 // voldoet of afwijkt van package.json (of, met verwacht, van de tag).
-// pinFouten: een gepubliceerde-releasepin die niet aan het schema voldoet.
 function controleer({ basis = repoRoot, verwacht } = {}) {
   const lees = (veld) => ({ pad: veld.pad, versies: veld.lees(leesBestand(basis, veld.pad)) });
   const velden = versievelden(basis).map(lees);
-  const pins = GEPUBLICEERDE_RELEASES.map(lees);
   const versie = verwacht ?? velden[0].versies[0];
   const fouten = [];
   if (!isGeldigeVersie(versie)) fouten.push(`version "${versie}" does not follow YYYY.W.N`);
@@ -244,12 +224,7 @@ function controleer({ basis = repoRoot, verwacht } = {}) {
     if (versies.length === 0) fouten.push(`${pad}: no version field found`);
     for (const v of versies) if (v !== versie) fouten.push(`${pad}: ${v} (expected ${versie})`);
   }
-  const pinFouten = [];
-  for (const { pad, versies } of pins) {
-    if (versies.length === 0) pinFouten.push(`${pad}: no version field found`);
-    for (const v of versies) if (!isGeldigeVersie(v)) pinFouten.push(`${pad}: ${v} does not follow YYYY.W.N`);
-  }
-  return { versie, velden, pins, fouten, pinFouten };
+  return { versie, velden, fouten };
 }
 
 function zetVersie(versie, { basis = repoRoot, log = console.log } = {}) {
@@ -284,9 +259,8 @@ function hoofd(args) {
   if (args[0] === '--check') {
     const tag = args[1];
     if (tag !== undefined && !isGeldigeTag(tag)) return ongeldig(tag, 'tag');
-    const { versie, velden, pins, fouten, pinFouten } = controleer({ verwacht: tag?.slice(1) });
-    for (const { pad, versies } of [...velden, ...pins]) console.log(`  ${versies.join(', ') || '-'}  ${pad}`);
-    for (const f of pinFouten) console.warn(`  WARNING: ${f}`);
+    const { versie, velden, fouten } = controleer({ verwacht: tag?.slice(1) });
+    for (const { pad, versies } of velden) console.log(`  ${versies.join(', ') || '-'}  ${pad}`);
     if (fouten.length) {
       console.error(`\nVersion fields do not match ${tag ?? versie}:\n  ${fouten.join('\n  ')}`);
       console.error('Set them with: node open-pdf-studio/scripts/bump-version.js <YYYY.W.N>');
@@ -324,7 +298,6 @@ module.exports = {
   isGeldigeTag,
   workspaceCrates,
   versievelden,
-  GEPUBLICEERDE_RELEASES,
   metainfoRelease,
   controleer,
   zetVersie,

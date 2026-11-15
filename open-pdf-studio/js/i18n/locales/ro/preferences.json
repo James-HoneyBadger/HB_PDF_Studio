@@ -204,19 +204,19 @@
   "fileAssoc": {
     "defaultPdfApplication": "Aplicatie PDF implicita",
     "currentDefault": "Aplicatia implicita curenta:",
-    "setDefault": "Setare Open PDF Studio ca vizualizator PDF implicit",
-    "setDefaultHelp": "Aceasta va deschide setarile sistemului unde puteti selecta Open PDF Studio ca aplicatia implicita pentru deschiderea fisierelor PDF.",
-    "windowsInstructions": "Setarile Windows au fost deschise.\n\nPentru a seta Open PDF Studio ca implicit:\n1. Derulati in jos la \"Alegeti aplicatiile implicite dupa tipul de fisier\"\n2. Gasiti .pdf\n3. Faceti clic si selectati Open PDF Studio",
+    "setDefault": "Setare HB PDF Studio ca vizualizator PDF implicit",
+    "setDefaultHelp": "Aceasta va deschide setarile sistemului unde puteti selecta HB PDF Studio ca aplicatia implicita pentru deschiderea fisierelor PDF.",
+    "windowsInstructions": "Setarile Windows au fost deschise.\n\nPentru a seta HB PDF Studio ca implicit:\n1. Derulati in jos la \"Alegeti aplicatiile implicite dupa tipul de fisier\"\n2. Gasiti .pdf\n3. Faceti clic si selectati HB PDF Studio",
     "windowsFailed": "Nu s-au putut deschide Setarile Windows.\n\nDeschideti manual Setari > Aplicatii > Aplicatii implicite.",
-    "macInstructions": "Pentru a seta Open PDF Studio ca vizualizator PDF implicit pe macOS:\n\n1. Faceti clic dreapta pe orice fisier PDF in Finder\n2. Selectati \"Informatii\"\n3. La \"Deschide cu\", selectati Open PDF Studio\n4. Faceti clic pe \"Schimba tot...\"",
-    "linuxInstructions": "Pentru a seta Open PDF Studio ca vizualizator PDF implicit pe Linux:\n\nRulati in terminal:\nxdg-mime default openpdfstudio.desktop application/pdf",
+    "macInstructions": "Pentru a seta HB PDF Studio ca vizualizator PDF implicit pe macOS:\n\n1. Faceti clic dreapta pe orice fisier PDF in Finder\n2. Selectati \"Informatii\"\n3. La \"Deschide cu\", selectati HB PDF Studio\n4. Faceti clic pe \"Schimba tot...\"",
+    "linuxInstructions": "Pentru a seta HB PDF Studio ca vizualizator PDF implicit pe Linux:\n\nRulati in terminal:\nxdg-mime default openpdfstudio.desktop application/pdf",
     "checkFinder": "Verificati Finder > Informatii",
     "notSet": "Nesetat",
     "chosenInSystemSettings": "Ales în setările sistemului",
-    "sandboxInstructions": "Open PDF Studio rulează ca pachet {{package}} și nu poate schimba singur aplicația PDF implicită.\n\nAlegeți Open PDF Studio în setările sistemului, la Aplicații implicite, sau faceți clic dreapta pe un fișier PDF și folosiți Deschide cu.",
-    "xdgMimeMissing": "xdg-mime (pachetul xdg-utils) nu este instalat, deci aplicația PDF implicită nu poate fi setată de aici.\n\nInstalați xdg-utils sau alegeți Open PDF Studio în setările sistemului, la Aplicații implicite.",
-    "linuxDone": "Open PDF Studio este acum aplicația implicită pentru fișierele PDF.",
-    "linuxFailed": "Open PDF Studio nu a putut fi setat ca aplicație PDF implicită.\n\n{{error}}"
+    "sandboxInstructions": "HB PDF Studio rulează ca pachet {{package}} și nu poate schimba singur aplicația PDF implicită.\n\nAlegeți HB PDF Studio în setările sistemului, la Aplicații implicite, sau faceți clic dreapta pe un fișier PDF și folosiți Deschide cu.",
+    "xdgMimeMissing": "xdg-mime (pachetul xdg-utils) nu este instalat, deci aplicația PDF implicită nu poate fi setată de aici.\n\nInstalați xdg-utils sau alegeți HB PDF Studio în setările sistemului, la Aplicații implicite.",
+    "linuxDone": "HB PDF Studio este acum aplicația implicită pentru fișierele PDF.",
+    "linuxFailed": "HB PDF Studio nu a putut fi setat ca aplicație PDF implicită.\n\n{{error}}"
   },
   "explorerThumbnails": {
     "title": "Explorer de fișiere",
@@ -226,7 +226,7 @@
     "otherHandler": "Miniaturile PDF sunt furnizate în prezent de {{name}}.",
     "defaultApp": "Aplicația PDF implicită afișează propriile miniaturi ({{name}}). Windows le folosește cât timp acea aplicație rămâne aplicația PDF implicită.",
     "replaceTitle": "Miniaturi PDF",
-    "replaceConfirm": "{{name}} furnizează deja miniaturi PDF în Explorer de fișiere.\n\nAfișați în schimb miniaturile Open PDF Studio pentru contul dvs. Windows? Dezactivarea acestei opțiuni restabilește miniaturile anterioare.",
+    "replaceConfirm": "{{name}} furnizează deja miniaturi PDF în Explorer de fișiere.\n\nAfișați în schimb miniaturile HB PDF Studio pentru contul dvs. Windows? Dezactivarea acestei opțiuni restabilește miniaturile anterioare.",
     "failed": "Setarea miniaturilor din Explorer de fișiere nu a putut fi modificată."
   },
   "virtualPrinter": {
@@ -251,7 +251,7 @@
     "stateUnknownDetail": "Starea imprimantei nu a putut fi citită.",
     "howTitle": "Cum funcționează",
     "how1": "În orice program alegeți Tipărire și selectați {{printer}}.",
-    "how2": "Tipărirea apare în fereastra de imprimantă din Open PDF Studio.",
+    "how2": "Tipărirea apare în fereastra de imprimantă din HB PDF Studio.",
     "how3": "Previzualizați, reordonați, îmbinați și salvați lucrările ca un singur PDF sau deschideți-le în Studio.",
     "openWindow": "Deschidere fereastră imprimantă",
     "openWindowTip": "Afișează lucrările de tipărire capturate"

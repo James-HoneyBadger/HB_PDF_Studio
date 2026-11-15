@@ -223,7 +223,7 @@ function bytesUit(waarde) {
 // Engels als er geen vertaling is meegegeven (zoals in de tests).
 const STANDAARD_TEKSTEN = {
   hostOpenFailed: 'The file could not be read from storage. Try again.',
-  hostNoContact: 'The page around Open PDF Studio does not respond, so files cannot be opened or saved. Reload the page and try again.',
+  hostNoContact: 'The page around HB PDF Studio does not respond, so files cannot be opened or saved. Reload the page and try again.',
   hostVersionInvalid: 'This version of the file cannot be opened: the version number is not valid.',
   hostVersionReadOnlyRefused: 'The site did not save the file: an older version of it is open read-only. Open the current version again to save, or use Save As to download a copy.',
 };

@@ -174,7 +174,6 @@ js/pdf/progressive-view-guard.test.mjs
 js/pdf/print-pagina-instelling.test.mjs
 js/pdf/print-papier.test.mjs
 js/pdf/print-formulieren.test.mjs
-js/pdf/print-plan-bron.test.mjs
 js/pdf/getoonde-pagina.test.mjs
 js/tools/middelmuis-pan-beleid.test.mjs
 js/tools/middelmuis-dubbelklik.test.mjs
@@ -313,9 +312,6 @@ js/annotations/annotatie-lagen-mcp.test.mjs
 js/annotations/vector-snippet-preview.test.mjs
 js/annotations/stempel-herteken.test.mjs
 js/pdf/pdfjs-record.test.mjs
-js/core/opstart-processen.test.mjs
-js/pdf/printerlijst-bron.test.mjs
-js/pdf/printerlijst-afnemers.test.mjs
 js/pdf/wiel-scroll.test.mjs
 js/pdf/saver/text-markup-dict.test.mjs
 js/text/leesrichting.test.mjs
@@ -347,7 +343,6 @@ js/pdf/weergave-per-document.test.mjs
 js/ui/chrome/tab-sneltoets-koppeling.test.mjs
 js/ui/chrome/weergave-tabs-model.test.mjs
 js/pdf/pagina-sneltoets.test.mjs
-scripts/nix-flake-bijwerken.test.mjs
 scripts/flatpak-flathub.test.mjs
 js/pdf/schermkalibratie.test.mjs
 js/pdf/schermkalibratie-i18n.test.mjs
@@ -449,7 +444,6 @@ scripts/pdfjs-form-xobject-cache.test.mjs
 scripts/pdfjs-knockout-bounds.test.mjs
 scripts/pdfium-runtime.test.mjs
 scripts/oude-webview-pdfjs.test.mjs
-scripts/android-config.test.mjs
 js/core/fout-bericht.test.mjs
 js/core/bestandsnaam.test.mjs
 js/mobile/ipc-wekker.test.mjs
@@ -483,14 +477,8 @@ js/pdf/print-huidige-weergave.test.mjs
 js/pdf/print-flyer.test.mjs
 js/pdf/print-katern.test.mjs
 js/pdf/print-boekje-opties.test.mjs
-js/solid/stores/print-queue-model.test.mjs
-js/solid/stores/print-queue-startup.test.mjs
-js/solid/stores/print-queue-presented.test.mjs
-js/solid/components/print-queue-i18n.test.mjs
 js/ui/chrome/tab-losmaken.test.mjs
 js/core/instantie-rol.test.mjs
-js/core/verkenner-miniaturen.test.mjs
-js/i18n/verkenner-miniaturen-i18n.test.mjs
 js/annotations/callout-koppen.test.mjs
 js/pdf/callout-koppen-rondgang.test.mjs
 js/tools/callout-plaatsing.test.mjs
@@ -736,7 +724,6 @@ js/pdf/shx-text.test.mjs
 # Draagbare Windows-versie (#881)
 js/core/draagbaar.test.mjs
 js/i18n/draagbaar-i18n.test.mjs
-scripts/draagbare-zip.test.mjs
 # Bijwerken via de OpenAEC Installer
 js/ui/chrome/installer-update.test.mjs
 js/pdf/annotatie-uitsnede.test.mjs
@@ -764,7 +751,6 @@ js/annotations/tekstmarkering-mcp.test.mjs
 js/text/tekst-markeren.test.mjs
 js/tools/highlight-mode-bedrading.test.mjs
 js/pdf/page-scale-geometry.test.mjs
-scripts/winget-manifest.test.mjs
 js/core/maat-notatie.test.mjs
 js/annotations/schaalcontrole.test.mjs
 js/annotations/schaalcontrole-i18n.test.mjs
@@ -776,8 +762,6 @@ js/review/shared-review-xfdf.test.mjs
 js/review/shared-review-wiring.test.mjs
 js/pdf/pdfa/pdfa.test.mjs
 js/core/shell-acties-logica.test.mjs
-js/core/shell-acties-installer.test.mjs
-js/core/shell-acties-bedrading.test.mjs
 js/core/werkruimte.test.mjs
 js/plugins/extension-catalog.test.mjs
 js/pdf/delen-keuze.test.mjs

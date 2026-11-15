@@ -18,13 +18,13 @@ voorwaarden van de bibliotheek.
 
 ## Antwoorden
 
-**Naam:** Open PDF Studio
+**Naam:** HB PDF Studio
 
 **Tagline (max. 55 tekens):** Measure and annotate PDF drawings (43)
 
 **Beschrijving:**
 
-> Open PDF Studio is a free, open-source PDF editor for the construction
+> HB PDF Studio is a free, open-source PDF editor for the construction
 > industry. With this extension Claude works in the drawing itself: opening
 > files, reading and navigating pages, placing scale regions, measuring areas
 > and lengths, creating and editing annotations, cutting a detail from one
@@ -50,7 +50,7 @@ het gaat om documenten en technische tekeningen)
 3. Een tekening klaarmaken voor uitgifte: bladhoofd invullen, revisiewolken en
    notities plaatsen, opslaan.
 
-**Wat de gebruiker vooraf nodig heeft:** Open PDF Studio geïnstalleerd (gratis,
+**Wat de gebruiker vooraf nodig heeft:** HB PDF Studio geïnstalleerd (gratis,
 Windows, macOS, Linux); de AI-koppeling staat standaard aan (controleer
 Instellingen › Algemeen).
 Geen account, geen abonnement, geen sleutel.
@@ -66,7 +66,7 @@ app aangezet.
 computer van de gebruiker.
 
 **Testinstructies voor de beoordelaar:**
-1. Installeer Open PDF Studio van <https://open-aec.com/open-pdf-studio/#download>
+1. Installeer HB PDF Studio van <https://open-aec.com/open-pdf-studio/#download>
    (Windows, macOS of Linux; geen account nodig).
 2. Start de app; de AI-koppeling staat standaard aan. Controleer **Settings >
    General > AI link (MCP)**: de statusregel toont *Active on 127.0.0.1:9223*.

@@ -1,6 +1,6 @@
 # Proof of Concept Onderzoeksprogramma
 
-> **Doel:** valideer empirisch welke architectuur-elementen voor Open PDF Studio's render-pijplijn echt de impact hebben die het parlement op 12 mei 2026 vermoedde. Geen architectuurkeuze tot na meting.
+> **Doel:** valideer empirisch welke architectuur-elementen voor HB PDF Studio's render-pijplijn echt de impact hebben die het parlement op 12 mei 2026 vermoedde. Geen architectuurkeuze tot na meting.
 
 ## Achtergrond
 

@@ -35,7 +35,7 @@
   "printQueue": {
     "toolbarLabel": "인쇄 작업 동작",
     "openInStudio": "Studio에서 열기",
-    "openInStudioTip": "선택한 작업을 Open PDF Studio에서 엽니다(Enter 또는 두 번 클릭). 여러 작업을 선택하면 하나의 병합된 문서로 열립니다.",
+    "openInStudioTip": "선택한 작업을 HB PDF Studio에서 엽니다(Enter 또는 두 번 클릭). 여러 작업을 선택하면 하나의 병합된 문서로 열립니다.",
     "mergeSelected": "선택 항목 병합…",
     "mergeSelectedTip": "선택한 작업을 목록 순서대로 하나의 PDF로 병합하여 저장합니다",
     "saveAs": "다른 이름으로 저장…",
@@ -75,11 +75,11 @@
     "adding": "PDF 파일을 추가하는 중…",
     "saving": "저장 중…",
     "merging": "병합 중 {{done}} / {{count}}…",
-    "opening": "Open PDF Studio에서 여는 중…",
+    "opening": "HB PDF Studio에서 여는 중…",
     "deleting": "삭제 중…",
     "saved": "{{name}}(으)로 저장됨",
     "merged": "병합하여 {{name}}(으)로 저장됨",
-    "opened": "Open PDF Studio에서 열림",
+    "opened": "HB PDF Studio에서 열림",
     "deleted": "삭제됨: {{count}}",
     "failed": "실패: {{message}}",
     "mergedFileName": "병합됨",
@@ -452,7 +452,7 @@
   },
   "update": {
     "title": "소프트웨어 업데이트",
-    "newVersionAvailable": "Open PDF Studio의 새 버전을 사용할 수 있습니다.",
+    "newVersionAvailable": "HB PDF Studio의 새 버전을 사용할 수 있습니다.",
     "currentVersion": "현재 버전:",
     "newVersion": "새 버전:",
     "releaseNotes": "릴리스 정보:",
@@ -616,7 +616,7 @@
   },
   "defaultPdfApp": {
     "title": "기본 PDF 앱",
-    "message": "Open PDF Studio가 PDF 파일을 여는 기본 앱으로 설정되어 있지 않습니다. 기본 앱으로 설정하시겠습니까?",
+    "message": "HB PDF Studio가 PDF 파일을 여는 기본 앱으로 설정되어 있지 않습니다. 기본 앱으로 설정하시겠습니까?",
     "setAsDefault": "기본값으로 설정",
     "dontAskAgain": "다시 묻지 않음",
     "notNow": "나중에"
@@ -1322,7 +1322,7 @@
   },
   "recovery": {
     "title": "저장하지 않은 작업 복구",
-    "intro": "지난번에 Open PDF Studio가 정상적으로 종료되지 않았습니다. 다음 문서의 저장하지 않은 작업이 보관되어 있습니다:",
+    "intro": "지난번에 HB PDF Studio가 정상적으로 종료되지 않았습니다. 다음 문서의 저장하지 않은 작업이 보관되어 있습니다:",
     "savedAt": "보관 시각: {{time}}",
     "pages": "페이지: {{count}}",
     "untitled": "제목 없는 문서",
@@ -1343,7 +1343,7 @@
     "deleteFailed": "삭제하지 못했습니다: {{error}}",
     "tabLabel": "복구됨",
     "tabTip": "예기치 않은 종료 후 복구되었습니다. 저장하면 원본 파일에 기록됩니다.",
-    "reloadStopped": "Open PDF Studio 창이 여러 번 연속으로 작동을 멈춰 더 이상 자동으로 다시 로드되지 않습니다. 작업을 저장하고 앱을 다시 시작하세요."
+    "reloadStopped": "HB PDF Studio 창이 여러 번 연속으로 작동을 멈춰 더 이상 자동으로 다시 로드되지 않습니다. 작업을 저장하고 앱을 다시 시작하세요."
   },
   "protectPdf": {
     "title": "문서 보안",
@@ -1919,7 +1919,7 @@
       "routing": "Routing",
       "howToRespond": "Reply to this mail with \"Approved\" or \"Rejected\" and keep {{ref}} in the subject.",
       "howToSign": "Signers: return the signed PDF and keep {{ref}} in the file name.",
-      "disclaimer": "The SHA-256 above identifies the exact document version. This mail was prepared in Open PDF Studio; it is not a legally binding signature service and does not verify identities."
+      "disclaimer": "The SHA-256 above identifies the exact document version. This mail was prepared in HB PDF Studio; it is not a legally binding signature service and does not verify identities."
     },
     "errors": {
       "CONFIGURE_ADAPTER_FIRST": "Enable the provider first.",

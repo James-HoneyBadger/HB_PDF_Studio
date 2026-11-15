@@ -35,7 +35,6 @@ pub mod verscherpen;
 pub mod symbool_zoeken;
 pub mod openaec_omgeving;
 // OCR (Tesseract) is desktop only; Android has no Tesseract build.
-#[cfg(not(target_os = "android"))]
 pub mod ocr;
 pub mod pdfium_renderer;
 pub mod pdfx_cmyk;
@@ -44,47 +43,29 @@ pub mod headless;
 pub mod herstel;
 pub mod laagweergave;
 pub mod instantie;
-pub mod print_formulieren;
+pub mod papierformaten;
 pub mod print_instelling;
 pub mod print_duplex;
 pub mod print_plaatsing;
-// Beslissingen van de Windows-printkern per opdracht (issue 699), puur.
-pub mod print_plan;
-// DEVMODE-hulp, de printerlijst uit de spooler en de GDI-printkern: alleen
-// Windows.
-#[cfg(target_os = "windows")]
-pub mod print_devmode;
-#[cfg(target_os = "windows")]
-pub mod print_lijst;
-// Of de app de standaard-PDF-app is: het Windows-register, of xdg-mime en
-// de sandbox-status op Linux.
+// Of de app de standaard-PDF-app is: xdg-mime en de sandbox-status.
 pub mod standaard_app;
-// Printen op Linux: rechtstreeks met CUPS via IPP, met lp/lpstat en het
-// printportaal als terugval (print_unix.rs). macOS houdt lp/lpstat in lib.rs.
-#[cfg(any(target_os = "linux", test))]
+// Printen: rechtstreeks met CUPS via IPP, met lp/lpstat en het printportaal
+// als terugval (print_unix.rs).
 pub mod cups_ipp;
-#[cfg(any(target_os = "linux", test))]
 pub mod print_unix;
-#[cfg(target_os = "windows")]
-pub mod print_windows;
 pub mod render_to_png;
 pub mod spraak;
-// Scanner input (#382): WIA on Windows, SANE elsewhere on Unix.
+// Scanner input (#382): SANE.
 pub mod scanner;
 #[cfg_attr(not(target_os = "windows"), allow(dead_code))]
 pub mod scanner_cmd;
 pub mod shared_review;
 pub mod central_review_transport;
 pub mod central_review;
-// Miniaturen van PDF's in Windows Verkenner (#605); buiten Windows niet beschikbaar.
-pub mod verkenner_acties;
-pub mod verkenner_miniaturen;
 pub mod window_mgmt;
 pub mod startup_diagnostics;
 mod startup_visibility;
 mod startup_window;
-// Vensteropname voor app_screenshot_view (#583); buiten Windows een nette fout.
-pub mod webview_opname;
 pub mod worker_pool;
 
 pub struct StartupOpts {
@@ -250,17 +231,11 @@ fn load_preferences() -> Option<String> {
 /// of de instelling is doorgegeven.
 #[tauri::command]
 fn zet_vloeiend_scrollen(app: tauri::AppHandle, aan: bool) -> bool {
-    #[cfg(target_os = "linux")]
     {
         for venster in app.webview_windows().values() {
             linux_runtime::zet_vloeiend_scrollen::<tauri::Wry>(venster.as_ref(), aan);
         }
         true
-    }
-    #[cfg(not(target_os = "linux"))]
-    {
-        let _ = (app, aan);
-        false
     }
 }
 
@@ -470,37 +445,7 @@ fn standaard_app_status() -> standaard_app::StandaardAppStatus {
     if beheerd::is_beheerd() {
         return standaard_app::beheerd_status();
     }
-    #[cfg(target_os = "windows")]
-    {
-        // Register lezen met de Windows-API, niet met reg.exe: een extra
-        // systeemproces kort na de start laat beveiligingssoftware de app
-        // afsluiten (#524).
-        use windows_sys::Win32::System::Registry::{HKEY_CLASSES_ROOT, HKEY_CURRENT_USER};
-        let eigen_exe = std::env::current_exe()
-            .map(|p| p.to_string_lossy().into_owned())
-            .unwrap_or_default();
-        let prog_id = standaard_app::lees_tekst(
-            HKEY_CURRENT_USER,
-            r"Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.pdf\UserChoice",
-            Some("ProgId"),
-        );
-        let is_default = prog_id.as_deref().is_some_and(|prog_id| {
-            let open_opdracht = standaard_app::lees_tekst(
-                HKEY_CLASSES_ROOT,
-                &format!(r"{}\shell\open\command", prog_id.trim()),
-                None,
-            );
-            standaard_app::is_onze_pdf_app(prog_id, open_opdracht.as_deref(), &eigen_exe)
-        });
-        standaard_app::StandaardAppStatus {
-            is_default: Some(is_default),
-            current: prog_id.map(|p| p.trim().to_string()).filter(|p| !p.is_empty()),
-            can_set: true,
-            reason: None,
-        }
-    }
 
-    #[cfg(target_os = "linux")]
     {
         // xdg-mime works on any XDG-compliant desktop (GNOME, KDE, Cinnamon,
         // MATE, XFCE) across distros. A Flatpak or Snap has no xdg-mime and
@@ -520,10 +465,6 @@ fn standaard_app_status() -> standaard_app::StandaardAppStatus {
         standaard_app::linux_status(sandbox, query.as_deref())
     }
 
-    #[cfg(not(any(target_os = "windows", target_os = "linux")))]
-    {
-        standaard_app::StandaardAppStatus { is_default: None, current: None, can_set: false, reason: Some("unsupported") }
-    }
 }
 
 /// Check if this app is the default handler for .pdf files.
@@ -553,60 +494,13 @@ async fn default_pdf_app_status() -> standaard_app::StandaardAppStatus {
         })
 }
 
-/// Of de PDF-miniaturen in Windows Verkenner aan staan (#605), en of een ander
-/// programma ze al levert. Leest alleen het register.
-#[tauri::command]
-async fn explorer_thumbnails_status(app: tauri::AppHandle) -> verkenner_miniaturen::MiniatuurStatus {
-    let Ok(resource_dir) = app.path().resource_dir() else {
-        return verkenner_miniaturen::MiniatuurStatus::default();
-    };
-    tauri::async_runtime::spawn_blocking(move || verkenner_miniaturen::status(&resource_dir))
-        .await
-        .unwrap_or_default()
-}
-
-/// Zet de PDF-miniaturen in Windows Verkenner aan of uit voor deze gebruiker
-/// (HKCU, geen admin; de bestandskoppeling blijft ongemoeid). `replace_other`:
-/// de gebruiker koos ervoor de miniaturen van een ander programma te vervangen.
-#[tauri::command]
-async fn explorer_thumbnails_set(
-    app: tauri::AppHandle,
-    enabled: bool,
-    replace_other: bool,
-) -> Result<verkenner_miniaturen::MiniatuurStatus, String> {
-    // Draagbaar (#881): de COM-registratie wijst naar de DLL in deze map en
-    // breekt zodra de map verhuist. Uitzetten mag wel.
-    if enabled {
-        draagbaar::weiger_als_draagbaar()?;
-    }
-    let resource_dir = app
-        .path()
-        .resource_dir()
-        .map_err(|e| format!("Cannot resolve resource_dir: {}", e))?;
-    tauri::async_runtime::spawn_blocking(move || {
-        verkenner_miniaturen::zet(&resource_dir, enabled, replace_other)
-    })
-    .await
-    .map_err(|e| e.to_string())?
-}
-
 /// Make this app the default handler for .pdf files.
 /// On Windows, opens the system default-apps settings page. On Linux, sets the
 /// xdg-mime default directly (no system UI for this exists on most desktops).
 #[tauri::command]
 fn open_default_apps_settings() -> Result<bool, String> {
     headless::weiger("open_default_apps_settings")?;
-    #[cfg(target_os = "windows")]
-    {
-        // Open the "Choose default apps by file type" settings page
-        no_window_command("cmd")
-            .args(&["/c", "start", "ms-settings:defaultapps"])
-            .spawn()
-            .map_err(|e| e.to_string())?;
-        Ok(true)
-    }
 
-    #[cfg(target_os = "linux")]
     {
         // Inside a Flatpak or Snap there is no xdg-mime and the host's mime
         // associations cannot be written; the desktop's own settings choose
@@ -639,10 +533,6 @@ fn open_default_apps_settings() -> Result<bool, String> {
         Ok(true)
     }
 
-    #[cfg(not(any(target_os = "windows", target_os = "linux")))]
-    {
-        Ok(false)
-    }
 }
 
 /// Lock a file to prevent other applications from writing to it.
@@ -745,18 +635,6 @@ fn unlock_file(path: String, state: tauri::State<LockedFiles>) -> Result<bool, S
     Ok(true)
 }
 
-/// Build a process Command that never flashes a console window on Windows
-/// (CREATE_NO_WINDOW). Use this for EVERY helper-process spawn (reg, cmd,
-/// powershell, …) so the GUI app stays window-free — a bare Command::new
-/// pops a black console box for a split second.
-#[cfg(target_os = "windows")]
-fn no_window_command(program: &str) -> std::process::Command {
-    use std::os::windows::process::CommandExt;
-    const CREATE_NO_WINDOW: u32 = 0x0800_0000;
-    let mut c = std::process::Command::new(program);
-    c.creation_flags(CREATE_NO_WINDOW);
-    c
-}
 
 /// Enumerate installed printers.
 /// Returns a JSON array of printer objects: Name, DriverName, PortName,
@@ -765,109 +643,27 @@ fn no_window_command(program: &str) -> std::process::Command {
 /// PortName hoort erbij omdat de printdialoog en `app_list_printers` daaraan
 /// zien of een wachtrij naar een bestand schrijft (js/pdf/print-doel.js,
 /// `isBestandsPrinter`).
-/// Windows: rechtstreeks uit de spooler (print_lijst.rs), zonder PowerShell;
-/// endpoint-beveiliging beëindigt de app als die bij het opstarten
-/// powershell.exe start (#524).
-/// async: the query runs on a blocking thread, so a slow spooler or printer
-/// server never holds up window show and input processing at startup.
+/// Linux: CUPS over IPP, `lpstat` as the fallback, and inside a Flatpak/Snap
+/// without any printer an entry for the desktop's print dialog.
+/// async: the query runs on a blocking thread, so a slow printer server never
+/// holds up window show and input processing at startup.
 #[tauri::command]
 async fn get_printers() -> Result<String, String> {
-    #[cfg(target_os = "windows")]
-    {
-        tauri::async_runtime::spawn_blocking(print_lijst::printers_als_json)
-            .await
-            .map_err(|e| format!("Failed to enumerate printers: {}", e))?
-    }
-
-    // Linux: CUPS over IPP on its socket first, `lpstat` when that fails, and
-    // inside a Flatpak/Snap without any printer an entry for the desktop's
-    // print dialog (print_unix.rs). The JSON keeps the Windows shape:
+    // CUPS over IPP on its socket first, `lpstat` when that fails, and inside
+    // a Flatpak/Snap without any printer an entry for the desktop's print
+    // dialog (print_unix.rs). The JSON keeps the Win32-printer shape:
     // { Name, DriverName, PortName, Default, PrinterStatus }.
-    #[cfg(target_os = "linux")]
-    {
-        let sandbox = linux_runtime::sandbox().is_some();
-        tauri::async_runtime::spawn_blocking(move || print_unix::lijst_printers(sandbox))
-            .await
-            .map_err(|e| format!("Failed to enumerate printers: {}", e))?
-    }
+    let sandbox = linux_runtime::sandbox().is_some();
+    tauri::async_runtime::spawn_blocking(move || print_unix::lijst_printers(sandbox))
+        .await
+        .map_err(|e| format!("Failed to enumerate printers: {}", e))?
 
-    // macOS: unchanged, `lpstat` (the CUPS client tools are always there).
-    #[cfg(target_os = "macos")]
-    {
-        // Use CUPS `lpstat -p` to list printers. Output format:
-        //   printer NAME is idle. enabled since ...
-        //   printer NAME disabled since ...
-        let output = std::process::Command::new("lpstat")
-            .args(&["-p"])
-            .output()
-            .map_err(|e| format!("Failed to run lpstat (is CUPS installed?): {}", e))?;
-
-        if !output.status.success() {
-            let stderr = String::from_utf8_lossy(&output.stderr);
-            // No printers configured isn't strictly an error; return empty list.
-            if stderr.trim().is_empty() {
-                return Ok("[]".to_string());
-            }
-            return Err(format!("lpstat error: {}", stderr));
-        }
-
-        // Get the system default printer name (if any) via `lpstat -d`.
-        let default_name = std::process::Command::new("lpstat")
-            .args(&["-d"])
-            .output()
-            .ok()
-            .and_then(|o| {
-                let s = String::from_utf8_lossy(&o.stdout).to_string();
-                // "system default destination: NAME" or "no system default destination"
-                s.lines()
-                    .find_map(|line| {
-                        line.split_once(':').and_then(|(_, v)| {
-                            let v = v.trim();
-                            if v.is_empty() || v.starts_with("no ") { None } else { Some(v.to_string()) }
-                        })
-                    })
-            })
-            .unwrap_or_default();
-
-        let stdout = String::from_utf8_lossy(&output.stdout).to_string();
-        let mut entries: Vec<String> = Vec::new();
-        for line in stdout.lines() {
-            let line = line.trim();
-            if !line.starts_with("printer ") { continue; }
-            let rest = &line["printer ".len()..];
-            let name = rest.split_whitespace().next().unwrap_or("").to_string();
-            if name.is_empty() { continue; }
-            let status_num: i32 = if rest.contains("disabled") { 0 } else { 3 }; // 3 = idle on Win32
-            let is_default = name == default_name;
-            // Match the Windows JSON shape: { Name, DriverName, PortName, Default, PrinterStatus }.
-            // CUPS has no port; an empty PortName keeps the shape the same.
-            let escaped = name.replace('\\', "\\\\").replace('"', "\\\"");
-            entries.push(format!(
-                "{{\"Name\":\"{}\",\"DriverName\":\"CUPS\",\"PortName\":\"\",\"Default\":{},\"PrinterStatus\":{}}}",
-                escaped,
-                if is_default { "true" } else { "false" },
-                status_num
-            ));
-        }
-        Ok(format!("[{}]", entries.join(",")))
-    }
-
-    #[cfg(not(any(target_os = "windows", target_os = "linux", target_os = "macos")))]
-    {
-        Ok("[]".to_string())
-    }
 }
 
 /// Print a PDF file to a specific printer.
 ///
-/// Implementation: rasterise each page via the in-proc PDFium renderer and
-/// blit it onto the printer device context with GDI (StretchDIBits). This is
-/// ASSOCIATION-INDEPENDENT — the previous ShellExecuteW("printto") approach
-/// broke with SE_ERR_NOASSOC (code 31) whenever this app itself is the
-/// default .pdf handler, because our ProgID registers no printto verb.
-/// Windows: the printer DC is created with a complete, driver-validated
-/// DEVMODE (the Properties choice from this session or the driver default,
-/// plus the Page Setup paper); see print_windows.rs.
+/// The JS side rasterises each page into a temp PDF at the right size and
+/// rotation; CUPS then only has to take one document for one queue.
 /// `plaatsing`: absent or anything but "vel" = each page fitted and centred
 /// in the printable area (the behaviour before this parameter); "vel" = the
 /// Print dialog has already laid every page out at paper size with the
@@ -877,8 +673,8 @@ async fn get_printers() -> Result<String, String> {
 /// 'bw'). The page images already carry it; CUPS additionally gets
 /// print-color-mode=monochrome for the non-colour modes, so a colour printer
 /// does not use colour ink for grey. Absent = printer default.
-/// async for the same reason as get_printers: GDI spooling is slow blocking
-/// work and runs on a blocking thread, not on the main event-loop thread.
+/// async for the same reason as get_printers: spooling is slow blocking work
+/// and runs on a blocking thread, not on the main event-loop thread.
 #[tauri::command]
 async fn print_pdf(
     path: String,
@@ -888,7 +684,6 @@ async fn print_pdf(
     plaatsing: Option<String>,
     kleur: Option<String>,
     duplex: Option<String>,
-    devmodes: tauri::State<'_, print_instelling::PrinterDevmodes>,
 ) -> Result<bool, String> {
     // Keuzes uit de Pagina-instelling. Zonder argumenten: Auto + printerstandaard,
     // precies het gedrag van vóór deze parameters.
@@ -896,40 +691,14 @@ async fn print_pdf(
     let papier = print_instelling::Papier::uit_keuze(papier.as_deref());
     let plaatsing = print_plaatsing::Plaatsing::uit_keuze(plaatsing.as_deref());
     let duplex = print_duplex::Duplex::parse(duplex.as_deref())?;
-    #[cfg(target_os = "windows")]
+    // The JS side has already rasterised the selected pages into a temp PDF at
+    // the right size and rotation (with plaatsing "vel": at paper size, scale
+    // and position already applied), and calls this once per copy — so CUPS
+    // only has to take one document for one queue and needs no page-range or
+    // copy options of its own. Sent as an IPP Print-Job over the CUPS socket,
+    // else with `lp`, else (Flatpak/Snap) through the print portal; the
+    // options are the same `lp -o` values on every route (print_unix.rs).
     {
-        // De kleurmodus zit op Windows al in de paginabeelden.
-        let _ = &kleur;
-        // Wat de gebruiker in deze sessie in het eigenschappenvenster koos.
-        let opgeslagen = devmodes.ophalen(&printer);
-        tauri::async_runtime::spawn_blocking(move || {
-            print_windows::print_pdf_bestand_met_duplex(
-                std::path::Path::new(&path),
-                &printer,
-                orientatie,
-                papier,
-                plaatsing,
-                duplex,
-                opgeslagen.as_deref(),
-                None,
-            )
-        })
-        .await
-        .map_err(|e| format!("Print task failed: {e}"))??;
-        Ok(true)
-    }
-
-    // Linux/macOS: spool through CUPS. The JS side has already rasterised the
-    // selected pages into a temp PDF at the right size and rotation (with
-    // plaatsing "vel": at paper size, scale and position already applied),
-    // and calls this once per copy — so CUPS only has to take one document
-    // for one queue and needs no page-range or copy options of its own.
-    // Linux: sent as an IPP Print-Job over the CUPS socket, else with `lp`,
-    // else (Flatpak/Snap) through the print portal; the options are the same
-    // `lp -o` values on every route (print_unix.rs).
-    #[cfg(target_os = "linux")]
-    {
-        let _ = &devmodes;
         let mut opties = print_instelling::lp_opties(orientatie, papier, plaatsing);
         duplex.append_cups(&mut opties);
         if let Some(k) = print_unix::kleur_optie(kleur.as_deref()) {
@@ -945,215 +714,57 @@ async fn print_pdf(
         Ok(true)
     }
 
-    // macOS: unchanged, `lp` (the colour mode is already in the page images).
-    #[cfg(target_os = "macos")]
-    {
-        let _ = (&devmodes, &kleur);
-        let queue = printer.trim();
-        let mut cmd = std::process::Command::new("lp");
-        // No queue name means "system default", which is what lp does without -d.
-        if !queue.is_empty() {
-            cmd.arg("-d").arg(queue);
-        }
-        // The caller always passes an absolute temp path, so the filename can
-        // never be mistaken for an option; `--` is not portable across lp
-        // implementations and is deliberately left out.
-        let mut opties = print_instelling::lp_opties(orientatie, papier, plaatsing);
-        duplex.append_cups(&mut opties);
-        for optie in opties {
-            cmd.arg(optie);
-        }
-        let output = cmd
-            .arg(&path)
-            .output()
-            .map_err(|e| format!("Failed to run lp — is CUPS installed (cups-client)? {}", e))?;
-
-        if !output.status.success() {
-            // lp reports rejected jobs on stderr, but a few builds use stdout.
-            let stderr = String::from_utf8_lossy(&output.stderr).trim().to_string();
-            let stdout = String::from_utf8_lossy(&output.stdout).trim().to_string();
-            let detail = if stderr.is_empty() { stdout } else { stderr };
-            let detail = if detail.is_empty() { "no output".to_string() } else { detail };
-            return Err(format!("lp could not queue the job: {}", detail));
-        }
-
-        Ok(true)
-    }
-
-    #[cfg(not(any(target_os = "windows", target_os = "linux", target_os = "macos")))]
-    {
-        let _ = (&path, &printer, &orientatie, &papier, &plaatsing, &kleur, &duplex, &devmodes);
-        Err("Printing is not supported on this platform".to_string())
-    }
 }
 
 /// Open the document properties (printing preferences) dialog for a printer.
 ///
-/// Windows: the driver's own dialog, modal to the calling window. It is
-/// pre-filled with what was chosen earlier this session for this printer
-/// (else the driver default), with `papier`/`orientatie` applied on top: the
-/// paper and orientation the next print job gets, as the Print dialog shows
-/// them (same values as print_pdf; 'printer'/'auto' or absent = leave as is).
-/// So OK without changes changes nothing the user chose in Page Setup.
-/// The command waits for the dialog. OK keeps the chosen DEVMODE in memory
-/// for this printer — only for this session, never written to the printer or
-/// system defaults — and returns its PapierInfo plus `papierGewijzigd` /
-/// `orientatieGewijzigd` (what the user changed against the pre-fill); Cancel
-/// returns null and changes nothing. Linux/macOS open the system printer
-/// settings and return null.
+/// CUPS has no per-driver properties dialog that an application can call, so
+/// the system's own printer settings for that queue are opened instead and
+/// the command returns null.
 #[tauri::command]
 async fn open_printer_properties(
     window: tauri::WebviewWindow,
     printer: String,
     papier: Option<String>,
     orientatie: Option<String>,
-    devmodes: tauri::State<'_, print_instelling::PrinterDevmodes>,
 ) -> Result<Option<print_instelling::EigenschappenKeuze>, String> {
     headless::weiger("printer properties dialog")?;
-    #[cfg(target_os = "windows")]
-    {
-        // The HWND makes the dialog modal to this window; passed on as usize
-        // because a raw handle is not Send.
-        let hwnd = window.hwnd().map_err(|e| format!("Failed to get window handle: {}", e))?;
-        let eigenaar = hwnd.0 as usize;
-        let opgeslagen = devmodes.ophalen(&printer);
-        let naam = printer.clone();
-        let papier = print_instelling::Papier::uit_keuze(papier.as_deref());
-        let orientatie = print_instelling::Orientatie::uit_keuze(orientatie.as_deref());
-        // DocumentPropertiesW runs its own modal loop until the user closes
-        // the dialog. It gets a fresh thread of its own (as before: no COM or
-        // other state from a reused pool thread) and the command awaits the
-        // answer instead of returning straight away.
-        let (klaar, antwoord) = tokio::sync::oneshot::channel();
-        std::thread::spawn(move || {
-            let uitkomst =
-                print_devmode::eigenschappen_kiezen(&naam, eigenaar, opgeslagen.as_deref(), papier, orientatie);
-            let _ = klaar.send(uitkomst);
-        });
-        let gekozen = antwoord
-            .await
-            .map_err(|_| "Printer properties dialog ended unexpectedly".to_string())??;
+    // The system's own printer settings for that queue. Each candidate is
+    // tried in turn; the first one that launches wins.
+    let _ = (window, papier, orientatie);
+    let queue = printer.trim();
 
-        match gekozen {
-            Some((bytes, keuze)) => {
-                devmodes.bewaren(&printer, bytes);
-                Ok(Some(keuze))
-            }
-            None => Ok(None),
+    // CUPS queue names cannot contain spaces or slashes, so the name is safe
+    // to drop into the local CUPS URL unencoded.
+    let candidates: Vec<(&str, Vec<String>)> = vec![
+        ("system-config-printer", vec![format!("--printer={}", queue)]),
+        ("xdg-open", vec![format!("http://localhost:631/printers/{}", queue)]),
+    ];
+
+    for (program, args) in candidates {
+        if std::process::Command::new(program).args(&args).spawn().is_ok() {
+            return Ok(None);
         }
     }
 
-    // CUPS has no per-driver properties dialog that an application can call the
-    // way Windows can, so the closest equivalent is the system's own printer
-    // settings for that queue. Each candidate is tried in turn; the first one
-    // that launches wins.
-    #[cfg(any(target_os = "linux", target_os = "macos"))]
-    {
-        let _ = (window, &devmodes, &papier, &orientatie);
-        let queue = printer.trim();
-
-        #[cfg(target_os = "linux")]
-        // CUPS queue names cannot contain spaces or slashes, so the name is
-        // safe to drop into the local CUPS URL unencoded.
-        let candidates: Vec<(&str, Vec<String>)> = vec![
-            ("system-config-printer", vec![format!("--printer={}", queue)]),
-            ("xdg-open", vec![format!("http://localhost:631/printers/{}", queue)]),
-        ];
-
-        #[cfg(target_os = "macos")]
-        let candidates: Vec<(&str, Vec<String>)> = vec![
-            ("open", vec!["x-apple.systempreferences:com.apple.Print-Scan-Settings.extension".to_string()]),
-            ("open", vec!["/System/Library/PreferencePanes/PrintAndScan.prefPane".to_string()]),
-        ];
-
-        for (program, args) in candidates {
-            if std::process::Command::new(program).args(&args).spawn().is_ok() {
-                return Ok(None);
-            }
-        }
-
-        Err("Could not open the system printer settings".to_string())
-    }
-
-    #[cfg(not(any(target_os = "windows", target_os = "linux", target_os = "macos")))]
-    {
-        let _ = (window, &printer, &devmodes, &papier, &orientatie);
-        Err("Printer properties are not supported on this platform".to_string())
-    }
+    Err("Could not open the system printer settings".to_string())
 }
 
-/// The paper the next job on this printer really uses, given the Page Setup
-/// paper (`papier`, same values as print_pdf).
-///
-/// - 'printer' or absent: the Properties choice from this session for this
-///   printer, else the driver's current default for this user.
-/// - a paper size: what the driver makes of it, exactly as print_pdf builds
-///   the job. A driver that cannot take the size (A0L is longer than the
-///   built-in PDF driver allows) keeps the printer's paper, and that is what
-///   comes back, so the Print dialog can show the sheet that will be used.
-///
-/// Never shows UI, never starts a job and never changes anything. null on
-/// Linux/macOS or when it cannot be determined.
+/// CUPS reports the paper of the queue itself; the Print dialog uses that and
+/// the command has nothing to add. Never shows UI, never starts a job and
+/// never changes anything.
 #[tauri::command]
-async fn printer_papier(
-    printer: String,
-    papier: Option<String>,
-    devmodes: tauri::State<'_, print_instelling::PrinterDevmodes>,
-) -> Result<Option<print_instelling::PapierInfo>, String> {
-    #[cfg(target_os = "windows")]
-    {
-        let opgeslagen = devmodes.ophalen(&printer);
-        let papier = print_instelling::Papier::uit_keuze(papier.as_deref());
-        tauri::async_runtime::spawn_blocking(move || {
-            print_devmode::papier_voor_opdracht(&printer, opgeslagen.as_deref(), papier)
-        })
-        .await
-        .map_err(|e| format!("Printer paper task failed: {e}"))
-    }
-
-    #[cfg(not(target_os = "windows"))]
-    {
-        let _ = (&printer, &papier, &devmodes);
-        Ok(None)
-    }
+async fn printer_papier(printer: String, papier: Option<String>) -> Result<Option<print_instelling::PapierInfo>, String> {
+    let _ = (printer, papier);
+    Ok(None)
 }
 
-/// The printer's unprintable margins for the sheet the next job gets
-/// (`papier`, same values as print_pdf), per orientation and in mm.
-///
-/// Measured on an information context with the very DEVMODE the job gets
-/// (this session's Properties choice or the driver default, plus the Page
-/// Setup paper): no job is started, nothing goes to the printer and nothing
-/// changes. The Print dialog fits "Fit" and "Shrink" inside that area and
-/// draws it in the preview.
-///
-/// Separate from printer_papier on purpose: the first information context on
-/// a sleeping network printer can take tens of seconds (cold driver), and the
-/// paper in the dialog header must not wait for it. null on Linux/macOS or
-/// when the driver does not report usable measurements; the dialog then works
-/// with a zero margin, as before.
+/// CUPS does not report the unprintable margins per job, so the Print dialog
+/// works with a zero margin, as before.
 #[tauri::command]
-async fn printer_bedrukbaar(
-    printer: String,
-    papier: Option<String>,
-    devmodes: tauri::State<'_, print_instelling::PrinterDevmodes>,
-) -> Result<Option<print_plaatsing::Bedrukbaar>, String> {
-    #[cfg(target_os = "windows")]
-    {
-        let opgeslagen = devmodes.ophalen(&printer);
-        let papier = print_instelling::Papier::uit_keuze(papier.as_deref());
-        tauri::async_runtime::spawn_blocking(move || {
-            print_windows::bedrukbaar_voor_opdracht(&printer, opgeslagen.as_deref(), papier)
-        })
-        .await
-        .map_err(|e| format!("Printable area task failed: {e}"))
-    }
-
-    #[cfg(not(target_os = "windows"))]
-    {
-        let _ = (&printer, &papier, &devmodes);
-        Ok(None)
-    }
+async fn printer_bedrukbaar(printer: String, papier: Option<String>) -> Result<Option<print_plaatsing::Bedrukbaar>, String> {
+    let _ = (printer, papier);
+    Ok(None)
 }
 
 /// Get the system temp directory path.
@@ -1252,516 +863,17 @@ fn rename_file(old_path: String, new_path: String) -> Result<bool, String> {
     Ok(true)
 }
 
-/// Run a PowerShell script with UAC elevation by writing it to a temp .ps1
-/// file, executing it as admin, and capturing errors via a log file.
-#[cfg(target_os = "windows")]
-fn run_elevated_ps_script(script: &str) -> Result<(), String> {
-    let temp_dir = std::env::temp_dir();
-    let timestamp = std::time::SystemTime::now()
-        .duration_since(std::time::UNIX_EPOCH)
-        .map(|d| d.as_millis())
-        .unwrap_or(0);
-
-    let script_path = temp_dir.join(format!("ops_printer_{}.ps1", timestamp));
-    let log_path = temp_dir.join(format!("ops_printer_{}.log", timestamp));
-
-    // Wrap the script: redirect all errors to a log file, write "OK" on success
-    let wrapped = format!(
-        r#"try {{
-{}
-'OK' | Out-File -FilePath '{}' -Encoding UTF8
-}} catch {{
-$_.Exception.Message | Out-File -FilePath '{}' -Encoding UTF8
-exit 1
-}}"#,
-        script,
-        log_path.to_string_lossy(),
-        log_path.to_string_lossy()
-    );
-
-    fs::write(&script_path, &wrapped)
-        .map_err(|e| format!("Failed to write temp script: {}", e))?;
-
-    // Launch elevated: Start-Process -Verb RunAs -Wait on the .ps1 file
-    // Build the -ArgumentList as a single quoted string with each param separated by commas.
-    // The script path is passed as a properly escaped argument, not interpolated into a command string.
-    use std::os::windows::process::CommandExt;
-    const CREATE_NO_WINDOW: u32 = 0x08000000;
-    let script_path_str = script_path.to_string_lossy().to_string();
-    let arg_list = format!(
-        "'-NoProfile','-NonInteractive','-ExecutionPolicy','Bypass','-File','{}'",
-        script_path_str.replace('\'', "''")
-    );
-    let output = std::process::Command::new("powershell")
-        .arg("-NoProfile")
-        .arg("-NonInteractive")
-        .arg("-Command")
-        .arg(format!(
-            "Start-Process powershell -Verb RunAs -Wait -WindowStyle Hidden -ArgumentList {}",
-            arg_list
-        ))
-        .creation_flags(CREATE_NO_WINDOW)
-        .output()
-        .map_err(|e| format!("Failed to launch elevated process: {}", e))?;
-
-    // Read the log file written by the elevated process
-    let log_content = fs::read_to_string(&log_path).unwrap_or_default();
-    let log_trimmed = log_content.trim();
-
-    // Cleanup temp files
-    let _ = fs::remove_file(&script_path);
-    let _ = fs::remove_file(&log_path);
-
-    if !output.status.success() {
-        let stderr = String::from_utf8_lossy(&output.stderr);
-        return Err(format!("UAC elevation failed: {}", stderr));
-    }
-
-    if log_trimmed.is_empty() {
-        return Err("Elevated script produced no output — user may have cancelled UAC".to_string());
-    }
-
-    // Check BOM-prefixed "OK" (UTF-8 BOM from Out-File)
-    if log_trimmed == "OK" || log_trimmed.ends_with("OK") {
-        Ok(())
-    } else {
-        Err(format!("Elevated script error: {}", log_trimmed))
-    }
-}
-
-/// Install a virtual printer named "Open PDF Printer" using the built-in
-/// "Microsoft Print to PDF" driver. Sets the default paper size to A4 and
-/// adds the extra paper sizes (A3L, A2L, A1L; A1 and A0 where missing; see
-/// print_formulieren.rs) to the print server, so other applications can pick
-/// them on printers whose driver accepts user-defined paper sizes. Requires
-/// one-time UAC admin elevation.
-///
-/// `use_collection` (DEFAULT true — the "catch and merge" behaviour):
-///   - `true` (default) → routes the output to a fixed file port pointing at
-///     `%LOCALAPPDATA%\OpenPDFPrinter\spool\latest.pdf`. NO Windows Save As
-///     dialog appears. Our app watches that folder, rotates the captured
-///     file into a timestamped job, and pops the print-queue dialog so the
-///     user can merge/reorder multiple print jobs from ANY program before
-///     saving. (Single-port approach: concurrent print jobs lock on the
-///     rotate step inside the app — Windows already serialises print jobs to
-///     a given port so the race window is tiny.)
-///   - `false` → PORTPROMPT: port (legacy): each print job pops the standard
-///     Windows Save As dialog. Only used if explicitly requested.
-///
-/// Backward compatibility: removes the legacy printer name "Open PDF
-/// Studio" if present, so an existing installation cleanly migrates to
-/// the new name on next install. Only printers that use the "Microsoft
-/// Print to PDF" driver are ever removed or replaced: a printer of the
-/// user's own that happens to carry one of these names is left alone.
-///
-/// The script text comes from print_formulieren.rs, the same source as the
-/// scripts the installer ships.
-#[tauri::command]
-fn install_virtual_printer(use_collection: Option<bool>) -> Result<bool, String> {
-    // Draagbaar (#881): een Windows-printer met een poort naar een vaste map
-    // hoort bij een installatie.
-    draagbaar::weiger_als_draagbaar()?;
-    #[cfg(target_os = "windows")]
-    {
-        // Default to the silent collection port — the user wants prints
-        // CAUGHT for merging, never a Save As dialog.
-        let use_collection = use_collection.unwrap_or(true);
-        let poort = if use_collection {
-            // Pre-create the spool dir. Windows file-ports require the port
-            // NAME to be the file path itself; the script adds the port.
-            let local = std::env::var("LOCALAPPDATA")
-                .map_err(|_| "LOCALAPPDATA not set".to_string())?;
-            let spool_dir = std::path::Path::new(&local).join("OpenPDFPrinter").join("spool");
-            std::fs::create_dir_all(&spool_dir)
-                .map_err(|e| format!("Failed to create spool dir: {}", e))?;
-            spool_dir.join("latest.pdf").to_string_lossy().to_string()
-        } else {
-            print_formulieren::POORT_DIALOOG.to_string()
-        };
-
-        // The user asked for this port, so an existing "Open PDF Printer" of
-        // ours is re-created on it (the installer never does that).
-        let script = print_formulieren::script_installeren(&print_formulieren::Installatie {
-            poort,
-            bestaande_vervangen: true,
-        });
-        run_elevated_ps_script(&script)?;
-        Ok(true)
-    }
-
-    #[cfg(not(target_os = "windows"))]
-    {
-        let _ = use_collection;
-        Err("Virtual printer is only supported on Windows".to_string())
-    }
-}
-
-/// Remove the "Open PDF Printer" virtual printer (and the legacy
-/// "Open PDF Studio" name if it exists), plus the paper sizes this app or
-/// its installer added to the print server. Requires UAC admin elevation.
-/// Printers with another driver and paper sizes added by someone else stay.
-#[tauri::command]
-fn remove_virtual_printer() -> Result<bool, String> {
-    #[cfg(target_os = "windows")]
-    {
-        run_elevated_ps_script(&print_formulieren::script_verwijderen())?;
-        Ok(true)
-    }
-
-    #[cfg(not(target_os = "windows"))]
-    {
-        Err("Virtual printer is only supported on Windows".to_string())
-    }
-}
-
-// ── Virtual-printer job queue ───────────────────────────────────────────
-// With the collection port installed, every print to "Open PDF Printer"
-// lands as spool/latest.pdf. The queue sweeps that into unique job files
-// (so the next print can't overwrite it) and lists them for the in-app
-// merge/reorder dialog.
-
-fn vp_spool_dir() -> Result<std::path::PathBuf, String> {
-    // Bewust niet via datamap::lokale_datamap(): de spoolmap is als
-    // Windows-printerpoort vastgelegd en gedeeld met het print-subsysteem.
-    let base = dirs::data_local_dir().ok_or("local data dir unknown")?;
-    Ok(base.join("OpenPDFPrinter").join("spool"))
-}
-
-/// Sweep the spool: rename a finished `latest.pdf` into `job_<epoch>.pdf`.
-/// Returns true when a new job was collected. The driver may still be
-/// writing — only collect once the file has been stable for a moment.
-#[tauri::command]
-fn virtual_printer_collect() -> Result<bool, String> {
-    let dir = vp_spool_dir()?;
-    let latest = dir.join("latest.pdf");
-    if !latest.exists() {
-        return Ok(false);
-    }
-    let meta = std::fs::metadata(&latest).map_err(|e| e.to_string())?;
-    if meta.len() == 0 {
-        return Ok(false);
-    }
-    if let Ok(modified) = meta.modified() {
-        if let Ok(age) = modified.elapsed() {
-            if age.as_millis() < 1500 {
-                return Ok(false);
-            }
-        }
-    }
-    let stamp = std::time::SystemTime::now()
-        .duration_since(std::time::UNIX_EPOCH)
-        .map(|d| d.as_millis())
-        .unwrap_or(0);
-    let job = dir.join(format!("job_{stamp}.pdf"));
-    match std::fs::rename(&latest, &job) {
-        Ok(()) => Ok(true),
-        // Still locked by the spooler — pick it up on the next sweep.
-        Err(_) => Ok(false),
-    }
-}
-
-#[derive(serde::Serialize)]
-#[serde(rename_all = "camelCase")]
-struct VpJob {
-    file: String,
-    path: String,
-    size: u64,
-    modified_ms: u64,
-    pages: u32,
-    /// `/Info /Title` of the PDF. The Windows PDF driver behind "Open PDF
-    /// Printer" writes the print job's document name there, so this is the
-    /// name of what was printed (the file port itself drops it).
-    title: Option<String>,
-}
-
-/// The document title from the trailer's `/Info` dictionary (direct or
-/// indirect), decoded from PDFDocEncoding or UTF-16; None when absent/blank.
-fn vp_pdf_title(doc: &lopdf::Document) -> Option<String> {
-    let info = doc.trailer.get(b"Info").ok()?;
-    let dict = match info.as_reference() {
-        Ok(id) => doc.get_object(id).ok()?.as_dict().ok()?,
-        Err(_) => info.as_dict().ok()?,
-    };
-    let title = match dict.get(b"Title").ok()? {
-        lopdf::Object::Reference(id) => doc.get_object(*id).ok()?,
-        o => o,
-    };
-    let text = lopdf::decode_text_string(title).ok()?;
-    let text = text.trim();
-    (!text.is_empty()).then(|| text.to_string())
-}
-
-/// List collected jobs (oldest first — print order).
-#[tauri::command]
-fn virtual_printer_jobs() -> Result<Vec<VpJob>, String> {
-    let dir = vp_spool_dir()?;
-    let mut jobs = Vec::new();
-    if let Ok(rd) = std::fs::read_dir(&dir) {
-        for e in rd.flatten() {
-            let name = e.file_name().to_string_lossy().to_string();
-            if !(name.starts_with("job_") && name.ends_with(".pdf")) {
-                continue;
-            }
-            let meta = match e.metadata() {
-                Ok(m) => m,
-                Err(_) => continue,
-            };
-            let modified_ms = meta
-                .modified()
-                .ok()
-                .and_then(|m| m.duration_since(std::time::UNIX_EPOCH).ok())
-                .map(|d| d.as_millis() as u64)
-                .unwrap_or(0);
-            let (pages, title) = match lopdf::Document::load(e.path()) {
-                Ok(d) => (d.get_pages().len() as u32, vp_pdf_title(&d)),
-                Err(_) => (0, None),
-            };
-            jobs.push(VpJob {
-                file: name,
-                path: e.path().to_string_lossy().to_string(),
-                size: meta.len(),
-                modified_ms,
-                pages,
-                title,
-            });
-        }
-    }
-    jobs.sort_by_key(|j| j.modified_ms);
-    Ok(jobs)
-}
-
-/// Is `file` the bare name of a collected job (`job_*.pdf`)? Rejects paths,
-/// Windows drive/stream syntax (`:`) and an empty stem, so a delete can only
-/// ever touch the queue's own files in the spool dir. (A `..` inside the name
-/// is harmless without a separator: "job_1__a..b.pdf" is one file name.)
-fn vp_job_naam_geldig(file: &str) -> bool {
-    let Some(stam) = file.strip_prefix("job_").and_then(|r| r.strip_suffix(".pdf")) else {
-        return false;
-    };
-    !stam.is_empty() && file.len() <= 260 && !file.contains(['/', '\\', ':', '\0'])
-}
-
-/// Delete one collected job. Basename only — no path traversal.
-#[tauri::command]
-fn virtual_printer_delete_job(file: String) -> Result<(), String> {
-    if !vp_job_naam_geldig(&file) {
-        return Err("invalid job file".into());
-    }
-    let p = vp_spool_dir()?.join(file);
-    std::fs::remove_file(&p).map_err(|e| e.to_string())
-}
-
-/// Whether "Open PDF Printer" is in SILENT CATCH mode — i.e. its port is the
-/// spool file (no Save As dialog). Returns false when it's on PORTPROMPT (the
-/// legacy save-dialog port) so the UI can offer to reconfigure it.
-/// Windows: de poort komt uit de spooler (print_lijst.rs), zonder PowerShell
-/// (#524).
-#[tauri::command]
-async fn virtual_printer_catch_enabled() -> bool {
-    #[cfg(target_os = "windows")]
-    {
-        let spoolbestand = match vp_spool_dir() {
-            Ok(p) => p.join("latest.pdf").to_string_lossy().to_string(),
-            Err(_) => return false,
-        };
-        tauri::async_runtime::spawn_blocking(move || {
-            let printers = print_lijst::printers_opvragen().unwrap_or_default();
-            let poort = print_lijst::poort_van(&printers, print_formulieren::PRINTERNAAM);
-            print_lijst::vangt_in_spoolbestand(poort, &spoolbestand)
-        })
-        .await
-        .unwrap_or(false)
-    }
-    #[cfg(not(target_os = "windows"))]
-    {
-        false
-    }
-}
-
-/// Switch the EXISTING "Open PDF Printer" to the silent collection file port
-/// — turns OFF the Windows Save As dialog. Verified to work WITHOUT UAC:
-/// changing a printer's port is permitted for the current user (unlike
-/// ADDING a printer). This is the fix for a printer installed on PORTPROMPT.
-#[tauri::command]
-fn virtual_printer_enable_catch() -> Result<bool, String> {
-    #[cfg(target_os = "windows")]
-    {
-        let spool = vp_spool_dir()?;
-        std::fs::create_dir_all(&spool).map_err(|e| format!("spool dir: {e}"))?;
-        let port = spool.join("latest.pdf").to_string_lossy().to_string();
-        // Idempotent: only add the port if missing (Add-PrinterPort errors if
-        // it exists), then point the printer at it.
-        let script = format!(
-            r#"$ErrorActionPreference='Stop'
-$port = '{}'
-if (-not (Get-PrinterPort -Name $port -ErrorAction SilentlyContinue)) {{ Add-PrinterPort -Name $port }}
-Set-Printer -Name 'Open PDF Printer' -PortName $port"#,
-            port.replace('\'', "''")
-        );
-        let out = no_window_command("powershell")
-            .args(&["-NoProfile", "-NonInteractive", "-Command", &script])
-            .output()
-            .map_err(|e| format!("powershell: {e}"))?;
-        if !out.status.success() {
-            return Err(String::from_utf8_lossy(&out.stderr).trim().to_string());
-        }
-        Ok(true)
-    }
-    #[cfg(not(target_os = "windows"))]
-    {
-        Err("Windows only".into())
-    }
-}
-
-/// Check whether the "Open PDF Printer" virtual printer is installed.
-/// Also returns `true` for the legacy "Open PDF Studio" name so users on
-/// an older installation see "installed" until they reinstall.
-/// Windows: de namen komen uit de spooler (print_lijst.rs), zonder
-/// PowerShell: deze vraag loopt bij elke start (#524).
-#[tauri::command]
-async fn is_virtual_printer_installed() -> bool {
-    #[cfg(target_os = "windows")]
-    {
-        tauri::async_runtime::spawn_blocking(|| {
-            print_lijst::printers_opvragen().is_ok_and(|printers| {
-                print_lijst::heeft_printer(
-                    &printers,
-                    &[print_formulieren::PRINTERNAAM, print_formulieren::OUDE_PRINTERNAAM],
-                )
-            })
-        })
-        .await
-        .unwrap_or(false)
-    }
-
-    #[cfg(not(target_os = "windows"))]
-    {
-        false
-    }
-}
-
-/// Spool directory for the PDF Printer collection feature. Print jobs to
-/// "Open PDF Printer" can be routed here (instead of the PORTPROMPT save
-/// dialog) so our app captures the output and shows a multi-PDF collection
-/// dialog instead. Lives under %LOCALAPPDATA% so it's per-user and
-/// auto-cleaned on uninstall (Windows clears LocalAppData entries that
-/// reference removed apps via the standard cleanup flow).
-#[tauri::command]
-fn get_printer_spool_dir() -> Result<String, String> {
-    #[cfg(target_os = "windows")]
-    {
-        let local = std::env::var("LOCALAPPDATA")
-            .map_err(|_| "LOCALAPPDATA not set".to_string())?;
-        let dir = std::path::Path::new(&local).join("OpenPDFPrinter").join("spool");
-        std::fs::create_dir_all(&dir)
-            .map_err(|e| format!("Failed to create spool dir: {}", e))?;
-        Ok(dir.to_string_lossy().to_string())
-    }
-    #[cfg(not(target_os = "windows"))]
-    {
-        Err("PDF Printer is Windows-only".to_string())
-    }
-}
-
-/// List PDFs currently waiting in the printer spool directory. The collection
-/// dialog calls this on open and after each `printer:job-arrived` event so
-/// the user sees a live list of "PDFs the printer has captured but not yet
-/// merged or saved". Returns absolute paths sorted by creation time.
-#[tauri::command]
-fn list_printer_spool() -> Result<Vec<String>, String> {
-    #[cfg(target_os = "windows")]
-    {
-        let dir = get_printer_spool_dir()?;
-        let dir_path = std::path::Path::new(&dir);
-        let mut entries: Vec<(std::time::SystemTime, String)> = Vec::new();
-        for e in std::fs::read_dir(dir_path)
-            .map_err(|e| format!("Failed to read spool: {}", e))? {
-            if let Ok(entry) = e {
-                let path = entry.path();
-                if path.extension().and_then(|x| x.to_str()) == Some("pdf") {
-                    let created = entry.metadata().ok()
-                        .and_then(|m| m.created().ok())
-                        .unwrap_or(std::time::SystemTime::UNIX_EPOCH);
-                    entries.push((created, path.to_string_lossy().to_string()));
-                }
-            }
-        }
-        entries.sort_by_key(|(t, _)| *t);
-        Ok(entries.into_iter().map(|(_, p)| p).collect())
-    }
-    #[cfg(not(target_os = "windows"))]
-    {
-        Ok(Vec::new())
-    }
-}
-
-/// Remove a captured print-job PDF from the spool after the collection
-/// dialog has merged it into the saved output (or after the user clicks
-/// Discard). The collection dialog calls this for each spool entry it
-/// consumed so the next print job starts fresh.
-#[tauri::command]
-fn discard_spool_pdf(path: String) -> Result<bool, String> {
-    let p = std::path::Path::new(&path);
-    // Safety: only allow deletion under the spool directory to prevent the
-    // dialog from accidentally being tricked into rm-rf'ing arbitrary files.
-    let spool = get_printer_spool_dir()?;
-    if !p.starts_with(&spool) {
-        return Err("Path is not in the printer spool directory".to_string());
-    }
-    std::fs::remove_file(p)
-        .map_err(|e| format!("Failed to remove spool file: {}", e))?;
-    Ok(true)
-}
-
 /// Open a file in the system's default PDF viewer. Used by the auto-open
 /// hook after a successful Save As so the user immediately sees their
 /// freshly-saved file in their preferred reader.
 ///
-/// Windows: `cmd /C start "" "<path>"` — the empty title argument prevents
-/// `start` from interpreting the path as a window title (a long-standing
-/// quoting quirk). The shell `start` verb honours the user's default app
-/// association for .pdf, so whichever reader the user prefers opens it.
-///
-/// macOS: `open "<path>"` honours `LSHandlerContentType` for .pdf.
-/// Linux: `xdg-open "<path>"` honours the `application/pdf` MIME default.
+/// `xdg-open "<path>"` honours the `application/pdf` MIME default.
 #[tauri::command]
 fn open_pdf_in_default_viewer(path: String) -> Result<bool, String> {
     headless::weiger("open_pdf_in_default_viewer")?;
     if !std::path::Path::new(&path).exists() {
         return Err(format!("File not found: {}", path));
     }
-    // Niet-desktop-platforms (mobile): geen externe-viewer-concept — nette
-    // fout i.p.v. een cfg-if zonder else (compileerfout E0317 op Android).
-    #[cfg(not(any(target_os = "windows", target_os = "macos", target_os = "linux")))]
-    {
-        let _ = &path;
-        return Err("Opening in an external viewer is not supported on this platform".into());
-    }
-    #[cfg(target_os = "windows")]
-    {
-        use std::os::windows::process::CommandExt;
-        const CREATE_NO_WINDOW: u32 = 0x08000000;
-        // `cmd /C start "" "<path>"` is the Windows idiom for "open this
-        // file with whatever the user has set as the default handler".
-        // The double-quoted empty title is required: without it, `start`
-        // treats the quoted path as the window title and then has no file
-        // argument to open.
-        std::process::Command::new("cmd")
-            .args(&["/C", "start", "", &path])
-            .creation_flags(CREATE_NO_WINDOW)
-            .spawn()
-            .map_err(|e| format!("Failed to launch default PDF viewer: {}", e))?;
-        Ok(true)
-    }
-    #[cfg(target_os = "macos")]
-    {
-        std::process::Command::new("open")
-            .arg(&path)
-            .spawn()
-            .map_err(|e| format!("Failed to launch default PDF viewer: {}", e))?;
-        Ok(true)
-    }
-    #[cfg(target_os = "linux")]
     {
         std::process::Command::new("xdg-open")
             .arg(&path)
@@ -1771,44 +883,13 @@ fn open_pdf_in_default_viewer(path: String) -> Result<bool, String> {
     }
 }
 
-/// Reveal a file in the OS file manager (Explorer / Finder / Linux file
-/// manager), with the file selected where the platform supports it.
+/// Reveal a file in the desktop's file manager.
 #[tauri::command]
 fn reveal_in_file_manager(path: String) -> Result<bool, String> {
     headless::weiger("reveal_in_file_manager")?;
     if !std::path::Path::new(&path).exists() {
         return Err(format!("File not found: {}", path));
     }
-    // Non-desktop platforms (mobile): no file-manager concept — return a
-    // clean error instead of a cfg-if without else (compile error E0317).
-    #[cfg(not(any(target_os = "windows", target_os = "macos", target_os = "linux")))]
-    {
-        let _ = &path;
-        return Err("Showing in the file manager is not supported on this platform".into());
-    }
-    #[cfg(target_os = "windows")]
-    {
-        use std::os::windows::process::CommandExt;
-        // `explorer /select,"<path>"` opens Explorer with the file selected.
-        // The switch and the path must travel as ONE argument; raw_arg keeps
-        // the quoting intact for paths with spaces (normal .arg() quoting
-        // would wrap the whole `/select,...` blob and confuse explorer).
-        no_window_command("explorer")
-            .raw_arg(format!("/select,\"{}\"", path))
-            .spawn()
-            .map_err(|e| format!("Failed to open Explorer: {}", e))?;
-        Ok(true)
-    }
-    #[cfg(target_os = "macos")]
-    {
-        // `open -R` reveals (selects) the file in a Finder window.
-        std::process::Command::new("open")
-            .args(["-R", &path])
-            .spawn()
-            .map_err(|e| format!("Failed to open Finder: {}", e))?;
-        Ok(true)
-    }
-    #[cfg(target_os = "linux")]
     {
         // No universal "select file" verb across file managers; open the
         // containing directory via xdg-open (works on every desktop).
@@ -1912,23 +993,6 @@ fn list_pdf_file_stats(dir: String) -> Result<Vec<PdfFileStat>, String> {
 
 #[tauri::command]
 fn play_alert_sound() {
-    #[cfg(target_os = "windows")]
-    {
-        use std::os::raw::c_uint;
-        #[link(name = "user32")]
-        extern "system" {
-            fn MessageBeep(uType: c_uint) -> i32;
-        }
-        unsafe { MessageBeep(0x00000030); } // MB_ICONEXCLAMATION
-    }
-    #[cfg(target_os = "macos")]
-    {
-        std::process::Command::new("afplay")
-            .arg("/System/Library/Sounds/Funk.aiff")
-            .spawn()
-            .ok();
-    }
-    #[cfg(target_os = "linux")]
     {
         std::process::Command::new("paplay")
             .arg("/usr/share/sounds/freedesktop/stereo/dialog-warning.oga")
@@ -2375,7 +1439,6 @@ async fn render_pdf_page(
 /// "chi_tra+eng"); defaults to "eng" if omitted. Tessdata is resolved from
 /// the bundled `tessdata` resource directory — see scripts/ocr-runtime.mjs
 /// and the `resources` map in tauri.conf.json.
-#[cfg(not(target_os = "android"))]
 #[tauri::command]
 async fn ocr_pdf_page(
     app: tauri::AppHandle,
@@ -2424,14 +1487,6 @@ async fn ocr_pdf_page(
     .map_err(|e| format!("OCR task panicked: {}", e))?
 }
 
-/// Android has no Tesseract build (see Cargo.toml), so OCR is unavailable
-/// there. The command stays registered so the invoke handler list is the
-/// same on every platform; it only reports that OCR is not available.
-#[cfg(target_os = "android")]
-#[tauri::command]
-async fn ocr_pdf_page() -> Result<(), String> {
-    Err("OCR is op dit platform niet beschikbaar".to_string())
-}
 
 /// Pixelvergelijking van een paginapaar (#465) in de PDFium-worker: renderen
 /// op de vergelijkingsresolutie, inktmaskers, automatische uitlijning en
@@ -3170,7 +2225,6 @@ async fn write_clipboard_image_png(
 // Called from the frontend when the "intercept PrtScn" preference changes and
 // at startup. Idempotent. Desktop only — the global-shortcut plugin has no
 // mobile backend, so on Android this is a no-op stub (see below).
-#[cfg(not(target_os = "android"))]
 #[tauri::command]
 fn set_prtscn_hotkey(app: tauri::AppHandle, enabled: bool) -> Result<(), String> {
     use tauri_plugin_global_shortcut::{Code, GlobalShortcutExt, Shortcut};
@@ -3192,11 +2246,6 @@ fn set_prtscn_hotkey(app: tauri::AppHandle, enabled: bool) -> Result<(), String>
     Ok(())
 }
 
-#[cfg(target_os = "android")]
-#[tauri::command]
-fn set_prtscn_hotkey(_app: tauri::AppHandle, _enabled: bool) -> Result<(), String> {
-    Ok(())
-}
 
 /// Mobile entry point: tauri vereist een argumentloze functie; de desktop-
 /// varianten geven StartupOpts (mcp-server/poort) door via main.rs.
@@ -3277,14 +2326,12 @@ pub fn run(opts: StartupOpts) {
         openaec_omgeving::huidige(),
         &openaec_omgeving::Waarneming::van_systeem(),
     );
-    // Een rechtermuisknop-actie uit Verkenner (#945) is geen "openen": de
-    // bestanden gaan naar de wachtrij van verkenner_acties.rs.
-    let start_shell_actie = verkenner_acties::actie_uit_args(&args, startmap.as_deref());
-    let opened_files: Vec<String> = if start_shell_actie.is_some() { Vec::new() } else { args.iter()
+    let opened_files: Vec<String> = args
+        .iter()
         .skip(1)
         .filter_map(|arg| pdf_uit_argument(arg))
         .map(|pad| openaec_omgeving::absoluut_argument(&pad, startmap.as_deref()))
-        .collect() };
+        .collect();
     if !opened_files.is_empty() {
         eprintln!("[startup] command-line files: {opened_files:?}");
     }
@@ -3345,12 +2392,10 @@ pub fn run(opts: StartupOpts) {
     let mut builder = tauri::Builder::default()
         .manage(OpenedFiles(Mutex::new(opened_files)))
         .manage(central_review_transport::Transport::default())
-        .manage(verkenner_acties::ShellActieWachtrij::met(start_shell_actie))
         .manage(LockedFiles(Mutex::new(HashMap::new())))
         .manage(spraak::SpraakProces::default())
         .manage(beveiligde_pdf::BeveiligdeKopieen::default())
         .manage(pdf_beveiliging::BeveiligingsSessies::default())
-        .manage(print_instelling::PrinterDevmodes::default())
         .manage(PdfBytesCache(Mutex::new(HashMap::new())))
         .manage(DocHandleCache(Mutex::new(HashMap::new())))
         .manage(TileSceneCache(Mutex::new(Vec::new())))
@@ -3387,7 +2432,6 @@ pub fn run(opts: StartupOpts) {
     }
     // Linux: 2D-canvasversnelling uit in elke WebView (#924, crash B in
     // Skia's GPU-pad); OPDS_CANVAS_GPU=1 laat haar aan.
-    #[cfg(target_os = "linux")]
     {
         builder = builder.plugin(linux_runtime::webview_plugin());
     }
@@ -3406,7 +2450,6 @@ pub fn run(opts: StartupOpts) {
         );
     }
     // Drag-out window detach is desktop-only (no mobile backend in the crate).
-    #[cfg(not(target_os = "android"))]
     {
         builder = builder.plugin(tauri_plugin_drag::init());
     }
@@ -3420,7 +2463,6 @@ pub fn run(opts: StartupOpts) {
     // instance and exit. `OPDS_DETACHED=1` also skips it (test instances next
     // to the installed app); add `OPDS_HEADLESS=1` to keep such a test
     // instance off-screen and out of focus (headless.rs).
-    #[cfg(not(target_os = "android"))]
     {
         // Linux only (the plugin uses D-Bus there): without a usable session
         // bus address zbus would panic inside the plugin; without any bus the
@@ -3428,31 +2470,17 @@ pub fn run(opts: StartupOpts) {
         let skip_single_instance = instantie::slaat_single_instance_over(
             &args,
             std::env::var("OPDS_DETACHED").ok().as_deref(),
-        ) || (cfg!(target_os = "linux")
-            && !openaec_omgeving::sessiebus_bruikbaar(
-                std::env::var("DBUS_SESSION_BUS_ADDRESS").ok().as_deref(),
-            ));
+        ) || !openaec_omgeving::sessiebus_bruikbaar(
+            std::env::var("DBUS_SESSION_BUS_ADDRESS").ok().as_deref(),
+        );
         if !skip_single_instance {
             builder = builder
-                .plugin(tauri_plugin_single_instance::init(|app: &tauri::AppHandle, argv: Vec<String>, cwd: String| {
+                .plugin(tauri_plugin_single_instance::init(|app: &tauri::AppHandle, argv: Vec<String>, _cwd: String| {
                     if headless::actief() {
                         headless::meld("single-instance focus");
                     } else if let Some(window) = app.get_webview_window("main") {
                         let _ = window.unminimize();
                         let _ = window.set_focus();
-                    }
-                    // Een rechtermuisknop-actie van een volgende Verkenner-start
-                    // (#945): in de wachtrij en dan een seintje. Een start die
-                    // binnenkomt terwijl het venster nog laadt, haalt de
-                    // frontend later op met get_shell_action.
-                    let basis = (!cwd.is_empty()).then(|| std::path::Path::new(&cwd));
-                    if let Some(actie) = verkenner_acties::actie_uit_args(&argv, basis) {
-                        for path in &actie.files {
-                            let _ = app.fs_scope().allow_file(path);
-                        }
-                        app.state::<verkenner_acties::ShellActieWachtrij>().voeg_toe(actie);
-                        let _ = app.emit("shell-action", ());
-                        return;
                     }
                     let files: Vec<String> = argv.iter()
                         .filter_map(|arg| pdf_uit_argument(arg))
@@ -3491,7 +2519,6 @@ pub fn run(opts: StartupOpts) {
     // press we bring the main window to the foreground and notify the WebView,
     // which reads the clipboard image onto a fresh annotate canvas. Desktop
     // only (the crate has no mobile backend).
-    #[cfg(not(target_os = "android"))]
     {
         use tauri_plugin_global_shortcut::ShortcutState;
         builder = builder.plugin(
@@ -3553,7 +2580,6 @@ pub fn run(opts: StartupOpts) {
             // files for unsaved work, then a normal exit.
             // Only in a container or managed mode; a normal desktop keeps the
             // default SIGTERM behaviour.
-            #[cfg(target_os = "linux")]
             {
                 if openaec_omgeving::huidige().sigterm_afhandelen() {
                     openaec_omgeving::installeer_sigterm(app.handle().clone());
@@ -3601,12 +2627,8 @@ pub fn run(opts: StartupOpts) {
             for path in app.state::<OpenedFiles>().0.lock().unwrap().iter() {
                 let _ = app.fs_scope().allow_file(path);
             }
-            for path in app.state::<verkenner_acties::ShellActieWachtrij>().paden() {
-                let _ = app.fs_scope().allow_file(&path);
-            }
 
             // Set the window icon (desktop only — not applicable on Android)
-            #[cfg(not(target_os = "android"))]
             if let Some(window) = app.get_webview_window("main") {
                 let icon_bytes = include_bytes!("../icons/icon.png");
                 if let Ok(icon) = tauri::image::Image::from_bytes(icon_bytes) {
@@ -3663,71 +2685,6 @@ pub fn run(opts: StartupOpts) {
                 Err(e) => log::error!("PDFium initialisation failed (rendering disabled): {}", e),
             }
 
-            // Windows-only: pre-warm shell32.dll + comdlg32.dll + the
-            // IFileOpenDialog COM factory in a background thread so the
-            // first time the user clicks Bestand → Open → Bladeren the
-            // OS dialog pops in ~100–300ms instead of the cold 1–3 s it
-            // takes to load shell32 + every shell extension (OneDrive,
-            // cloud-sync providers, AV hooks) on demand.
-            //
-            // We spend ~50 ms on a background thread at app startup to
-            // amortise this cost. The dialog plugin (rfd 0.16) calls
-            // CoInitializeEx/CoUninitialize around every Show(), so we
-            // can't keep the COM apartment alive across calls — but the
-            // DLLs and the registered class factory stay loaded for the
-            // life of the process, which is what costs the seconds.
-            #[cfg(target_os = "windows")]
-            {
-                std::thread::spawn(|| {
-                    use windows_sys::Win32::System::Com::{
-                        CoCreateInstance, CoInitializeEx, CoUninitialize,
-                        CLSCTX_INPROC_SERVER, COINIT_APARTMENTTHREADED,
-                        COINIT_DISABLE_OLE1DDE,
-                    };
-                    use windows_sys::Win32::UI::Shell::FileOpenDialog;
-                    use windows_sys::core::GUID;
-                    const FILE_OPEN_DIALOG_IID: GUID =
-                        GUID::from_u128(0xd57c7288_d4ad_4768_be02_9d969532d960);
-
-                    let t0 = std::time::Instant::now();
-                    unsafe {
-                        let res = CoInitializeEx(
-                            std::ptr::null(),
-                            (COINIT_APARTMENTTHREADED | COINIT_DISABLE_OLE1DDE) as u32,
-                        );
-                        if res < 0 {
-                            eprintln!("[prewarm] CoInitializeEx failed: 0x{:x}", res);
-                            return;
-                        }
-                        let mut iptr: *mut std::ffi::c_void = std::ptr::null_mut();
-                        let hr = CoCreateInstance(
-                            &FileOpenDialog,
-                            std::ptr::null_mut(),
-                            CLSCTX_INPROC_SERVER,
-                            &FILE_OPEN_DIALOG_IID,
-                            &mut iptr as *mut _ as *mut *mut std::ffi::c_void,
-                        );
-                        if hr >= 0 && !iptr.is_null() {
-                            // Release: vtbl()[2] is Release.
-                            #[repr(C)]
-                            struct IUnknownV {
-                                _qi: usize,
-                                _add_ref: usize,
-                                release: unsafe extern "system" fn(
-                                    this: *mut std::ffi::c_void,
-                                ) -> u32,
-                            }
-                            let vtbl = *(iptr as *mut *mut IUnknownV);
-                            ((*vtbl).release)(iptr);
-                        }
-                        CoUninitialize();
-                    }
-                    log::info!(
-                        "[prewarm] shell32 + IFileOpenDialog factory warmed in {} ms",
-                        t0.elapsed().as_millis()
-                    );
-                });
-            }
 
             Ok(())
         })
@@ -3744,7 +2701,6 @@ pub fn run(opts: StartupOpts) {
             spraak::tts_speak,
             spraak::tts_stop,
             get_opened_file,
-            verkenner_acties::get_shell_action,
             updates_managed_externally,
             save_session,
             load_session,
@@ -3772,8 +2728,6 @@ pub fn run(opts: StartupOpts) {
             is_default_pdf_app,
             default_pdf_app_status,
             open_default_apps_settings,
-            explorer_thumbnails_status,
-            explorer_thumbnails_set,
             get_printers,
             print_pdf,
             open_printer_properties,
@@ -3783,19 +2737,8 @@ pub fn run(opts: StartupOpts) {
             write_temp_pdf,
             delete_file,
             rename_file,
-            install_virtual_printer,
-            remove_virtual_printer,
-            is_virtual_printer_installed,
-            virtual_printer_collect,
-            virtual_printer_jobs,
-            virtual_printer_delete_job,
-            virtual_printer_catch_enabled,
-            virtual_printer_enable_catch,
             open_pdf_in_default_viewer,
             reveal_in_file_manager,
-            get_printer_spool_dir,
-            list_printer_spool,
-            discard_spool_pdf,
             download_pdf_from_url,
             list_pdf_files,
             list_pdf_file_stats,
@@ -3883,7 +2826,6 @@ pub fn run(opts: StartupOpts) {
             mcp_app_bridge::app_response,
             mcp_app_bridge::mcp_bridge_ready,
             mcp_extensie_tools::mcp_set_extension_tools,
-            webview_opname::capture_webview_png,
             mcp_koppeling::mcp_instellen,
             mcp_koppeling::mcp_status,
             accounts::accounts_sign_in,
@@ -3951,62 +2893,6 @@ pub fn run(opts: StartupOpts) {
                 // stappen hierboven nooit overslaat.
                 if let Some(pool) = _app.try_state::<Arc<tokio::sync::OnceCell<worker_pool::WorkerPool>>>() {
                     worker_pool::shutdown_on_exit(&pool);
-                }
-            }
-            // macOS (en iOS) leveren een dubbelklik in Finder NIET als
-            // argv-argument aan (zoals Windows/Linux), maar als Apple Event
-            // dat Tauri doorgeeft als RunEvent::Opened { urls }. Zonder deze
-            // afhandeling opent de app wel, maar het bestand niet (#325).
-            //
-            // Twee gevallen, beide via het bestaande argv-mechanisme:
-            // - Koude start: het event komt binnen vóór de frontend klaar is.
-            //   We bufferen de paden in de OpenedFiles-state; de frontend
-            //   haalt ze bij init op via `get_opened_file` (zelfde pad als
-            //   command-line-bestanden). De emit hieronder gaat dan verloren
-            //   of belandt in pendingOpenFiles — main.js gooit die pending-
-            //   lijst weg zodra get_opened_file al bestanden opleverde, dus
-            //   er ontstaat geen dubbele tab.
-            // - App draait al: de frontend-listener op "open-files" (zelfde
-            //   event als de single-instance-plugin gebruikt) opent de tab
-            //   direct; de state-buffer wordt dan nooit meer gelezen.
-            //
-            // Custom-scheme-URLs (deep-link-plugin) hebben scheme != "file"
-            // en passeren dit filter niet — geen botsing met die plugin.
-            //
-            // Android (#593): "Openen met" uit een andere app komt als
-            // VIEW/SEND-intent binnen; tao zet de data-URI om in hetzelfde
-            // RunEvent::Opened. Dat is een content://-URI, geen pad: zonder
-            // deze tak verscheen de app wel, maar bleef het document weg (de
-            // deep-link-plugin negeert content://, het hoort niet bij zijn
-            // domein). Zie geopend_pdf_document().
-            #[cfg(any(target_os = "macos", target_os = "ios", target_os = "android"))]
-            if let tauri::RunEvent::Opened { urls } = &_event {
-                let android = cfg!(target_os = "android");
-                let files: Vec<String> = urls
-                    .iter()
-                    .filter_map(|url| geopend_pdf_document(url, android))
-                    .collect();
-                if !files.is_empty() {
-                    for path in files.iter().filter(|p| !p.starts_with("content://")) {
-                        let _ = _app.fs_scope().allow_file(path);
-                    }
-                    {
-                        let state = _app.state::<OpenedFiles>();
-                        let mut buffered = state.0.lock().unwrap();
-                        for path in &files {
-                            if !buffered.contains(path) {
-                                buffered.push(path.clone());
-                            }
-                        }
-                    }
-                    let _ = _app.emit("open-files", &files);
-                    #[cfg(desktop)]
-                    if headless::actief() {
-                        headless::meld("file-open activation");
-                    } else if let Some(window) = _app.get_webview_window("main") {
-                        let _ = window.unminimize();
-                        let _ = window.set_focus();
-                    }
                 }
             }
         });
@@ -4091,78 +2977,3 @@ mod geopend_document_tests {
     }
 }
 
-#[cfg(test)]
-mod vp_title_tests {
-    use super::vp_pdf_title;
-    use lopdf::{dictionary, Document, Object, StringFormat};
-
-    fn doc_with_info(info: Option<Object>) -> Document {
-        let mut doc = Document::with_version("1.7");
-        if let Some(info) = info {
-            let id = doc.add_object(info);
-            doc.trailer.set("Info", Object::Reference(id));
-        }
-        doc
-    }
-
-    #[test]
-    fn title_from_an_indirect_info_dictionary() {
-        let doc = doc_with_info(Some(Object::Dictionary(dictionary! {
-            "Title" => Object::String(b"Rapport fase 2.docx".to_vec(), StringFormat::Literal),
-        })));
-        assert_eq!(vp_pdf_title(&doc).as_deref(), Some("Rapport fase 2.docx"));
-    }
-
-    #[test]
-    fn title_in_utf16_with_a_byte_order_mark() {
-        let mut bytes = vec![0xFE, 0xFF];
-        for u in "Gevel noord – A1".encode_utf16() {
-            bytes.extend_from_slice(&u.to_be_bytes());
-        }
-        let doc = doc_with_info(Some(Object::Dictionary(dictionary! {
-            "Title" => Object::String(bytes, StringFormat::Hexadecimal),
-        })));
-        assert_eq!(vp_pdf_title(&doc).as_deref(), Some("Gevel noord – A1"));
-    }
-
-    #[test]
-    fn no_info_blank_title_or_no_title_give_none() {
-        assert_eq!(vp_pdf_title(&doc_with_info(None)), None);
-        let blank = doc_with_info(Some(Object::Dictionary(dictionary! {
-            "Title" => Object::String(b"   ".to_vec(), StringFormat::Literal),
-        })));
-        assert_eq!(vp_pdf_title(&blank), None);
-        let other = doc_with_info(Some(Object::Dictionary(dictionary! {
-            "Producer" => Object::String(b"x".to_vec(), StringFormat::Literal),
-        })));
-        assert_eq!(vp_pdf_title(&other), None);
-    }
-}
-
-#[cfg(test)]
-mod vp_job_naam_tests {
-    use super::vp_job_naam_geldig;
-
-    #[test]
-    fn alleen_kale_jobnamen_in_de_spoolmap() {
-        for ok in ["job_1730000000000.pdf", "job_1__Report.pdf", "job_1__a..b.pdf"] {
-            assert!(vp_job_naam_geldig(ok), "{ok}");
-        }
-        let lang = format!("job_{}.pdf", "x".repeat(300));
-        for fout in [
-            "latest.pdf",
-            "job_.pdf",
-            "job_1.PDF",
-            "job_1.txt",
-            "../job_1.pdf",
-            "job_1/../../x.pdf",
-            r"job_..\..\x.pdf",
-            "job_1.pdf:stream.pdf",
-            "job_C:x.pdf",
-            "job_1\0.pdf",
-            lang.as_str(),
-        ] {
-            assert!(!vp_job_naam_geldig(fout), "{fout}");
-        }
-    }
-}

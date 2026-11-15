@@ -156,6 +156,4 @@ test('the plugin is in the vite config, and CI runs the CSP test', () => {
   assert.equal(pkg.scripts['test:hosted-csp'], 'node scripts/test-gehost-csp.mjs');
   const ci = fs.readFileSync(path.join(APP, '..', '.github', 'workflows', 'ci.yml'), 'utf8');
   assert.match(ci, /npm run test:hosted-csp/);
-  const release = fs.readFileSync(path.join(APP, '..', '.github', 'workflows', 'release.yml'), 'utf8');
-  assert.match(release, /npm run test:hosted-csp -- --dist "dist-webbundel\/open-pdf-studio-web-\$\{VERSION#v\}"/);
 });

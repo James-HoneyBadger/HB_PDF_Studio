@@ -6,7 +6,7 @@
 //   1. node scripts/print-schaal-proef.mjs            (vanuit open-pdf-studio/)
 //   2. de Rust-proef print_windows::proef::schaal_op_vel_naar_pdf_bestand
 //      (#[ignore]) print elke bron naar een bestand, uitsluitend op de
-//      virtuele pdf-printer "Open PDF Studio";
+//      virtuele pdf-printer "HB PDF Studio";
 //   3. python scripts/meet-print-schaal-proef.py meet plek en grootte van de
 //      inhoud in de uitvoer (PyMuPDF).
 //

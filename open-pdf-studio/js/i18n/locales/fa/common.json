@@ -110,7 +110,7 @@
     "readOnly": {
       "title": "Opened read-only",
       "kenmerk": "{{name}} is read-only: it has the read-only attribute, or you only have read permission on this location.",
-      "in-gebruik": "{{name}} is open in another application or is being synchronized, so Open PDF Studio cannot reserve it.",
+      "in-gebruik": "{{name}} is open in another application or is being synchronized, so HB PDF Studio cannot reserve it.",
       "geweigerd": "{{name}} cannot be reserved: Windows denied it.",
       "mislukt": "{{name}} could not be reserved.",
       "saveAs": "It has been opened read-only. You can make changes; use Save As to save them to another file."
@@ -118,7 +118,7 @@
   },
   "hostOpenFailed": "خواندن فایل از فضای ذخیره‌سازی ممکن نشد. دوباره تلاش کنید.",
   "hostInvalidPdf": "{{name}} یک فایل PDF معتبر نیست و باز نشد.",
-  "hostNoContact": "صفحه‌ای که Open PDF Studio در آن قرار دارد پاسخ نمی‌دهد، بنابراین فایل‌ها باز یا ذخیره نمی‌شوند. صفحه را دوباره بارگیری کنید و دوباره تلاش کنید.",
+  "hostNoContact": "صفحه‌ای که HB PDF Studio در آن قرار دارد پاسخ نمی‌دهد، بنابراین فایل‌ها باز یا ذخیره نمی‌شوند. صفحه را دوباره بارگیری کنید و دوباره تلاش کنید.",
   "hostSaveConflict": "شخص دیگری در این فاصله این فایل را ذخیره کرده است. تغییرات شما به‌صورت یک نسخهٔ جداگانه ذخیره شد: {{name}}. ذخیره‌های بعدی در همان نسخه انجام می‌شود.",
   "hostSaveNotLocked": "این فایل برای شما رزرو نشده است، بنابراین دیگران می‌توانند هم‌زمان آن را تغییر دهند. تغییرات شما به‌صورت نسخه‌های جدید ذخیره می‌شود؛ چیزی بازنویسی نمی‌شود.",
   "hostReadOnlySave": "این فایل فقط‌خواندنی باز شده است، بنابراین نمی‌توان تغییرات را در آن ذخیره کرد. برای دانلود یک نسخه از «ذخیره با نام» استفاده کنید.",
@@ -162,7 +162,7 @@
   "failedToReplacePage": "جایگزینی صفحه ناموفق بود: {{error}}",
   "failedToMergeFile": "ادغام ناموفق بود: {{file}}\n{{error}}",
   "invalidPageRange": "محدوده صفحات نامعتبر است. لطفاً شماره صفحات معتبر وارد کنید.",
-  "appName": "Open PDF Studio",
+  "appName": "HB PDF Studio",
   "noDocuments": "هیچ PDF انتخاب نشده",
   "noDocumentsHint": "برای مرور و حاشیه‌نویسی یک PDF روی \"باز کردن PDF\" کلیک کنید",
   "solid": "توپر",
@@ -350,7 +350,7 @@
     "fileAssoc": "این نسخه قابل‌حمل در Windows ثبت نشده است. برای باز کردن فایل‌های PDF با آن، روی یک PDF کلیک راست کنید، Open with > Choose another app را انتخاب کنید و open-pdf-studio.exe را در همین پوشه برگزینید.",
     "explorerThumbnails": "تصاویر بندانگشتی PDF در File Explorer فقط در نسخه نصب‌شده در دسترس است.",
     "virtualPrinter": "چاپگر مجازی فقط در نسخه نصب‌شده در دسترس است: با دسترسی مدیر به Windows افزوده می‌شود.",
-    "notWritable": "Open PDF Studio نمی‌تواند در پوشه {{dir}} بنویسد، بنابراین این بار تنظیمات شما در نمایه کاربری‌تان ذخیره می‌شود. پوشه قابل‌حمل را به مکانی قابل نوشتن، مانند یک حافظه USB یا پوشه Documents، منتقل کنید."
+    "notWritable": "HB PDF Studio نمی‌تواند در پوشه {{dir}} بنویسد، بنابراین این بار تنظیمات شما در نمایه کاربری‌تان ذخیره می‌شود. پوشه قابل‌حمل را به مکانی قابل نوشتن، مانند یک حافظه USB یا پوشه Documents، منتقل کنید."
   },
   "protectedPdfNoPrint": "مجوزهای این سند اجازهٔ چاپ نمی‌دهند.",
   "share": {

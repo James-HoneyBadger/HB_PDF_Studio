@@ -204,19 +204,19 @@
   "fileAssoc": {
     "defaultPdfApplication": "Predvolená PDF aplikácia",
     "currentDefault": "Aktuálna predvolená:",
-    "setDefault": "Nastaviť Open PDF Studio ako predvolený PDF prehliadač",
-    "setDefaultHelp": "Toto otvorí systémové nastavenia, kde môžete vybrať Open PDF Studio ako predvolenú aplikáciu na otváranie PDF súborov.",
-    "windowsInstructions": "Nastavenia systému Windows boli otvorené.\n\nNa nastavenie Open PDF Studio ako predvolenej aplikácie:\n1. Prejdite nadol na \"Vybrať predvolené aplikácie podľa typu súboru\"\n2. Nájdite .pdf\n3. Kliknite a vyberte Open PDF Studio",
+    "setDefault": "Nastaviť HB PDF Studio ako predvolený PDF prehliadač",
+    "setDefaultHelp": "Toto otvorí systémové nastavenia, kde môžete vybrať HB PDF Studio ako predvolenú aplikáciu na otváranie PDF súborov.",
+    "windowsInstructions": "Nastavenia systému Windows boli otvorené.\n\nNa nastavenie HB PDF Studio ako predvolenej aplikácie:\n1. Prejdite nadol na \"Vybrať predvolené aplikácie podľa typu súboru\"\n2. Nájdite .pdf\n3. Kliknite a vyberte HB PDF Studio",
     "windowsFailed": "Nepodarilo sa otvoriť Nastavenia systému Windows.\n\nProsím, manuálne otvorte Nastavenia > Aplikácie > Predvolené aplikácie.",
-    "macInstructions": "Na nastavenie Open PDF Studio ako predvoleného PDF prehliadača na macOS:\n\n1. Kliknite pravým tlačidlom na ľubovoľný PDF súbor vo Finderi\n2. Vyberte \"Informácie\"\n3. V časti \"Otvoriť pomocou\" vyberte Open PDF Studio\n4. Kliknite na \"Zmeniť všetky...\"",
-    "linuxInstructions": "Na nastavenie Open PDF Studio ako predvoleného PDF prehliadača na Linuxe:\n\nSpustite v termináli:\nxdg-mime default openpdfstudio.desktop application/pdf",
+    "macInstructions": "Na nastavenie HB PDF Studio ako predvoleného PDF prehliadača na macOS:\n\n1. Kliknite pravým tlačidlom na ľubovoľný PDF súbor vo Finderi\n2. Vyberte \"Informácie\"\n3. V časti \"Otvoriť pomocou\" vyberte HB PDF Studio\n4. Kliknite na \"Zmeniť všetky...\"",
+    "linuxInstructions": "Na nastavenie HB PDF Studio ako predvoleného PDF prehliadača na Linuxe:\n\nSpustite v termináli:\nxdg-mime default openpdfstudio.desktop application/pdf",
     "checkFinder": "Skontrolujte Finder > Informácie",
     "notSet": "Nenastavené",
     "chosenInSystemSettings": "Zvolené v nastaveniach systému",
-    "sandboxInstructions": "Open PDF Studio beží ako balík {{package}} a nemôže samo zmeniť predvolenú aplikáciu pre PDF.\n\nZvoľte Open PDF Studio v nastaveniach systému v časti Predvolené aplikácie, alebo kliknite pravým tlačidlom na súbor PDF a použite Otvoriť pomocou.",
-    "xdgMimeMissing": "xdg-mime (balík xdg-utils) nie je nainštalovaný, takže predvolenú aplikáciu pre PDF nemožno nastaviť odtiaľto.\n\nNainštalujte xdg-utils, alebo zvoľte Open PDF Studio v nastaveniach systému v časti Predvolené aplikácie.",
-    "linuxDone": "Open PDF Studio je teraz predvolenou aplikáciou pre súbory PDF.",
-    "linuxFailed": "Open PDF Studio sa nepodarilo nastaviť ako predvolenú aplikáciu pre PDF.\n\n{{error}}"
+    "sandboxInstructions": "HB PDF Studio beží ako balík {{package}} a nemôže samo zmeniť predvolenú aplikáciu pre PDF.\n\nZvoľte HB PDF Studio v nastaveniach systému v časti Predvolené aplikácie, alebo kliknite pravým tlačidlom na súbor PDF a použite Otvoriť pomocou.",
+    "xdgMimeMissing": "xdg-mime (balík xdg-utils) nie je nainštalovaný, takže predvolenú aplikáciu pre PDF nemožno nastaviť odtiaľto.\n\nNainštalujte xdg-utils, alebo zvoľte HB PDF Studio v nastaveniach systému v časti Predvolené aplikácie.",
+    "linuxDone": "HB PDF Studio je teraz predvolenou aplikáciou pre súbory PDF.",
+    "linuxFailed": "HB PDF Studio sa nepodarilo nastaviť ako predvolenú aplikáciu pre PDF.\n\n{{error}}"
   },
   "explorerThumbnails": {
     "title": "Prieskumník",
@@ -226,7 +226,7 @@
     "otherHandler": "Miniatúry PDF teraz poskytuje {{name}}.",
     "defaultApp": "Vaša predvolená aplikácia pre PDF zobrazuje vlastné miniatúry ({{name}}). Windows ich používa, kým je táto aplikácia vašou predvolenou aplikáciou pre PDF.",
     "replaceTitle": "Miniatúry PDF",
-    "replaceConfirm": "{{name}} už poskytuje miniatúry PDF v Prieskumníkovi.\n\nZobrazovať namiesto nich pre váš účet Windows miniatúry z Open PDF Studio? Vypnutím tejto možnosti sa obnovia predchádzajúce miniatúry.",
+    "replaceConfirm": "{{name}} už poskytuje miniatúry PDF v Prieskumníkovi.\n\nZobrazovať namiesto nich pre váš účet Windows miniatúry z HB PDF Studio? Vypnutím tejto možnosti sa obnovia predchádzajúce miniatúry.",
     "failed": "Nastavenie miniatúr v Prieskumníkovi sa nepodarilo zmeniť."
   },
   "virtualPrinter": {
@@ -251,7 +251,7 @@
     "stateUnknownDetail": "Stav tlačiarne sa nepodarilo prečítať.",
     "howTitle": "Ako to funguje",
     "how1": "V ľubovoľnom programe zvoľte Tlačiť a vyberte {{printer}}.",
-    "how2": "Tlač sa zobrazí v okne tlačiarne aplikácie Open PDF Studio.",
+    "how2": "Tlač sa zobrazí v okne tlačiarne aplikácie HB PDF Studio.",
     "how3": "Zobrazte ukážku, zmeňte poradie, zlúčte a uložte úlohy ako jeden PDF alebo ich otvorte v Studio.",
     "openWindow": "Otvoriť okno tlačiarne",
     "openWindowTip": "Zobraziť zachytené tlačové úlohy"

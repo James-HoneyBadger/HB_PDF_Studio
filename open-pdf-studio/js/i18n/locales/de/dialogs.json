@@ -35,7 +35,7 @@
   "printQueue": {
     "toolbarLabel": "Aktionen für Druckaufträge",
     "openInStudio": "In Studio öffnen",
-    "openInStudioTip": "Den ausgewählten Auftrag in Open PDF Studio öffnen (Eingabetaste oder Doppelklick). Mehrere ausgewählte Aufträge werden als ein zusammengeführtes Dokument geöffnet.",
+    "openInStudioTip": "Den ausgewählten Auftrag in HB PDF Studio öffnen (Eingabetaste oder Doppelklick). Mehrere ausgewählte Aufträge werden als ein zusammengeführtes Dokument geöffnet.",
     "mergeSelected": "Auswahl zusammenführen…",
     "mergeSelectedTip": "Die ausgewählten Aufträge in Listenreihenfolge zu einer PDF zusammenführen und speichern",
     "saveAs": "Speichern unter…",
@@ -75,11 +75,11 @@
     "adding": "PDF-Dateien werden hinzugefügt…",
     "saving": "Wird gespeichert…",
     "merging": "Zusammenführen {{done}} von {{count}}…",
-    "opening": "Wird in Open PDF Studio geöffnet…",
+    "opening": "Wird in HB PDF Studio geöffnet…",
     "deleting": "Wird gelöscht…",
     "saved": "Gespeichert als {{name}}",
     "merged": "Zusammengeführt und gespeichert als {{name}}",
-    "opened": "In Open PDF Studio geöffnet",
+    "opened": "In HB PDF Studio geöffnet",
     "deleted": "Gelöscht: {{count}}",
     "failed": "Fehlgeschlagen: {{message}}",
     "mergedFileName": "Zusammengeführt",
@@ -452,7 +452,7 @@
   },
   "update": {
     "title": "Software-Update",
-    "newVersionAvailable": "Eine neue Version von Open PDF Studio ist verfügbar.",
+    "newVersionAvailable": "Eine neue Version von HB PDF Studio ist verfügbar.",
     "currentVersion": "Aktuelle Version:",
     "newVersion": "Neue Version:",
     "releaseNotes": "Versionshinweise:",
@@ -616,7 +616,7 @@
   },
   "defaultPdfApp": {
     "title": "Standard-PDF-App",
-    "message": "Open PDF Studio ist nicht als Standard-App zum Öffnen von PDF-Dateien festgelegt. Möchten Sie sie als Standard festlegen?",
+    "message": "HB PDF Studio ist nicht als Standard-App zum Öffnen von PDF-Dateien festgelegt. Möchten Sie sie als Standard festlegen?",
     "setAsDefault": "Als Standard festlegen",
     "dontAskAgain": "Nicht mehr fragen",
     "notNow": "Nicht jetzt"
@@ -1322,7 +1322,7 @@
   },
   "recovery": {
     "title": "Nicht gespeicherte Arbeit wiederherstellen",
-    "intro": "Open PDF Studio wurde beim letzten Mal nicht normal beendet. Für diese Dokumente wurde nicht gespeicherte Arbeit aufbewahrt:",
+    "intro": "HB PDF Studio wurde beim letzten Mal nicht normal beendet. Für diese Dokumente wurde nicht gespeicherte Arbeit aufbewahrt:",
     "savedAt": "Aufbewahrt am {{time}}",
     "pages": "Seiten: {{count}}",
     "untitled": "Unbenanntes Dokument",
@@ -1343,7 +1343,7 @@
     "deleteFailed": "Löschen fehlgeschlagen: {{error}}",
     "tabLabel": "wiederhergestellt",
     "tabTip": "Nach einem unerwarteten Beenden wiederhergestellt. Speichern schreibt in die Originaldatei.",
-    "reloadStopped": "Das Fenster von Open PDF Studio ist mehrmals kurz hintereinander abgestürzt und wird nicht mehr automatisch neu geladen. Speichern Sie Ihre Arbeit und starten Sie die App neu."
+    "reloadStopped": "Das Fenster von HB PDF Studio ist mehrmals kurz hintereinander abgestürzt und wird nicht mehr automatisch neu geladen. Speichern Sie Ihre Arbeit und starten Sie die App neu."
   },
   "protectPdf": {
     "title": "Dokumentsicherheit",
@@ -1919,7 +1919,7 @@
       "routing": "Routing",
       "howToRespond": "Reply to this mail with \"Approved\" or \"Rejected\" and keep {{ref}} in the subject.",
       "howToSign": "Signers: return the signed PDF and keep {{ref}} in the file name.",
-      "disclaimer": "The SHA-256 above identifies the exact document version. This mail was prepared in Open PDF Studio; it is not a legally binding signature service and does not verify identities."
+      "disclaimer": "The SHA-256 above identifies the exact document version. This mail was prepared in HB PDF Studio; it is not a legally binding signature service and does not verify identities."
     },
     "errors": {
       "CONFIGURE_ADAPTER_FIRST": "Enable the provider first.",

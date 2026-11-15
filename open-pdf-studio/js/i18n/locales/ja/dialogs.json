@@ -35,7 +35,7 @@
   "printQueue": {
     "toolbarLabel": "印刷ジョブの操作",
     "openInStudio": "Studio で開く",
-    "openInStudioTip": "選択したジョブを Open PDF Studio で開きます（Enter またはダブルクリック）。複数のジョブを選択すると、1 つの結合ドキュメントとして開きます。",
+    "openInStudioTip": "選択したジョブを HB PDF Studio で開きます（Enter またはダブルクリック）。複数のジョブを選択すると、1 つの結合ドキュメントとして開きます。",
     "mergeSelected": "選択を結合…",
     "mergeSelectedTip": "選択したジョブをリストの順に 1 つの PDF に結合して保存します",
     "saveAs": "名前を付けて保存…",
@@ -75,11 +75,11 @@
     "adding": "PDF ファイルを追加しています…",
     "saving": "保存中…",
     "merging": "結合中 {{done}} / {{count}}…",
-    "opening": "Open PDF Studio で開いています…",
+    "opening": "HB PDF Studio で開いています…",
     "deleting": "削除中…",
     "saved": "{{name}} として保存しました",
     "merged": "結合して {{name}} として保存しました",
-    "opened": "Open PDF Studio で開きました",
+    "opened": "HB PDF Studio で開きました",
     "deleted": "削除しました：{{count}}",
     "failed": "失敗しました：{{message}}",
     "mergedFileName": "結合済み",
@@ -452,7 +452,7 @@
   },
   "update": {
     "title": "ソフトウェアの更新",
-    "newVersionAvailable": "Open PDF Studio の新しいバージョンが利用可能です。",
+    "newVersionAvailable": "HB PDF Studio の新しいバージョンが利用可能です。",
     "currentVersion": "現在のバージョン：",
     "newVersion": "新しいバージョン：",
     "releaseNotes": "リリースノート：",
@@ -616,7 +616,7 @@
   },
   "defaultPdfApp": {
     "title": "既定の PDF アプリ",
-    "message": "Open PDF Studio は PDF ファイルを開く既定のアプリケーションとして設定されていません。既定のアプリケーションに設定しますか？",
+    "message": "HB PDF Studio は PDF ファイルを開く既定のアプリケーションとして設定されていません。既定のアプリケーションに設定しますか？",
     "setAsDefault": "既定に設定",
     "dontAskAgain": "今後は表示しない",
     "notNow": "今はしない"
@@ -1322,7 +1322,7 @@
   },
   "recovery": {
     "title": "保存されていない作業の復元",
-    "intro": "前回、Open PDF Studio は正常に終了しませんでした。次のドキュメントの保存されていない作業が保持されています:",
+    "intro": "前回、HB PDF Studio は正常に終了しませんでした。次のドキュメントの保存されていない作業が保持されています:",
     "savedAt": "保持日時: {{time}}",
     "pages": "ページ数: {{count}}",
     "untitled": "無題のドキュメント",
@@ -1343,7 +1343,7 @@
     "deleteFailed": "削除できませんでした: {{error}}",
     "tabLabel": "復元済み",
     "tabTip": "予期しない終了の後に復元されました。保存すると元のファイルに書き込まれます。",
-    "reloadStopped": "Open PDF Studio のウィンドウが続けて何度か停止したため、自動での再読み込みは行われなくなりました。作業を保存してアプリを再起動してください。"
+    "reloadStopped": "HB PDF Studio のウィンドウが続けて何度か停止したため、自動での再読み込みは行われなくなりました。作業を保存してアプリを再起動してください。"
   },
   "protectPdf": {
     "title": "文書のセキュリティ",
@@ -1919,7 +1919,7 @@
       "routing": "Routing",
       "howToRespond": "Reply to this mail with \"Approved\" or \"Rejected\" and keep {{ref}} in the subject.",
       "howToSign": "Signers: return the signed PDF and keep {{ref}} in the file name.",
-      "disclaimer": "The SHA-256 above identifies the exact document version. This mail was prepared in Open PDF Studio; it is not a legally binding signature service and does not verify identities."
+      "disclaimer": "The SHA-256 above identifies the exact document version. This mail was prepared in HB PDF Studio; it is not a legally binding signature service and does not verify identities."
     },
     "errors": {
       "CONFIGURE_ADAPTER_FIRST": "Enable the provider first.",

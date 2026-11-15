@@ -13,7 +13,7 @@
     <div class="hero-sigil">🏛️</div>
     <h1>HET PARLEMENT</h1>
     <p class="subtitle">Buitengewone zitting over PDF Viewer Architectuur</p>
-    <p class="meta">Open PDF Studio · 12 mei 2026 · 7 leden + voorzitter</p>
+    <p class="meta">HB PDF Studio · 12 mei 2026 · 7 leden + voorzitter</p>
   </div>
 </header>
 
@@ -86,7 +86,7 @@
   <article class="card gebruiker">
     <div class="avatar">🔨</div>
     <h3>De Gebruiker — Maarten</h3>
-    <p class="role">Project owner van Open PDF Studio. Werkt bij 3BM Bouwtechniek. Gebruikt het tool 6+ uur/dag voor BIM-projecten. Frustratie met huidige snelheid is hét drijfveer.</p>
+    <p class="role">Project owner van HB PDF Studio. Werkt bij 3BM Bouwtechniek. Gebruikt het tool 6+ uur/dag voor BIM-projecten. Frustratie met huidige snelheid is hét drijfveer.</p>
     <p class="creed">"BARN moet in een seconde open. Daarna instant zoomen. Geen excuses."</p>
   </article>
 
@@ -107,7 +107,7 @@
   <article class="card historicus">
     <div class="avatar">📜</div>
     <h3>De Geschiedkundige — Dr. Margriet Beemster</h3>
-    <p class="role">Software-historicus aan TU Delft, specialiteit failure post-mortems van FOSS projecten. Las de hele git-historie van Open PDF Studio voorbereid voor de zitting. Komt met lessen uit de bouwgeschiedenis.</p>
+    <p class="role">Software-historicus aan TU Delft, specialiteit failure post-mortems van FOSS projecten. Las de hele git-historie van HB PDF Studio voorbereid voor de zitting. Komt met lessen uit de bouwgeschiedenis.</p>
     <p class="creed">"Wie de geschiedenis niet kent, herbouwt 'm — soms zelfs op dezelfde manier."</p>
   </article>
 </div>
@@ -145,7 +145,7 @@
 
 <div class="speech voorzitter">
   <div class="speaker">Voorzitter</div>
-  <p>"Dames en heren. Wij zijn vandaag bijeen om de architectuur van Open PDF Studio te bespreken. De gebruiker — onze project owner — vraagt zich af waarom BARN niet zo snel opent als een gewone afbeelding. Twee eerdere pogingen — Vello GPU en tile rendering — zijn op architecturele gronden afgewezen. Vandaag wil ik dat we EERST naar de bestanden kijken. Dan pas naar de oplossing. Mevrouw Lindgren, mag ik u als eerste vragen?"</p>
+  <p>"Dames en heren. Wij zijn vandaag bijeen om de architectuur van HB PDF Studio te bespreken. De gebruiker — onze project owner — vraagt zich af waarom BARN niet zo snel opent als een gewone afbeelding. Twee eerdere pogingen — Vello GPU en tile rendering — zijn op architecturele gronden afgewezen. Vandaag wil ik dat we EERST naar de bestanden kijken. Dan pas naar de oplossing. Mevrouw Lindgren, mag ik u als eerste vragen?"</p>
 </div>
 
 <div class="speech purist">
@@ -179,14 +179,14 @@
 <div class="speech tekenaar">
   <div class="speaker">De Tekenaar</div>
   <p>"Mag ik vanuit de werkpraktijk reageren? Ik werk vier jaar bij een architectenbureau in Utrecht. Mijn dagelijkse PDFs zijn precies dit type: <code>NKD1a</code>, <code>BARN</code>, <code>3131-CLT-Set</code>. Constructie- of bouwkundige tekeningen, vaak 2-30 pages. Soms van een externe leverancier die ze in DWG maakte en als PDF exporteerde — die hebben honderd duizenden lijntjes."</p>
-  <p>"Waar ik dagelijks tegenaan loop: ik moet snel kunnen <strong>vergelijken</strong>. Twee revisies naast elkaar, schakelen tussen tabs, snel zoomen om een detail te zien, dan weer uitzoomen. Bluebeam doet dit in een halve seconde per actie. Open PDF Studio kost meer dan een seconde per actie. Dat klinkt klein, maar in een 8-uurs dag met ~500 zoom-cycles is dat 8+ minuten alleen aan wachten."</p>
+  <p>"Waar ik dagelijks tegenaan loop: ik moet snel kunnen <strong>vergelijken</strong>. Twee revisies naast elkaar, schakelen tussen tabs, snel zoomen om een detail te zien, dan weer uitzoomen. Bluebeam doet dit in een halve seconde per actie. HB PDF Studio kost meer dan een seconde per actie. Dat klinkt klein, maar in een 8-uurs dag met ~500 zoom-cycles is dat 8+ minuten alleen aan wachten."</p>
   <p>"Voor mij is BARN representatief. Wat hier werkt, werkt ook voor mijn echte werk."</p>
 </div>
 
 <div class="speech eindgebruiker">
   <div class="speaker">De Eindgebruiker</div>
   <p>"Ik ben Hanne. Manager. Ik open dit soort tekeningen één keer per week om mijn ingenieurs te beoordelen. De rest van de tijd is het: een offerte van 5 pagina's, een rapport, soms een specificatie. Voor mij is de meerderheid van dit dossier — <code>Tekst.pdf</code>, <code>rapport-constructie</code>, <code>Combinatie</code> — alledaagse pdf-werk."</p>
-  <p>"Mijn iPad opent BARN in twee seconden via Apple Files. Dezelfde tablet, dezelfde tijd voor <code>rapport-constructie</code>. Op mijn werklaptop wacht ik 5-8 seconden tot een PDF in Open PDF Studio bruikbaar is. Dat is mijn echte ergernis: niet de extreme PDFs, maar dat ALLES traag voelt."</p>
+  <p>"Mijn iPad opent BARN in twee seconden via Apple Files. Dezelfde tablet, dezelfde tijd voor <code>rapport-constructie</code>. Op mijn werklaptop wacht ik 5-8 seconden tot een PDF in HB PDF Studio bruikbaar is. Dat is mijn echte ergernis: niet de extreme PDFs, maar dat ALLES traag voelt."</p>
 </div>
 
 <div class="speech luis">
@@ -198,7 +198,7 @@
 <div class="speech gebruiker">
   <div class="speaker">De Gebruiker</div>
   <p>"Hanne snijdt iets pijnlijks aan. Het is niet alleen BARN. Onze EERSTE render is voor elk type PDF te langzaam — ook voor een 158 KB <code>Tekst.pdf</code>. Dat is wat een gebruiker merkt: bij elke nieuwe pagina, elke nieuwe scale, voelt het alsof het systeem moet 'denken'."</p>
-  <p>"Mijn verwachting is hoog: ik bouw deze tool voor mijn eigen dagelijks werk plus dat van de tekenaars op kantoor. Open PDF Studio moet de tool zijn waar ik nooit meer wegga. Voor BARN moet het 1 seconde tot eerste page zijn. Voor de rest van de pages: max 100 ms tussen scrolls. Voor zoom: instant — alsof het GIF is."</p>
+  <p>"Mijn verwachting is hoog: ik bouw deze tool voor mijn eigen dagelijks werk plus dat van de tekenaars op kantoor. HB PDF Studio moet de tool zijn waar ik nooit meer wegga. Voor BARN moet het 1 seconde tot eerste page zijn. Voor de rest van de pages: max 100 ms tussen scrolls. Voor zoom: instant — alsof het GIF is."</p>
 </div>
 
 </div>
@@ -620,7 +620,7 @@
 
 <div class="speech programmer">
   <div class="speaker">De Programmer</div>
-  <p>"Bovendien: WebView2 (waar Open PDF Studio in draait) gebruikt al GPU compositing voor canvas → screen. Dus we hebben de iPad-stijl 'final-step GPU' DE FACTO al. Het is niet ons probleem."</p>
+  <p>"Bovendien: WebView2 (waar HB PDF Studio in draait) gebruikt al GPU compositing voor canvas → screen. Dus we hebben de iPad-stijl 'final-step GPU' DE FACTO al. Het is niet ons probleem."</p>
 </div>
 
 <div class="speech veteraan">
@@ -674,13 +674,13 @@
     <li>Ik tik annotatie 'wijziging OK' — moet direct verschijnen, niet vertraagd</li>
     <li>Ctrl+S — save — &lt;1 sec</li>
   </ol>
-  <p>"In Bluebeam Revu doet de hele cyclus 3-5 seconden. In Open PDF Studio kost het me NU 20-25 seconden door cumulatieve vertragingen. Voornaamste pijn: ELKE zoom is een halve seconde extra. Vermenigvuldig met 100 zoom-cycles per uur."</p>
+  <p>"In Bluebeam Revu doet de hele cyclus 3-5 seconden. In HB PDF Studio kost het me NU 20-25 seconden door cumulatieve vertragingen. Voornaamste pijn: ELKE zoom is een halve seconde extra. Vermenigvuldig met 100 zoom-cycles per uur."</p>
 </div>
 
 <div class="speech eindgebruiker">
   <div class="speaker">De Eindgebruiker</div>
   <p>"Mijn workflow is veel eenvoudiger. Open offerte → scroll door → printen of saving naar shared drive. Voor mij is de OPEN tijd het belangrijkste. Als die 1.5 seconde is, en daarna gewoon scrollen werkt, ben ik tevreden.</p>
-  <p>"Wat ik wel verwacht: een PDF die nog niet open is moet IETS van progress laten zien. Een spinner. Een placeholder. Niet 'wit scherm 3 seconden'. Dat is wat tegenwoordig bij Open PDF Studio gebeurt en voelt slecht."</p>
+  <p>"Wat ik wel verwacht: een PDF die nog niet open is moet IETS van progress laten zien. Een spinner. Een placeholder. Niet 'wit scherm 3 seconden'. Dat is wat tegenwoordig bij HB PDF Studio gebeurt en voelt slecht."</p>
 </div>
 
 <div class="speech gebruiker">
@@ -755,12 +755,12 @@
 
 <div class="speech voorzitter">
   <div class="speaker">Voorzitter</div>
-  <p>"Voor we tot de synthese komen wil ik nog één invalshoek horen die we tot nu toe hebben gemist: de geschiedenis. Open PDF Studio bestaat sinds september 2025. Ons performance werk de afgelopen vier weken heeft een eigen patroon. Dr. Beemster, mag ik u vragen?"</p>
+  <p>"Voor we tot de synthese komen wil ik nog één invalshoek horen die we tot nu toe hebben gemist: de geschiedenis. HB PDF Studio bestaat sinds september 2025. Ons performance werk de afgelopen vier weken heeft een eigen patroon. Dr. Beemster, mag ik u vragen?"</p>
 </div>
 
 <div class="speech historicus">
   <div class="speaker">De Geschiedkundige</div>
-  <p>"Dank u, voorzitter. Ik heb de afgelopen drie dagen de volledige commit-geschiedenis van Open PDF Studio gelezen. Specifiek de performance-gerelateerde takken. Wat ik vond is verontrustend bekend voor wie FOSS post-mortems doet."</p>
+  <p>"Dank u, voorzitter. Ik heb de afgelopen drie dagen de volledige commit-geschiedenis van HB PDF Studio gelezen. Specifiek de performance-gerelateerde takken. Wat ik vond is verontrustend bekend voor wie FOSS post-mortems doet."</p>
 
   <p><strong>Twee grote architecturale gokjes, beide gefaald.</strong></p>
 
@@ -1005,7 +1005,7 @@
 </div>
 
 <div class="footer-meta">
-  <p>Open PDF Studio · Het Parlement · zitting 12 mei 2026 · 9 leden + voorzitter · in totaal 4 uur 22 minuten</p>
+  <p>HB PDF Studio · Het Parlement · zitting 12 mei 2026 · 9 leden + voorzitter · in totaal 4 uur 22 minuten</p>
   <p>Volgende stap: acht Proof of Concept onderzoeken — apart project, te starten door de Gebruiker. Optioneel een negende (gerichte Vello-met-tuning) als basis-aanpak niet voldoende blijkt.</p>
 </div>
 

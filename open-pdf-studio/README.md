@@ -1,6 +1,6 @@
 # open-pdf-studio (app folder)
 
-This folder holds the Open PDF Studio app: the front end (`js/`, `styles/`,
+This folder holds the HB PDF Studio app: the front end (`js/`, `styles/`,
 `index.html`), the Tauri shell (`src-tauri/`) and the build and test scripts
 (`scripts/`).
 

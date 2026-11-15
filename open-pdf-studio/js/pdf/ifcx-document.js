@@ -534,7 +534,7 @@ export class IfcxSchrijver {
         id: `opds-ifcx-${this.wortel}`,
         ifcxVersion: IFCX_VERSIE,
         dataVersion: DATA_VERSIE,
-        author: 'Open PDF Studio',
+        author: 'HB PDF Studio',
         timestamp: this.tijd,
       },
       imports: IMPORTS.map((uri) => ({ uri })),

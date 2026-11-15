@@ -1,9 +1,9 @@
 name: open-pdf-studio
 base: core24
-version: '2026.46.3'
+version: '2026.47.0'
 summary: Free, open-source PDF editor for drawings and documents
 description: |
-  Open PDF Studio is a free, open-source PDF editor and annotator for people
+  HB PDF Studio is a free, open-source PDF editor and annotator for people
   who work with drawings and documents every day: architects, engineers,
   contractors, and anyone who needs solid tools without a subscription.
 
@@ -54,7 +54,7 @@ description: |
   and no telemetry, no data collection and no subscriptions.
 
   Built with Tauri and web technologies for a fast, lightweight, native desktop experience.
-title: Open PDF Studio
+title: HB PDF Studio
 icon: snap/gui/open-pdf-studio.png
 license: LGPL-3.0-or-later
 contact: https://impertio.nl/
@@ -94,8 +94,8 @@ apps:
       - single-instance
 
 layout:
-  /usr/lib/x86_64-linux-gnu/webkit2gtk-4.1:
-    bind: $SNAP/usr/lib/x86_64-linux-gnu/webkit2gtk-4.1
+  /usr/lib/aarch64-linux-gnu/webkit2gtk-4.1:
+    bind: $SNAP/usr/lib/aarch64-linux-gnu/webkit2gtk-4.1
 
 parts:
   open-pdf-studio:
@@ -113,7 +113,7 @@ parts:
       mkdir -p $CRAFT_PART_INSTALL/usr/share/applications
       cat > $CRAFT_PART_INSTALL/usr/share/applications/open-pdf-studio.desktop << 'EOF'
       [Desktop Entry]
-      Name=Open PDF Studio
+      Name=HB PDF Studio
       Comment=Free, open-source PDF annotation editor
       Exec=open-pdf-studio %F
       Icon=${SNAP}/usr/share/icons/hicolor/512x512/apps/open-pdf-studio.png

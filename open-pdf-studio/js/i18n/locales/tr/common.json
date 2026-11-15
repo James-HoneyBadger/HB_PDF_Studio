@@ -110,7 +110,7 @@
     "readOnly": {
       "title": "Opened read-only",
       "kenmerk": "{{name}} is read-only: it has the read-only attribute, or you only have read permission on this location.",
-      "in-gebruik": "{{name}} is open in another application or is being synchronized, so Open PDF Studio cannot reserve it.",
+      "in-gebruik": "{{name}} is open in another application or is being synchronized, so HB PDF Studio cannot reserve it.",
       "geweigerd": "{{name}} cannot be reserved: Windows denied it.",
       "mislukt": "{{name}} could not be reserved.",
       "saveAs": "It has been opened read-only. You can make changes; use Save As to save them to another file."
@@ -118,7 +118,7 @@
   },
   "hostOpenFailed": "Dosya depolamadan okunamadı. Yeniden deneyin.",
   "hostInvalidPdf": "{{name}} geçerli bir PDF dosyası değil ve açılamadı.",
-  "hostNoContact": "Open PDF Studio'yu içeren sayfa yanıt vermiyor, bu nedenle dosyalar açılamıyor veya kaydedilemiyor. Sayfayı yeniden yükleyip tekrar deneyin.",
+  "hostNoContact": "HB PDF Studio'yu içeren sayfa yanıt vermiyor, bu nedenle dosyalar açılamıyor veya kaydedilemiyor. Sayfayı yeniden yükleyip tekrar deneyin.",
   "hostSaveConflict": "Bu dosyayı bu arada başka biri kaydetti. Değişiklikleriniz ayrı bir kopya olarak kaydedildi: {{name}}. Sonraki kayıtlar bu kopyaya gider.",
   "hostSaveNotLocked": "Bu dosya size ayrılmış değil, bu yüzden başkaları da aynı anda değiştirebilir. Değişiklikleriniz yeni sürümler olarak kaydedilir; hiçbir şeyin üzerine yazılmaz.",
   "hostReadOnlySave": "Bu dosya salt okunur açıldı, bu yüzden değişiklikler buna kaydedilemez. Bir kopya indirmek için Farklı Kaydet'i kullanın.",
@@ -162,7 +162,7 @@
   "failedToReplacePage": "Sayfa değiştirilemedi: {{error}}",
   "failedToMergeFile": "Birleştirilemedi: {{file}}\n{{error}}",
   "invalidPageRange": "Geçersiz sayfa aralığı. Lütfen geçerli sayfa numaraları girin.",
-  "appName": "Open PDF Studio",
+  "appName": "HB PDF Studio",
   "noDocuments": "PDF Seçilmedi",
   "noDocumentsHint": "Bir PDF dosyasını görüntülemek ve açıklama eklemek için \"PDF Aç\" düğmesine tıklayın",
   "solid": "Düz",
@@ -350,7 +350,7 @@
     "fileAssoc": "Bu taşınabilir kopya Windows'a kayıtlı değil. PDF dosyalarını bununla açmak için bir PDF'ye sağ tıklayın, Birlikte aç > Başka bir uygulama seç'i seçin ve bu klasördeki open-pdf-studio.exe dosyasını seçin.",
     "explorerThumbnails": "Dosya Gezgini'ndeki PDF küçük resimleri yalnızca yüklü sürümde kullanılabilir.",
     "virtualPrinter": "Sanal yazıcı yalnızca yüklü sürümde kullanılabilir: Windows'a yönetici haklarıyla eklenir.",
-    "notWritable": "Open PDF Studio {{dir}} klasörüne yazamıyor, bu yüzden ayarlarınız bu sefer kullanıcı profilinizde saklanıyor. Taşınabilir klasörü USB bellek veya Belgeler klasörünüz gibi yazılabilir bir konuma taşıyın."
+    "notWritable": "HB PDF Studio {{dir}} klasörüne yazamıyor, bu yüzden ayarlarınız bu sefer kullanıcı profilinizde saklanıyor. Taşınabilir klasörü USB bellek veya Belgeler klasörünüz gibi yazılabilir bir konuma taşıyın."
   },
   "protectedPdfNoPrint": "Bu belgenin izinleri yazdırmaya izin vermiyor.",
   "share": {

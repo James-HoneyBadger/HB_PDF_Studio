@@ -35,7 +35,7 @@
   "printQueue": {
     "toolbarLabel": "Дії із завданнями друку",
     "openInStudio": "Відкрити в Studio",
-    "openInStudioTip": "Відкрити вибране завдання в Open PDF Studio (Enter або подвійне клацання). Кілька вибраних завдань відкриваються як один об'єднаний документ.",
+    "openInStudioTip": "Відкрити вибране завдання в HB PDF Studio (Enter або подвійне клацання). Кілька вибраних завдань відкриваються як один об'єднаний документ.",
     "mergeSelected": "Об'єднати вибрані…",
     "mergeSelectedTip": "Об'єднати вибрані завдання в порядку списку в один PDF і зберегти його",
     "saveAs": "Зберегти як…",
@@ -75,11 +75,11 @@
     "adding": "Додавання файлів PDF…",
     "saving": "Збереження…",
     "merging": "Об'єднання {{done}} з {{count}}…",
-    "opening": "Відкриття в Open PDF Studio…",
+    "opening": "Відкриття в HB PDF Studio…",
     "deleting": "Видалення…",
     "saved": "Збережено як {{name}}",
     "merged": "Об'єднано й збережено як {{name}}",
-    "opened": "Відкрито в Open PDF Studio",
+    "opened": "Відкрито в HB PDF Studio",
     "deleted": "Видалено: {{count}}",
     "failed": "Помилка: {{message}}",
     "mergedFileName": "Об'єднаний",
@@ -452,7 +452,7 @@
   },
   "update": {
     "title": "Оновлення програми",
-    "newVersionAvailable": "Доступна нова версія Open PDF Studio.",
+    "newVersionAvailable": "Доступна нова версія HB PDF Studio.",
     "currentVersion": "Поточна версія:",
     "newVersion": "Нова версія:",
     "releaseNotes": "Примітки до випуску:",
@@ -616,7 +616,7 @@
   },
   "defaultPdfApp": {
     "title": "Програма PDF за замовчуванням",
-    "message": "Open PDF Studio не встановлено як програму за замовчуванням для відкриття файлів PDF. Бажаєте встановити її за замовчуванням?",
+    "message": "HB PDF Studio не встановлено як програму за замовчуванням для відкриття файлів PDF. Бажаєте встановити її за замовчуванням?",
     "setAsDefault": "Встановити за замовчуванням",
     "dontAskAgain": "Більше не питати",
     "notNow": "Не зараз"
@@ -1322,7 +1322,7 @@
   },
   "recovery": {
     "title": "Відновлення незбереженої роботи",
-    "intro": "Минулого разу Open PDF Studio завершив роботу некоректно. Незбережену роботу в цих документах збережено:",
+    "intro": "Минулого разу HB PDF Studio завершив роботу некоректно. Незбережену роботу в цих документах збережено:",
     "savedAt": "Збережено {{time}}",
     "pages": "Сторінок: {{count}}",
     "untitled": "Документ без назви",
@@ -1343,7 +1343,7 @@
     "deleteFailed": "Не вдалося видалити: {{error}}",
     "tabLabel": "відновлено",
     "tabTip": "Відновлено після неочікуваного завершення роботи. Збереження записує у вихідний файл.",
-    "reloadStopped": "Вікно Open PDF Studio кілька разів поспіль перестало працювати й більше не перезавантажується автоматично. Збережіть роботу та перезапустіть застосунок."
+    "reloadStopped": "Вікно HB PDF Studio кілька разів поспіль перестало працювати й більше не перезавантажується автоматично. Збережіть роботу та перезапустіть застосунок."
   },
   "protectPdf": {
     "title": "Захист документа",
@@ -1919,7 +1919,7 @@
       "routing": "Routing",
       "howToRespond": "Reply to this mail with \"Approved\" or \"Rejected\" and keep {{ref}} in the subject.",
       "howToSign": "Signers: return the signed PDF and keep {{ref}} in the file name.",
-      "disclaimer": "The SHA-256 above identifies the exact document version. This mail was prepared in Open PDF Studio; it is not a legally binding signature service and does not verify identities."
+      "disclaimer": "The SHA-256 above identifies the exact document version. This mail was prepared in HB PDF Studio; it is not a legally binding signature service and does not verify identities."
     },
     "errors": {
       "CONFIGURE_ADAPTER_FIRST": "Enable the provider first.",

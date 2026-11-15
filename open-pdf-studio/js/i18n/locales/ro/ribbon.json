@@ -460,7 +460,7 @@
     "extensionsTitle": "Gestionare extensii",
     "extensions": "Extensii",
     "information": "Informatii",
-    "aboutTitle": "Despre Open PDF Studio",
+    "aboutTitle": "Despre HB PDF Studio",
     "about": "Despre",
     "whatsNewTitle": "Noutăți în această versiune",
     "whatsNew": "Noutăți",
@@ -477,7 +477,7 @@
     "fileAssociation": "Asociere fisiere",
     "setDefaultPdf": "Setare aplicatie PDF implicita",
     "fileAssociations": "Asocieri fisiere",
-    "previousVersionTitle": "Instalează versiunea anterioară a Open PDF Studio",
+    "previousVersionTitle": "Instalează versiunea anterioară a HB PDF Studio",
     "previousVersion": "Versiunea anterioară"
   },
   "format": {

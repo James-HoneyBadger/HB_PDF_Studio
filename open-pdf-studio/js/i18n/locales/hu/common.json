@@ -110,7 +110,7 @@
     "readOnly": {
       "title": "Opened read-only",
       "kenmerk": "{{name}} is read-only: it has the read-only attribute, or you only have read permission on this location.",
-      "in-gebruik": "{{name}} is open in another application or is being synchronized, so Open PDF Studio cannot reserve it.",
+      "in-gebruik": "{{name}} is open in another application or is being synchronized, so HB PDF Studio cannot reserve it.",
       "geweigerd": "{{name}} cannot be reserved: Windows denied it.",
       "mislukt": "{{name}} could not be reserved.",
       "saveAs": "It has been opened read-only. You can make changes; use Save As to save them to another file."
@@ -162,7 +162,7 @@
   "failedToReplacePage": "Az oldal cseréje sikertelen: {{error}}",
   "failedToMergeFile": "Az összefűzés sikertelen: {{file}}\n{{error}}",
   "invalidPageRange": "Érvénytelen oldaltartomány. Kérem, adjon meg érvényes oldalszámokat.",
-  "appName": "Open PDF Studio",
+  "appName": "HB PDF Studio",
   "noDocuments": "Nincs PDF kiválasztva",
   "noDocumentsHint": "Kattintson a \"PDF megnyitása\" gombra egy PDF tallózásához és jegyzeteléséhez",
   "solid": "Folytonos",
@@ -350,7 +350,7 @@
     "fileAssoc": "Ez a hordozható példány nincs regisztrálva a Windowsban. Ha PDF-fájlokat szeretne megnyitni vele, kattintson jobb gombbal egy PDF-re, válassza a Társítás > Másik alkalmazás választása lehetőséget, és jelölje ki az open-pdf-studio.exe fájlt ebben a mappában.",
     "explorerThumbnails": "A PDF-bélyegképek a Fájlkezelőben csak a telepített verzióban érhetők el.",
     "virtualPrinter": "A virtuális nyomtató csak a telepített verzióban érhető el: rendszergazdai jogokkal adható hozzá a Windowshoz.",
-    "notWritable": "Az Open PDF Studio nem tud írni a(z) {{dir}} mappába, ezért a beállításai most a felhasználói profiljában tárolódnak. Helyezze át a hordozható mappát írható helyre, például USB-meghajtóra vagy a Dokumentumok mappába."
+    "notWritable": "Az HB PDF Studio nem tud írni a(z) {{dir}} mappába, ezért a beállításai most a felhasználói profiljában tárolódnak. Helyezze át a hordozható mappát írható helyre, például USB-meghajtóra vagy a Dokumentumok mappába."
   },
   "protectedPdfNoPrint": "A dokumentum jogosultságai nem engedélyezik a nyomtatást.",
   "share": {

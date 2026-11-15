@@ -55,7 +55,7 @@ class HttpTransport(Transport):
             if not text.strip():
                 raise ProtocolError(f"HTTP {e.code} from {self.endpoint}") from None
         except (urllib.error.URLError, ConnectionError, TimeoutError, OSError) as e:
-            raise AppNotReachableError(f"Open PDF Studio is not reachable at {self.endpoint}: {e}") from None
+            raise AppNotReachableError(f"HB PDF Studio is not reachable at {self.endpoint}: {e}") from None
         if not text.strip():
             return None
         try:

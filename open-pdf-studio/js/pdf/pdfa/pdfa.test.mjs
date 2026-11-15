@@ -372,7 +372,7 @@ for (const deel of [1, 2, 3]) {
     assert.equal(info.Title, 'Bouwtekening');
     assert.equal(xmpWaarde(xml, 'dc:title'), 'Bouwtekening');
     assert.equal(xmpWaarde(xml, 'dc:creator'), 'Ontwerper');
-    assert.equal(xmpWaarde(xml, 'pdf:Producer'), 'Open PDF Studio');
+    assert.equal(xmpWaarde(xml, 'pdf:Producer'), 'HB PDF Studio');
     assert.equal(leesXmpDatum(xmpWaarde(xml, 'xmp:CreateDate')).getTime(), Date.UTC(2020, 0, 2, 3, 4, 5));
     // Bestands-ID en kop
     assert.equal(pdf.context.trailerInfo.ID.size(), 2);

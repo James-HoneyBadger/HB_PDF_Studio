@@ -1,8 +1,8 @@
 # Installing on Linux
 
 Every [release](https://github.com/OpenAEC-Foundation/open-pdf-studio/releases/latest)
-has a `.deb`, an `.AppImage` and a `.snap` for x86_64 (amd64). Other
-architectures are not built.
+has a `.deb`, an `.AppImage` and a `.snap` for Linux AArch64 (ARM64). No
+other desktop operating-system or CPU targets are built.
 
 ## Verifying the download (OpenPGP)
 
@@ -17,7 +17,7 @@ and on every release as `openaec-signing-public-key.asc`.
 ```bash
 gpg --import openaec-signing-public-key.asc
 gpg --fingerprint 13F6D414ADEE4ED4CD09AC60601D86C93C504D29
-gpg --verify Open.PDF.Studio_*_amd64.deb.asc Open.PDF.Studio_*_amd64.deb
+gpg --verify HB.PDF.Studio_*_arm64.deb.asc HB.PDF.Studio_*_arm64.deb
 gpg --verify SHA256SUMS.asc SHA256SUMS
 sha256sum --check --ignore-missing SHA256SUMS
 ```
@@ -48,7 +48,7 @@ Store keeps it up to date.
 ## Debian and Ubuntu (`.deb`)
 
 ```bash
-sudo apt install ./Open.PDF.Studio_*_amd64.deb
+sudo apt install ./HB.PDF.Studio_*_arm64.deb
 ```
 
 The package depends on `libwebkit2gtk-4.1-0`, `libgtk-3-0` and the CUPS client
@@ -57,8 +57,8 @@ tools (`cups-bsd`, `cups-client`) for printing.
 ## AppImage
 
 ```bash
-chmod +x Open.PDF.Studio_*_amd64.AppImage
-./Open.PDF.Studio_*_amd64.AppImage
+chmod +x HB.PDF.Studio_*_arm64.AppImage
+./HB.PDF.Studio_*_arm64.AppImage
 ```
 
 The AppImage and the `.deb` update themselves through the built-in updater.
@@ -66,40 +66,16 @@ The AppImage and the `.deb` update themselves through the built-in updater.
 Without FUSE, extract it and start `AppRun`:
 
 ```bash
-./Open.PDF.Studio_*_amd64.AppImage --appimage-extract
+./HB.PDF.Studio_*_arm64.AppImage --appimage-extract
 squashfs-root/AppRun [file.pdf]
 ```
 
-## Nix and NixOS (x86_64)
+## Nix and AUR
 
-The repository is a Nix flake. It wraps the released AppImage with
-`appimageTools.wrapType2`, so nothing is compiled and no cargo or npm hashes are
-involved.
-
-```bash
-# Run once without installing
-nix run github:OpenAEC-Foundation/open-pdf-studio
-
-# Install into your user profile (adds the menu entry and icons)
-nix profile install github:OpenAEC-Foundation/open-pdf-studio
-```
-
-On NixOS you can also add it to your system configuration:
-
-```nix
-# flake.nix of your system
-inputs.open-pdf-studio.url = "github:OpenAEC-Foundation/open-pdf-studio";
-
-# configuration.nix (with `inputs` passed through specialArgs)
-environment.systemPackages = [ inputs.open-pdf-studio.packages.x86_64-linux.default ];
-```
-
-Notes:
-
-- Only `x86_64-linux` is packaged, because releases ship an amd64 AppImage only.
-- The flake points at a fixed release. After publishing a release, update its
-  version and hash with `node open-pdf-studio/scripts/nix-flake-bijwerken.mjs`
-  (it reads the AppImage checksum from the GitHub release; no download needed).
+Nix and AUR packaging are temporarily unavailable while Linux releases target
+AArch64 only. The repository's previous definitions used x86_64 release assets;
+they will return when official AArch64-compatible package definitions are
+available.
 
 ## Flatpak
 
@@ -138,7 +114,7 @@ these crashes.
 
 **Smooth scrolling.** WebKitGTK animates scrolling by default (the WebKitGTK
 setting `enable-smooth-scrolling`): the page keeps gliding after the mouse
-wheel stops. Open PDF Studio turns this off in every window, together with its
+wheel stops. HB PDF Studio turns this off in every window, together with its
 own wheel and jump animations, unless *Preferences > Behavior > Smooth
 scrolling* is on. The setting is applied when a window opens and again when
 you change the preference; if a WebKitGTK version does not pick up the change

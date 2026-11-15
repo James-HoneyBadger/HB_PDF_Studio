@@ -1278,8 +1278,8 @@ pub fn write_pdf_with<W: Write>(
     pdf.set(catalog, Obj::Dict(catalog_entries));
     let info = pdf.add(Obj::dict(vec![
         ("Title", Obj::text(title)),
-        ("Producer", Obj::text("Open PDF Studio")),
-        ("Creator", Obj::text("Open PDF Studio")),
+        ("Producer", Obj::text("HB PDF Studio")),
+        ("Creator", Obj::text("HB PDF Studio")),
     ]));
     if cancelled() {
         return Err(interrupted());

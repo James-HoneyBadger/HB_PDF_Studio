@@ -1,6 +1,6 @@
 # Python library (`open-pdf-studio`)
 
-*Issue #518: the PDF editing tools of Open PDF Studio as a Python library,
+*Issue #518: the PDF editing tools of HB PDF Studio as a Python library,
 built with every release, with one source of truth.*
 
 ```python
@@ -97,10 +97,10 @@ display server; headless mode hides the window, it does not remove it.
 `find_app()` tries, in order: `$OPDS_APP` (any executable or AppImage),
 `open-pdf-studio` on `PATH`, then the install locations:
 
-* Windows: `%ProgramFiles%\Open PDF Studio\open-pdf-studio.exe` (per-machine
-  installer), `%LOCALAPPDATA%\Open PDF Studio\open-pdf-studio.exe` and
-  `%LOCALAPPDATA%\Programs\Open PDF Studio\open-pdf-studio.exe` (per-user);
-* macOS: `/Applications/Open PDF Studio.app/Contents/MacOS/open-pdf-studio`
+* Windows: `%ProgramFiles%\HB PDF Studio\open-pdf-studio.exe` (per-machine
+  installer), `%LOCALAPPDATA%\HB PDF Studio\open-pdf-studio.exe` and
+  `%LOCALAPPDATA%\Programs\HB PDF Studio\open-pdf-studio.exe` (per-user);
+* macOS: `/Applications/HB PDF Studio.app/Contents/MacOS/open-pdf-studio`
   and the same under `~/Applications`;
 * Linux: `/usr/bin` (`.deb`, AUR), `/usr/local/bin`, `/snap/bin`,
   `/opt/open-pdf-studio`. For an AppImage or Flatpak set `OPDS_APP` (for

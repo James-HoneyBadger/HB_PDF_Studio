@@ -35,7 +35,7 @@
   "printQueue": {
     "toolbarLabel": "Accions de les tasques d'impressió",
     "openInStudio": "Obre a Studio",
-    "openInStudioTip": "Obre la tasca seleccionada a Open PDF Studio (Retorn o doble clic). Si hi ha diverses tasques seleccionades, s'obren com un únic document combinat.",
+    "openInStudioTip": "Obre la tasca seleccionada a HB PDF Studio (Retorn o doble clic). Si hi ha diverses tasques seleccionades, s'obren com un únic document combinat.",
     "mergeSelected": "Combina la selecció…",
     "mergeSelectedTip": "Combina les tasques seleccionades, en l'ordre de la llista, en un sol PDF i el desa",
     "saveAs": "Desa com a…",
@@ -75,11 +75,11 @@
     "adding": "S'estan afegint fitxers PDF…",
     "saving": "S'està desant…",
     "merging": "S'està combinant {{done}} de {{count}}…",
-    "opening": "S'està obrint a Open PDF Studio…",
+    "opening": "S'està obrint a HB PDF Studio…",
     "deleting": "S'està suprimint…",
     "saved": "S'ha desat com a {{name}}",
     "merged": "S'ha combinat i desat com a {{name}}",
-    "opened": "S'ha obert a Open PDF Studio",
+    "opened": "S'ha obert a HB PDF Studio",
     "deleted": "Suprimides: {{count}}",
     "failed": "Error: {{message}}",
     "mergedFileName": "Combinat",
@@ -452,7 +452,7 @@
   },
   "update": {
     "title": "Actualització de programari",
-    "newVersionAvailable": "Hi ha una nova versió d'Open PDF Studio disponible.",
+    "newVersionAvailable": "Hi ha una nova versió d'HB PDF Studio disponible.",
     "currentVersion": "Versió actual:",
     "newVersion": "Nova versió:",
     "releaseNotes": "Notes de la versió:",
@@ -616,7 +616,7 @@
   },
   "defaultPdfApp": {
     "title": "Aplicació PDF per defecte",
-    "message": "Open PDF Studio no està establert com a aplicació per defecte per obrir fitxers PDF. Voleu establir-lo com a aplicació per defecte?",
+    "message": "HB PDF Studio no està establert com a aplicació per defecte per obrir fitxers PDF. Voleu establir-lo com a aplicació per defecte?",
     "setAsDefault": "Estableix com a per defecte",
     "dontAskAgain": "No ho tornis a preguntar",
     "notNow": "Ara no"
@@ -1322,7 +1322,7 @@
   },
   "recovery": {
     "title": "Recupera la feina no desada",
-    "intro": "Open PDF Studio no es va tancar correctament l'última vegada. S'ha conservat la feina no desada d'aquests documents:",
+    "intro": "HB PDF Studio no es va tancar correctament l'última vegada. S'ha conservat la feina no desada d'aquests documents:",
     "savedAt": "Conservat el {{time}}",
     "pages": "Pàgines: {{count}}",
     "untitled": "Document sense títol",
@@ -1343,7 +1343,7 @@
     "deleteFailed": "No s'ha pogut suprimir: {{error}}",
     "tabLabel": "recuperat",
     "tabTip": "Recuperat després d'un tancament inesperat. Desar escriu al fitxer original.",
-    "reloadStopped": "La finestra d'Open PDF Studio ha deixat de funcionar diverses vegades seguides i ja no es torna a carregar automàticament. Deseu la feina i reinicieu l'aplicació."
+    "reloadStopped": "La finestra d'HB PDF Studio ha deixat de funcionar diverses vegades seguides i ja no es torna a carregar automàticament. Deseu la feina i reinicieu l'aplicació."
   },
   "protectPdf": {
     "title": "Seguretat del document",
@@ -1919,7 +1919,7 @@
       "routing": "Routing",
       "howToRespond": "Reply to this mail with \"Approved\" or \"Rejected\" and keep {{ref}} in the subject.",
       "howToSign": "Signers: return the signed PDF and keep {{ref}} in the file name.",
-      "disclaimer": "The SHA-256 above identifies the exact document version. This mail was prepared in Open PDF Studio; it is not a legally binding signature service and does not verify identities."
+      "disclaimer": "The SHA-256 above identifies the exact document version. This mail was prepared in HB PDF Studio; it is not a legally binding signature service and does not verify identities."
     },
     "errors": {
       "CONFIGURE_ADAPTER_FIRST": "Enable the provider first.",

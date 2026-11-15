@@ -270,7 +270,7 @@ Interpretation:
 5. A UI indication of the save mode and an explicit "Save as full rewrite"
    (compact) command, since the file only grows.
 6. Encrypted incremental saves via `open-pdf-security` (#773), or keep them refused.
-7. Manual check in the packaged app on Windows, macOS and Linux: save, reopen,
+7. Manual check in the packaged Linux AArch64 app: save, reopen,
    save-and-continue (#345), closing with unsaved changes, recovery snapshots.
 
 ## 9. Not verified without running the app

@@ -35,7 +35,7 @@
   "printQueue": {
     "toolbarLabel": "Действия с заданиями печати",
     "openInStudio": "Открыть в Studio",
-    "openInStudioTip": "Открыть выбранное задание в Open PDF Studio (Enter или двойной щелчок). Несколько выбранных заданий открываются как один объединённый документ.",
+    "openInStudioTip": "Открыть выбранное задание в HB PDF Studio (Enter или двойной щелчок). Несколько выбранных заданий открываются как один объединённый документ.",
     "mergeSelected": "Объединить выбранные…",
     "mergeSelectedTip": "Объединить выбранные задания в порядке списка в один PDF и сохранить его",
     "saveAs": "Сохранить как…",
@@ -75,11 +75,11 @@
     "adding": "Добавление файлов PDF…",
     "saving": "Сохранение…",
     "merging": "Объединение {{done}} из {{count}}…",
-    "opening": "Открытие в Open PDF Studio…",
+    "opening": "Открытие в HB PDF Studio…",
     "deleting": "Удаление…",
     "saved": "Сохранено как {{name}}",
     "merged": "Объединено и сохранено как {{name}}",
-    "opened": "Открыто в Open PDF Studio",
+    "opened": "Открыто в HB PDF Studio",
     "deleted": "Удалено: {{count}}",
     "failed": "Ошибка: {{message}}",
     "mergedFileName": "Объединённый",
@@ -452,7 +452,7 @@
   },
   "update": {
     "title": "Обновление программы",
-    "newVersionAvailable": "Доступна новая версия Open PDF Studio.",
+    "newVersionAvailable": "Доступна новая версия HB PDF Studio.",
     "currentVersion": "Текущая версия:",
     "newVersion": "Новая версия:",
     "releaseNotes": "Примечания к выпуску:",
@@ -616,7 +616,7 @@
   },
   "defaultPdfApp": {
     "title": "Приложение PDF по умолчанию",
-    "message": "Open PDF Studio не установлено как приложение по умолчанию для открытия PDF-файлов. Хотите установить его по умолчанию?",
+    "message": "HB PDF Studio не установлено как приложение по умолчанию для открытия PDF-файлов. Хотите установить его по умолчанию?",
     "setAsDefault": "Установить по умолчанию",
     "dontAskAgain": "Больше не спрашивать",
     "notNow": "Не сейчас"
@@ -1322,7 +1322,7 @@
   },
   "recovery": {
     "title": "Восстановление несохранённой работы",
-    "intro": "В прошлый раз Open PDF Studio завершил работу некорректно. Несохранённая работа в этих документах была сохранена:",
+    "intro": "В прошлый раз HB PDF Studio завершил работу некорректно. Несохранённая работа в этих документах была сохранена:",
     "savedAt": "Сохранено {{time}}",
     "pages": "Страниц: {{count}}",
     "untitled": "Документ без названия",
@@ -1343,7 +1343,7 @@
     "deleteFailed": "Не удалось удалить: {{error}}",
     "tabLabel": "восстановлен",
     "tabTip": "Восстановлен после неожиданного завершения работы. Сохранение записывает в исходный файл.",
-    "reloadStopped": "Окно Open PDF Studio несколько раз подряд перестало отвечать и больше не перезагружается автоматически. Сохраните работу и перезапустите приложение."
+    "reloadStopped": "Окно HB PDF Studio несколько раз подряд перестало отвечать и больше не перезагружается автоматически. Сохраните работу и перезапустите приложение."
   },
   "protectPdf": {
     "title": "Защита документа",
@@ -1919,7 +1919,7 @@
       "routing": "Routing",
       "howToRespond": "Reply to this mail with \"Approved\" or \"Rejected\" and keep {{ref}} in the subject.",
       "howToSign": "Signers: return the signed PDF and keep {{ref}} in the file name.",
-      "disclaimer": "The SHA-256 above identifies the exact document version. This mail was prepared in Open PDF Studio; it is not a legally binding signature service and does not verify identities."
+      "disclaimer": "The SHA-256 above identifies the exact document version. This mail was prepared in HB PDF Studio; it is not a legally binding signature service and does not verify identities."
     },
     "errors": {
       "CONFIGURE_ADAPTER_FIRST": "Enable the provider first.",

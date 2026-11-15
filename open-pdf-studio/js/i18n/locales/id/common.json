@@ -110,7 +110,7 @@
     "readOnly": {
       "title": "Opened read-only",
       "kenmerk": "{{name}} is read-only: it has the read-only attribute, or you only have read permission on this location.",
-      "in-gebruik": "{{name}} is open in another application or is being synchronized, so Open PDF Studio cannot reserve it.",
+      "in-gebruik": "{{name}} is open in another application or is being synchronized, so HB PDF Studio cannot reserve it.",
       "geweigerd": "{{name}} cannot be reserved: Windows denied it.",
       "mislukt": "{{name}} could not be reserved.",
       "saveAs": "It has been opened read-only. You can make changes; use Save As to save them to another file."
@@ -118,7 +118,7 @@
   },
   "hostOpenFailed": "Berkas tidak dapat dibaca dari penyimpanan. Coba lagi.",
   "hostInvalidPdf": "{{name}} bukan file PDF yang valid dan tidak dapat dibuka.",
-  "hostNoContact": "Halaman yang memuat Open PDF Studio tidak merespons, sehingga berkas tidak dapat dibuka atau disimpan. Muat ulang halaman lalu coba lagi.",
+  "hostNoContact": "Halaman yang memuat HB PDF Studio tidak merespons, sehingga berkas tidak dapat dibuka atau disimpan. Muat ulang halaman lalu coba lagi.",
   "hostSaveConflict": "Orang lain telah menyimpan file ini sementara itu. Perubahan Anda disimpan sebagai salinan terpisah: {{name}}. Penyimpanan berikutnya akan masuk ke salinan itu.",
   "hostSaveNotLocked": "File ini tidak dicadangkan untuk Anda, jadi orang lain dapat mengubahnya pada saat yang sama. Perubahan Anda disimpan sebagai versi baru; tidak ada yang ditimpa.",
   "hostReadOnlySave": "File ini dibuka hanya-baca, jadi perubahan tidak dapat disimpan ke dalamnya. Gunakan Simpan Sebagai untuk mengunduh salinan.",
@@ -162,7 +162,7 @@
   "failedToReplacePage": "Gagal mengganti halaman: {{error}}",
   "failedToMergeFile": "Gagal menggabungkan: {{file}}\n{{error}}",
   "invalidPageRange": "Rentang halaman tidak valid. Silakan masukkan nomor halaman yang benar.",
-  "appName": "Open PDF Studio",
+  "appName": "HB PDF Studio",
   "noDocuments": "Tidak Ada PDF Dipilih",
   "noDocumentsHint": "Klik \"Buka PDF\" untuk menelusuri dan menganotasi PDF",
   "solid": "Solid",
@@ -350,7 +350,7 @@
     "fileAssoc": "Salinan portabel ini tidak terdaftar di Windows. Untuk membuka file PDF dengannya, klik kanan sebuah PDF, pilih Buka dengan > Pilih aplikasi lain, lalu pilih open-pdf-studio.exe di folder ini.",
     "explorerThumbnails": "Gambar mini PDF di File Explorer hanya tersedia pada versi yang diinstal.",
     "virtualPrinter": "Printer virtual hanya tersedia pada versi yang diinstal: printer ini ditambahkan ke Windows dengan hak administrator.",
-    "notWritable": "Open PDF Studio tidak dapat menulis ke folder {{dir}}, sehingga kali ini pengaturan Anda disimpan di profil pengguna Anda. Pindahkan folder portabel ke lokasi yang dapat ditulisi, seperti flashdisk USB atau folder Dokumen Anda."
+    "notWritable": "HB PDF Studio tidak dapat menulis ke folder {{dir}}, sehingga kali ini pengaturan Anda disimpan di profil pengguna Anda. Pindahkan folder portabel ke lokasi yang dapat ditulisi, seperti flashdisk USB atau folder Dokumen Anda."
   },
   "protectedPdfNoPrint": "Izin dokumen ini tidak mengizinkan pencetakan.",
   "share": {

@@ -1,6 +1,6 @@
 # Test Protocol — MCP-driven release scenarios
 
-End-to-end test scenarios for Open PDF Studio that drive the **live Tauri
+End-to-end test scenarios for HB PDF Studio that drive the **live Tauri
 app** via the in-process MCP server (port 9223). Each scenario is a JSON
 file: setup → steps → assertions, with optional screenshot capture.
 

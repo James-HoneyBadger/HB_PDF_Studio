@@ -68,14 +68,14 @@ modules:
         mv tesseract-src/leptonica tesseract-src/tesseract "$third_party/"
       # PDFium from the declared, checksum-verified archive; tauri.linux.conf.json
       # bundles it as a resource.
-      - install -Dm644 pdfium/lib/libpdfium.so open-pdf-studio/src-tauri/binaries/linux-x64/libpdfium.so
+      - install -Dm644 pdfium/lib/libpdfium.so open-pdf-studio/src-tauri/binaries/linux-arm64/libpdfium.so
       # npm dependencies from the offline cache. No install scripts: the build
       # only needs vite and its prebuilt platform packages.
       - cd open-pdf-studio && npm ci --offline --ignore-scripts --no-audit --no-fund
-      # Frontend. --ignore-scripts skips the prebuild hook, which fetches the
-      # OCR assets (declared as sources below) and builds the Windows/macOS
-      # sidecars that Linux does not use.
+      # Frontend. --ignore-scripts skips the prebuild hook; OCR assets and the
+      # PDFium worker are handled from declared sources and offline builds.
       - cd open-pdf-studio && npm run build --ignore-scripts
+      - cargo build --release --offline --locked -p pdfium-worker
       # Tauri/Rust backend from the workspace root (one Cargo.lock, one
       # target/). custom-protocol makes it serve the embedded frontend instead
       # of the dev server, like `tauri build` does.
@@ -85,8 +85,8 @@ modules:
       # <prefix>/lib/<productName>.
       - |
         set -e
-        res="${FLATPAK_DEST}/lib/Open PDF Studio"
-        install -Dm644 open-pdf-studio/src-tauri/binaries/linux-x64/libpdfium.so "$res/libpdfium.so"
+        res="${FLATPAK_DEST}/lib/HB PDF Studio"
+        install -Dm644 open-pdf-studio/src-tauri/binaries/linux-arm64/libpdfium.so "$res/libpdfium.so"
         install -Dm644 open-pdf-studio/src-tauri/icons/file-icon.ico "$res/file-icon.ico"
         for dir in kaders onderhoeken tessdata fonts; do
           mkdir -p "$res/$dir"
@@ -123,12 +123,12 @@ modules:
 
       # PDFium (chromium/8076), the same build the release workflows bundle.
       - type: archive
-        url: https://github.com/bblanchon/pdfium-binaries/releases/download/chromium%2F8076/pdfium-linux-x64.tgz
-        sha256: d9d67bc40af03aef4fe28a60b19b1086f28ace019c8c9caf19cb7fe3d14ceca3
+        url: https://github.com/bblanchon/pdfium-binaries/releases/download/chromium%2F8076/pdfium-linux-arm64.tgz
+        sha256: d7247b33ae5545615a5e877235dd97afc879e3a8805689684f528cae3339d352
         strip-components: 0
         dest: pdfium
         only-arches:
-          - x86_64
+          - aarch64
 
       # Leptonica and Tesseract at the tags pinned in tesseract-rs's build.rs.
       - type: git

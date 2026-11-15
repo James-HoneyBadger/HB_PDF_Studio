@@ -69,7 +69,7 @@ test('bedrading: dialogen in de werkmap, beheerde modus alleen via core/beheerd.
   const main = lees('js/main.js');
   const installeer = main.indexOf('installeerWerkmapDialogen(window)');
   assert.notEqual(installeer, -1);
-  assert.ok(installeer < main.indexOf("get('view') === 'printqueue'"), 'vóór het printwachtrijvenster');
+  assert.ok(installeer < main.indexOf('recordStartupDiagnostic(\'frontend-ready\')'), 'vóór de startdiagnose');
   // Eén schakelaar voor de beheerde modus: geen tweede vlag uit __OPENAEC__.
   for (const bestand of ['js/ui/chrome/updater.js', 'js/help/previous-version.js', 'js/help/whats-new-trigger.js']) {
     const bron = lees(bestand);
@@ -89,6 +89,6 @@ test('Rust zet window.__OPENAEC__ en registreert de updater niet in beheerde mod
   assert.match(lib, /builder\.plugin\(openaec_omgeving::plugin\(\)\)/);
   // Alleen in een container of beheerd: op een bureaublad blijft SIGTERM standaard.
   assert.match(lib, /if openaec_omgeving::huidige\(\)\.sigterm_afhandelen\(\) \{\n\s+openaec_omgeving::installeer_sigterm/);
-  // De D-Bus-controle geldt alleen op Linux (macOS kent launchd:-adressen).
-  assert.match(lib, /cfg!\(target_os = "linux"\)\s*&& !openaec_omgeving::sessiebus_bruikbaar/);
+  // De D-Bus-controle: zonder bruikbare sessiebus start de plugin niet mee.
+  assert.match(lib, /!openaec_omgeving::sessiebus_bruikbaar\(/);
 });

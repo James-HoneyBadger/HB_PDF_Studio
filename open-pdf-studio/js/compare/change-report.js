@@ -124,7 +124,7 @@ const A4L = [841.89, 595.28];
 export async function buildReportPdf({ rows, labels, typeNames = {}, meta, crops = new Map() }) {
   const pdf = await PDFDocument.create();
   pdf.setTitle(toWinAnsiText(labels.title || 'Compare report'));
-  pdf.setCreator('Open PDF Studio');
+  pdf.setCreator('HB PDF Studio');
   const font = await pdf.embedFont(StandardFonts.Helvetica);
   const bold = await pdf.embedFont(StandardFonts.HelveticaBold);
   const [W, H] = A4L;

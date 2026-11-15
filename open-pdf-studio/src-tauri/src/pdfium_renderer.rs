@@ -1,4 +1,4 @@
-//! PDFium rendering integration for Open PDF Studio.
+//! PDFium rendering integration for HB PDF Studio.
 //!
 //! Wraps the `pdfium-render` crate with the bindings we need for
 //! `render_pdf_page` and `render_thumbnail` Tauri commands. Owns a

@@ -10,7 +10,7 @@ itself happens in the Flathub organisation on GitHub and needs a maintainer.
 | `flatpak/org.openaec.OpenPdfStudio.yml` | Manifest. Builds from the local checkout (`type: dir`), for CI and local tests. |
 | `flatpak/org.openaec.OpenPdfStudio.desktop` | Desktop entry, installed under the app id. |
 | `flatpak/org.openaec.OpenPdfStudio.metainfo.xml` | AppStream metadata (store page: description, screenshots, releases). |
-| `flatpak/flathub.json` | Flathub build options: x86_64 only (see below). |
+| `flatpak/flathub.json` | Flathub build options: AArch64 only. |
 | `flatpak/generate-sources.mjs` | Writes `generated-sources-npm.json` and `generated-sources-cargo.json` from `open-pdf-studio/package-lock.json` and `Cargo.lock`. No network needed; the output is not committed. |
 | `flatpak/flathub-manifest.mjs` | Writes the files for the Flathub repository for one release tag. |
 | `flatpak/ci-check.sh` | `lint` and `build` steps used by CI. |
@@ -159,14 +159,12 @@ workflows and the OCR checksums with `ocr-runtime.mjs`.
 
 ## Known limitations
 
-- **x86_64 only** (`flathub.json`): the PDFium source is declared for x86_64,
-  like the other Linux release builds. An aarch64 build needs the
-  `pdfium-linux-arm64.tgz` source with `only-arches: [aarch64]` and a test
-  build.
+- **AArch64 only** (`flathub.json`): the manifest uses the pinned
+  `pdfium-linux-arm64.tgz` source and builds only for `aarch64`.
 - **Printer list**: printing calls `lpstat` and `lp`, which the GNOME runtime
   does not ship (it has `lpr` only), so the printer list stays empty in the
   Flatpak until printing uses libcups or the print portal, or the manifest
   builds the CUPS client tools.
-- **Default PDF app**: the "make Open PDF Studio the default" check uses
+- **Default PDF app**: the "make HB PDF Studio the default" check uses
   `xdg-mime`, which is not in the runtime; in a Flatpak the desktop's own
   settings set the default application.

@@ -35,7 +35,7 @@
   "printQueue": {
     "toolbarLabel": "إجراءات مهام الطباعة",
     "openInStudio": "فتح في Studio",
-    "openInStudioTip": "فتح المهمة المحددة في Open PDF Studio (Enter أو النقر المزدوج). عند تحديد عدة مهام تُفتح كمستند واحد مدمج.",
+    "openInStudioTip": "فتح المهمة المحددة في HB PDF Studio (Enter أو النقر المزدوج). عند تحديد عدة مهام تُفتح كمستند واحد مدمج.",
     "mergeSelected": "دمج المحدد…",
     "mergeSelectedTip": "دمج المهام المحددة، بترتيب القائمة، في ملف PDF واحد وحفظه",
     "saveAs": "حفظ باسم…",
@@ -75,11 +75,11 @@
     "adding": "جارٍ إضافة ملفات PDF…",
     "saving": "جارٍ الحفظ…",
     "merging": "جارٍ دمج {{done}} من {{count}}…",
-    "opening": "جارٍ الفتح في Open PDF Studio…",
+    "opening": "جارٍ الفتح في HB PDF Studio…",
     "deleting": "جارٍ الحذف…",
     "saved": "تم الحفظ باسم {{name}}",
     "merged": "تم الدمج والحفظ باسم {{name}}",
-    "opened": "تم الفتح في Open PDF Studio",
+    "opened": "تم الفتح في HB PDF Studio",
     "deleted": "تم الحذف: {{count}}",
     "failed": "فشل: {{message}}",
     "mergedFileName": "مدمج",
@@ -452,7 +452,7 @@
   },
   "update": {
     "title": "تحديث البرنامج",
-    "newVersionAvailable": "يتوفر إصدار جديد من Open PDF Studio.",
+    "newVersionAvailable": "يتوفر إصدار جديد من HB PDF Studio.",
     "currentVersion": "الإصدار الحالي:",
     "newVersion": "الإصدار الجديد:",
     "releaseNotes": "ملاحظات الإصدار:",
@@ -616,7 +616,7 @@
   },
   "defaultPdfApp": {
     "title": "تطبيق PDF الافتراضي",
-    "message": "لم يتم تعيين Open PDF Studio كالتطبيق الافتراضي لفتح ملفات PDF. هل تريد تعيينه كافتراضي؟",
+    "message": "لم يتم تعيين HB PDF Studio كالتطبيق الافتراضي لفتح ملفات PDF. هل تريد تعيينه كافتراضي؟",
     "setAsDefault": "تعيين كافتراضي",
     "dontAskAgain": "لا تسأل مرة أخرى",
     "notNow": "ليس الآن"
@@ -1322,7 +1322,7 @@
   },
   "recovery": {
     "title": "استعادة العمل غير المحفوظ",
-    "intro": "لم يُغلق Open PDF Studio بشكل طبيعي في المرة السابقة. تم الاحتفاظ بالعمل غير المحفوظ لهذه المستندات:",
+    "intro": "لم يُغلق HB PDF Studio بشكل طبيعي في المرة السابقة. تم الاحتفاظ بالعمل غير المحفوظ لهذه المستندات:",
     "savedAt": "محفوظ في {{time}}",
     "pages": "الصفحات: {{count}}",
     "untitled": "مستند بلا عنوان",
@@ -1343,7 +1343,7 @@
     "deleteFailed": "فشل الحذف: {{error}}",
     "tabLabel": "مستعاد",
     "tabTip": "تمت الاستعادة بعد إغلاق غير متوقع. الحفظ يكتب في الملف الأصلي.",
-    "reloadStopped": "توقفت نافذة Open PDF Studio عن العمل عدة مرات متتالية ولم تعد تُعاد تحميلها تلقائيًا. احفظ عملك وأعد تشغيل التطبيق."
+    "reloadStopped": "توقفت نافذة HB PDF Studio عن العمل عدة مرات متتالية ولم تعد تُعاد تحميلها تلقائيًا. احفظ عملك وأعد تشغيل التطبيق."
   },
   "protectPdf": {
     "title": "أمان المستند",
@@ -1919,7 +1919,7 @@
       "routing": "Routing",
       "howToRespond": "Reply to this mail with \"Approved\" or \"Rejected\" and keep {{ref}} in the subject.",
       "howToSign": "Signers: return the signed PDF and keep {{ref}} in the file name.",
-      "disclaimer": "The SHA-256 above identifies the exact document version. This mail was prepared in Open PDF Studio; it is not a legally binding signature service and does not verify identities."
+      "disclaimer": "The SHA-256 above identifies the exact document version. This mail was prepared in HB PDF Studio; it is not a legally binding signature service and does not verify identities."
     },
     "errors": {
       "CONFIGURE_ADAPTER_FIRST": "Enable the provider first.",

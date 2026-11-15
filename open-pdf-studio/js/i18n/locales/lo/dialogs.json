@@ -35,7 +35,7 @@
   "printQueue": {
     "toolbarLabel": "ການດຳເນີນການຂອງລາຍການພິມ",
     "openInStudio": "ເປີດໃນ Studio",
-    "openInStudioTip": "ເປີດລາຍການທີ່ເລືອກໃນ Open PDF Studio (Enter ຫຼື ດັບເບິນຄລິກ). ຖ້າເລືອກຫຼາຍລາຍການ ຈະເປີດເປັນເອກະສານດຽວທີ່ຮວມກັນ.",
+    "openInStudioTip": "ເປີດລາຍການທີ່ເລືອກໃນ HB PDF Studio (Enter ຫຼື ດັບເບິນຄລິກ). ຖ້າເລືອກຫຼາຍລາຍການ ຈະເປີດເປັນເອກະສານດຽວທີ່ຮວມກັນ.",
     "mergeSelected": "ຮວມລາຍການທີ່ເລືອກ…",
     "mergeSelectedTip": "ຮວມລາຍການທີ່ເລືອກຕາມລຳດັບໃນບັນຊີ ເປັນ PDF ດຽວ ແລະ ບັນທຶກ",
     "saveAs": "ບັນທຶກເປັນ…",
@@ -75,11 +75,11 @@
     "adding": "ກຳລັງເພີ່ມໄຟລ໌ PDF…",
     "saving": "ກຳລັງບັນທຶກ…",
     "merging": "ກຳລັງຮວມ {{done}} ຈາກ {{count}}…",
-    "opening": "ກຳລັງເປີດໃນ Open PDF Studio…",
+    "opening": "ກຳລັງເປີດໃນ HB PDF Studio…",
     "deleting": "ກຳລັງລຶບ…",
     "saved": "ບັນທຶກເປັນ {{name}} ແລ້ວ",
     "merged": "ຮວມ ແລະ ບັນທຶກເປັນ {{name}} ແລ້ວ",
-    "opened": "ເປີດໃນ Open PDF Studio ແລ້ວ",
+    "opened": "ເປີດໃນ HB PDF Studio ແລ້ວ",
     "deleted": "ລຶບແລ້ວ: {{count}}",
     "failed": "ບໍ່ສຳເລັດ: {{message}}",
     "mergedFileName": "ຮວມແລ້ວ",
@@ -452,7 +452,7 @@
   },
   "update": {
     "title": "ອັບເດດໂປຣແກຣມ",
-    "newVersionAvailable": "ມີເວີຊັນໃໝ່ຂອງ Open PDF Studio ພ້ອມໃຫ້ໃຊ້ງານແລ້ວ.",
+    "newVersionAvailable": "ມີເວີຊັນໃໝ່ຂອງ HB PDF Studio ພ້ອມໃຫ້ໃຊ້ງານແລ້ວ.",
     "currentVersion": "ເວີຊັນປັດຈຸບັນ:",
     "newVersion": "ເວີຊັນໃໝ່:",
     "releaseNotes": "ລາຍລະອຽດການປັບປຸງ:",
@@ -707,7 +707,7 @@
   },
   "defaultPdfApp": {
     "title": "ໂປຣແກຣມ PDF ຫຼັກ",
-    "message": "Open PDF Studio ຍັງບໍ່ທັນໄດ້ຕັ້ງເປັນໂປຣແກຣມຫຼັກໃນການເປີດໄຟລ໌ PDF ເທື່ອ. ທ່ານຕ້ອງການຕັ້ງໃຫ້ເປັນໂປຣແກຣມຫຼັກ ຫຼື ບໍ່?",
+    "message": "HB PDF Studio ຍັງບໍ່ທັນໄດ້ຕັ້ງເປັນໂປຣແກຣມຫຼັກໃນການເປີດໄຟລ໌ PDF ເທື່ອ. ທ່ານຕ້ອງການຕັ້ງໃຫ້ເປັນໂປຣແກຣມຫຼັກ ຫຼື ບໍ່?",
     "setAsDefault": "ຕັ້ງເປັນຄ່າເລີ່ມຕົ້ນ",
     "dontAskAgain": "ບໍ່ຕ້ອງຖາມອີກ",
     "notNow": "ບໍ່ແມ່ນຕອນນີ້"
@@ -1321,7 +1321,7 @@
   },
   "recovery": {
     "title": "ກູ້ຄືນວຽກທີ່ຍັງບໍ່ໄດ້ບັນທຶກ",
-    "intro": "ຄັ້ງກ່ອນ Open PDF Studio ບໍ່ໄດ້ປິດຕາມປົກກະຕິ. ວຽກທີ່ຍັງບໍ່ໄດ້ບັນທຶກຂອງເອກະສານເຫຼົ່ານີ້ຖືກເກັບໄວ້:",
+    "intro": "ຄັ້ງກ່ອນ HB PDF Studio ບໍ່ໄດ້ປິດຕາມປົກກະຕິ. ວຽກທີ່ຍັງບໍ່ໄດ້ບັນທຶກຂອງເອກະສານເຫຼົ່ານີ້ຖືກເກັບໄວ້:",
     "savedAt": "ເກັບໄວ້ເມື່ອ {{time}}",
     "pages": "ໜ້າ: {{count}}",
     "untitled": "ເອກະສານບໍ່ມີຊື່",
@@ -1342,7 +1342,7 @@
     "deleteFailed": "ການລຶບລົ້ມເຫຼວ: {{error}}",
     "tabLabel": "ກູ້ຄືນແລ້ວ",
     "tabTip": "ກູ້ຄືນຫຼັງຈາກປິດໂດຍບໍ່ຄາດຄິດ. ການບັນທຶກຈະຂຽນລົງໃນໄຟລ໌ຕົ້ນສະບັບ.",
-    "reloadStopped": "ໜ້າຕ່າງ Open PDF Studio ຢຸດເຮັດວຽກຫຼາຍຄັ້ງຕິດຕໍ່ກັນ ແລະ ຈະບໍ່ໂຫຼດຄືນໃໝ່ໂດຍອັດຕະໂນມັດອີກ. ບັນທຶກວຽກຂອງທ່ານ ແລ້ວເລີ່ມແອັບຄືນໃໝ່."
+    "reloadStopped": "ໜ້າຕ່າງ HB PDF Studio ຢຸດເຮັດວຽກຫຼາຍຄັ້ງຕິດຕໍ່ກັນ ແລະ ຈະບໍ່ໂຫຼດຄືນໃໝ່ໂດຍອັດຕະໂນມັດອີກ. ບັນທຶກວຽກຂອງທ່ານ ແລ້ວເລີ່ມແອັບຄືນໃໝ່."
   },
   "protectPdf": {
     "title": "ຄວາມປອດໄພຂອງເອກະສານ",
@@ -1918,7 +1918,7 @@
       "routing": "Routing",
       "howToRespond": "Reply to this mail with \"Approved\" or \"Rejected\" and keep {{ref}} in the subject.",
       "howToSign": "Signers: return the signed PDF and keep {{ref}} in the file name.",
-      "disclaimer": "The SHA-256 above identifies the exact document version. This mail was prepared in Open PDF Studio; it is not a legally binding signature service and does not verify identities."
+      "disclaimer": "The SHA-256 above identifies the exact document version. This mail was prepared in HB PDF Studio; it is not a legally binding signature service and does not verify identities."
     },
     "errors": {
       "CONFIGURE_ADAPTER_FIRST": "Enable the provider first.",

@@ -257,7 +257,7 @@ pub fn portable_status() -> Status {
 }
 
 /// Tekst van de melding als de WebView2-runtime ontbreekt.
-pub const MELDING_GEEN_WEBVIEW2: &str = "Open PDF Studio needs the Microsoft Edge WebView2 Runtime, \
+pub const MELDING_GEEN_WEBVIEW2: &str = "HB PDF Studio needs the Microsoft Edge WebView2 Runtime, \
 which was not found on this computer.\n\n\
 Windows 10 and 11 normally include it. Install it from \
 https://developer.microsoft.com/microsoft-edge/webview2/ (Evergreen Runtime), \
@@ -298,7 +298,7 @@ fn toon_fout(tekst: &str) {
     use windows_sys::Win32::UI::WindowsAndMessaging::{MessageBoxW, MB_ICONERROR, MB_OK};
     let breed = |s: &str| s.encode_utf16().chain(std::iter::once(0)).collect::<Vec<u16>>();
     let tekst_w = breed(tekst);
-    let titel_w = breed("Open PDF Studio");
+    let titel_w = breed("HB PDF Studio");
     unsafe {
         MessageBoxW(std::ptr::null_mut(), tekst_w.as_ptr(), titel_w.as_ptr(), MB_OK | MB_ICONERROR);
     }

@@ -161,17 +161,10 @@ test('system tar reads our archive', (t) => {
   }
 });
 
-test('release workflow builds, checks and attaches the web bundle after the version check', () => {
+test('the release workflow ships no web bundle: Linux AArch64 only', () => {
   const pkg = JSON.parse(fs.readFileSync(path.join(APP, 'package.json'), 'utf8'));
   assert.equal(pkg.scripts['pack:hosted'], 'node scripts/pak-webbundel.mjs');
-  assert.equal(pkg.scripts['verify:hosted-bundle'], 'node scripts/controleer-webbundel.mjs');
   const yml = fs.readFileSync(path.join(APP, '..', '.github', 'workflows', 'release.yml'), 'utf8').replace(/\r\n/g, '\n');
-  const job = /\n {2}web-bundle:\n([\s\S]*?)(?=\n {2}[a-z-]+:\n)/.exec(yml)?.[1];
-  assert.ok(job, 'release.yml has a web-bundle job');
-  assert.match(job, /needs: create-release/);
-  assert.match(job, /npm run pack:hosted -- --tag "\$VERSION"/);
-  assert.match(job, /npm run verify:hosted-bundle/);
-  assert.match(job, /gh release upload "\$VERSION" "\$ARCHIVE" "\$ARCHIVE\.sha256" --clobber/);
-  // De versiecontrole staat in create-release, waar deze job op wacht.
-  assert.match(yml, /create-release:[\s\S]*bump-version\.js --check "\$VERSION"[\s\S]*\n {2}build:\n/);
+  assert.doesNotMatch(yml, /^ {2}web-bundle:$/m, 'release.yml has no web-bundle job');
+  assert.doesNotMatch(yml, /pack:hosted|verify:hosted-bundle/, 'release.yml packs no hosted bundle');
 });

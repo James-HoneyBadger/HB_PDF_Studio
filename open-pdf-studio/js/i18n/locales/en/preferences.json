@@ -294,19 +294,19 @@
   "fileAssoc": {
     "defaultPdfApplication": "Default PDF Application",
     "currentDefault": "Current default:",
-    "setDefault": "Set Open PDF Studio as Default PDF Viewer",
-    "setDefaultHelp": "This will open your system settings where you can select Open PDF Studio as the default application for opening PDF files.",
-    "windowsInstructions": "Windows Settings opened.\n\nTo set Open PDF Studio as default:\n1. Scroll down to \"Choose default apps by file type\"\n2. Find .pdf\n3. Click and select Open PDF Studio",
+    "setDefault": "Set HB PDF Studio as Default PDF Viewer",
+    "setDefaultHelp": "This will open your system settings where you can select HB PDF Studio as the default application for opening PDF files.",
+    "windowsInstructions": "Windows Settings opened.\n\nTo set HB PDF Studio as default:\n1. Scroll down to \"Choose default apps by file type\"\n2. Find .pdf\n3. Click and select HB PDF Studio",
     "windowsFailed": "Could not open Windows Settings.\n\nPlease manually open Settings > Apps > Default Apps.",
-    "macInstructions": "To set Open PDF Studio as default PDF viewer on macOS:\n\n1. Right-click any PDF file in Finder\n2. Select \"Get Info\"\n3. Under \"Open with\", select Open PDF Studio\n4. Click \"Change All...\"",
-    "linuxInstructions": "To set Open PDF Studio as default PDF viewer on Linux:\n\nRun in terminal:\nxdg-mime default openpdfstudio.desktop application/pdf",
+    "macInstructions": "To set HB PDF Studio as default PDF viewer on macOS:\n\n1. Right-click any PDF file in Finder\n2. Select \"Get Info\"\n3. Under \"Open with\", select HB PDF Studio\n4. Click \"Change All...\"",
+    "linuxInstructions": "To set HB PDF Studio as default PDF viewer on Linux:\n\nRun in terminal:\nxdg-mime default openpdfstudio.desktop application/pdf",
     "checkFinder": "Check Finder > Get Info",
     "notSet": "Not set",
     "chosenInSystemSettings": "Chosen in the system settings",
-    "sandboxInstructions": "Open PDF Studio runs as a {{package}} package and cannot change the default PDF app itself.\n\nChoose Open PDF Studio in your system settings under Default Applications, or right-click a PDF file and use Open With.",
-    "xdgMimeMissing": "xdg-mime (package xdg-utils) is not installed, so the default PDF app cannot be set from here.\n\nInstall xdg-utils, or choose Open PDF Studio in your system settings under Default Applications.",
-    "linuxDone": "Open PDF Studio is now the default app for PDF files.",
-    "linuxFailed": "Could not set Open PDF Studio as the default PDF app.\n\n{{error}}"
+    "sandboxInstructions": "HB PDF Studio runs as a {{package}} package and cannot change the default PDF app itself.\n\nChoose HB PDF Studio in your system settings under Default Applications, or right-click a PDF file and use Open With.",
+    "xdgMimeMissing": "xdg-mime (package xdg-utils) is not installed, so the default PDF app cannot be set from here.\n\nInstall xdg-utils, or choose HB PDF Studio in your system settings under Default Applications.",
+    "linuxDone": "HB PDF Studio is now the default app for PDF files.",
+    "linuxFailed": "Could not set HB PDF Studio as the default PDF app.\n\n{{error}}"
   },
   "explorerThumbnails": {
     "title": "File Explorer",
@@ -316,7 +316,7 @@
     "otherHandler": "PDF thumbnails are currently provided by {{name}}.",
     "defaultApp": "Your default PDF app shows its own thumbnails ({{name}}). Windows uses those as long as that app is your default PDF app.",
     "replaceTitle": "PDF thumbnails",
-    "replaceConfirm": "{{name}} already provides PDF thumbnails in File Explorer.\n\nShow the thumbnails of Open PDF Studio instead for your Windows account? Turning this option off restores the previous thumbnails.",
+    "replaceConfirm": "{{name}} already provides PDF thumbnails in File Explorer.\n\nShow the thumbnails of HB PDF Studio instead for your Windows account? Turning this option off restores the previous thumbnails.",
     "failed": "Could not change the File Explorer thumbnail setting."
   },
   "virtualPrinter": {
@@ -341,7 +341,7 @@
     "stateUnknownDetail": "The printer status could not be read.",
     "howTitle": "How it works",
     "how1": "In any program choose Print and select {{printer}}.",
-    "how2": "The print appears in the printer window of Open PDF Studio.",
+    "how2": "The print appears in the printer window of HB PDF Studio.",
     "how3": "Preview, reorder, merge and save the jobs as one PDF, or open them in Studio.",
     "openWindow": "Open printer window",
     "openWindowTip": "Show the captured print jobs"

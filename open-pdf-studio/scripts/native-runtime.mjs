@@ -8,17 +8,19 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 
 export const PDFIUM_RUNTIME = Object.freeze({
   version: '8076',
-  url: 'https://github.com/bblanchon/pdfium-binaries/releases/download/chromium%2F8076/pdfium-mac-univ.tgz',
-  sha256: '3bdb93e229298dfdf083dc8ccc7d1a8cf87790b6917e5073335504fe2ff0bdc1',
+  url: 'https://github.com/bblanchon/pdfium-binaries/releases/download/chromium%2F8076/pdfium-linux-arm64.tgz',
+  sha256: 'd7247b33ae5545615a5e877235dd97afc879e3a8805689684f528cae3339d352',
+  librarySha256: '2c6b186b84596e1e6c370b9058c8dfd64b3d944f4878e51993b3cddb160209e2',
 });
 
 export function nativeRuntimePlan({
   platform = process.platform,
+  arch = process.arch,
   projectDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..'),
 } = {}) {
-  if (platform !== 'darwin') return null;
+  if (platform !== 'linux' || arch !== 'arm64') return null;
 
-  const libraryPath = path.join(projectDir, 'src-tauri', 'binaries', 'macos-universal', 'libpdfium.dylib');
+  const libraryPath = path.join(projectDir, 'src-tauri', 'binaries', 'linux-arm64', 'libpdfium.so');
   return {
     ...PDFIUM_RUNTIME,
     libraryPath,
@@ -31,7 +33,10 @@ export async function isNativeRuntimeReady(plan) {
   try {
     await access(plan.libraryPath);
     const metadata = JSON.parse(await readFile(plan.metadataPath, 'utf8'));
-    return metadata.version === plan.version && metadata.sha256 === plan.sha256;
+    return metadata.version === plan.version
+      && metadata.sha256 === plan.sha256
+      && metadata.librarySha256 === plan.librarySha256
+      && await sha256(plan.libraryPath) === plan.librarySha256;
   } catch {
     return false;
   }
@@ -73,8 +78,8 @@ export async function prepareNativeRuntime(options = {}) {
 
   await mkdir(path.dirname(plan.libraryPath), { recursive: true });
   const tempDir = await mkdtemp(path.join(os.tmpdir(), 'opds-pdfium-'));
-  const archivePath = path.join(tempDir, 'pdfium-mac-univ.tgz');
-  const stagedLibrary = path.join(tempDir, 'lib', 'libpdfium.dylib');
+  const archivePath = path.join(tempDir, 'pdfium-linux-arm64.tgz');
+  const stagedLibrary = path.join(tempDir, 'lib', 'libpdfium.so');
   const nextLibrary = `${plan.libraryPath}.new`;
 
   try {
@@ -84,11 +89,19 @@ export async function prepareNativeRuntime(options = {}) {
     if (actualSha256 !== plan.sha256) {
       throw new Error(`PDFium checksum mismatch: expected ${plan.sha256}, received ${actualSha256}`);
     }
-    await run('tar', ['xzf', archivePath, '-C', tempDir, 'lib/libpdfium.dylib'], tempDir);
+    await run('tar', ['xzf', archivePath, '-C', tempDir, 'lib/libpdfium.so'], tempDir);
+    const actualLibrarySha256 = await sha256(stagedLibrary);
+    if (actualLibrarySha256 !== plan.librarySha256) {
+      throw new Error(`PDFium library checksum mismatch: expected ${plan.librarySha256}, received ${actualLibrarySha256}`);
+    }
     await copyFile(stagedLibrary, nextLibrary);
     await rm(plan.libraryPath, { force: true });
     await rename(nextLibrary, plan.libraryPath);
-    await writeFile(plan.metadataPath, `${JSON.stringify({ version: plan.version, sha256: plan.sha256 }, null, 2)}\n`);
+    await writeFile(plan.metadataPath, `${JSON.stringify({
+      version: plan.version,
+      sha256: plan.sha256,
+      librarySha256: plan.librarySha256,
+    }, null, 2)}\n`);
     console.log(`Native runtime: installed ${plan.libraryPath}`);
   } finally {
     await rm(nextLibrary, { force: true });

@@ -1,6 +1,6 @@
 # Licensing
 
-A plain-language overview of the licence of Open PDF Studio and of the
+A plain-language overview of the licence of HB PDF Studio and of the
 third-party components it ships with. The legal texts are authoritative:
 [`LICENSE.md`](LICENSE.md) (GNU LGPL v3) and [`GPL-3.0.txt`](GPL-3.0.txt) (the
 GNU GPL v3 that the LGPL builds on). This page is not legal advice.
@@ -23,12 +23,12 @@ merged into one file again.
 
 What the LGPL means in practice:
 
-- You may use Open PDF Studio for any purpose, commercial work included, on
+- You may use HB PDF Studio for any purpose, commercial work included, on
   as many machines as you like.
 - You may copy and redistribute it, modified or not. When you distribute it,
   you pass on the same rights: the licence texts and the corresponding source
-  code of Open PDF Studio go with it.
-- Changes to Open PDF Studio itself that you distribute are licensed under
+  code of HB PDF Studio go with it.
+- Changes to HB PDF Studio itself that you distribute are licensed under
   the LGPL as well.
 - Other software may use the libraries of this repository without becoming
   LGPL itself, as long as users can replace the LGPL part (the "Lesser" in
@@ -128,14 +128,14 @@ binaries.
 - The LGPL v3 and the GPL v3 both allow combining with AGPL v3 code (GPL v3
   section 13). There is no licence conflict.
 - The distributed app as a whole (the combined work) must then be passed on
-  under terms that respect the AGPL. Open PDF Studio already meets the main
+  under terms that respect the AGPL. HB PDF Studio already meets the main
   duty: the complete corresponding source of every release is public in this
   repository, and the About dialog links to it.
 - The AGPL adds a network clause (section 13): people who use a *modified*
   version over a network must be offered its source. That matters for the
   hosted web version: it must be built from published source, which the
   current deploy from this repository does.
-- The source files of Open PDF Studio stay LGPL. Someone who reuses them
+- The source files of HB PDF Studio stay LGPL. Someone who reuses them
   without MuPDF is bound by the LGPL only.
 
 **Options, for the project owner to decide.**

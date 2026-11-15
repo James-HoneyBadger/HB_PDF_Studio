@@ -35,7 +35,7 @@
   "printQueue": {
     "toolbarLabel": "प्रिंट जॉब क्रियाएं",
     "openInStudio": "Studio में खोलें",
-    "openInStudioTip": "चुने गए जॉब को Open PDF Studio में खोलें (Enter या डबल-क्लिक)। एक से अधिक चुने गए जॉब एक मर्ज किए गए दस्तावेज़ के रूप में खुलते हैं।",
+    "openInStudioTip": "चुने गए जॉब को HB PDF Studio में खोलें (Enter या डबल-क्लिक)। एक से अधिक चुने गए जॉब एक मर्ज किए गए दस्तावेज़ के रूप में खुलते हैं।",
     "mergeSelected": "चुने हुए मर्ज करें…",
     "mergeSelectedTip": "चुने गए जॉब को सूची के क्रम में एक PDF में मर्ज करें और उसे सहेजें",
     "saveAs": "इस रूप में सहेजें…",
@@ -75,11 +75,11 @@
     "adding": "PDF फ़ाइलें जोड़ी जा रही हैं…",
     "saving": "सहेजा जा रहा है…",
     "merging": "{{count}} में से {{done}} मर्ज हो रहा है…",
-    "opening": "Open PDF Studio में खुल रहा है…",
+    "opening": "HB PDF Studio में खुल रहा है…",
     "deleting": "हटाया जा रहा है…",
     "saved": "{{name}} के रूप में सहेजा गया",
     "merged": "मर्ज किया गया और {{name}} के रूप में सहेजा गया",
-    "opened": "Open PDF Studio में खोला गया",
+    "opened": "HB PDF Studio में खोला गया",
     "deleted": "हटाए गए: {{count}}",
     "failed": "विफल: {{message}}",
     "mergedFileName": "मर्ज_किया_गया",
@@ -452,7 +452,7 @@
   },
   "update": {
     "title": "सॉफ़्टवेयर अपडेट",
-    "newVersionAvailable": "Open PDF Studio का एक नया संस्करण उपलब्ध है।",
+    "newVersionAvailable": "HB PDF Studio का एक नया संस्करण उपलब्ध है।",
     "currentVersion": "वर्तमान संस्करण:",
     "newVersion": "नया संस्करण:",
     "releaseNotes": "रिलीज़ नोट्स:",
@@ -616,7 +616,7 @@
   },
   "defaultPdfApp": {
     "title": "डिफ़ॉल्ट PDF ऐप",
-    "message": "Open PDF Studio PDF फ़ाइलें खोलने के लिए डिफ़ॉल्ट ऐप के रूप में सेट नहीं है। क्या आप इसे डिफ़ॉल्ट के रूप में सेट करना चाहते हैं?",
+    "message": "HB PDF Studio PDF फ़ाइलें खोलने के लिए डिफ़ॉल्ट ऐप के रूप में सेट नहीं है। क्या आप इसे डिफ़ॉल्ट के रूप में सेट करना चाहते हैं?",
     "setAsDefault": "डिफ़ॉल्ट के रूप में सेट करें",
     "dontAskAgain": "दोबारा न पूछें",
     "notNow": "अभी नहीं"
@@ -1322,7 +1322,7 @@
   },
   "recovery": {
     "title": "बिना सहेजा काम पुनर्प्राप्त करें",
-    "intro": "पिछली बार Open PDF Studio सामान्य रूप से बंद नहीं हुआ। इन दस्तावेज़ों का बिना सहेजा काम सुरक्षित रखा गया है:",
+    "intro": "पिछली बार HB PDF Studio सामान्य रूप से बंद नहीं हुआ। इन दस्तावेज़ों का बिना सहेजा काम सुरक्षित रखा गया है:",
     "savedAt": "{{time}} को सुरक्षित रखा गया",
     "pages": "पृष्ठ: {{count}}",
     "untitled": "बिना शीर्षक का दस्तावेज़",
@@ -1343,7 +1343,7 @@
     "deleteFailed": "हटाना विफल रहा: {{error}}",
     "tabLabel": "पुनर्प्राप्त",
     "tabTip": "अप्रत्याशित रूप से बंद होने के बाद पुनर्प्राप्त किया गया। सहेजना मूल फ़ाइल में लिखता है।",
-    "reloadStopped": "Open PDF Studio की विंडो लगातार कई बार काम करना बंद कर चुकी है और अब अपने आप फिर से लोड नहीं होती। अपना काम सहेजें और ऐप को फिर से शुरू करें।"
+    "reloadStopped": "HB PDF Studio की विंडो लगातार कई बार काम करना बंद कर चुकी है और अब अपने आप फिर से लोड नहीं होती। अपना काम सहेजें और ऐप को फिर से शुरू करें।"
   },
   "protectPdf": {
     "title": "दस्तावेज़ सुरक्षा",
@@ -1919,7 +1919,7 @@
       "routing": "Routing",
       "howToRespond": "Reply to this mail with \"Approved\" or \"Rejected\" and keep {{ref}} in the subject.",
       "howToSign": "Signers: return the signed PDF and keep {{ref}} in the file name.",
-      "disclaimer": "The SHA-256 above identifies the exact document version. This mail was prepared in Open PDF Studio; it is not a legally binding signature service and does not verify identities."
+      "disclaimer": "The SHA-256 above identifies the exact document version. This mail was prepared in HB PDF Studio; it is not a legally binding signature service and does not verify identities."
     },
     "errors": {
       "CONFIGURE_ADAPTER_FIRST": "Enable the provider first.",

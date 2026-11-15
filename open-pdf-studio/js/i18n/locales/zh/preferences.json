@@ -204,19 +204,19 @@
   "fileAssoc": {
     "defaultPdfApplication": "默认 PDF 应用程序",
     "currentDefault": "当前默认：",
-    "setDefault": "将 Open PDF Studio 设为默认 PDF 查看器",
-    "setDefaultHelp": "这将打开系统设置，您可以在其中选择 Open PDF Studio 作为打开 PDF 文件的默认应用程序。",
-    "windowsInstructions": "Windows 设置已打开。\n\n要将 Open PDF Studio 设为默认：\n1. 向下滚动到“按文件类型选择默认应用”\n2. 找到 .pdf\n3. 点击并选择 Open PDF Studio",
+    "setDefault": "将 HB PDF Studio 设为默认 PDF 查看器",
+    "setDefaultHelp": "这将打开系统设置，您可以在其中选择 HB PDF Studio 作为打开 PDF 文件的默认应用程序。",
+    "windowsInstructions": "Windows 设置已打开。\n\n要将 HB PDF Studio 设为默认：\n1. 向下滚动到“按文件类型选择默认应用”\n2. 找到 .pdf\n3. 点击并选择 HB PDF Studio",
     "windowsFailed": "无法打开 Windows 设置。\n\n请手动打开 设置 > 应用 > 默认应用。",
-    "macInstructions": "在 macOS 上将 Open PDF Studio 设为默认 PDF 查看器：\n\n1. 在 Finder 中右键点击任意 PDF 文件\n2. 选择“显示简介”\n3. 在“打开方式”下选择 Open PDF Studio\n4. 点击“全部更改...”",
-    "linuxInstructions": "在 Linux 上将 Open PDF Studio 设为默认 PDF 查看器：\n\n在终端中运行：\nxdg-mime default openpdfstudio.desktop application/pdf",
+    "macInstructions": "在 macOS 上将 HB PDF Studio 设为默认 PDF 查看器：\n\n1. 在 Finder 中右键点击任意 PDF 文件\n2. 选择“显示简介”\n3. 在“打开方式”下选择 HB PDF Studio\n4. 点击“全部更改...”",
+    "linuxInstructions": "在 Linux 上将 HB PDF Studio 设为默认 PDF 查看器：\n\n在终端中运行：\nxdg-mime default openpdfstudio.desktop application/pdf",
     "checkFinder": "检查 Finder > 显示简介",
     "notSet": "未设置",
     "chosenInSystemSettings": "已在系统设置中选择",
-    "sandboxInstructions": "Open PDF Studio 以 {{package}} 软件包运行，无法自行更改默认 PDF 应用。\n\n请在系统设置的“默认应用程序”中选择 Open PDF Studio，或右键单击 PDF 文件并使用“打开方式”。",
-    "xdgMimeMissing": "未安装 xdg-mime（软件包 xdg-utils），因此无法在此设置默认 PDF 应用。\n\n请安装 xdg-utils，或在系统设置的“默认应用程序”中选择 Open PDF Studio。",
-    "linuxDone": "Open PDF Studio 现在是 PDF 文件的默认应用。",
-    "linuxFailed": "无法将 Open PDF Studio 设为默认 PDF 应用。\n\n{{error}}"
+    "sandboxInstructions": "HB PDF Studio 以 {{package}} 软件包运行，无法自行更改默认 PDF 应用。\n\n请在系统设置的“默认应用程序”中选择 HB PDF Studio，或右键单击 PDF 文件并使用“打开方式”。",
+    "xdgMimeMissing": "未安装 xdg-mime（软件包 xdg-utils），因此无法在此设置默认 PDF 应用。\n\n请安装 xdg-utils，或在系统设置的“默认应用程序”中选择 HB PDF Studio。",
+    "linuxDone": "HB PDF Studio 现在是 PDF 文件的默认应用。",
+    "linuxFailed": "无法将 HB PDF Studio 设为默认 PDF 应用。\n\n{{error}}"
   },
   "explorerThumbnails": {
     "title": "文件资源管理器",
@@ -226,7 +226,7 @@
     "otherHandler": "PDF 缩略图目前由 {{name}} 提供。",
     "defaultApp": "您的默认 PDF 应用会显示自己的缩略图（{{name}}）。只要该应用仍是您的默认 PDF 应用，Windows 就会使用这些缩略图。",
     "replaceTitle": "PDF 缩略图",
-    "replaceConfirm": "{{name}} 已在文件资源管理器中提供 PDF 缩略图。\n\n是否为您的 Windows 帐户改为显示 Open PDF Studio 的缩略图？关闭此选项会恢复之前的缩略图。",
+    "replaceConfirm": "{{name}} 已在文件资源管理器中提供 PDF 缩略图。\n\n是否为您的 Windows 帐户改为显示 HB PDF Studio 的缩略图？关闭此选项会恢复之前的缩略图。",
     "failed": "无法更改文件资源管理器的缩略图设置。"
   },
   "virtualPrinter": {
@@ -251,7 +251,7 @@
     "stateUnknownDetail": "无法读取打印机状态。",
     "howTitle": "工作原理",
     "how1": "在任意程序中选择“打印”，然后选择 {{printer}}。",
-    "how2": "打印内容会显示在 Open PDF Studio 的打印机窗口中。",
+    "how2": "打印内容会显示在 HB PDF Studio 的打印机窗口中。",
     "how3": "预览、重新排序、合并并将作业保存为一个 PDF，或在 Studio 中打开它们。",
     "openWindow": "打开打印机窗口",
     "openWindowTip": "显示已捕获的打印作业"

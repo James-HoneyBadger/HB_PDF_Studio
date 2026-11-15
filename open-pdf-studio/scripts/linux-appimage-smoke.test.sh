@@ -12,8 +12,8 @@ printf '%s\n' \
   'set -euo pipefail' \
   'if [[ "${1:-}" == "--appimage-extract" ]]; then' \
   '  if [[ "${FAKE_MISSING_PDFIUM:-0}" != "1" ]]; then' \
-  '    mkdir -p "squashfs-root/usr/lib/Open PDF Studio"' \
-  '    : > "squashfs-root/usr/lib/Open PDF Studio/libpdfium.so"' \
+  '    mkdir -p "squashfs-root/usr/lib/HB PDF Studio"' \
+  '    : > "squashfs-root/usr/lib/HB PDF Studio/libpdfium.so"' \
   '  fi' \
   '  if [[ "${FAKE_MISSING_WORKER:-0}" != "1" ]]; then' \
   '    mkdir -p squashfs-root/usr/bin' \

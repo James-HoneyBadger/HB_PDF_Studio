@@ -111,7 +111,7 @@
     "readOnly": {
       "title": "Opened read-only",
       "kenmerk": "{{name}} is read-only: it has the read-only attribute, or you only have read permission on this location.",
-      "in-gebruik": "{{name}} is open in another application or is being synchronized, so Open PDF Studio cannot reserve it.",
+      "in-gebruik": "{{name}} is open in another application or is being synchronized, so HB PDF Studio cannot reserve it.",
       "geweigerd": "{{name}} cannot be reserved: Windows denied it.",
       "mislukt": "{{name}} could not be reserved.",
       "saveAs": "It has been opened read-only. You can make changes; use Save As to save them to another file."
@@ -119,7 +119,7 @@
   },
   "hostOpenFailed": "ບໍ່ສາມາດອ່ານໄຟລ໌ຈາກບ່ອນເກັບຂໍ້ມູນໄດ້. ກະລຸນາລອງໃໝ່.",
   "hostInvalidPdf": "{{name}} ບໍ່ແມ່ນໄຟລ໌ PDF ທີ່ຖືກຕ້ອງ ແລະ ບໍ່ສາມາດເປີດໄດ້.",
-  "hostNoContact": "ໜ້າທີ່ມີ Open PDF Studio ບໍ່ຕອບສະໜອງ, ສະນັ້ນຈຶ່ງເປີດ ຫຼື ບັນທຶກໄຟລ໌ບໍ່ໄດ້. ກະລຸນາໂຫຼດໜ້າຄືນໃໝ່ ແລ້ວລອງອີກຄັ້ງ.",
+  "hostNoContact": "ໜ້າທີ່ມີ HB PDF Studio ບໍ່ຕອບສະໜອງ, ສະນັ້ນຈຶ່ງເປີດ ຫຼື ບັນທຶກໄຟລ໌ບໍ່ໄດ້. ກະລຸນາໂຫຼດໜ້າຄືນໃໝ່ ແລ້ວລອງອີກຄັ້ງ.",
   "hostSaveConflict": "ມີຄົນອື່ນບັນທຶກໄຟລ໌ນີ້ໃນລະຫວ່າງນັ້ນ. ການປ່ຽນແປງຂອງທ່ານຖືກບັນທຶກເປັນສຳເນົາແຍກ: {{name}}. ການບັນທຶກຄັ້ງຕໍ່ໄປຈະໄປທີ່ສຳເນົານັ້ນ.",
   "hostSaveNotLocked": "ໄຟລ໌ນີ້ບໍ່ໄດ້ສະຫງວນໄວ້ໃຫ້ທ່ານ, ສະນັ້ນຄົນອື່ນສາມາດແກ້ໄຂໄດ້ໃນເວລາດຽວກັນ. ການປ່ຽນແປງຂອງທ່ານຖືກບັນທຶກເປັນເວີຊັນໃໝ່; ບໍ່ມີຫຍັງຖືກຂຽນທັບ.",
   "hostReadOnlySave": "ໄຟລ໌ນີ້ເປີດແບບອ່ານຢ່າງດຽວ, ສະນັ້ນບໍ່ສາມາດບັນທຶກການປ່ຽນແປງລົງໃນໄຟລ໌ໄດ້. ໃຊ້ \"ບັນທຶກເປັນ\" ເພື່ອດາວໂຫຼດສຳເນົາ.",
@@ -163,7 +163,7 @@
   "failedToReplacePage": "ປ່ຽນແທນໜ້າບໍ່ສຳເລັດ: {{error}}",
   "failedToMergeFile": "ຮວມໄຟລ໌ບໍ່ສຳເລັດ: {{file}}\n{{error}}",
   "invalidPageRange": "ຊ່ວງໜ້າບໍ່ຖືກຕ້ອງ. ກະລຸນາປ້ອນໝາຍເລກໜ້າໃຫ້ຖືກຕ້ອງ.",
-  "appName": "Open PDF Studio",
+  "appName": "HB PDF Studio",
   "noDocuments": "ບໍ່ໄດ້ເລືອກ PDF",
   "noDocumentsHint": "ກົດ \"ເປີດ PDF\" ເພື່ອເລືອກ ແລະ ໃສ່ຄຳອະທິບາຍປະກອບໃນ PDF",
   "solid": "ເສັ້ນທຶບ",
@@ -350,7 +350,7 @@
     "fileAssoc": "ສຳເນົາແບບພົກພານີ້ບໍ່ໄດ້ລົງທະບຽນກັບ Windows. ເພື່ອເປີດໄຟລ໌ PDF ດ້ວຍມັນ, ຄລິກຂວາໃສ່ PDF, ເລືອກ Open with > Choose another app, ແລ້ວເລືອກ open-pdf-studio.exe ໃນໂຟນເດີນີ້.",
     "explorerThumbnails": "ຮູບຫຍໍ້ PDF ໃນ File Explorer ມີສະເພາະໃນເວີຊັນທີ່ຕິດຕັ້ງເທົ່ານັ້ນ.",
     "virtualPrinter": "ເຄື່ອງພິມສະເໝືອນມີສະເພາະໃນເວີຊັນທີ່ຕິດຕັ້ງເທົ່ານັ້ນ: ມັນຖືກເພີ່ມເຂົ້າ Windows ດ້ວຍສິດຜູ້ເບິ່ງແຍງລະບົບ.",
-    "notWritable": "Open PDF Studio ບໍ່ສາມາດຂຽນລົງໂຟນເດີ {{dir}} ໄດ້, ດັ່ງນັ້ນເທື່ອນີ້ການຕັ້ງຄ່າຂອງທ່ານຈະຖືກເກັບໄວ້ໃນໂປຣໄຟລ໌ຜູ້ໃຊ້ຂອງທ່ານ. ຍ້າຍໂຟນເດີແບບພົກພາໄປບ່ອນທີ່ຂຽນໄດ້, ເຊັ່ນ USB ຫຼື ໂຟນເດີ Documents ຂອງທ່ານ."
+    "notWritable": "HB PDF Studio ບໍ່ສາມາດຂຽນລົງໂຟນເດີ {{dir}} ໄດ້, ດັ່ງນັ້ນເທື່ອນີ້ການຕັ້ງຄ່າຂອງທ່ານຈະຖືກເກັບໄວ້ໃນໂປຣໄຟລ໌ຜູ້ໃຊ້ຂອງທ່ານ. ຍ້າຍໂຟນເດີແບບພົກພາໄປບ່ອນທີ່ຂຽນໄດ້, ເຊັ່ນ USB ຫຼື ໂຟນເດີ Documents ຂອງທ່ານ."
   },
   "protectedPdfNoPrint": "ສິດຂອງເອກະສານນີ້ບໍ່ອະນຸຍາດໃຫ້ພິມ.",
   "share": {

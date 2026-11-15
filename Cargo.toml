@@ -6,7 +6,6 @@ members = [
   "pdfium-worker",
   "open-pdf-cad",
   "open-pdf-cmyk",
-  "open-pdf-thumbnails",
   "open-pdf-signatures",
   "open-pdf-security",
   "open-pdf-monochrome",

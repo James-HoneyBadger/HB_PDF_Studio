@@ -20,7 +20,7 @@ const corpus = JSON.parse(readFileSync(join(__dirname, 'corpus.json'), 'utf-8'))
 
 const BENCH = join(__dirname, 'bench-harness.mjs');
 
-console.log('═══ Baseline measurement — Open PDF Studio render pipeline ═══');
+console.log('═══ Baseline measurement — HB PDF Studio render pipeline ═══');
 console.log(`Fixtures: ${corpus.fixtures.map(f => f.name).join(', ')}`);
 console.log(`Scenarios: ${corpus.scenarios.map(s => s.name).join(', ')}\n`);
 

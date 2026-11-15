@@ -290,19 +290,19 @@
   "fileAssoc": {
     "defaultPdfApplication": "ແອັບພລິເຄຊັນ PDF ເລີ່ມຕົ້ນ",
     "currentDefault": "ຄ່າເລີ່ມຕົ້ນປັດຈຸບັນ:",
-    "setDefault": "ຕັ້ງ Open PDF Studio ເປັນຕົວເປີດ PDF ເລີ່ມຕົ້ນ",
-    "setDefaultHelp": "ລະບົບຈະເປີດການຕັ້ງຄ່າເຄື່ອງ ເຊິ່ງທ່ານສາມາດເລືອກ Open PDF Studio ເປັນແອັບເລີ່ມຕົ້ນສຳລັບການເປີດໄຟລ໌ PDF ໄດ້.",
-    "windowsInstructions": "ເປີດການຕັ້ງຄ່າ Windows ແລ້ວ.\n\nວິທີຕັ້ງ Open PDF Studio ເປັນຄ່າເລີ່ມຕົ້ນ:\n1. ເລື່ອນລົງໄປຫາ \"Choose default apps by file type\"\n2. ຊອກຫາ .pdf\n3. ຄລິກ ແລະ ເລືອກ Open PDF Studio",
+    "setDefault": "ຕັ້ງ HB PDF Studio ເປັນຕົວເປີດ PDF ເລີ່ມຕົ້ນ",
+    "setDefaultHelp": "ລະບົບຈະເປີດການຕັ້ງຄ່າເຄື່ອງ ເຊິ່ງທ່ານສາມາດເລືອກ HB PDF Studio ເປັນແອັບເລີ່ມຕົ້ນສຳລັບການເປີດໄຟລ໌ PDF ໄດ້.",
+    "windowsInstructions": "ເປີດການຕັ້ງຄ່າ Windows ແລ້ວ.\n\nວິທີຕັ້ງ HB PDF Studio ເປັນຄ່າເລີ່ມຕົ້ນ:\n1. ເລື່ອນລົງໄປຫາ \"Choose default apps by file type\"\n2. ຊອກຫາ .pdf\n3. ຄລິກ ແລະ ເລືອກ HB PDF Studio",
     "windowsFailed": "ບໍ່ສາມາດເປີດການຕັ້ງຄ່າ Windows ໄດ້.\n\nກະລຸນາເປີດດ້ວຍຕົນເອງທີ່ Settings > Apps > Default Apps.",
-    "macInstructions": "ວິທີຕັ້ງ Open PDF Studio ເປັນຕົວເປີດ PDF ເລີ່ມຕົ້ນໃນ macOS:\n\n1. ຄລິກຂວາໃສ່ໄຟລ໌ PDF ໃດກໍໄດ້ໃນ Finder\n2. ເລືອກ \"Get Info\"\n3. ພາຍໃຕ້ \"Open with\", ເລືອກ Open PDF Studio\n4. ຄລິກ \"Change All...\"",
-    "linuxInstructions": "ວິທີຕັ້ງ Open PDF Studio ເປັນຕົວເປີດ PDF ເລີ່ມຕົ້ນໃນ Linux:\n\nຮັນຄຳສັ່ງໃນ terminal:\nxdg-mime default openpdfstudio.desktop application/pdf",
+    "macInstructions": "ວິທີຕັ້ງ HB PDF Studio ເປັນຕົວເປີດ PDF ເລີ່ມຕົ້ນໃນ macOS:\n\n1. ຄລິກຂວາໃສ່ໄຟລ໌ PDF ໃດກໍໄດ້ໃນ Finder\n2. ເລືອກ \"Get Info\"\n3. ພາຍໃຕ້ \"Open with\", ເລືອກ HB PDF Studio\n4. ຄລິກ \"Change All...\"",
+    "linuxInstructions": "ວິທີຕັ້ງ HB PDF Studio ເປັນຕົວເປີດ PDF ເລີ່ມຕົ້ນໃນ Linux:\n\nຮັນຄຳສັ່ງໃນ terminal:\nxdg-mime default openpdfstudio.desktop application/pdf",
     "checkFinder": "ກວດເບິ່ງ Finder > Get Info",
     "notSet": "ຍັງບໍ່ໄດ້ຕັ້ງຄ່າ",
     "chosenInSystemSettings": "ເລືອກໄວ້ໃນການຕັ້ງຄ່າລະບົບ",
-    "sandboxInstructions": "Open PDF Studio ເຮັດວຽກເປັນແພັກເກດ {{package}} ແລະ ບໍ່ສາມາດປ່ຽນແອັບ PDF ເລີ່ມຕົ້ນໄດ້ເອງ.\n\nເລືອກ Open PDF Studio ໃນການຕັ້ງຄ່າລະບົບທີ່ ແອັບພລິເຄຊັນເລີ່ມຕົ້ນ, ຫຼື ຄລິກຂວາທີ່ໄຟລ໌ PDF ແລ້ວໃຊ້ ເປີດດ້ວຍ.",
-    "xdgMimeMissing": "ບໍ່ໄດ້ຕິດຕັ້ງ xdg-mime (ແພັກເກດ xdg-utils), ສະນັ້ນຈຶ່ງບໍ່ສາມາດຕັ້ງແອັບ PDF ເລີ່ມຕົ້ນຈາກບ່ອນນີ້ໄດ້.\n\nຕິດຕັ້ງ xdg-utils, ຫຼື ເລືອກ Open PDF Studio ໃນການຕັ້ງຄ່າລະບົບທີ່ ແອັບພລິເຄຊັນເລີ່ມຕົ້ນ.",
-    "linuxDone": "ຕອນນີ້ Open PDF Studio ເປັນແອັບເລີ່ມຕົ້ນສຳລັບໄຟລ໌ PDF ແລ້ວ.",
-    "linuxFailed": "ບໍ່ສາມາດຕັ້ງ Open PDF Studio ເປັນແອັບ PDF ເລີ່ມຕົ້ນໄດ້.\n\n{{error}}"
+    "sandboxInstructions": "HB PDF Studio ເຮັດວຽກເປັນແພັກເກດ {{package}} ແລະ ບໍ່ສາມາດປ່ຽນແອັບ PDF ເລີ່ມຕົ້ນໄດ້ເອງ.\n\nເລືອກ HB PDF Studio ໃນການຕັ້ງຄ່າລະບົບທີ່ ແອັບພລິເຄຊັນເລີ່ມຕົ້ນ, ຫຼື ຄລິກຂວາທີ່ໄຟລ໌ PDF ແລ້ວໃຊ້ ເປີດດ້ວຍ.",
+    "xdgMimeMissing": "ບໍ່ໄດ້ຕິດຕັ້ງ xdg-mime (ແພັກເກດ xdg-utils), ສະນັ້ນຈຶ່ງບໍ່ສາມາດຕັ້ງແອັບ PDF ເລີ່ມຕົ້ນຈາກບ່ອນນີ້ໄດ້.\n\nຕິດຕັ້ງ xdg-utils, ຫຼື ເລືອກ HB PDF Studio ໃນການຕັ້ງຄ່າລະບົບທີ່ ແອັບພລິເຄຊັນເລີ່ມຕົ້ນ.",
+    "linuxDone": "ຕອນນີ້ HB PDF Studio ເປັນແອັບເລີ່ມຕົ້ນສຳລັບໄຟລ໌ PDF ແລ້ວ.",
+    "linuxFailed": "ບໍ່ສາມາດຕັ້ງ HB PDF Studio ເປັນແອັບ PDF ເລີ່ມຕົ້ນໄດ້.\n\n{{error}}"
   },
   "explorerThumbnails": {
     "title": "ຕົວສຳຫຼວດໄຟລ໌",
@@ -312,7 +312,7 @@
     "otherHandler": "ດຽວນີ້ຮູບຫຍໍ້ຂອງ PDF ມາຈາກ {{name}}.",
     "defaultApp": "ແອັບ PDF ເລີ່ມຕົ້ນຂອງທ່ານສະແດງຮູບຫຍໍ້ຂອງມັນເອງ ({{name}}). Windows ຈະໃຊ້ພວກມັນຕາບໃດທີ່ແອັບນັ້ນຍັງເປັນແອັບ PDF ເລີ່ມຕົ້ນຂອງທ່ານ.",
     "replaceTitle": "ຮູບຫຍໍ້ຂອງ PDF",
-    "replaceConfirm": "{{name}} ໃຫ້ຮູບຫຍໍ້ຂອງ PDF ໃນຕົວສຳຫຼວດໄຟລ໌ຢູ່ແລ້ວ.\n\nສະແດງຮູບຫຍໍ້ຈາກ Open PDF Studio ແທນສຳລັບບັນຊີ Windows ຂອງທ່ານບໍ? ການປິດຕົວເລືອກນີ້ຈະຄືນຮູບຫຍໍ້ເດີມ.",
+    "replaceConfirm": "{{name}} ໃຫ້ຮູບຫຍໍ້ຂອງ PDF ໃນຕົວສຳຫຼວດໄຟລ໌ຢູ່ແລ້ວ.\n\nສະແດງຮູບຫຍໍ້ຈາກ HB PDF Studio ແທນສຳລັບບັນຊີ Windows ຂອງທ່ານບໍ? ການປິດຕົວເລືອກນີ້ຈະຄືນຮູບຫຍໍ້ເດີມ.",
     "failed": "ບໍ່ສາມາດປ່ຽນການຕັ້ງຄ່າຮູບຫຍໍ້ຂອງຕົວສຳຫຼວດໄຟລ໌ໄດ້."
   },
   "virtualPrinter": {
@@ -337,7 +337,7 @@
     "stateUnknownDetail": "ບໍ່ສາມາດອ່ານສະຖານະຂອງເຄື່ອງພິມໄດ້.",
     "howTitle": "ວິທີການເຮັດວຽກ",
     "how1": "ໃນໂປຣແກຣມໃດກໍໄດ້ ເລືອກພິມ ແລ້ວເລືອກ {{printer}}.",
-    "how2": "ການພິມຈະປາກົດໃນໜ້າຕ່າງເຄື່ອງພິມຂອງ Open PDF Studio.",
+    "how2": "ການພິມຈະປາກົດໃນໜ້າຕ່າງເຄື່ອງພິມຂອງ HB PDF Studio.",
     "how3": "ເບິ່ງຕົວຢ່າງ, ຈັດລຳດັບໃໝ່, ຮວມ ແລະ ບັນທຶກລາຍການເປັນ PDF ດຽວ ຫຼື ເປີດໃນ Studio.",
     "openWindow": "ເປີດໜ້າຕ່າງເຄື່ອງພິມ",
     "openWindowTip": "ສະແດງລາຍການພິມທີ່ຖືກດັກຈັບ"

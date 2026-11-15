@@ -10,7 +10,7 @@
 //  - geen vraag of de app de standaard-PDF-app moet worden (main.js) en in de
 //    voorkeuren een uitleg in plaats van de knop (FileAssocTab.jsx);
 //  - Verkenner-miniaturen en de virtuele printer: niet beschikbaar, met een
-//    uitleg (FileAssocTab.jsx, VirtualPrinterTab.jsx).
+//    uitleg (FileAssocTab.jsx).
 //
 // Deze module is vrij van DOM- en i18n-imports, zodat de regels los te testen
 // zijn.
@@ -30,7 +30,7 @@ export const RELEASES_URL = 'https://github.com/OpenAEC-Foundation/open-pdf-stud
 /** Bestandsnaam van de draagbare zip, zoals de releaseworkflow hem uploadt. */
 export function zipNaam(versie) {
   const v = String(versie || '').trim().replace(/^v/, '');
-  return `Open.PDF.Studio_${v}_x64_portable.zip`;
+  return `HB.PDF.Studio_${v}_x64_portable.zip`;
 }
 
 /** Wat in de draagbare modus niet kan of anders gaat. */

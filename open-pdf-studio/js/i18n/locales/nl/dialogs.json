@@ -35,7 +35,7 @@
   "printQueue": {
     "toolbarLabel": "Acties voor afdrukopdrachten",
     "openInStudio": "Openen in Studio",
-    "openInStudioTip": "Open de geselecteerde opdracht in Open PDF Studio (Enter of dubbelklikken). Meerdere geselecteerde opdrachten openen als één samengevoegd document.",
+    "openInStudioTip": "Open de geselecteerde opdracht in HB PDF Studio (Enter of dubbelklikken). Meerdere geselecteerde opdrachten openen als één samengevoegd document.",
     "mergeSelected": "Selectie samenvoegen…",
     "mergeSelectedTip": "Voeg de geselecteerde opdrachten in lijstvolgorde samen tot één PDF en sla die op",
     "saveAs": "Opslaan als…",
@@ -75,11 +75,11 @@
     "adding": "PDF-bestanden toevoegen…",
     "saving": "Opslaan…",
     "merging": "Samenvoegen {{done}} van {{count}}…",
-    "opening": "Openen in Open PDF Studio…",
+    "opening": "Openen in HB PDF Studio…",
     "deleting": "Verwijderen…",
     "saved": "Opgeslagen als {{name}}",
     "merged": "Samengevoegd en opgeslagen als {{name}}",
-    "opened": "Geopend in Open PDF Studio",
+    "opened": "Geopend in HB PDF Studio",
     "deleted": "Verwijderd: {{count}}",
     "failed": "Mislukt: {{message}}",
     "mergedFileName": "Samengevoegd",
@@ -433,7 +433,7 @@
   },
   "update": {
     "title": "Software-update",
-    "newVersionAvailable": "Er is een nieuwe versie van Open PDF Studio beschikbaar.",
+    "newVersionAvailable": "Er is een nieuwe versie van HB PDF Studio beschikbaar.",
     "currentVersion": "Huidige versie:",
     "newVersion": "Nieuwe versie:",
     "releaseNotes": "Release-opmerkingen:",
@@ -560,7 +560,7 @@
   },
   "defaultPdfApp": {
     "title": "Standaard PDF-app",
-    "message": "Open PDF Studio is niet ingesteld als de standaardapp voor het openen van PDF-bestanden. Wilt u deze als standaard instellen?",
+    "message": "HB PDF Studio is niet ingesteld als de standaardapp voor het openen van PDF-bestanden. Wilt u deze als standaard instellen?",
     "setAsDefault": "Als standaard instellen",
     "dontAskAgain": "Niet meer vragen",
     "notNow": "Niet nu"
@@ -1322,7 +1322,7 @@
   },
   "recovery": {
     "title": "Niet-opgeslagen werk herstellen",
-    "intro": "Open PDF Studio is de vorige keer niet normaal afgesloten. Van deze documenten is niet-opgeslagen werk bewaard:",
+    "intro": "HB PDF Studio is de vorige keer niet normaal afgesloten. Van deze documenten is niet-opgeslagen werk bewaard:",
     "savedAt": "Bewaard op {{time}}",
     "pages": "Pagina's: {{count}}",
     "untitled": "Naamloos document",
@@ -1343,7 +1343,7 @@
     "deleteFailed": "Verwijderen is mislukt: {{error}}",
     "tabLabel": "hersteld",
     "tabTip": "Hersteld na een onverwachte afsluiting. Opslaan schrijft naar het oorspronkelijke bestand.",
-    "reloadStopped": "Het venster van Open PDF Studio is meerdere keren kort na elkaar vastgelopen en wordt niet meer automatisch opnieuw geladen. Sla uw werk op en start de app opnieuw."
+    "reloadStopped": "Het venster van HB PDF Studio is meerdere keren kort na elkaar vastgelopen en wordt niet meer automatisch opnieuw geladen. Sla uw werk op en start de app opnieuw."
   },
   "protectPdf": {
     "title": "Documentbeveiliging",
@@ -1919,7 +1919,7 @@
       "routing": "Volgorde",
       "howToRespond": "Beantwoord deze mail met \"Goedgekeurd\" of \"Afgewezen\" en laat {{ref}} in het onderwerp staan.",
       "howToSign": "Ondertekenaars: stuur de ondertekende PDF terug en laat {{ref}} in de bestandsnaam staan.",
-      "disclaimer": "De SHA-256 hierboven identificeert de exacte documentversie. Deze mail is voorbereid in Open PDF Studio; dit is geen juridisch bindende ondertekendienst en identiteiten worden niet geverifieerd."
+      "disclaimer": "De SHA-256 hierboven identificeert de exacte documentversie. Deze mail is voorbereid in HB PDF Studio; dit is geen juridisch bindende ondertekendienst en identiteiten worden niet geverifieerd."
     },
     "errors": {
       "CONFIGURE_ADAPTER_FIRST": "Schakel de provider eerst in.",

@@ -460,7 +460,7 @@
     "extensionsTitle": "Zarządzaj rozszerzeniami",
     "extensions": "Rozszerzenia",
     "information": "Informacje",
-    "aboutTitle": "O programie Open PDF Studio",
+    "aboutTitle": "O programie HB PDF Studio",
     "about": "O programie",
     "whatsNewTitle": "Co nowego w tej wersji",
     "whatsNew": "Co nowego",
@@ -477,7 +477,7 @@
     "fileAssociation": "Skojarzenie plików",
     "setDefaultPdf": "Ustaw domyślną aplikację PDF",
     "fileAssociations": "Skojarzenia plików",
-    "previousVersionTitle": "Zainstaluj poprzednią wersję Open PDF Studio",
+    "previousVersionTitle": "Zainstaluj poprzednią wersję HB PDF Studio",
     "previousVersion": "Poprzednia wersja"
   },
   "format": {

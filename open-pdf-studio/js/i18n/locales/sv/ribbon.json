@@ -460,7 +460,7 @@
     "extensionsTitle": "Hantera tillägg",
     "extensions": "Tillägg",
     "information": "Information",
-    "aboutTitle": "Om Open PDF Studio",
+    "aboutTitle": "Om HB PDF Studio",
     "about": "Om",
     "whatsNewTitle": "Nyheter i den här versionen",
     "whatsNew": "Nyheter",
@@ -477,7 +477,7 @@
     "fileAssociation": "Filassociation",
     "setDefaultPdf": "Ange standard-PDF-program",
     "fileAssociations": "Filassociationer",
-    "previousVersionTitle": "Installera föregående version av Open PDF Studio",
+    "previousVersionTitle": "Installera föregående version av HB PDF Studio",
     "previousVersion": "Föregående version"
   },
   "format": {

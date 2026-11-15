@@ -2,7 +2,7 @@
 
 Datum: 2026-07-15  
 Status: ter beoordeling  
-Repository: Open PDF Studio
+Repository: HB PDF Studio
 
 ## Aanleiding
 
@@ -70,7 +70,7 @@ De backend voert voor een desktopopslag deze stappen uit:
 2. Valideer het doelpad, maak er een absoluut fysiek pad van en bereken de genormaliseerde interne padsleutel.
 3. Maak met `create_new` een uniek bestand `.<bestandsnaam>.ops-save-<pid>-<random>.tmp` in dezelfde map als het doelbestand.
 4. Schrijf de raw body rechtstreeks vanuit de geleende byteslice, roep `flush` aan en synchroniseer het tijdelijke bestand met `sync_all`.
-5. Geef bij een gewone Save de door Open PDF Studio gehouden lock op het doelpad zo laat mogelijk vrij. Bij Save As blijft de lock op `previousPath` actief totdat het nieuwe doel succesvol is vervangen.
+5. Geef bij een gewone Save de door HB PDF Studio gehouden lock op het doelpad zo laat mogelijk vrij. Bij Save As blijft de lock op `previousPath` actief totdat het nieuwe doel succesvol is vervangen.
 6. Vervang of maak het doelbestand met `atomic_replace_file`.
 7. Synchroniseer op Unix de bovenliggende map met `sync_all`, zodat ook de directorywijziging duurzaam wordt vastgelegd.
 8. Verhoog de documentgeneratie van het doelpad en verwijder alle padgebonden backendcaches. Bij Save As worden ook de lock en caches van het afwijkende `previousPath` vrijgegeven.
@@ -205,7 +205,7 @@ De implementatie volgt test-first ontwikkeling. Productiecode wordt pas aangepas
 8. Een fout na succesvolle vervanging retourneert `saved = true` met de juiste waarschuwingcode.
 9. Save As laat bij een fout de lock en caches van het bronpad intact en verhuist die pas na succes naar het doelpad.
 10. Op Unix kan een tweede proces of onafhankelijke filehandle de exclusieve advisory lock niet verkrijgen zolang de eerste lock actief is; na unlock lukt dit wel.
-11. De bestaande Windows-locktest bevestigt dat een conflicterende schrijf/delete-open faalt zolang Open PDF Studio de lock houdt.
+11. De bestaande Windows-locktest bevestigt dat een conflicterende schrijf/delete-open faalt zolang HB PDF Studio de lock houdt.
 12. De raw IPC-body wordt zonder JSON-deserialisatie als byteslice naar het tijdelijke bestand geschreven.
 
 Voor foutinjectie worden schrijf-, replace-, sync- en lockstappen achter kleine interne functies of traits geplaatst. De tests hoeven daardoor geen schijfvolle machine, abrupt procesverlies of timingrace te simuleren.

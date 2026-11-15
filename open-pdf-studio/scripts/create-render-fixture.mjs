@@ -8,9 +8,9 @@ const FIXED_DATE = new Date('2026-01-01T00:00:00.000Z');
 export async function createRenderFixture(outputPath) {
   const pdf = await PDFDocument.create({ updateMetadata: false });
   pdf.setTitle('Render regression fixture');
-  pdf.setAuthor('Open PDF Studio');
-  pdf.setCreator('Open PDF Studio');
-  pdf.setProducer('Open PDF Studio');
+  pdf.setAuthor('HB PDF Studio');
+  pdf.setCreator('HB PDF Studio');
+  pdf.setProducer('HB PDF Studio');
   pdf.setCreationDate(FIXED_DATE);
   pdf.setModificationDate(FIXED_DATE);
 
@@ -18,7 +18,7 @@ export async function createRenderFixture(outputPath) {
   const font = await pdf.embedFont(StandardFonts.Helvetica);
   const bold = await pdf.embedFont(StandardFonts.HelveticaBold);
 
-  page.drawText('Open PDF Studio', {
+  page.drawText('HB PDF Studio', {
     x: 64,
     y: 752,
     size: 24,

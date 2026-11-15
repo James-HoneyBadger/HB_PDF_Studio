@@ -110,7 +110,7 @@
     "readOnly": {
       "title": "Opened read-only",
       "kenmerk": "{{name}} is read-only: it has the read-only attribute, or you only have read permission on this location.",
-      "in-gebruik": "{{name}} is open in another application or is being synchronized, so Open PDF Studio cannot reserve it.",
+      "in-gebruik": "{{name}} is open in another application or is being synchronized, so HB PDF Studio cannot reserve it.",
       "geweigerd": "{{name}} cannot be reserved: Windows denied it.",
       "mislukt": "{{name}} could not be reserved.",
       "saveAs": "It has been opened read-only. You can make changes; use Save As to save them to another file."
@@ -118,7 +118,7 @@
   },
   "hostOpenFailed": "تعذّرت قراءة الملف من التخزين. حاول مرة أخرى.",
   "hostInvalidPdf": "{{name}} ليس ملف PDF صالحًا وتعذّر فتحه.",
-  "hostNoContact": "الصفحة التي تحتوي على Open PDF Studio لا تستجيب، لذا لا يمكن فتح الملفات أو حفظها. أعد تحميل الصفحة وحاول مرة أخرى.",
+  "hostNoContact": "الصفحة التي تحتوي على HB PDF Studio لا تستجيب، لذا لا يمكن فتح الملفات أو حفظها. أعد تحميل الصفحة وحاول مرة أخرى.",
   "hostSaveConflict": "قام شخص آخر بحفظ هذا الملف في هذه الأثناء. تم حفظ تغييراتك كنسخة منفصلة: {{name}}. ستُحفظ المرات التالية في تلك النسخة.",
   "hostSaveNotLocked": "هذا الملف غير محجوز لك، لذا يمكن للآخرين تغييره في الوقت نفسه. تُحفظ تغييراتك كإصدارات جديدة؛ ولا يُستبدل أي شيء.",
   "hostReadOnlySave": "هذا الملف مفتوح للقراءة فقط، لذا لا يمكن حفظ التغييرات فيه. استخدم «حفظ باسم» لتنزيل نسخة.",
@@ -162,7 +162,7 @@
   "failedToReplacePage": "فشل استبدال الصفحة: {{error}}",
   "failedToMergeFile": "فشل الدمج: {{file}}\n{{error}}",
   "invalidPageRange": "نطاق صفحات غير صالح. يرجى إدخال أرقام صفحات صحيحة.",
-  "appName": "Open PDF Studio",
+  "appName": "HB PDF Studio",
   "noDocuments": "لم يتم تحديد ملف PDF",
   "noDocumentsHint": "انقر فوق \"فتح PDF\" لاستعراض ملف PDF والتعليق عليه",
   "solid": "متصل",
@@ -350,7 +350,7 @@
     "fileAssoc": "هذه النسخة المحمولة غير مسجلة في Windows. لفتح ملفات PDF بها، انقر بزر الماوس الأيمن على ملف PDF، واختر فتح باستخدام > اختيار تطبيق آخر، ثم حدد open-pdf-studio.exe في هذا المجلد.",
     "explorerThumbnails": "الصور المصغرة لملفات PDF في مستكشف الملفات متاحة في الإصدار المثبت فقط.",
     "virtualPrinter": "الطابعة الافتراضية متاحة في الإصدار المثبت فقط: تُضاف إلى Windows بصلاحيات المسؤول.",
-    "notWritable": "لا يستطيع Open PDF Studio الكتابة في المجلد {{dir}}، لذلك تُحفظ إعداداتك هذه المرة في ملف تعريف المستخدم. انقل المجلد المحمول إلى مكان قابل للكتابة، مثل ذاكرة USB أو مجلد المستندات."
+    "notWritable": "لا يستطيع HB PDF Studio الكتابة في المجلد {{dir}}، لذلك تُحفظ إعداداتك هذه المرة في ملف تعريف المستخدم. انقل المجلد المحمول إلى مكان قابل للكتابة، مثل ذاكرة USB أو مجلد المستندات."
   },
   "protectedPdfNoPrint": "لا تسمح أذونات هذا المستند بالطباعة.",
   "share": {

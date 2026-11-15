@@ -1,10 +1,10 @@
-# English voice-over — Open PDF Studio
+# English voice-over — HB PDF Studio
 
 Voice: calm British English. Duration: 66 seconds.
 
 ## 1. MEET OPEN PDF STUDIO · 0–9.5s
 
-Your drawings. Your tools. Meet Open PDF Studio. Free and open source.
+Your drawings. Your tools. Meet HB PDF Studio. Free and open source.
 
 ## 2. 01 / OPEN · 9.5–18s
 
@@ -28,4 +28,4 @@ Professional PDF tools, without a subscription. No watermarks. Open source, with
 
 ## 7. OPENAEC FOUNDATION · 57–66s
 
-Your next project starts here. Open PDF Studio. Download it free, and get to work.
+Your next project starts here. HB PDF Studio. Download it free, and get to work.

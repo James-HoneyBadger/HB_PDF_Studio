@@ -204,19 +204,19 @@
   "fileAssoc": {
     "defaultPdfApplication": "تطبيق PDF الافتراضي",
     "currentDefault": "الافتراضي الحالي:",
-    "setDefault": "تعيين Open PDF Studio كعارض PDF الافتراضي",
-    "setDefaultHelp": "سيؤدي هذا إلى فتح إعدادات النظام حيث يمكنك تحديد Open PDF Studio كالتطبيق الافتراضي لفتح ملفات PDF.",
-    "windowsInstructions": "تم فتح إعدادات Windows.\n\nلتعيين Open PDF Studio كافتراضي:\n1. قم بالتمرير لأسفل إلى \"اختيار التطبيقات الافتراضية حسب نوع الملف\"\n2. ابحث عن .pdf\n3. انقر واختر Open PDF Studio",
+    "setDefault": "تعيين HB PDF Studio كعارض PDF الافتراضي",
+    "setDefaultHelp": "سيؤدي هذا إلى فتح إعدادات النظام حيث يمكنك تحديد HB PDF Studio كالتطبيق الافتراضي لفتح ملفات PDF.",
+    "windowsInstructions": "تم فتح إعدادات Windows.\n\nلتعيين HB PDF Studio كافتراضي:\n1. قم بالتمرير لأسفل إلى \"اختيار التطبيقات الافتراضية حسب نوع الملف\"\n2. ابحث عن .pdf\n3. انقر واختر HB PDF Studio",
     "windowsFailed": "تعذر فتح إعدادات Windows.\n\nيرجى فتح الإعدادات > التطبيقات > التطبيقات الافتراضية يدويًا.",
-    "macInstructions": "لتعيين Open PDF Studio كعارض PDF الافتراضي على macOS:\n\n1. انقر بزر الماوس الأيمن على أي ملف PDF في Finder\n2. اختر \"الحصول على معلومات\"\n3. ضمن \"فتح باستخدام\"، اختر Open PDF Studio\n4. انقر على \"تغيير الكل...\"",
-    "linuxInstructions": "لتعيين Open PDF Studio كعارض PDF الافتراضي على Linux:\n\nقم بتشغيل في الطرفية:\nxdg-mime default openpdfstudio.desktop application/pdf",
+    "macInstructions": "لتعيين HB PDF Studio كعارض PDF الافتراضي على macOS:\n\n1. انقر بزر الماوس الأيمن على أي ملف PDF في Finder\n2. اختر \"الحصول على معلومات\"\n3. ضمن \"فتح باستخدام\"، اختر HB PDF Studio\n4. انقر على \"تغيير الكل...\"",
+    "linuxInstructions": "لتعيين HB PDF Studio كعارض PDF الافتراضي على Linux:\n\nقم بتشغيل في الطرفية:\nxdg-mime default openpdfstudio.desktop application/pdf",
     "checkFinder": "تحقق من Finder > الحصول على معلومات",
     "notSet": "غير معيّن",
     "chosenInSystemSettings": "تم الاختيار في إعدادات النظام",
-    "sandboxInstructions": "يعمل Open PDF Studio كحزمة {{package}} ولا يمكنه تغيير تطبيق PDF الافتراضي بنفسه.\n\nاختر Open PDF Studio في إعدادات النظام ضمن التطبيقات الافتراضية، أو انقر بزر الماوس الأيمن على ملف PDF واستخدم فتح باستخدام.",
-    "xdgMimeMissing": "الأداة xdg-mime (الحزمة xdg-utils) غير مثبتة، لذلك لا يمكن تعيين تطبيق PDF الافتراضي من هنا.\n\nثبّت xdg-utils، أو اختر Open PDF Studio في إعدادات النظام ضمن التطبيقات الافتراضية.",
-    "linuxDone": "أصبح Open PDF Studio الآن التطبيق الافتراضي لملفات PDF.",
-    "linuxFailed": "تعذر تعيين Open PDF Studio كتطبيق PDF الافتراضي.\n\n{{error}}"
+    "sandboxInstructions": "يعمل HB PDF Studio كحزمة {{package}} ولا يمكنه تغيير تطبيق PDF الافتراضي بنفسه.\n\nاختر HB PDF Studio في إعدادات النظام ضمن التطبيقات الافتراضية، أو انقر بزر الماوس الأيمن على ملف PDF واستخدم فتح باستخدام.",
+    "xdgMimeMissing": "الأداة xdg-mime (الحزمة xdg-utils) غير مثبتة، لذلك لا يمكن تعيين تطبيق PDF الافتراضي من هنا.\n\nثبّت xdg-utils، أو اختر HB PDF Studio في إعدادات النظام ضمن التطبيقات الافتراضية.",
+    "linuxDone": "أصبح HB PDF Studio الآن التطبيق الافتراضي لملفات PDF.",
+    "linuxFailed": "تعذر تعيين HB PDF Studio كتطبيق PDF الافتراضي.\n\n{{error}}"
   },
   "explorerThumbnails": {
     "title": "مستكشف الملفات",
@@ -226,7 +226,7 @@
     "otherHandler": "يوفّر {{name}} الصور المصغرة لملفات PDF حالياً.",
     "defaultApp": "يعرض تطبيق PDF الافتراضي لديك صوره المصغرة الخاصة ({{name}}). يستخدمها Windows ما دام هذا التطبيق هو تطبيق PDF الافتراضي لديك.",
     "replaceTitle": "الصور المصغرة لملفات PDF",
-    "replaceConfirm": "يوفّر {{name}} بالفعل صوراً مصغرة لملفات PDF في مستكشف الملفات.\n\nهل تريد عرض الصور المصغرة من Open PDF Studio بدلاً منها لحسابك في Windows؟ يؤدي إيقاف هذا الخيار إلى استعادة الصور المصغرة السابقة.",
+    "replaceConfirm": "يوفّر {{name}} بالفعل صوراً مصغرة لملفات PDF في مستكشف الملفات.\n\nهل تريد عرض الصور المصغرة من HB PDF Studio بدلاً منها لحسابك في Windows؟ يؤدي إيقاف هذا الخيار إلى استعادة الصور المصغرة السابقة.",
     "failed": "تعذّر تغيير إعداد الصور المصغرة في مستكشف الملفات."
   },
   "virtualPrinter": {
@@ -251,7 +251,7 @@
     "stateUnknownDetail": "تعذرت قراءة حالة الطابعة.",
     "howTitle": "كيف تعمل",
     "how1": "في أي برنامج اختر طباعة ثم حدد {{printer}}.",
-    "how2": "تظهر المطبوعة في نافذة الطابعة في Open PDF Studio.",
+    "how2": "تظهر المطبوعة في نافذة الطابعة في HB PDF Studio.",
     "how3": "عاين المهام وأعد ترتيبها وادمجها واحفظها كملف PDF واحد، أو افتحها في Studio.",
     "openWindow": "فتح نافذة الطابعة",
     "openWindowTip": "عرض مهام الطباعة الملتقطة"

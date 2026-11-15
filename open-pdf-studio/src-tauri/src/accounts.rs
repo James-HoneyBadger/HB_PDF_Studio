@@ -268,7 +268,7 @@ fn wait_for_callback(listener: TcpListener) -> Result<(String, String), String> 
         }
         let body = if code.is_some() {
             "<html><body style=\"font-family:sans-serif;text-align:center;padding-top:80px\">\
-             <h2>Ingelogd bij OpenAEC</h2><p>Je kunt dit venster sluiten en teruggaan naar Open PDF Studio.</p></body></html>"
+             <h2>Ingelogd bij OpenAEC</h2><p>Je kunt dit venster sluiten en teruggaan naar HB PDF Studio.</p></body></html>"
         } else {
             "<html><body style=\"font-family:sans-serif;text-align:center;padding-top:80px\">\
              <h2>Inloggen geannuleerd</h2><p>Je kunt dit venster sluiten.</p></body></html>"

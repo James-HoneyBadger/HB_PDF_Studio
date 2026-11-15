@@ -204,19 +204,19 @@
   "fileAssoc": {
     "defaultPdfApplication": "Standard-PDF-program",
     "currentDefault": "Nuvarande standard:",
-    "setDefault": "Ange Open PDF Studio som standard-PDF-visare",
-    "setDefaultHelp": "Detta öppnar dina systeminställningar där du kan välja Open PDF Studio som standardprogram för att öppna PDF-filer.",
-    "windowsInstructions": "Windows-inställningar öppnade.\n\nFör att ange Open PDF Studio som standard:\n1. Bla neddat till \"Välj standardappar efter filtyp\"\n2. Hitta .pdf\n3. Klicka och välj Open PDF Studio",
+    "setDefault": "Ange HB PDF Studio som standard-PDF-visare",
+    "setDefaultHelp": "Detta öppnar dina systeminställningar där du kan välja HB PDF Studio som standardprogram för att öppna PDF-filer.",
+    "windowsInstructions": "Windows-inställningar öppnade.\n\nFör att ange HB PDF Studio som standard:\n1. Bla neddat till \"Välj standardappar efter filtyp\"\n2. Hitta .pdf\n3. Klicka och välj HB PDF Studio",
     "windowsFailed": "Kunde inte öppna Windows-inställningar.\n\nVänligen öppna Inställningar > Appar > Standardappar manuellt.",
-    "macInstructions": "För att ange Open PDF Studio som standard-PDF-visare på macOS:\n\n1. Högerklicka på valfri PDF-fil i Finder\n2. Välj \"Visa info\"\n3. Under \"Öppna med\", välj Open PDF Studio\n4. Klicka på \"Ändra alla...\"",
-    "linuxInstructions": "För att ange Open PDF Studio som standard-PDF-visare på Linux:\n\nKör i terminalen:\nxdg-mime default openpdfstudio.desktop application/pdf",
+    "macInstructions": "För att ange HB PDF Studio som standard-PDF-visare på macOS:\n\n1. Högerklicka på valfri PDF-fil i Finder\n2. Välj \"Visa info\"\n3. Under \"Öppna med\", välj HB PDF Studio\n4. Klicka på \"Ändra alla...\"",
+    "linuxInstructions": "För att ange HB PDF Studio som standard-PDF-visare på Linux:\n\nKör i terminalen:\nxdg-mime default openpdfstudio.desktop application/pdf",
     "checkFinder": "Kontrollera Finder > Visa info",
     "notSet": "Inte angiven",
     "chosenInSystemSettings": "Valt i systeminställningarna",
-    "sandboxInstructions": "Open PDF Studio körs som ett {{package}}-paket och kan inte själv ändra standardappen för PDF.\n\nVälj Open PDF Studio i systeminställningarna under Standardprogram, eller högerklicka på en PDF-fil och använd Öppna med.",
-    "xdgMimeMissing": "xdg-mime (paketet xdg-utils) är inte installerat, så standardappen för PDF kan inte anges härifrån.\n\nInstallera xdg-utils, eller välj Open PDF Studio i systeminställningarna under Standardprogram.",
-    "linuxDone": "Open PDF Studio är nu standardappen för PDF-filer.",
-    "linuxFailed": "Det gick inte att ange Open PDF Studio som standardapp för PDF.\n\n{{error}}"
+    "sandboxInstructions": "HB PDF Studio körs som ett {{package}}-paket och kan inte själv ändra standardappen för PDF.\n\nVälj HB PDF Studio i systeminställningarna under Standardprogram, eller högerklicka på en PDF-fil och använd Öppna med.",
+    "xdgMimeMissing": "xdg-mime (paketet xdg-utils) är inte installerat, så standardappen för PDF kan inte anges härifrån.\n\nInstallera xdg-utils, eller välj HB PDF Studio i systeminställningarna under Standardprogram.",
+    "linuxDone": "HB PDF Studio är nu standardappen för PDF-filer.",
+    "linuxFailed": "Det gick inte att ange HB PDF Studio som standardapp för PDF.\n\n{{error}}"
   },
   "explorerThumbnails": {
     "title": "Utforskaren",
@@ -226,7 +226,7 @@
     "otherHandler": "PDF-miniatyrer tillhandahålls just nu av {{name}}.",
     "defaultApp": "Din standardapp för PDF visar egna miniatyrer ({{name}}). Windows använder dem så länge den appen är din standardapp för PDF.",
     "replaceTitle": "PDF-miniatyrer",
-    "replaceConfirm": "{{name}} tillhandahåller redan PDF-miniatyrer i Utforskaren.\n\nVisa i stället miniatyrerna från Open PDF Studio för ditt Windows-konto? Om du stänger av alternativet igen återställs de tidigare miniatyrerna.",
+    "replaceConfirm": "{{name}} tillhandahåller redan PDF-miniatyrer i Utforskaren.\n\nVisa i stället miniatyrerna från HB PDF Studio för ditt Windows-konto? Om du stänger av alternativet igen återställs de tidigare miniatyrerna.",
     "failed": "Inställningen för miniatyrer i Utforskaren kunde inte ändras."
   },
   "virtualPrinter": {
@@ -251,7 +251,7 @@
     "stateUnknownDetail": "Skrivarstatusen kunde inte läsas.",
     "howTitle": "Så fungerar det",
     "how1": "Välj Skriv ut i valfritt program och välj {{printer}}.",
-    "how2": "Utskriften visas i skrivarfönstret i Open PDF Studio.",
+    "how2": "Utskriften visas i skrivarfönstret i HB PDF Studio.",
     "how3": "Förhandsvisa, ändra ordning på, sammanfoga och spara jobben som en PDF, eller öppna dem i Studio.",
     "openWindow": "Öppna skrivarfönster",
     "openWindowTip": "Visa de fångade utskriftsjobben"

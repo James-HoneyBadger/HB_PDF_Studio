@@ -4,7 +4,7 @@ When the app runs in a centrally managed environment, such as one container per
 user, start it with the environment variable `OPENAEC_BEHEERD=1` (`true`, `yes`
 and `on` work too). The app then starts without one-time prompts:
 
-- no "make Open PDF Studio the default PDF app" bar (and no registry or
+- no "make HB PDF Studio the default PDF app" bar (and no registry or
   `xdg-mime` lookup for it);
 - no "What's new" dialog after an update, and no request for the release notes;
 - no update check or update dialog; *Check for Updates* and *Previous version*
@@ -37,8 +37,5 @@ work (at most 5 seconds) and then exits cleanly. The extracted AppImage
 - The full contract for OpenAEC Linux, including host libraries and the
   verification in CI: [docs/openaec-linux.md](openaec-linux.md).
 - Every network connection the app can make: [PRIVACY.md](../PRIVACY.md).
-- Windows: silent install switches and winget manifests in
-  [docs/windows-distribution.md](windows-distribution.md); the portable version in
-  [docs/portable-windows.md](portable-windows.md).
 - The web bundle for hosting the app on your own platform is attached to every
   release as `open-pdf-studio-web-<version>.tar.gz`.

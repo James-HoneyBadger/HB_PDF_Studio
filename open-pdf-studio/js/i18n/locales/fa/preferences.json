@@ -204,19 +204,19 @@
   "fileAssoc": {
     "defaultPdfApplication": "برنامه PDF پیش‌فرض",
     "currentDefault": "پیش‌فرض فعلی:",
-    "setDefault": "تنظیم Open PDF Studio به عنوان نمایشگر PDF پیش‌فرض",
-    "setDefaultHelp": "این کار تنظیمات سیستم را باز می‌کند تا بتوانید Open PDF Studio را به عنوان برنامه پیش‌فرض برای باز کردن فایل‌های PDF انتخاب کنید.",
-    "windowsInstructions": "تنظیمات Windows باز شد.\n\nبرای تنظیم Open PDF Studio به عنوان پیش‌فرض:\n1. به پایین بروید تا \"انتخاب برنامه‌های پیش‌فرض بر اساس نوع فایل\"\n2. .pdf را پیدا کنید\n3. کلیک کرده و Open PDF Studio را انتخاب کنید",
+    "setDefault": "تنظیم HB PDF Studio به عنوان نمایشگر PDF پیش‌فرض",
+    "setDefaultHelp": "این کار تنظیمات سیستم را باز می‌کند تا بتوانید HB PDF Studio را به عنوان برنامه پیش‌فرض برای باز کردن فایل‌های PDF انتخاب کنید.",
+    "windowsInstructions": "تنظیمات Windows باز شد.\n\nبرای تنظیم HB PDF Studio به عنوان پیش‌فرض:\n1. به پایین بروید تا \"انتخاب برنامه‌های پیش‌فرض بر اساس نوع فایل\"\n2. .pdf را پیدا کنید\n3. کلیک کرده و HB PDF Studio را انتخاب کنید",
     "windowsFailed": "باز کردن تنظیمات Windows امکان‌پذیر نشد.\n\nلطفاً به صورت دستی تنظیمات > برنامه‌ها > برنامه‌های پیش‌فرض را باز کنید.",
-    "macInstructions": "برای تنظیم Open PDF Studio به عنوان نمایشگر PDF پیش‌فرض در macOS:\n\n1. روی هر فایل PDF در Finder راست‌کلیک کنید\n2. \"دریافت اطلاعات\" را انتخاب کنید\n3. در بخش \"باز کردن با\"، Open PDF Studio را انتخاب کنید\n4. روی \"تغییر همه...\" کلیک کنید",
-    "linuxInstructions": "برای تنظیم Open PDF Studio به عنوان نمایشگر PDF پیش‌فرض در Linux:\n\nدر ترمینال اجرا کنید:\nxdg-mime default openpdfstudio.desktop application/pdf",
+    "macInstructions": "برای تنظیم HB PDF Studio به عنوان نمایشگر PDF پیش‌فرض در macOS:\n\n1. روی هر فایل PDF در Finder راست‌کلیک کنید\n2. \"دریافت اطلاعات\" را انتخاب کنید\n3. در بخش \"باز کردن با\"، HB PDF Studio را انتخاب کنید\n4. روی \"تغییر همه...\" کلیک کنید",
+    "linuxInstructions": "برای تنظیم HB PDF Studio به عنوان نمایشگر PDF پیش‌فرض در Linux:\n\nدر ترمینال اجرا کنید:\nxdg-mime default openpdfstudio.desktop application/pdf",
     "checkFinder": "بررسی Finder > دریافت اطلاعات",
     "notSet": "تنظیم نشده",
     "chosenInSystemSettings": "در تنظیمات سیستم انتخاب شده است",
-    "sandboxInstructions": "Open PDF Studio به‌صورت بسته {{package}} اجرا می‌شود و نمی‌تواند خودش برنامه پیش‌فرض PDF را تغییر دهد.\n\nOpen PDF Studio را در تنظیمات سیستم در بخش برنامه‌های پیش‌فرض انتخاب کنید، یا روی یک فایل PDF راست‌کلیک کرده و از «باز کردن با» استفاده کنید.",
-    "xdgMimeMissing": "xdg-mime (بسته xdg-utils) نصب نیست، بنابراین برنامه پیش‌فرض PDF را نمی‌توان از اینجا تنظیم کرد.\n\nxdg-utils را نصب کنید، یا Open PDF Studio را در تنظیمات سیستم در بخش برنامه‌های پیش‌فرض انتخاب کنید.",
-    "linuxDone": "Open PDF Studio اکنون برنامه پیش‌فرض برای فایل‌های PDF است.",
-    "linuxFailed": "تنظیم Open PDF Studio به‌عنوان برنامه پیش‌فرض PDF ممکن نشد.\n\n{{error}}"
+    "sandboxInstructions": "HB PDF Studio به‌صورت بسته {{package}} اجرا می‌شود و نمی‌تواند خودش برنامه پیش‌فرض PDF را تغییر دهد.\n\nHB PDF Studio را در تنظیمات سیستم در بخش برنامه‌های پیش‌فرض انتخاب کنید، یا روی یک فایل PDF راست‌کلیک کرده و از «باز کردن با» استفاده کنید.",
+    "xdgMimeMissing": "xdg-mime (بسته xdg-utils) نصب نیست، بنابراین برنامه پیش‌فرض PDF را نمی‌توان از اینجا تنظیم کرد.\n\nxdg-utils را نصب کنید، یا HB PDF Studio را در تنظیمات سیستم در بخش برنامه‌های پیش‌فرض انتخاب کنید.",
+    "linuxDone": "HB PDF Studio اکنون برنامه پیش‌فرض برای فایل‌های PDF است.",
+    "linuxFailed": "تنظیم HB PDF Studio به‌عنوان برنامه پیش‌فرض PDF ممکن نشد.\n\n{{error}}"
   },
   "explorerThumbnails": {
     "title": "کاوشگر فایل",
@@ -226,7 +226,7 @@
     "otherHandler": "تصاویر کوچک PDF در حال حاضر توسط {{name}} ارائه می‌شود.",
     "defaultApp": "برنامهٔ پیش‌فرض PDF شما تصاویر کوچک خودش را نشان می‌دهد ({{name}}). Windows تا زمانی که آن برنامه پیش‌فرض PDF شما باشد از آن‌ها استفاده می‌کند.",
     "replaceTitle": "تصاویر کوچک PDF",
-    "replaceConfirm": "{{name}} از قبل تصاویر کوچک PDF را در کاوشگر فایل ارائه می‌کند.\n\nبه جای آن، تصاویر کوچک Open PDF Studio برای حساب Windows شما نمایش داده شود؟ با خاموش کردن این گزینه، تصاویر کوچک قبلی بازگردانده می‌شوند.",
+    "replaceConfirm": "{{name}} از قبل تصاویر کوچک PDF را در کاوشگر فایل ارائه می‌کند.\n\nبه جای آن، تصاویر کوچک HB PDF Studio برای حساب Windows شما نمایش داده شود؟ با خاموش کردن این گزینه، تصاویر کوچک قبلی بازگردانده می‌شوند.",
     "failed": "تغییر تنظیم تصاویر کوچک کاوشگر فایل ممکن نبود."
   },
   "virtualPrinter": {
@@ -251,7 +251,7 @@
     "stateUnknownDetail": "وضعیت چاپگر خوانده نشد.",
     "howTitle": "نحوه کار",
     "how1": "در هر برنامه‌ای چاپ را انتخاب کنید و {{printer}} را برگزینید.",
-    "how2": "چاپ در پنجره چاپگر Open PDF Studio نمایش داده می‌شود.",
+    "how2": "چاپ در پنجره چاپگر HB PDF Studio نمایش داده می‌شود.",
     "how3": "کارها را پیش‌نمایش، مرتب و ادغام کنید و به‌صورت یک PDF ذخیره کنید، یا آن‌ها را در Studio باز کنید.",
     "openWindow": "باز کردن پنجره چاپگر",
     "openWindowTip": "نمایش کارهای چاپ دریافت‌شده"

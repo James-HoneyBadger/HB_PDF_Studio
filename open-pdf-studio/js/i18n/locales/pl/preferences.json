@@ -204,19 +204,19 @@
   "fileAssoc": {
     "defaultPdfApplication": "Domyślna aplikacja PDF",
     "currentDefault": "Bieżąca domyślna:",
-    "setDefault": "Ustaw Open PDF Studio jako domyślną przeglądarkę PDF",
-    "setDefaultHelp": "Spowoduje to otwarcie ustawień systemu, w których można wybrać Open PDF Studio jako domyślną aplikację do otwierania plików PDF.",
-    "windowsInstructions": "Ustawienia systemu Windows zostały otwarte.\n\nAby ustawić Open PDF Studio jako domyślny:\n1. Przewiń w dół do \"Wybierz domyślne aplikacje według typu pliku\"\n2. Znajdź .pdf\n3. Kliknij i wybierz Open PDF Studio",
+    "setDefault": "Ustaw HB PDF Studio jako domyślną przeglądarkę PDF",
+    "setDefaultHelp": "Spowoduje to otwarcie ustawień systemu, w których można wybrać HB PDF Studio jako domyślną aplikację do otwierania plików PDF.",
+    "windowsInstructions": "Ustawienia systemu Windows zostały otwarte.\n\nAby ustawić HB PDF Studio jako domyślny:\n1. Przewiń w dół do \"Wybierz domyślne aplikacje według typu pliku\"\n2. Znajdź .pdf\n3. Kliknij i wybierz HB PDF Studio",
     "windowsFailed": "Nie udało się otworzyć Ustawień systemu Windows.\n\nProsimy ręcznie otworzyć Ustawienia > Aplikacje > Aplikacje domyślne.",
-    "macInstructions": "Aby ustawić Open PDF Studio jako domyślną przeglądarkę PDF na macOS:\n\n1. Kliknij prawym przyciskiem myszy dowolny plik PDF w Finderze\n2. Wybierz \"Informacje\"\n3. W sekcji \"Otwórz za pomocą\" wybierz Open PDF Studio\n4. Kliknij \"Zmień wszystko...\"",
-    "linuxInstructions": "Aby ustawić Open PDF Studio jako domyślną przeglądarkę PDF na Linux:\n\nUruchom w terminalu:\nxdg-mime default openpdfstudio.desktop application/pdf",
+    "macInstructions": "Aby ustawić HB PDF Studio jako domyślną przeglądarkę PDF na macOS:\n\n1. Kliknij prawym przyciskiem myszy dowolny plik PDF w Finderze\n2. Wybierz \"Informacje\"\n3. W sekcji \"Otwórz za pomocą\" wybierz HB PDF Studio\n4. Kliknij \"Zmień wszystko...\"",
+    "linuxInstructions": "Aby ustawić HB PDF Studio jako domyślną przeglądarkę PDF na Linux:\n\nUruchom w terminalu:\nxdg-mime default openpdfstudio.desktop application/pdf",
     "checkFinder": "Sprawdź Finder > Informacje",
     "notSet": "Nie ustawiono",
     "chosenInSystemSettings": "Wybrane w ustawieniach systemu",
-    "sandboxInstructions": "Open PDF Studio działa jako pakiet {{package}} i nie może samodzielnie zmienić domyślnej aplikacji PDF.\n\nWybierz Open PDF Studio w ustawieniach systemu w sekcji Aplikacje domyślne lub kliknij prawym przyciskiem plik PDF i użyj opcji Otwórz za pomocą.",
-    "xdgMimeMissing": "xdg-mime (pakiet xdg-utils) nie jest zainstalowany, więc domyślnej aplikacji PDF nie można ustawić stąd.\n\nZainstaluj xdg-utils lub wybierz Open PDF Studio w ustawieniach systemu w sekcji Aplikacje domyślne.",
-    "linuxDone": "Open PDF Studio jest teraz domyślną aplikacją dla plików PDF.",
-    "linuxFailed": "Nie udało się ustawić Open PDF Studio jako domyślnej aplikacji PDF.\n\n{{error}}"
+    "sandboxInstructions": "HB PDF Studio działa jako pakiet {{package}} i nie może samodzielnie zmienić domyślnej aplikacji PDF.\n\nWybierz HB PDF Studio w ustawieniach systemu w sekcji Aplikacje domyślne lub kliknij prawym przyciskiem plik PDF i użyj opcji Otwórz za pomocą.",
+    "xdgMimeMissing": "xdg-mime (pakiet xdg-utils) nie jest zainstalowany, więc domyślnej aplikacji PDF nie można ustawić stąd.\n\nZainstaluj xdg-utils lub wybierz HB PDF Studio w ustawieniach systemu w sekcji Aplikacje domyślne.",
+    "linuxDone": "HB PDF Studio jest teraz domyślną aplikacją dla plików PDF.",
+    "linuxFailed": "Nie udało się ustawić HB PDF Studio jako domyślnej aplikacji PDF.\n\n{{error}}"
   },
   "explorerThumbnails": {
     "title": "Eksplorator plików",
@@ -226,7 +226,7 @@
     "otherHandler": "Miniatury plików PDF dostarcza obecnie {{name}}.",
     "defaultApp": "Twoja domyślna aplikacja PDF pokazuje własne miniatury ({{name}}). Windows używa ich, dopóki ta aplikacja jest domyślną aplikacją PDF.",
     "replaceTitle": "Miniatury PDF",
-    "replaceConfirm": "{{name}} już dostarcza miniatury plików PDF w Eksploratorze plików.\n\nCzy zamiast nich pokazywać miniatury Open PDF Studio na Twoim koncie Windows? Wyłączenie tej opcji przywraca poprzednie miniatury.",
+    "replaceConfirm": "{{name}} już dostarcza miniatury plików PDF w Eksploratorze plików.\n\nCzy zamiast nich pokazywać miniatury HB PDF Studio na Twoim koncie Windows? Wyłączenie tej opcji przywraca poprzednie miniatury.",
     "failed": "Nie udało się zmienić ustawienia miniatur w Eksploratorze plików."
   },
   "virtualPrinter": {
@@ -251,7 +251,7 @@
     "stateUnknownDetail": "Nie udało się odczytać stanu drukarki.",
     "howTitle": "Jak to działa",
     "how1": "W dowolnym programie wybierz Drukuj i wybierz {{printer}}.",
-    "how2": "Wydruk pojawi się w oknie drukarki Open PDF Studio.",
+    "how2": "Wydruk pojawi się w oknie drukarki HB PDF Studio.",
     "how3": "Wyświetlaj podgląd, zmieniaj kolejność, scalaj i zapisuj zadania jako jeden plik PDF lub otwieraj je w Studio.",
     "openWindow": "Otwórz okno drukarki",
     "openWindowTip": "Pokaż przechwycone zadania drukowania"

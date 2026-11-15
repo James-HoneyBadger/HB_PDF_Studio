@@ -4,7 +4,6 @@ import { openExtern } from '../../../core/extern-openen.js';
 import { defaultPdfAppStatus, invoke } from '../../../core/platform.js';
 import { huidigeAppTekst, platformUit, zetAlsStandaard } from '../../../core/standaard-pdf-app.js';
 import { showMessage } from '../../stores/dialogStore.js';
-import { GEEN_MINIATUREN, leesMiniatuurStatus, zetMiniaturen } from '../../../core/verkenner-miniaturen.js';
 import { GEEN_DRAAGBAAR, leesDraagbaar } from '../../../core/draagbaar.js';
 
 export default function FileAssocTab() {
@@ -12,44 +11,14 @@ export default function FileAssocTab() {
   const { t: tCommon } = useTranslation('common');
   const [currentApp, setCurrentApp] = createSignal(tCommon('checking'));
 
-  // PDF-miniaturen in Verkenner (#605): alleen Windows; de sectie blijft weg
-  // zolang Rust niet meldt dat het kan.
-  const [miniaturen, setMiniaturen] = createSignal({ ...GEEN_MINIATUREN });
-  const [miniaturenBezig, setMiniaturenBezig] = createSignal(false);
-
   // Draagbaar (#881): niet bij Windows geregistreerd; uitleg in plaats van
   // de knop en de miniaturen.
   const [draagbaar, setDraagbaar] = createSignal({ ...GEEN_DRAAGBAAR });
 
   onMount(() => {
     checkDefaultPdfApp();
-    leesMiniatuurStatus().then(setMiniaturen);
     leesDraagbaar().then(setDraagbaar);
   });
-
-  async function vraagVervangen(naam) {
-    const tekst = t('explorerThumbnails.replaceConfirm', { name: naam });
-    if (window.__TAURI__?.dialog?.ask) {
-      return await window.__TAURI__.dialog.ask(tekst, { title: t('explorerThumbnails.replaceTitle'), kind: 'warning' });
-    }
-    return confirm(tekst);
-  }
-
-  async function handleMiniaturen(e) {
-    // Vastleggen voor de await: na het afhandelen is currentTarget weg.
-    const vak = e.currentTarget;
-    const aan = vak.checked;
-    setMiniaturenBezig(true);
-    try {
-      setMiniaturen(await zetMiniaturen(aan, miniaturen(), { vraag: vraagVervangen }));
-    } catch (err) {
-      showMessage(t('explorerThumbnails.failed') + '\n' + (err?.message || err));
-      setMiniaturen(await leesMiniatuurStatus());
-    }
-    // Het vinkje volgt altijd de echte toestand (ook na "nee" op de vraag).
-    vak.checked = miniaturen().enabled;
-    setMiniaturenBezig(false);
-  }
 
   // Huidige standaard en "Als standaard instellen" via de Rust-kant
   // (standaard-pdf-app.js). In een Flatpak/Snap of zonder xdg-mime is het
@@ -102,49 +71,6 @@ export default function FileAssocTab() {
         </p>
       </Show>
     </fieldset>
-    <Show when={miniaturen().supported && draagbaar().portable}>
-      <fieldset class="pref-fieldset">
-        <legend>{t('explorerThumbnails.title')}</legend>
-        <p data-testid="prefs-portable-thumbnails" style="font-size:10px;color:var(--theme-text-secondary, #888);line-height:1.4;">
-          {tCommon('portable.explorerThumbnails')}
-        </p>
-      </fieldset>
-    </Show>
-    <Show when={miniaturen().supported && !draagbaar().portable}>
-      <fieldset class="pref-fieldset">
-        <legend>{t('explorerThumbnails.title')}</legend>
-        <div class="pref-row pref-checkbox-row">
-          <label class="pref-checkbox-label">
-            <input
-              type="checkbox"
-              data-testid="prefs-explorer-thumbnails"
-              checked={miniaturen().enabled}
-              disabled={miniaturenBezig() || (!miniaturen().available && !miniaturen().enabled)}
-              onChange={handleMiniaturen}
-            />
-            <span>{t('explorerThumbnails.show')}</span>
-          </label>
-        </div>
-        <p style="font-size:10px;color:var(--theme-text-secondary, #888);margin-top:8px;line-height:1.4;">
-          {t('explorerThumbnails.help')}
-        </p>
-        <Show when={!miniaturen().available}>
-          <p style="font-size:10px;color:var(--theme-text-secondary, #888);margin-top:6px;line-height:1.4;">
-            {t('explorerThumbnails.unavailable')}
-          </p>
-        </Show>
-        <Show when={miniaturen().otherHandler && !miniaturen().enabled}>
-          <p style="font-size:10px;color:var(--theme-text-secondary, #888);margin-top:6px;line-height:1.4;">
-            {t('explorerThumbnails.otherHandler', { name: miniaturen().otherHandler })}
-          </p>
-        </Show>
-        <Show when={miniaturen().defaultAppHandler}>
-          <p style="font-size:10px;color:#b26a00;margin-top:6px;line-height:1.4;">
-            {t('explorerThumbnails.defaultApp', { name: miniaturen().defaultAppHandler })}
-          </p>
-        </Show>
-      </fieldset>
-    </Show>
     </>
   );
 }

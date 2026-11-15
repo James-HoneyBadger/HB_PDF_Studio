@@ -460,7 +460,7 @@
     "extensionsTitle": "확장 프로그램 관리",
     "extensions": "확장 프로그램",
     "information": "정보",
-    "aboutTitle": "Open PDF Studio 정보",
+    "aboutTitle": "HB PDF Studio 정보",
     "about": "정보",
     "whatsNewTitle": "이 버전의 새로운 기능",
     "whatsNew": "새로운 기능",
@@ -477,7 +477,7 @@
     "fileAssociation": "파일 연결",
     "setDefaultPdf": "기본 PDF 응용 프로그램으로 설정",
     "fileAssociations": "파일 연결",
-    "previousVersionTitle": "Open PDF Studio의 이전 버전 설치",
+    "previousVersionTitle": "HB PDF Studio의 이전 버전 설치",
     "previousVersion": "이전 버전"
   },
   "format": {

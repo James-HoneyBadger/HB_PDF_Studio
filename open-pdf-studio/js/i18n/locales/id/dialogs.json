@@ -35,7 +35,7 @@
   "printQueue": {
     "toolbarLabel": "Tindakan pekerjaan cetak",
     "openInStudio": "Buka di Studio",
-    "openInStudioTip": "Buka pekerjaan yang dipilih di Open PDF Studio (Enter atau klik ganda). Beberapa pekerjaan yang dipilih dibuka sebagai satu dokumen gabungan.",
+    "openInStudioTip": "Buka pekerjaan yang dipilih di HB PDF Studio (Enter atau klik ganda). Beberapa pekerjaan yang dipilih dibuka sebagai satu dokumen gabungan.",
     "mergeSelected": "Gabungkan yang dipilih…",
     "mergeSelectedTip": "Gabungkan pekerjaan yang dipilih, sesuai urutan daftar, menjadi satu PDF dan simpan",
     "saveAs": "Simpan sebagai…",
@@ -75,11 +75,11 @@
     "adding": "Menambahkan berkas PDF…",
     "saving": "Menyimpan…",
     "merging": "Menggabungkan {{done}} dari {{count}}…",
-    "opening": "Membuka di Open PDF Studio…",
+    "opening": "Membuka di HB PDF Studio…",
     "deleting": "Menghapus…",
     "saved": "Disimpan sebagai {{name}}",
     "merged": "Digabungkan dan disimpan sebagai {{name}}",
-    "opened": "Dibuka di Open PDF Studio",
+    "opened": "Dibuka di HB PDF Studio",
     "deleted": "Dihapus: {{count}}",
     "failed": "Gagal: {{message}}",
     "mergedFileName": "Gabungan",
@@ -452,7 +452,7 @@
   },
   "update": {
     "title": "Pembaruan Perangkat Lunak",
-    "newVersionAvailable": "Versi baru Open PDF Studio tersedia.",
+    "newVersionAvailable": "Versi baru HB PDF Studio tersedia.",
     "currentVersion": "Versi saat ini:",
     "newVersion": "Versi baru:",
     "releaseNotes": "Catatan Rilis:",
@@ -616,7 +616,7 @@
   },
   "defaultPdfApp": {
     "title": "Aplikasi PDF Bawaan",
-    "message": "Open PDF Studio belum diatur sebagai aplikasi bawaan untuk membuka file PDF. Apakah Anda ingin mengaturnya sebagai bawaan?",
+    "message": "HB PDF Studio belum diatur sebagai aplikasi bawaan untuk membuka file PDF. Apakah Anda ingin mengaturnya sebagai bawaan?",
     "setAsDefault": "Atur sebagai Bawaan",
     "dontAskAgain": "Jangan Tanya Lagi",
     "notNow": "Tidak Sekarang"
@@ -1322,7 +1322,7 @@
   },
   "recovery": {
     "title": "Pulihkan pekerjaan yang belum disimpan",
-    "intro": "Open PDF Studio tidak ditutup dengan normal terakhir kali. Pekerjaan yang belum disimpan dari dokumen-dokumen ini telah disimpan sementara:",
+    "intro": "HB PDF Studio tidak ditutup dengan normal terakhir kali. Pekerjaan yang belum disimpan dari dokumen-dokumen ini telah disimpan sementara:",
     "savedAt": "Disimpan sementara pada {{time}}",
     "pages": "Halaman: {{count}}",
     "untitled": "Dokumen tanpa judul",
@@ -1343,7 +1343,7 @@
     "deleteFailed": "Penghapusan gagal: {{error}}",
     "tabLabel": "dipulihkan",
     "tabTip": "Dipulihkan setelah penutupan yang tidak terduga. Menyimpan akan menulis ke file asli.",
-    "reloadStopped": "Jendela Open PDF Studio berhenti berfungsi beberapa kali berturut-turut dan tidak lagi dimuat ulang secara otomatis. Simpan pekerjaan Anda dan mulai ulang aplikasi."
+    "reloadStopped": "Jendela HB PDF Studio berhenti berfungsi beberapa kali berturut-turut dan tidak lagi dimuat ulang secara otomatis. Simpan pekerjaan Anda dan mulai ulang aplikasi."
   },
   "protectPdf": {
     "title": "Keamanan Dokumen",
@@ -1919,7 +1919,7 @@
       "routing": "Routing",
       "howToRespond": "Reply to this mail with \"Approved\" or \"Rejected\" and keep {{ref}} in the subject.",
       "howToSign": "Signers: return the signed PDF and keep {{ref}} in the file name.",
-      "disclaimer": "The SHA-256 above identifies the exact document version. This mail was prepared in Open PDF Studio; it is not a legally binding signature service and does not verify identities."
+      "disclaimer": "The SHA-256 above identifies the exact document version. This mail was prepared in HB PDF Studio; it is not a legally binding signature service and does not verify identities."
     },
     "errors": {
       "CONFIGURE_ADAPTER_FIRST": "Enable the provider first.",

@@ -110,7 +110,7 @@
     "readOnly": {
       "title": "Opened read-only",
       "kenmerk": "{{name}} is read-only: it has the read-only attribute, or you only have read permission on this location.",
-      "in-gebruik": "{{name}} is open in another application or is being synchronized, so Open PDF Studio cannot reserve it.",
+      "in-gebruik": "{{name}} is open in another application or is being synchronized, so HB PDF Studio cannot reserve it.",
       "geweigerd": "{{name}} cannot be reserved: Windows denied it.",
       "mislukt": "{{name}} could not be reserved.",
       "saveAs": "It has been opened read-only. You can make changes; use Save As to save them to another file."
@@ -118,7 +118,7 @@
   },
   "hostOpenFailed": "Súbor sa nepodarilo načítať z úložiska. Skúste to znova.",
   "hostInvalidPdf": "{{name}} nie je platný súbor PDF a nepodarilo sa ho otvoriť.",
-  "hostNoContact": "Stránka okolo Open PDF Studio neodpovedá, takže súbory nemožno otvárať ani ukladať. Znova načítajte stránku a skúste to znova.",
+  "hostNoContact": "Stránka okolo HB PDF Studio neodpovedá, takže súbory nemožno otvárať ani ukladať. Znova načítajte stránku a skúste to znova.",
   "hostSaveConflict": "Niekto iný medzitým tento súbor uložil. Vaše zmeny boli uložené ako samostatná kópia: {{name}}. Ďalšie ukladanie pôjde do tejto kópie.",
   "hostSaveNotLocked": "Tento súbor nie je rezervovaný pre vás, takže ho ostatní môžu meniť súčasne. Vaše zmeny sa ukladajú ako nové verzie; nič sa neprepisuje.",
   "hostReadOnlySave": "Tento súbor je otvorený len na čítanie, takže do neho nemožno uložiť zmeny. Kópiu stiahnete pomocou príkazu Uložiť ako.",
@@ -162,7 +162,7 @@
   "failedToReplacePage": "Nahradenie strany zlyhalo: {{error}}",
   "failedToMergeFile": "Zlúčenie zlyhalo: {{file}}\n{{error}}",
   "invalidPageRange": "Neplatný rozsah strán. Zadajte platné čísla strán.",
-  "appName": "Open PDF Studio",
+  "appName": "HB PDF Studio",
   "noDocuments": "Žiadny PDF nie je vybraný",
   "noDocumentsHint": "Kliknite na \"Otvoriť PDF\" na prehľadávanie a anotovanie PDF",
   "solid": "Plná",
@@ -350,7 +350,7 @@
     "fileAssoc": "Táto prenosná kópia nie je zaregistrovaná vo Windows. Ak s ňou chcete otvárať súbory PDF, kliknite pravým tlačidlom na PDF, vyberte Otvoriť pomocou > Vybrať inú aplikáciu a zvoľte open-pdf-studio.exe v tomto priečinku.",
     "explorerThumbnails": "Miniatúry PDF v Prieskumníkovi súborov sú dostupné len v nainštalovanej verzii.",
     "virtualPrinter": "Virtuálna tlačiareň je dostupná len v nainštalovanej verzii: pridáva sa do Windows s právami správcu.",
-    "notWritable": "Open PDF Studio nemôže zapisovať do priečinka {{dir}}, preto sa vaše nastavenia tentoraz ukladajú do vášho používateľského profilu. Presuňte prenosný priečinok na miesto s možnosťou zápisu, napríklad na USB kľúč alebo do priečinka Dokumenty."
+    "notWritable": "HB PDF Studio nemôže zapisovať do priečinka {{dir}}, preto sa vaše nastavenia tentoraz ukladajú do vášho používateľského profilu. Presuňte prenosný priečinok na miesto s možnosťou zápisu, napríklad na USB kľúč alebo do priečinka Dokumenty."
   },
   "protectedPdfNoPrint": "Oprávnenia tohto dokumentu nepovoľujú tlač.",
   "share": {

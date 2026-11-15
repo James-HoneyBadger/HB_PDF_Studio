@@ -1,5 +1,5 @@
 [Desktop Entry]
-Name=Open PDF Studio
+Name=HB PDF Studio
 GenericName=PDF Editor
 Comment=A free, open-source PDF annotation editor
 Exec=open-pdf-studio %F

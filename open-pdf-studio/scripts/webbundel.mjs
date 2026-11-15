@@ -208,9 +208,9 @@ export function pakketMappen(ids, appMap) {
 export function noticesTekst(pakketten, bundelLicenties = []) {
   const streep = '-'.repeat(79);
   const delen = [
-    'Open PDF Studio - third-party notices',
+    'HB PDF Studio - third-party notices',
     '',
-    `Open PDF Studio itself is licensed under ${LICENTIE}; see bron.json for the`,
+    `HB PDF Studio itself is licensed under ${LICENTIE}; see bron.json for the`,
     'exact source code of this bundle.',
     '',
     'This web bundle contains code from the npm packages listed below. Each entry',

@@ -43,7 +43,7 @@ import {
   ANNOTATIES_DEEL1, ANNOTATIES_DEEL2, TOEGESTANE_ACTIES, TOEGESTANE_NAMED, MENGMODI, WEERGAVE_INTENTIES, VLAG,
 } from './regels.js';
 
-export const PRODUCER = 'Open PDF Studio';
+export const PRODUCER = 'HB PDF Studio';
 
 const DECODEERBAAR = new Set(['FlateDecode', 'Fl', 'LZWDecode', 'LZW', 'ASCII85Decode', 'A85', 'ASCIIHexDecode', 'AHx', 'RunLengthDecode', 'RL']);
 

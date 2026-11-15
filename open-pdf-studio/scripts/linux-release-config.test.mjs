@@ -11,43 +11,27 @@ async function readJson(relativePath) {
   return JSON.parse(await readFile(new URL(relativePath, appRoot), 'utf8'));
 }
 
-test('desktop runtime resources stay on their own platform', async () => {
+test('desktop bundles are Linux AArch64 only', async () => {
   const base = await readJson('src-tauri/tauri.conf.json');
   const linux = await readJson('src-tauri/tauri.linux.conf.json');
-  const windows = await readJson('src-tauri/tauri.windows.conf.json');
-
-  const baseResources = base.bundle.resources;
-  const linuxResources = { ...baseResources, ...linux.bundle.resources };
-  const windowsResources = { ...baseResources, ...windows.bundle.resources };
-
-  assert.equal(linuxResources['binaries/win-x64/pdfium.dll'], undefined);
-  assert.equal(linuxResources['WebView2Loader.dll'], undefined);
+  assert.deepEqual(base.bundle.targets, ['deb', 'appimage']);
+  assert.equal(base.bundle.windows, undefined);
+  assert.equal(base.bundle.macOS, undefined);
   assert.equal(
-    linuxResources['binaries/linux-x64/libpdfium.so'],
+    linux.bundle.resources['binaries/linux-arm64/libpdfium.so'],
     'libpdfium.so',
-  );
-
-  assert.equal(
-    windowsResources['binaries/win-x64/pdfium.dll'],
-    'pdfium.dll',
-  );
-  assert.equal(
-    windowsResources['WebView2Loader.dll'],
-    'WebView2Loader.dll',
-  );
-  assert.equal(
-    base.bundle.windows.webviewInstallMode.type,
-    'embedBootstrapper',
   );
 });
 
-test('CI builds and starts the AppImage on Debian 13', async () => {
+test('CI builds and starts the AArch64 AppImage on Debian 13', async () => {
   const workflow = await readFile(
     new URL('.github/workflows/ci.yml', repoRoot),
     'utf8',
   );
 
-  assert.match(workflow, /Fetch libpdfium\.so \(Linux\)/);
+  assert.match(workflow, /platform: 'ubuntu-24\.04-arm'/);
+  assert.match(workflow, /npm run prepare:native-runtime/);
+  assert.match(workflow, /pdfium-worker-aarch64-unknown-linux-gnu/);
   assert.match(
     workflow,
     /tauri build -- --bundles appimage --config '\{"bundle":\{"createUpdaterArtifacts":false\}\}'/,
@@ -105,8 +89,8 @@ test('CI starts the AppImage on Fedora 44', async () => {
 });
 
 test('every AppImage build pins the same checksum-verified linuxdeploy (#362)', async () => {
-  const url = 'https://github.com/linuxdeploy/linuxdeploy/releases/download/1-alpha-20251107-1/linuxdeploy-x86_64.AppImage';
-  const sha = 'c20cd71e3a4e3b80c3483cef793cda3f4e990aca14014d23c544ca3ce1270b4d';
+  const url = 'https://github.com/linuxdeploy/linuxdeploy/releases/download/1-alpha-20251107-1/linuxdeploy-aarch64.AppImage';
+  const sha = '620095110d693282b8ebeb244a95b5e911cf8f65f76c88b4b47d16ae6346fcff';
   for (const name of ['ci.yml', 'release.yml', 'nightly.yml']) {
     const workflow = await readFile(new URL(`.github/workflows/${name}`, repoRoot), 'utf8');
     assert.ok(workflow.includes('Provide pinned linuxdeploy (Linux)'), `${name} provides linuxdeploy`);
@@ -151,17 +135,6 @@ test('Linux links Tesseract statically instead of a system soname (#620)', async
     !depends.some((dep) => /tesseract|leptonica|lept5/.test(dep)),
     'the .deb does not depend on a system Tesseract',
   );
-});
-
-test('the AUR reference PKGBUILD and .SRCINFO agree (#620)', async () => {
-  const pkgbuild = await readFile(new URL('packaging/aur/PKGBUILD', repoRoot), 'utf8');
-  const srcinfo = await readFile(new URL('packaging/aur/.SRCINFO', repoRoot), 'utf8');
-  const pkgver = pkgbuild.match(/^pkgver=(.+)$/m)?.[1];
-  assert.ok(pkgver, 'PKGBUILD sets pkgver');
-  assert.match(srcinfo, new RegExp(`^\tpkgver = ${pkgver.replace(/\./g, '\.')}$`, 'm'));
-  assert.match(srcinfo, /^\tdepends = webkit2gtk-4\.1$/m);
-  assert.doesNotMatch(srcinfo, /depends = .*(tesseract|leptonica)/i);
-  assert.doesNotMatch(srcinfo, /\r/, '.SRCINFO uses LF line endings');
 });
 
 test('the .deb/AppImage desktop file accepts files, so "Open with" lists the app (#748)', async () => {
@@ -210,9 +183,11 @@ test('the bundle lists a complete square RGBA icon set for Linux (#774)', async 
     'icons/256x256.png': 256,
     'icons/512x512.png': 512,
   };
-  for (const name of [...Object.keys(expected), 'icons/icon.icns', 'icons/icon.ico']) {
+  for (const name of Object.keys(expected)) {
     assert.ok(icons.includes(name), `bundle.icon lists ${name}`);
   }
+  // Only PNGs: no macOS .icns or Windows .ico in the Linux bundle.
+  assert.deepEqual(icons.filter((icon) => !icon.endsWith('.png')), []);
   // Tauri takes the first PNG in the list as the default window icon on Linux.
   assert.equal(icons.find((icon) => icon.endsWith('.png')), 'icons/icon.png');
 
@@ -247,20 +222,14 @@ test('desktop entries use the installed icon name and the window class (#774)', 
   assert.equal(flatpak.Icon, flatpakId);
   assert.equal(flatpak.StartupWMClass, binary);
 
-  const flake = await leesLf(new URL('flake.nix', repoRoot));
-  // The scalable icon (icon-new.svg, the same design as the PNGs) stays.
-  for (const [naam, tekst] of [['flatpak', manifest], ['flake', flake]]) {
-    assert.match(tekst, /icons\/icon-new\.svg[^\n]*\n?[^\n]*hicolor\/scalable\/apps\/org\.openaec\.OpenPdfStudio\.svg/,
-      `${naam} installs the scalable icon`);
-  }
+  assert.match(manifest, /icons\/icon-new\.svg[^\n]*\n?[^\n]*hicolor\/scalable\/apps\/org\.openaec\.OpenPdfStudio\.svg/,
+    'flatpak installs the scalable icon');
   for (const size of ['32x32', '64x64', '128x128', '256x256', '512x512']) {
     const target = `hicolor/${size}/apps/${flatpakId}.png`;
     assert.ok(
       manifest.includes(`src-tauri/icons/${size}.png \${FLATPAK_DEST}/share/icons/${target}`),
       `flatpak installs ${target}`,
     );
-    assert.ok(flake.includes(`src-tauri/icons/${size}.png}`), `flake installs ${size}`);
-    assert.ok(flake.includes(`/share/icons/${target}`), `flake installs ${target}`);
   }
 
   const snapcraft = await leesLf(new URL('snap/snapcraft.yaml', repoRoot));
@@ -540,11 +509,11 @@ gpg --batch --pinentry-mode loopback --passphrase fixture-only --armor --export-
 gpgconf --kill gpg-agent >/dev/null 2>&1 || true
 unset GNUPGHOME
 a="$root/assets"
-printf deb > "$a/Open.PDF.Studio_1.0.0_amd64.deb"
-printf appimage > "$a/Open.PDF.Studio_1.0.0_amd64.AppImage"
-printf updater > "$a/Open.PDF.Studio_1.0.0_amd64.AppImage.tar.gz"
-printf minisign > "$a/Open.PDF.Studio_1.0.0_amd64.AppImage.sig"
-printf snap > "$a/open-pdf-studio_1.0.0_amd64.snap"
+printf deb > "$a/HB.PDF.Studio_1.0.0_arm64.deb"
+printf appimage > "$a/HB.PDF.Studio_1.0.0_arm64.AppImage"
+printf updater > "$a/HB.PDF.Studio_1.0.0_arm64.AppImage.tar.gz"
+printf minisign > "$a/HB.PDF.Studio_1.0.0_arm64.AppImage.sig"
+printf snap > "$a/open-pdf-studio_1.0.0_arm64.snap"
 secret=$(cat "$root/sec.asc")
 
 echo "== skip"
@@ -561,15 +530,15 @@ if OPENAEC_GPG_PRIVATE_KEY=$secret OPENAEC_GPG_PASSPHRASE=fixture-only OPENAEC_G
 echo "== sign"
 export OPENAEC_GPG_EXPECTED_FINGERPRINT=$fpr
 OPENAEC_GPG_PRIVATE_KEY=$secret OPENAEC_GPG_PASSPHRASE=fixture-only OPENAEC_GPG_FINGERPRINT=$fpr bash "$script" sign "$a" "$root/pub.asc"
-for f in Open.PDF.Studio_1.0.0_amd64.deb Open.PDF.Studio_1.0.0_amd64.AppImage open-pdf-studio_1.0.0_amd64.snap SHA256SUMS; do
+for f in HB.PDF.Studio_1.0.0_arm64.deb HB.PDF.Studio_1.0.0_arm64.AppImage open-pdf-studio_1.0.0_arm64.snap SHA256SUMS; do
   head -1 "$a/$f.asc" | grep -qx -- '-----BEGIN PGP SIGNATURE-----'
 done
-test ! -e "$a/Open.PDF.Studio_1.0.0_amd64.AppImage.tar.gz.asc"
-test "$(cat "$a/Open.PDF.Studio_1.0.0_amd64.AppImage.sig")" = minisign
+test ! -e "$a/HB.PDF.Studio_1.0.0_arm64.AppImage.tar.gz.asc"
+test "$(cat "$a/HB.PDF.Studio_1.0.0_arm64.AppImage.sig")" = minisign
 echo "== sums"
 cat "$a/SHA256SUMS"
 echo "== tampered"
-printf x >> "$a/open-pdf-studio_1.0.0_amd64.snap"
+printf x >> "$a/open-pdf-studio_1.0.0_arm64.snap"
 if bash "$script" verify "$a" "$root/pub.asc"; then exit 12; fi
 echo "== done"
 `;
@@ -591,10 +560,10 @@ test('sign-linux-release.sh signs, verifies, refuses a wrong key and skips witho
   const sums = result.stdout.split('== sums\n')[1].split('== tampered')[0].trim().split('\n')
     .map((line) => line.split('  ')[1]);
   assert.deepEqual(sums, [
-    'Open.PDF.Studio_1.0.0_amd64.AppImage',
-    'Open.PDF.Studio_1.0.0_amd64.AppImage.tar.gz',
-    'Open.PDF.Studio_1.0.0_amd64.deb',
-    'open-pdf-studio_1.0.0_amd64.snap',
+    'HB.PDF.Studio_1.0.0_arm64.AppImage',
+    'HB.PDF.Studio_1.0.0_arm64.AppImage.tar.gz',
+    'HB.PDF.Studio_1.0.0_arm64.deb',
+    'open-pdf-studio_1.0.0_arm64.snap',
   ]);
   assert.match(log, /BAD signature/);
   assert.match(result.stdout, /== done/);

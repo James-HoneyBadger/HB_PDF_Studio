@@ -53,7 +53,7 @@ bronbestand, eenheden) komen terug als `opds::pdf::document` op de wortelknoop.
 ```json
 {
   "header":  { "id": "opds-ifcx-<root path>", "ifcxVersion": "ifcx_alpha",
-               "dataVersion": "0.1.0", "author": "Open PDF Studio", "timestamp": "<ISO 8601>" },
+               "dataVersion": "0.1.0", "author": "HB PDF Studio", "timestamp": "<ISO 8601>" },
   "imports": [ { "uri": "https://ifcx.dev/@standards.buildingsmart.org/ifc/core/ifc@v5a.ifcx" },
                { "uri": "https://ifcx.dev/@openusd.org/usd@v1.ifcx" } ],
   "schemas": { "opds::pdf::document": { "uri": "…", "value": { "dataType": "Object", … } }, … },
@@ -100,7 +100,7 @@ het `schemas`-blok ingekort):
 ```json
 {
  "header": { "id": "opds-ifcx-3f2a9c1e-7b4d-40a5-8000-000000000001", "ifcxVersion": "ifcx_alpha",
-             "dataVersion": "0.1.0", "author": "Open PDF Studio", "timestamp": "2026-10-31T12:00:00.000Z" },
+             "dataVersion": "0.1.0", "author": "HB PDF Studio", "timestamp": "2026-10-31T12:00:00.000Z" },
  "imports": [ { "uri": "https://ifcx.dev/@standards.buildingsmart.org/ifc/core/ifc@v5a.ifcx" },
               { "uri": "https://ifcx.dev/@openusd.org/usd@v1.ifcx" } ],
  "schemas": { "…": "de 8 opds::pdf::-schema's" },
@@ -350,7 +350,7 @@ over welke van de verliesgevende delen dan behouden moeten blijven (open vraag 6
    lezers die die kunnen gebruiken?
 5. **Afbeeldingen**: base64 in het bestand (nu) of losse bestanden naast de `.ifcx`?
    Welke groottegrenzen zijn aanvaardbaar voor een zware set scans?
-6. **Heen en terug**: moet Open PDF Studio IFCX terug inlezen, en welke delen moeten dan
+6. **Heen en terug**: moet HB PDF Studio IFCX terug inlezen, en welke delen moeten dan
    behouden blijven (alleen annotaties, of ook de tekening)?
 7. **Eigen naamruimte**: is `opds::pdf::*` het juiste voorvoegsel, en waar moeten de
    schema-URI's naar wijzen (nu naar dit document)?

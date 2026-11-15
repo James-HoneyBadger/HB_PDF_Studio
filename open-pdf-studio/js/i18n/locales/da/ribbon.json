@@ -460,7 +460,7 @@
     "extensionsTitle": "Administrer udvidelser",
     "extensions": "Udvidelser",
     "information": "Information",
-    "aboutTitle": "Om Open PDF Studio",
+    "aboutTitle": "Om HB PDF Studio",
     "about": "Om",
     "whatsNewTitle": "Nyheder i denne version",
     "whatsNew": "Nyheder",
@@ -477,7 +477,7 @@
     "fileAssociation": "Filtilknytning",
     "setDefaultPdf": "Angiv standard PDF-program",
     "fileAssociations": "Filtilknytninger",
-    "previousVersionTitle": "Installér den forrige version af Open PDF Studio",
+    "previousVersionTitle": "Installér den forrige version af HB PDF Studio",
     "previousVersion": "Forrige version"
   },
   "format": {

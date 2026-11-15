@@ -460,7 +460,7 @@
     "extensionsTitle": "Управление расширениями",
     "extensions": "Расширения",
     "information": "Информация",
-    "aboutTitle": "О программе Open PDF Studio",
+    "aboutTitle": "О программе HB PDF Studio",
     "about": "О программе",
     "whatsNewTitle": "Что нового в этой версии",
     "whatsNew": "Что нового",
@@ -477,7 +477,7 @@
     "fileAssociation": "Ассоциация файлов",
     "setDefaultPdf": "Установить приложение PDF по умолчанию",
     "fileAssociations": "Ассоциации файлов",
-    "previousVersionTitle": "Установить предыдущую версию Open PDF Studio",
+    "previousVersionTitle": "Установить предыдущую версию HB PDF Studio",
     "previousVersion": "Предыдущая версия"
   },
   "format": {

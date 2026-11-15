@@ -14,10 +14,10 @@ const __dirname  = path.dirname(__filename);                   // <repo>/scripts
 const REPO_ROOT  = path.resolve(__dirname, '..');              // <repo>
 const TAURI_DIR  = path.join(REPO_ROOT, 'open-pdf-studio');
 const HARNESS_PY = path.join(__dirname, 'render-regression-test.py');
-const VENV_PY    = path.join(__dirname, '.venv-test', 'Scripts', 'python.exe');
+const VENV_PY    = path.join(__dirname, '.venv-test', 'bin', 'python');
 
 const PORT = 9223;
-// A cold Windows runner may need several minutes to compile the desktop app.
+// A cold ARM runner may need several minutes to compile the desktop app.
 // Keep readiness separate from compilation speed; the workflow-level timeout
 // remains the hard upper bound for hung starts.
 const MAX_WAIT_MS = 600_000;

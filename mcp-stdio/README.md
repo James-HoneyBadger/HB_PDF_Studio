@@ -1,6 +1,6 @@
-# Open PDF Studio — MCP for Claude Desktop / Claude Code
+# HB PDF Studio — MCP for Claude Desktop / Claude Code
 
-Open PDF Studio ships a **full MCP server inside the app** (94 public tools: open /
+HB PDF Studio ships a **full MCP server inside the app** (94 public tools: open /
 zoom / annotate / save PDFs, measure, take off quantities, answer extension
 tasks, inspect viewport state, …). It is implemented in Rust (`src-tauri/src/mcp_server.rs`)
 and speaks **HTTP JSON-RPC** on `127.0.0.1:9223/mcp`.
@@ -11,7 +11,7 @@ is reimplemented here — `tools/list` / `tools/call` are answered by the live
 app, so the bridge always reflects exactly what the app exposes.
 
 ```
-Claude Desktop / Code  ──stdio──►  server.mjs  ──HTTP──►  Open PDF Studio
+Claude Desktop / Code  ──stdio──►  server.mjs  ──HTTP──►  HB PDF Studio
                        ◄─stdio──                ◄──HTTP──  (in-app Rust server)
 ```
 
@@ -39,7 +39,7 @@ npm run tauri -- dev -- -- --mcp-server
 npm run tauri -- dev -- -- --mcp-server --mcp-port 9300
 
 # Release build — must also set OPS_ENABLE_MCP=1 (safety guard):
-OPS_ENABLE_MCP=1 "Open PDF Studio.exe" --mcp-server
+OPS_ENABLE_MCP=1 "HB PDF Studio.exe" --mcp-server
 ```
 
 When ready the app logs `MCP server listening on http://127.0.0.1:9223/mcp`
@@ -221,7 +221,7 @@ both Claude Desktop and Claude Code and gives clearer "app not running" errors.
 
 ## Troubleshooting
 
-- **`Open PDF Studio is not reachable`** — the app isn't running, or the AI
+- **`HB PDF Studio is not reachable`** — the app isn't running, or the AI
   link was turned off, or it's on a different port. Check Settings > General >
   AI link (MCP) (on by default) and that the port matches. While the app is down the bridge
   still answers `tools/list` (from `tools.json`), so the client keeps its tools.

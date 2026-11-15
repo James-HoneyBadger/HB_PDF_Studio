@@ -35,7 +35,7 @@
   "printQueue": {
     "toolbarLabel": "அச்சுப் பணி செயல்கள்",
     "openInStudio": "Studio-வில் திற",
-    "openInStudioTip": "தேர்ந்தெடுத்த பணியை Open PDF Studio-வில் திறக்கும் (Enter அல்லது இருமுறை சொடுக்கு). பல பணிகளைத் தேர்ந்தெடுத்தால் அவை ஒரே ஆவணமாக ஒன்றிணைந்து திறக்கும்.",
+    "openInStudioTip": "தேர்ந்தெடுத்த பணியை HB PDF Studio-வில் திறக்கும் (Enter அல்லது இருமுறை சொடுக்கு). பல பணிகளைத் தேர்ந்தெடுத்தால் அவை ஒரே ஆவணமாக ஒன்றிணைந்து திறக்கும்.",
     "mergeSelected": "தேர்ந்தவற்றை ஒன்றிணை…",
     "mergeSelectedTip": "தேர்ந்தெடுத்த பணிகளைப் பட்டியல் வரிசையில் ஒரே PDF ஆக ஒன்றிணைத்துச் சேமிக்கும்",
     "saveAs": "இவ்வாறு சேமி…",
@@ -75,11 +75,11 @@
     "adding": "PDF கோப்புகள் சேர்க்கப்படுகின்றன…",
     "saving": "சேமிக்கப்படுகிறது…",
     "merging": "{{count}}-இல் {{done}} ஒன்றிணைக்கப்படுகிறது…",
-    "opening": "Open PDF Studio-வில் திறக்கப்படுகிறது…",
+    "opening": "HB PDF Studio-வில் திறக்கப்படுகிறது…",
     "deleting": "நீக்கப்படுகிறது…",
     "saved": "{{name}} ஆகச் சேமிக்கப்பட்டது",
     "merged": "ஒன்றிணைத்து {{name}} ஆகச் சேமிக்கப்பட்டது",
-    "opened": "Open PDF Studio-வில் திறக்கப்பட்டது",
+    "opened": "HB PDF Studio-வில் திறக்கப்பட்டது",
     "deleted": "நீக்கப்பட்டவை: {{count}}",
     "failed": "தோல்வி: {{message}}",
     "mergedFileName": "ஒன்றிணைந்தது",
@@ -452,7 +452,7 @@
   },
   "update": {
     "title": "மென்பொருள் புதுப்பிப்பு",
-    "newVersionAvailable": "Open PDF Studio இன் புதிய பதிப்பு கிடைக்கிறது.",
+    "newVersionAvailable": "HB PDF Studio இன் புதிய பதிப்பு கிடைக்கிறது.",
     "currentVersion": "தற்போதைய பதிப்பு:",
     "newVersion": "புதிய பதிப்பு:",
     "releaseNotes": "வெளியீட்டுக் குறிப்புகள்:",
@@ -616,7 +616,7 @@
   },
   "defaultPdfApp": {
     "title": "இயல்புநிலை PDF பயன்பாடு",
-    "message": "PDF கோப்புகளைத் திறப்பதற்கு Open PDF Studio இயல்புநிலை பயன்பாடாக அமைக்கப்படவில்லை. இயல்புநிலையாக அமைக்க விரும்புகிறீர்களா?",
+    "message": "PDF கோப்புகளைத் திறப்பதற்கு HB PDF Studio இயல்புநிலை பயன்பாடாக அமைக்கப்படவில்லை. இயல்புநிலையாக அமைக்க விரும்புகிறீர்களா?",
     "setAsDefault": "இயல்புநிலையாக அமை",
     "dontAskAgain": "மீண்டும் கேட்காதே",
     "notNow": "இப்போது வேண்டாம்"
@@ -1322,7 +1322,7 @@
   },
   "recovery": {
     "title": "சேமிக்கப்படாத வேலையை மீட்டெடு",
-    "intro": "கடந்த முறை Open PDF Studio இயல்பாக மூடப்படவில்லை. இந்த ஆவணங்களின் சேமிக்கப்படாத வேலை வைக்கப்பட்டுள்ளது:",
+    "intro": "கடந்த முறை HB PDF Studio இயல்பாக மூடப்படவில்லை. இந்த ஆவணங்களின் சேமிக்கப்படாத வேலை வைக்கப்பட்டுள்ளது:",
     "savedAt": "{{time}} அன்று வைக்கப்பட்டது",
     "pages": "பக்கங்கள்: {{count}}",
     "untitled": "தலைப்பில்லா ஆவணம்",
@@ -1343,7 +1343,7 @@
     "deleteFailed": "நீக்குதல் தோல்வியடைந்தது: {{error}}",
     "tabLabel": "மீட்டெடுக்கப்பட்டது",
     "tabTip": "எதிர்பாராத மூடலுக்குப் பிறகு மீட்டெடுக்கப்பட்டது. சேமித்தல் அசல் கோப்பில் எழுதும்.",
-    "reloadStopped": "Open PDF Studio சாளரம் தொடர்ந்து பலமுறை செயல்படுவதை நிறுத்தியது, இனி தானாக மீண்டும் ஏற்றப்படாது. உங்கள் வேலையைச் சேமித்து பயன்பாட்டை மீண்டும் தொடங்கவும்."
+    "reloadStopped": "HB PDF Studio சாளரம் தொடர்ந்து பலமுறை செயல்படுவதை நிறுத்தியது, இனி தானாக மீண்டும் ஏற்றப்படாது. உங்கள் வேலையைச் சேமித்து பயன்பாட்டை மீண்டும் தொடங்கவும்."
   },
   "protectPdf": {
     "title": "ஆவணப் பாதுகாப்பு",
@@ -1919,7 +1919,7 @@
       "routing": "Routing",
       "howToRespond": "Reply to this mail with \"Approved\" or \"Rejected\" and keep {{ref}} in the subject.",
       "howToSign": "Signers: return the signed PDF and keep {{ref}} in the file name.",
-      "disclaimer": "The SHA-256 above identifies the exact document version. This mail was prepared in Open PDF Studio; it is not a legally binding signature service and does not verify identities."
+      "disclaimer": "The SHA-256 above identifies the exact document version. This mail was prepared in HB PDF Studio; it is not a legally binding signature service and does not verify identities."
     },
     "errors": {
       "CONFIGURE_ADAPTER_FIRST": "Enable the provider first.",

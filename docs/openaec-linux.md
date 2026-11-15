@@ -1,8 +1,8 @@
-# Open PDF Studio in OpenAEC Linux
+# HB PDF Studio in OpenAEC Linux
 
 OpenAEC Linux is the container image of the OpenAEC SuperCloud: every user gets
 their own Linux environment on the server, with the Linux builds of all OpenAEC
-tools, streamed to the browser. Open PDF Studio runs there as a normal Linux
+tools, streamed to the browser. HB PDF Studio runs there as a normal Linux
 program from the release AppImage (issue #863, shared rules in
 OpenAEC-Blueprint#61). The SuperCloud builds the image and pins the release;
 this repository only ships the AppImage.
@@ -17,7 +17,7 @@ in the dialogs). Managed mode itself has one switch for the whole app:
 ## How the SuperCloud starts the app
 
 ```bash
-./Open.PDF.Studio_<version>_amd64.AppImage --appimage-extract   # once, when building the image
+./HB.PDF.Studio_<version>_arm64.AppImage --appimage-extract   # once, when building the image
 OPENAEC_BEHEERD=1 OPENAEC_MAP=/openaec squashfs-root/AppRun [file.pdf]
 ```
 
@@ -188,7 +188,7 @@ AppImage.
 docker run --rm -it -v "$PWD:/w" debian:13-slim bash
 apt-get update && apt-get install -y --no-install-recommends labwc grim \
   libgtk-3-0t64 libegl1 libgl1 libgles2 libgbm1 libgl1-mesa-dri fonts-dejavu-core
-bash /w/open-pdf-studio/scripts/openaec-linux-smoke.sh /w/Open.PDF.Studio_*_amd64.AppImage 15 /w/smoke-out
+bash /w/open-pdf-studio/scripts/openaec-linux-smoke.sh /w/HB.PDF.Studio_*_arm64.AppImage 15 /w/smoke-out
 ```
 
 What only the real SuperCloud shows: the streaming path, input through the

@@ -1,7 +1,7 @@
-// Rekenregels van de Verkenner-rechtermuisknop-acties (#945), zonder Tauri of
-// DOM zodat ze los getest worden (shell-acties-logica.test.mjs). De
-// bedrading staat in shell-acties.js, de installer-kant in
-// src-tauri/nsis/hooks.nsh en de opdrachtregel in src-tauri/src/verkenner_acties.rs.
+// Rekenregels van de acties "Combineren tot één PDF" en "Omzetten naar PDF"
+// (#945), zonder Tauri of DOM zodat ze los getest worden
+// (shell-acties-logica.test.mjs). Het samenvoegvenster gebruikt ze via
+// MergePdfsDialog.jsx.
 
 /** Afbeeldingen die "Omzetten naar PDF" kent (zelfde lijst als de installer). */
 export const AFBEELDING = /\.(jpe?g|png|bmp|gif|webp)$/i;

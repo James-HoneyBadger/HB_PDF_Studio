@@ -35,7 +35,7 @@
   "printQueue": {
     "toolbarLabel": "การทำงานของงานพิมพ์",
     "openInStudio": "เปิดใน Studio",
-    "openInStudioTip": "เปิดงานที่เลือกใน Open PDF Studio (Enter หรือดับเบิลคลิก) หากเลือกหลายงานจะเปิดเป็นเอกสารเดียวที่รวมกัน",
+    "openInStudioTip": "เปิดงานที่เลือกใน HB PDF Studio (Enter หรือดับเบิลคลิก) หากเลือกหลายงานจะเปิดเป็นเอกสารเดียวที่รวมกัน",
     "mergeSelected": "รวมที่เลือก…",
     "mergeSelectedTip": "รวมงานที่เลือกตามลำดับในรายการเป็น PDF เดียวแล้วบันทึก",
     "saveAs": "บันทึกเป็น…",
@@ -75,11 +75,11 @@
     "adding": "กำลังเพิ่มไฟล์ PDF…",
     "saving": "กำลังบันทึก…",
     "merging": "กำลังรวม {{done}} จาก {{count}}…",
-    "opening": "กำลังเปิดใน Open PDF Studio…",
+    "opening": "กำลังเปิดใน HB PDF Studio…",
     "deleting": "กำลังลบ…",
     "saved": "บันทึกเป็น {{name}} แล้ว",
     "merged": "รวมและบันทึกเป็น {{name}} แล้ว",
-    "opened": "เปิดใน Open PDF Studio แล้ว",
+    "opened": "เปิดใน HB PDF Studio แล้ว",
     "deleted": "ลบแล้ว: {{count}}",
     "failed": "ล้มเหลว: {{message}}",
     "mergedFileName": "รวมแล้ว",
@@ -452,7 +452,7 @@
   },
   "update": {
     "title": "อัปเดตซอฟต์แวร์",
-    "newVersionAvailable": "มีเวอร์ชันใหม่ของ Open PDF Studio พร้อมใช้งาน",
+    "newVersionAvailable": "มีเวอร์ชันใหม่ของ HB PDF Studio พร้อมใช้งาน",
     "currentVersion": "เวอร์ชันปัจจุบัน:",
     "newVersion": "เวอร์ชันใหม่:",
     "releaseNotes": "บันทึกการเผยแพร่:",
@@ -616,7 +616,7 @@
   },
   "defaultPdfApp": {
     "title": "แอป PDF เริ่มต้น",
-    "message": "Open PDF Studio ยังไม่ได้ถูกตั้งเป็นแอปเริ่มต้นสำหรับเปิดไฟล์ PDF คุณต้องการตั้งเป็นค่าเริ่มต้นหรือไม่?",
+    "message": "HB PDF Studio ยังไม่ได้ถูกตั้งเป็นแอปเริ่มต้นสำหรับเปิดไฟล์ PDF คุณต้องการตั้งเป็นค่าเริ่มต้นหรือไม่?",
     "setAsDefault": "ตั้งเป็นค่าเริ่มต้น",
     "dontAskAgain": "ไม่ต้องถามอีก",
     "notNow": "ไม่ใช่ตอนนี้"
@@ -1322,7 +1322,7 @@
   },
   "recovery": {
     "title": "กู้คืนงานที่ยังไม่ได้บันทึก",
-    "intro": "ครั้งที่แล้ว Open PDF Studio ไม่ได้ปิดตามปกติ งานที่ยังไม่ได้บันทึกของเอกสารเหล่านี้ถูกเก็บไว้:",
+    "intro": "ครั้งที่แล้ว HB PDF Studio ไม่ได้ปิดตามปกติ งานที่ยังไม่ได้บันทึกของเอกสารเหล่านี้ถูกเก็บไว้:",
     "savedAt": "เก็บไว้เมื่อ {{time}}",
     "pages": "หน้า: {{count}}",
     "untitled": "เอกสารไม่มีชื่อ",
@@ -1343,7 +1343,7 @@
     "deleteFailed": "การลบล้มเหลว: {{error}}",
     "tabLabel": "กู้คืนแล้ว",
     "tabTip": "กู้คืนหลังจากปิดโดยไม่คาดคิด การบันทึกจะเขียนลงในไฟล์ต้นฉบับ",
-    "reloadStopped": "หน้าต่าง Open PDF Studio หยุดทำงานหลายครั้งติดต่อกันและจะไม่โหลดใหม่โดยอัตโนมัติอีก บันทึกงานของคุณแล้วเริ่มแอปใหม่"
+    "reloadStopped": "หน้าต่าง HB PDF Studio หยุดทำงานหลายครั้งติดต่อกันและจะไม่โหลดใหม่โดยอัตโนมัติอีก บันทึกงานของคุณแล้วเริ่มแอปใหม่"
   },
   "protectPdf": {
     "title": "ความปลอดภัยของเอกสาร",
@@ -1919,7 +1919,7 @@
       "routing": "Routing",
       "howToRespond": "Reply to this mail with \"Approved\" or \"Rejected\" and keep {{ref}} in the subject.",
       "howToSign": "Signers: return the signed PDF and keep {{ref}} in the file name.",
-      "disclaimer": "The SHA-256 above identifies the exact document version. This mail was prepared in Open PDF Studio; it is not a legally binding signature service and does not verify identities."
+      "disclaimer": "The SHA-256 above identifies the exact document version. This mail was prepared in HB PDF Studio; it is not a legally binding signature service and does not verify identities."
     },
     "errors": {
       "CONFIGURE_ADAPTER_FIRST": "Enable the provider first.",

@@ -25,8 +25,10 @@ class FindApp(unittest.TestCase):
 
     def test_path_then_install_locations(self):
         self.assertEqual(find_app(env={}, exists=lambda p: False, which=lambda n: "/usr/bin/open-pdf-studio"), "/usr/bin/open-pdf-studio")
-        mac = "/Applications/Open PDF Studio.app/Contents/MacOS/open-pdf-studio"
+        mac = "/Applications/HB PDF Studio.app/Contents/MacOS/open-pdf-studio"
         self.assertEqual(find_app(platform="darwin", env={"HOME": "/Users/u"}, exists=lambda p: p == mac, which=lambda n: None), mac)
+        legacy_mac = "/Applications/Open PDF Studio.app/Contents/MacOS/open-pdf-studio"
+        self.assertEqual(find_app(platform="darwin", env={"HOME": "/Users/u"}, exists=lambda p: p == legacy_mac, which=lambda n: None), legacy_mac)
 
     def test_not_found_lists_what_was_tried(self):
         with self.assertRaises(ops.AppNotFoundError) as cm:
@@ -38,13 +40,18 @@ class FindApp(unittest.TestCase):
         # Separators follow the target platform, whatever the host is.
         win = candidate_paths("win32", {"ProgramFiles": r"C:\Program Files", "ProgramW6432": r"C:\Program Files", "LOCALAPPDATA": r"C:\Users\u\AppData\Local"})
         self.assertEqual(win, [
+            r"C:\Program Files\HB PDF Studio\open-pdf-studio.exe",
             r"C:\Program Files\Open PDF Studio\open-pdf-studio.exe",
+            r"C:\Users\u\AppData\Local\HB PDF Studio\open-pdf-studio.exe",
             r"C:\Users\u\AppData\Local\Open PDF Studio\open-pdf-studio.exe",
+            r"C:\Users\u\AppData\Local\Programs\HB PDF Studio\open-pdf-studio.exe",
             r"C:\Users\u\AppData\Local\Programs\Open PDF Studio\open-pdf-studio.exe",
         ])
         self.assertIn("/snap/bin/open-pdf-studio", candidate_paths("linux", {}))
         self.assertEqual(candidate_paths("darwin", {"HOME": "/Users/u"}), [
+            "/Applications/HB PDF Studio.app/Contents/MacOS/open-pdf-studio",
             "/Applications/Open PDF Studio.app/Contents/MacOS/open-pdf-studio",
+            "/Users/u/Applications/HB PDF Studio.app/Contents/MacOS/open-pdf-studio",
             "/Users/u/Applications/Open PDF Studio.app/Contents/MacOS/open-pdf-studio",
         ])
 

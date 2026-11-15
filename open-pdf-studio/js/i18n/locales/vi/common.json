@@ -110,7 +110,7 @@
     "readOnly": {
       "title": "Opened read-only",
       "kenmerk": "{{name}} is read-only: it has the read-only attribute, or you only have read permission on this location.",
-      "in-gebruik": "{{name}} is open in another application or is being synchronized, so Open PDF Studio cannot reserve it.",
+      "in-gebruik": "{{name}} is open in another application or is being synchronized, so HB PDF Studio cannot reserve it.",
       "geweigerd": "{{name}} cannot be reserved: Windows denied it.",
       "mislukt": "{{name}} could not be reserved.",
       "saveAs": "It has been opened read-only. You can make changes; use Save As to save them to another file."
@@ -118,7 +118,7 @@
   },
   "hostOpenFailed": "Không thể đọc tệp từ bộ lưu trữ. Hãy thử lại.",
   "hostInvalidPdf": "{{name}} không phải là tệp PDF hợp lệ và không thể mở.",
-  "hostNoContact": "Trang chứa Open PDF Studio không phản hồi nên không thể mở hoặc lưu tệp. Hãy tải lại trang và thử lại.",
+  "hostNoContact": "Trang chứa HB PDF Studio không phản hồi nên không thể mở hoặc lưu tệp. Hãy tải lại trang và thử lại.",
   "hostSaveConflict": "Trong lúc đó, người khác đã lưu tệp này. Các thay đổi của bạn đã được lưu thành một bản sao riêng: {{name}}. Những lần lưu sau sẽ vào bản sao đó.",
   "hostSaveNotLocked": "Tệp này không được giữ riêng cho bạn, nên người khác có thể sửa nó cùng lúc. Các thay đổi của bạn được lưu thành phiên bản mới; không có gì bị ghi đè.",
   "hostReadOnlySave": "Tệp này được mở ở chế độ chỉ đọc, nên không thể lưu thay đổi vào đó. Hãy dùng Lưu thành để tải xuống một bản sao.",
@@ -162,7 +162,7 @@
   "failedToReplacePage": "Thay thế trang thất bại: {{error}}",
   "failedToMergeFile": "Gộp thất bại: {{file}}\n{{error}}",
   "invalidPageRange": "Phạm vi trang không hợp lệ. Vui lòng nhập số trang hợp lệ.",
-  "appName": "Open PDF Studio",
+  "appName": "HB PDF Studio",
   "noDocuments": "Chưa chọn PDF",
   "noDocumentsHint": "Nhấn \"Mở PDF\" để duyệt và chú thích tệp PDF",
   "solid": "Liền nét",
@@ -350,7 +350,7 @@
     "fileAssoc": "Bản di động này chưa được đăng ký với Windows. Để mở tệp PDF bằng nó, hãy nhấp chuột phải vào một tệp PDF, chọn Mở bằng > Chọn ứng dụng khác, rồi chọn open-pdf-studio.exe trong thư mục này.",
     "explorerThumbnails": "Hình thu nhỏ PDF trong File Explorer chỉ có trong phiên bản đã cài đặt.",
     "virtualPrinter": "Máy in ảo chỉ có trong phiên bản đã cài đặt: nó được thêm vào Windows với quyền quản trị viên.",
-    "notWritable": "Open PDF Studio không thể ghi vào thư mục {{dir}}, vì vậy lần này cài đặt của bạn được lưu trong hồ sơ người dùng. Hãy chuyển thư mục di động đến vị trí có thể ghi, chẳng hạn ổ USB hoặc thư mục Documents."
+    "notWritable": "HB PDF Studio không thể ghi vào thư mục {{dir}}, vì vậy lần này cài đặt của bạn được lưu trong hồ sơ người dùng. Hãy chuyển thư mục di động đến vị trí có thể ghi, chẳng hạn ổ USB hoặc thư mục Documents."
   },
   "protectedPdfNoPrint": "Quyền của tài liệu này không cho phép in.",
   "share": {

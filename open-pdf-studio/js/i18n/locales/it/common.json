@@ -110,7 +110,7 @@
     "readOnly": {
       "title": "Opened read-only",
       "kenmerk": "{{name}} is read-only: it has the read-only attribute, or you only have read permission on this location.",
-      "in-gebruik": "{{name}} is open in another application or is being synchronized, so Open PDF Studio cannot reserve it.",
+      "in-gebruik": "{{name}} is open in another application or is being synchronized, so HB PDF Studio cannot reserve it.",
       "geweigerd": "{{name}} cannot be reserved: Windows denied it.",
       "mislukt": "{{name}} could not be reserved.",
       "saveAs": "It has been opened read-only. You can make changes; use Save As to save them to another file."
@@ -118,7 +118,7 @@
   },
   "hostOpenFailed": "Impossibile leggere il file dall'archivio. Riprova.",
   "hostInvalidPdf": "{{name}} non è un file PDF valido e non è stato possibile aprirlo.",
-  "hostNoContact": "La pagina che contiene Open PDF Studio non risponde, quindi non è possibile aprire o salvare file. Ricarica la pagina e riprova.",
+  "hostNoContact": "La pagina che contiene HB PDF Studio non risponde, quindi non è possibile aprire o salvare file. Ricarica la pagina e riprova.",
   "hostSaveConflict": "Qualcun altro ha salvato questo file nel frattempo. Le tue modifiche sono state salvate in una copia separata: {{name}}. I salvataggi successivi andranno in quella copia.",
   "hostSaveNotLocked": "Questo file non è riservato a te, quindi altri possono modificarlo contemporaneamente. Le tue modifiche vengono salvate come nuove versioni; nulla viene sovrascritto.",
   "hostReadOnlySave": "Questo file è aperto in sola lettura, quindi non è possibile salvarvi le modifiche. Usa Salva con nome per scaricare una copia.",
@@ -162,7 +162,7 @@
   "failedToReplacePage": "Impossibile sostituire la pagina: {{error}}",
   "failedToMergeFile": "Unione non riuscita: {{file}}\n{{error}}",
   "invalidPageRange": "Intervallo di pagine non valido. Inserire numeri di pagina validi.",
-  "appName": "Open PDF Studio",
+  "appName": "HB PDF Studio",
   "noDocuments": "Nessun PDF selezionato",
   "noDocumentsHint": "Fare clic su \"Apri PDF\" per sfogliare e annotare un PDF",
   "solid": "Continuo",
@@ -350,7 +350,7 @@
     "fileAssoc": "Questa copia portatile non è registrata in Windows. Per aprire i file PDF con essa, fai clic con il pulsante destro su un PDF, scegli Apri con > Scegli un'altra app e seleziona open-pdf-studio.exe in questa cartella.",
     "explorerThumbnails": "Le miniature PDF in Esplora file sono disponibili solo nella versione installata.",
     "virtualPrinter": "La stampante virtuale è disponibile solo nella versione installata: viene aggiunta a Windows con diritti di amministratore.",
-    "notWritable": "Open PDF Studio non può scrivere nella cartella {{dir}}, quindi questa volta le impostazioni vengono salvate nel tuo profilo utente. Sposta la cartella portatile in una posizione scrivibile, ad esempio una chiavetta USB o la cartella Documenti."
+    "notWritable": "HB PDF Studio non può scrivere nella cartella {{dir}}, quindi questa volta le impostazioni vengono salvate nel tuo profilo utente. Sposta la cartella portatile in una posizione scrivibile, ad esempio una chiavetta USB o la cartella Documenti."
   },
   "protectedPdfNoPrint": "I permessi di questo documento non consentono la stampa.",
   "share": {

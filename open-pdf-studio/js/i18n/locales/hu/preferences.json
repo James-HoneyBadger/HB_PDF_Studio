@@ -204,18 +204,18 @@
   "fileAssoc": {
     "defaultPdfApplication": "Alapértelmezett PDF alkalmazás",
     "currentDefault": "Jelenlegi alapértelmezett:",
-    "setDefault": "Open PDF Studio beállítása alapértelmezett PDF megjelenítőként",
-    "setDefaultHelp": "Ez megnyitja a rendszerbeállításokat, ahol kiválaszthatja a Open PDF Studio alkalmazást a PDF fájlok alapértelmezett megnyitásához.",
-    "windowsInstructions": "A Windows Beállítások megnyitva.\n\nA Open PDF Studio alapértelmezett beállításához:\n1. Görgessen le az \"Alapértelmezett alkalmazások kiválasztása fájltípus szerint\" részhez\n2. Keresse meg a .pdf bejegyzést\n3. Kattintson rá, és válassza a Open PDF Studio alkalmazást",
+    "setDefault": "HB PDF Studio beállítása alapértelmezett PDF megjelenítőként",
+    "setDefaultHelp": "Ez megnyitja a rendszerbeállításokat, ahol kiválaszthatja a HB PDF Studio alkalmazást a PDF fájlok alapértelmezett megnyitásához.",
+    "windowsInstructions": "A Windows Beállítások megnyitva.\n\nA HB PDF Studio alapértelmezett beállításához:\n1. Görgessen le az \"Alapértelmezett alkalmazások kiválasztása fájltípus szerint\" részhez\n2. Keresse meg a .pdf bejegyzést\n3. Kattintson rá, és válassza a HB PDF Studio alkalmazást",
     "windowsFailed": "Nem sikerült megnyitni a Windows Beállításokat.\n\nKérem, nyissa meg manuálisan: Beállítások > Alkalmazások > Alapértelmezett alkalmazások.",
-    "macInstructions": "A Open PDF Studio beállítása alapértelmezett PDF megjelenítőként macOS rendszeren:\n\n1. Kattintson jobb gombbal bármely PDF fájlra a Finderben\n2. Válassza az \"Információ\" menüpontot\n3. A \"Megnyitás ezzel\" alatt válassza a Open PDF Studio alkalmazást\n4. Kattintson a \"Mindent megváltoztat...\" gombra",
-    "linuxInstructions": "A Open PDF Studio beállítása alapértelmezett PDF megjelenítőként Linux rendszeren:\n\nFuttassa a terminálban:\nxdg-mime default openpdfstudio.desktop application/pdf",
+    "macInstructions": "A HB PDF Studio beállítása alapértelmezett PDF megjelenítőként macOS rendszeren:\n\n1. Kattintson jobb gombbal bármely PDF fájlra a Finderben\n2. Válassza az \"Információ\" menüpontot\n3. A \"Megnyitás ezzel\" alatt válassza a HB PDF Studio alkalmazást\n4. Kattintson a \"Mindent megváltoztat...\" gombra",
+    "linuxInstructions": "A HB PDF Studio beállítása alapértelmezett PDF megjelenítőként Linux rendszeren:\n\nFuttassa a terminálban:\nxdg-mime default openpdfstudio.desktop application/pdf",
     "checkFinder": "Ellenőrizze a Finder > Információ részben",
     "notSet": "Nincs beállítva",
     "chosenInSystemSettings": "A rendszerbeállításokban kiválasztva",
-    "sandboxInstructions": "Az Open PDF Studio {{package}}-csomagként fut, és nem tudja maga módosítani az alapértelmezett PDF-alkalmazást.\n\nVálassza az Open PDF Studiót a rendszerbeállítások Alapértelmezett alkalmazások részében, vagy kattintson jobb gombbal egy PDF-fájlra, és használja a Megnyitás ezzel lehetőséget.",
+    "sandboxInstructions": "Az HB PDF Studio {{package}}-csomagként fut, és nem tudja maga módosítani az alapértelmezett PDF-alkalmazást.\n\nVálassza az Open PDF Studiót a rendszerbeállítások Alapértelmezett alkalmazások részében, vagy kattintson jobb gombbal egy PDF-fájlra, és használja a Megnyitás ezzel lehetőséget.",
     "xdgMimeMissing": "Az xdg-mime (xdg-utils csomag) nincs telepítve, ezért az alapértelmezett PDF-alkalmazás innen nem állítható be.\n\nTelepítse az xdg-utils csomagot, vagy válassza az Open PDF Studiót a rendszerbeállítások Alapértelmezett alkalmazások részében.",
-    "linuxDone": "Az Open PDF Studio most már a PDF-fájlok alapértelmezett alkalmazása.",
+    "linuxDone": "Az HB PDF Studio most már a PDF-fájlok alapértelmezett alkalmazása.",
     "linuxFailed": "Nem sikerült az Open PDF Studiót alapértelmezett PDF-alkalmazásként beállítani.\n\n{{error}}"
   },
   "explorerThumbnails": {
@@ -226,7 +226,7 @@
     "otherHandler": "A PDF-miniatűröket jelenleg a következő biztosítja: {{name}}.",
     "defaultApp": "Az alapértelmezett PDF-alkalmazása saját miniatűröket mutat ({{name}}). A Windows ezeket használja, amíg az az alkalmazás az alapértelmezett PDF-alkalmazás.",
     "replaceTitle": "PDF-miniatűrök",
-    "replaceConfirm": "A(z) {{name}} már biztosít PDF-miniatűröket a Fájlkezelőben.\n\nHelyettük az Open PDF Studio miniatűrjei jelenjenek meg az Ön Windows-fiókjában? Ha kikapcsolja ezt a beállítást, visszaállnak a korábbi miniatűrök.",
+    "replaceConfirm": "A(z) {{name}} már biztosít PDF-miniatűröket a Fájlkezelőben.\n\nHelyettük az HB PDF Studio miniatűrjei jelenjenek meg az Ön Windows-fiókjában? Ha kikapcsolja ezt a beállítást, visszaállnak a korábbi miniatűrök.",
     "failed": "A Fájlkezelő miniatűr-beállítását nem sikerült módosítani."
   },
   "virtualPrinter": {
@@ -251,7 +251,7 @@
     "stateUnknownDetail": "A nyomtató állapota nem olvasható.",
     "howTitle": "Működése",
     "how1": "Bármely programban válassza a Nyomtatás parancsot, és válassza ki a(z) {{printer}} nyomtatót.",
-    "how2": "A nyomtatás megjelenik az Open PDF Studio nyomtatóablakában.",
+    "how2": "A nyomtatás megjelenik az HB PDF Studio nyomtatóablakában.",
     "how3": "Tekintse meg az előnézetet, rendezze át, fűzze össze és mentse a feladatokat egyetlen PDF-ként, vagy nyissa meg őket a Studióban.",
     "openWindow": "Nyomtatóablak megnyitása",
     "openWindowTip": "Az elfogott nyomtatási feladatok megjelenítése"

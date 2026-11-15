@@ -146,7 +146,7 @@ async function updatesManagedExternally() {
 function showManagedExternallyMessage() {
   if (window.__TAURI__?.dialog?.message) {
     window.__TAURI__.dialog.message(
-      'This copy of Open PDF Studio is installed as a Flatpak. Updates are installed through your software center or with "flatpak update".',
+      'This copy of HB PDF Studio is installed as a Flatpak. Updates are installed through your software center or with "flatpak update".',
       { title: 'Software Update', kind: 'info' }
     );
   }
@@ -155,7 +155,7 @@ function showManagedExternallyMessage() {
 function showNoUpdateMessage() {
   if (window.__TAURI__?.dialog?.message) {
     window.__TAURI__.dialog.message(
-      'You are running the latest version of Open PDF Studio.',
+      'You are running the latest version of HB PDF Studio.',
       { title: 'Software Update', kind: 'info' }
     );
   }

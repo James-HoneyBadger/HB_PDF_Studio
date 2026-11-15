@@ -204,19 +204,19 @@
   "fileAssoc": {
     "defaultPdfApplication": "Oletus-PDF-sovellus",
     "currentDefault": "Nykyinen oletus:",
-    "setDefault": "Aseta Open PDF Studio oletus-PDF-katseluohjelmaksi",
-    "setDefaultHelp": "Tämä avaa järjestelmäasetukset, joista voit valita Open PDF Studion oletussovellukseksi PDF-tiedostojen avaamiseen.",
-    "windowsInstructions": "Windows-asetukset avattu.\n\nAseta Open PDF Studio oletukseksi:\n1. Vieritä alas kohtaan \"Valitse oletussovellukset tiedostotyypin mukaan\"\n2. Etsi .pdf\n3. Napsauta ja valitse Open PDF Studio",
+    "setDefault": "Aseta HB PDF Studio oletus-PDF-katseluohjelmaksi",
+    "setDefaultHelp": "Tämä avaa järjestelmäasetukset, joista voit valita HB PDF Studion oletussovellukseksi PDF-tiedostojen avaamiseen.",
+    "windowsInstructions": "Windows-asetukset avattu.\n\nAseta HB PDF Studio oletukseksi:\n1. Vieritä alas kohtaan \"Valitse oletussovellukset tiedostotyypin mukaan\"\n2. Etsi .pdf\n3. Napsauta ja valitse HB PDF Studio",
     "windowsFailed": "Windows-asetusten avaaminen epäonnistui.\n\nAvaa manuaalisesti Asetukset > Sovellukset > Oletussovellukset.",
-    "macInstructions": "Aseta Open PDF Studio oletus-PDF-katseluohjelmaksi macOS:ssä:\n\n1. Napsauta mitä tahansa PDF-tiedostoa hiiren kakkospainikkeella Finderissa\n2. Valitse \"Hae tietoja\"\n3. Kohdasta \"Avaa sovelluksella\" valitse Open PDF Studio\n4. Napsauta \"Vaihda kaikki...\"",
-    "linuxInstructions": "Aseta Open PDF Studio oletus-PDF-katseluohjelmaksi Linuxissa:\n\nSuorita terminaalissa:\nxdg-mime default openpdfstudio.desktop application/pdf",
+    "macInstructions": "Aseta HB PDF Studio oletus-PDF-katseluohjelmaksi macOS:ssä:\n\n1. Napsauta mitä tahansa PDF-tiedostoa hiiren kakkospainikkeella Finderissa\n2. Valitse \"Hae tietoja\"\n3. Kohdasta \"Avaa sovelluksella\" valitse HB PDF Studio\n4. Napsauta \"Vaihda kaikki...\"",
+    "linuxInstructions": "Aseta HB PDF Studio oletus-PDF-katseluohjelmaksi Linuxissa:\n\nSuorita terminaalissa:\nxdg-mime default openpdfstudio.desktop application/pdf",
     "checkFinder": "Tarkista Finder > Hae tietoja",
     "notSet": "Ei asetettu",
     "chosenInSystemSettings": "Valittu järjestelmän asetuksissa",
-    "sandboxInstructions": "Open PDF Studio toimii {{package}}-pakettina eikä voi itse vaihtaa oletus-PDF-sovellusta.\n\nValitse Open PDF Studio järjestelmän asetuksista kohdasta Oletussovellukset, tai napsauta PDF-tiedostoa hiiren oikealla painikkeella ja käytä Avaa sovelluksella.",
-    "xdgMimeMissing": "xdg-mime (paketti xdg-utils) ei ole asennettu, joten oletus-PDF-sovellusta ei voi asettaa täältä.\n\nAsenna xdg-utils tai valitse Open PDF Studio järjestelmän asetuksista kohdasta Oletussovellukset.",
-    "linuxDone": "Open PDF Studio on nyt PDF-tiedostojen oletussovellus.",
-    "linuxFailed": "Open PDF Studiota ei voitu asettaa oletus-PDF-sovellukseksi.\n\n{{error}}"
+    "sandboxInstructions": "HB PDF Studio toimii {{package}}-pakettina eikä voi itse vaihtaa oletus-PDF-sovellusta.\n\nValitse HB PDF Studio järjestelmän asetuksista kohdasta Oletussovellukset, tai napsauta PDF-tiedostoa hiiren oikealla painikkeella ja käytä Avaa sovelluksella.",
+    "xdgMimeMissing": "xdg-mime (paketti xdg-utils) ei ole asennettu, joten oletus-PDF-sovellusta ei voi asettaa täältä.\n\nAsenna xdg-utils tai valitse HB PDF Studio järjestelmän asetuksista kohdasta Oletussovellukset.",
+    "linuxDone": "HB PDF Studio on nyt PDF-tiedostojen oletussovellus.",
+    "linuxFailed": "HB PDF Studiota ei voitu asettaa oletus-PDF-sovellukseksi.\n\n{{error}}"
   },
   "explorerThumbnails": {
     "title": "Resurssienhallinta",
@@ -226,7 +226,7 @@
     "otherHandler": "PDF-pikkukuvat tarjoaa tällä hetkellä {{name}}.",
     "defaultApp": "Oletus-PDF-sovelluksesi näyttää omat pikkukuvansa ({{name}}). Windows käyttää niitä niin kauan kuin kyseinen sovellus on oletus-PDF-sovelluksesi.",
     "replaceTitle": "PDF-pikkukuvat",
-    "replaceConfirm": "{{name}} tarjoaa jo PDF-pikkukuvat resurssienhallintaan.\n\nNäytetäänkö Windows-tilillesi sen sijaan Open PDF Studion pikkukuvat? Kun poistat asetuksen käytöstä, aiemmat pikkukuvat palautetaan.",
+    "replaceConfirm": "{{name}} tarjoaa jo PDF-pikkukuvat resurssienhallintaan.\n\nNäytetäänkö Windows-tilillesi sen sijaan HB PDF Studion pikkukuvat? Kun poistat asetuksen käytöstä, aiemmat pikkukuvat palautetaan.",
     "failed": "Resurssienhallinnan pikkukuva-asetusta ei voitu muuttaa."
   },
   "virtualPrinter": {
@@ -251,7 +251,7 @@
     "stateUnknownDetail": "Tulostimen tilaa ei voitu lukea.",
     "howTitle": "Näin se toimii",
     "how1": "Valitse missä tahansa ohjelmassa Tulosta ja valitse {{printer}}.",
-    "how2": "Tuloste ilmestyy Open PDF Studion tulostinikkunaan.",
+    "how2": "Tuloste ilmestyy HB PDF Studion tulostinikkunaan.",
     "how3": "Esikatsele, järjestä, yhdistä ja tallenna työt yhtenä PDF-tiedostona tai avaa ne Studiossa.",
     "openWindow": "Avaa tulostinikkuna",
     "openWindowTip": "Näytä kaapatut tulostustyöt"

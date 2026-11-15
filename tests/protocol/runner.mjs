@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// MCP-driven test runner for Open PDF Studio.
+// MCP-driven test runner for HB PDF Studio.
 //
 // Reads scenario JSON files from ./scenarios, drives the running Tauri app
 // via the MCP server on http://127.0.0.1:9223/mcp, captures state probes +

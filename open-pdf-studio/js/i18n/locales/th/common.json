@@ -110,7 +110,7 @@
     "readOnly": {
       "title": "Opened read-only",
       "kenmerk": "{{name}} is read-only: it has the read-only attribute, or you only have read permission on this location.",
-      "in-gebruik": "{{name}} is open in another application or is being synchronized, so Open PDF Studio cannot reserve it.",
+      "in-gebruik": "{{name}} is open in another application or is being synchronized, so HB PDF Studio cannot reserve it.",
       "geweigerd": "{{name}} cannot be reserved: Windows denied it.",
       "mislukt": "{{name}} could not be reserved.",
       "saveAs": "It has been opened read-only. You can make changes; use Save As to save them to another file."
@@ -118,7 +118,7 @@
   },
   "hostOpenFailed": "ไม่สามารถอ่านไฟล์จากที่เก็บข้อมูลได้ โปรดลองอีกครั้ง",
   "hostInvalidPdf": "{{name}} ไม่ใช่ไฟล์ PDF ที่ถูกต้องและไม่สามารถเปิดได้",
-  "hostNoContact": "หน้าที่ครอบ Open PDF Studio ไม่ตอบสนอง จึงเปิดหรือบันทึกไฟล์ไม่ได้ โปรดโหลดหน้าใหม่แล้วลองอีกครั้ง",
+  "hostNoContact": "หน้าที่ครอบ HB PDF Studio ไม่ตอบสนอง จึงเปิดหรือบันทึกไฟล์ไม่ได้ โปรดโหลดหน้าใหม่แล้วลองอีกครั้ง",
   "hostSaveConflict": "มีผู้อื่นบันทึกไฟล์นี้ในระหว่างนั้น การเปลี่ยนแปลงของคุณถูกบันทึกเป็นสำเนาแยก: {{name}} การบันทึกครั้งต่อไปจะไปที่สำเนานั้น",
   "hostSaveNotLocked": "ไฟล์นี้ไม่ได้สงวนไว้ให้คุณ ผู้อื่นจึงแก้ไขได้ในเวลาเดียวกัน การเปลี่ยนแปลงของคุณจะถูกบันทึกเป็นเวอร์ชันใหม่ ไม่มีสิ่งใดถูกเขียนทับ",
   "hostReadOnlySave": "ไฟล์นี้เปิดแบบอ่านอย่างเดียว จึงบันทึกการเปลี่ยนแปลงลงในไฟล์ไม่ได้ ใช้ \"บันทึกเป็น\" เพื่อดาวน์โหลดสำเนา",
@@ -162,7 +162,7 @@
   "failedToReplacePage": "แทนที่หน้าไม่สำเร็จ: {{error}}",
   "failedToMergeFile": "รวมไม่สำเร็จ: {{file}}\n{{error}}",
   "invalidPageRange": "ช่วงหน้าไม่ถูกต้อง กรุณากรอกหมายเลขหน้าที่ถูกต้อง",
-  "appName": "Open PDF Studio",
+  "appName": "HB PDF Studio",
   "noDocuments": "ไม่ได้เลือก PDF",
   "noDocumentsHint": "คลิก \"เปิด PDF\" เพื่อเรียกดูและใส่คำอธิบายประกอบ PDF",
   "solid": "ทึบ",
@@ -350,7 +350,7 @@
     "fileAssoc": "สำเนาแบบพกพานี้ไม่ได้ลงทะเบียนกับ Windows หากต้องการเปิดไฟล์ PDF ด้วยสำเนานี้ ให้คลิกขวาที่ไฟล์ PDF เลือก เปิดด้วย > เลือกแอปอื่น แล้วเลือก open-pdf-studio.exe ในโฟลเดอร์นี้",
     "explorerThumbnails": "ภาพขนาดย่อ PDF ใน File Explorer ใช้ได้เฉพาะในเวอร์ชันที่ติดตั้งเท่านั้น",
     "virtualPrinter": "เครื่องพิมพ์เสมือนใช้ได้เฉพาะในเวอร์ชันที่ติดตั้งเท่านั้น โดยจะถูกเพิ่มลงใน Windows ด้วยสิทธิ์ผู้ดูแลระบบ",
-    "notWritable": "Open PDF Studio เขียนลงในโฟลเดอร์ {{dir}} ไม่ได้ ครั้งนี้การตั้งค่าของคุณจึงถูกเก็บไว้ในโปรไฟล์ผู้ใช้ของคุณ ย้ายโฟลเดอร์แบบพกพาไปยังตำแหน่งที่เขียนได้ เช่น แฟลชไดรฟ์ USB หรือโฟลเดอร์ Documents"
+    "notWritable": "HB PDF Studio เขียนลงในโฟลเดอร์ {{dir}} ไม่ได้ ครั้งนี้การตั้งค่าของคุณจึงถูกเก็บไว้ในโปรไฟล์ผู้ใช้ของคุณ ย้ายโฟลเดอร์แบบพกพาไปยังตำแหน่งที่เขียนได้ เช่น แฟลชไดรฟ์ USB หรือโฟลเดอร์ Documents"
   },
   "protectedPdfNoPrint": "สิทธิ์ของเอกสารนี้ไม่อนุญาตให้พิมพ์",
   "share": {

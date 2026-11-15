@@ -1,4 +1,4 @@
-// De standaard-PDF-app: nagaan of Open PDF Studio het is, en wat er gebeurt
+// De standaard-PDF-app: nagaan of HB PDF Studio het is, en wat er gebeurt
 // als de gebruiker op "Als standaard instellen" klikt.
 //
 // De Rust-kant (`default_pdf_app_status`, src-tauri/src/standaard_app.rs)

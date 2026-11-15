@@ -35,7 +35,7 @@
   "printQueue": {
     "toolbarLabel": "Handlinger for udskriftsjob",
     "openInStudio": "Åbn i Studio",
-    "openInStudioTip": "Åbn det valgte job i Open PDF Studio (Enter eller dobbeltklik). Flere valgte job åbnes som ét samlet dokument.",
+    "openInStudioTip": "Åbn det valgte job i HB PDF Studio (Enter eller dobbeltklik). Flere valgte job åbnes som ét samlet dokument.",
     "mergeSelected": "Flet valgte…",
     "mergeSelectedTip": "Flet de valgte job i listens rækkefølge til én PDF og gem den",
     "saveAs": "Gem som…",
@@ -75,11 +75,11 @@
     "adding": "Tilføjer PDF-filer…",
     "saving": "Gemmer…",
     "merging": "Fletter {{done}} af {{count}}…",
-    "opening": "Åbner i Open PDF Studio…",
+    "opening": "Åbner i HB PDF Studio…",
     "deleting": "Sletter…",
     "saved": "Gemt som {{name}}",
     "merged": "Flettet og gemt som {{name}}",
-    "opened": "Åbnet i Open PDF Studio",
+    "opened": "Åbnet i HB PDF Studio",
     "deleted": "Slettet: {{count}}",
     "failed": "Mislykkedes: {{message}}",
     "mergedFileName": "Flettet",
@@ -452,7 +452,7 @@
   },
   "update": {
     "title": "Softwareopdatering",
-    "newVersionAvailable": "En ny version af Open PDF Studio er tilgængelig.",
+    "newVersionAvailable": "En ny version af HB PDF Studio er tilgængelig.",
     "currentVersion": "Nuværende version:",
     "newVersion": "Ny version:",
     "releaseNotes": "Udgivelsesnoter:",
@@ -616,7 +616,7 @@
   },
   "defaultPdfApp": {
     "title": "Standard PDF-app",
-    "message": "Open PDF Studio er ikke angivet som standardapp til at åbne PDF-filer. Vil du angive det som standard?",
+    "message": "HB PDF Studio er ikke angivet som standardapp til at åbne PDF-filer. Vil du angive det som standard?",
     "setAsDefault": "Angiv som standard",
     "dontAskAgain": "Spørg ikke igen",
     "notNow": "Ikke nu"
@@ -1322,7 +1322,7 @@
   },
   "recovery": {
     "title": "Gendan ikke-gemt arbejde",
-    "intro": "Open PDF Studio blev ikke lukket normalt sidste gang. Ikke-gemt arbejde er bevaret for disse dokumenter:",
+    "intro": "HB PDF Studio blev ikke lukket normalt sidste gang. Ikke-gemt arbejde er bevaret for disse dokumenter:",
     "savedAt": "Bevaret {{time}}",
     "pages": "Sider: {{count}}",
     "untitled": "Dokument uden navn",
@@ -1343,7 +1343,7 @@
     "deleteFailed": "Sletning mislykkedes: {{error}}",
     "tabLabel": "gendannet",
     "tabTip": "Gendannet efter en uventet lukning. Gem skriver til den oprindelige fil.",
-    "reloadStopped": "Open PDF Studio-vinduet holdt op med at fungere flere gange i træk og genindlæses ikke længere automatisk. Gem dit arbejde, og genstart appen."
+    "reloadStopped": "HB PDF Studio-vinduet holdt op med at fungere flere gange i træk og genindlæses ikke længere automatisk. Gem dit arbejde, og genstart appen."
   },
   "protectPdf": {
     "title": "Dokumentsikkerhed",
@@ -1919,7 +1919,7 @@
       "routing": "Routing",
       "howToRespond": "Reply to this mail with \"Approved\" or \"Rejected\" and keep {{ref}} in the subject.",
       "howToSign": "Signers: return the signed PDF and keep {{ref}} in the file name.",
-      "disclaimer": "The SHA-256 above identifies the exact document version. This mail was prepared in Open PDF Studio; it is not a legally binding signature service and does not verify identities."
+      "disclaimer": "The SHA-256 above identifies the exact document version. This mail was prepared in HB PDF Studio; it is not a legally binding signature service and does not verify identities."
     },
     "errors": {
       "CONFIGURE_ADAPTER_FIRST": "Enable the provider first.",

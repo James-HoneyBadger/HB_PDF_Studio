@@ -36,14 +36,10 @@ test('test.res wordt niet meer via rustflags gelinkt (dat raakte elk build-scrip
   }
 });
 
-test('build.rs linkt test.res alleen voor de GNU-toolchain, vanaf CARGO_MANIFEST_DIR', () => {
+test('build.rs permits only Linux AArch64 desktop and Android targets', () => {
   const bron = readFileSync(join(tauri, 'build.rs'), 'utf8');
-  const start = bron.indexOf('if target == "x86_64-pc-windows-gnu"');
-  assert.ok(start >= 0, 'GNU-tak ontbreekt in build.rs');
-  const eind = bron.indexOf('tauri_build::build()', start);
-  const tak = bron.slice(start, eind >= 0 ? eind : undefined);
-  assert.match(tak, /CARGO_MANIFEST_DIR/);
-  assert.match(tak, /join\("test\.res"\)/);
-  assert.match(tak, /cargo:rustc-link-arg=\{\}/);
-  assert.ok(existsSync(join(tauri, 'test.res')), 'src-tauri/test.res hoort bij de repo');
+  assert.match(bron, /"aarch64-unknown-linux-gnu" => copy_pdfium_worker/);
+  assert.match(bron, /target\.starts_with\("aarch64-linux-android"\)/);
+  assert.match(bron, /desktop builds only support Linux AArch64/);
+  assert.doesNotMatch(bron, /windows-gnu|mapi32|open_pdf_thumbnails/);
 });

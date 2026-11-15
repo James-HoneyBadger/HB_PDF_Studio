@@ -35,7 +35,7 @@
   "printQueue": {
     "toolbarLabel": "פעולות על עבודות הדפסה",
     "openInStudio": "פתיחה ב-Studio",
-    "openInStudioTip": "פתיחת העבודה שנבחרה ב-Open PDF Studio (Enter או לחיצה כפולה). כמה עבודות שנבחרו ייפתחו כמסמך ממוזג אחד.",
+    "openInStudioTip": "פתיחת העבודה שנבחרה ב-HB PDF Studio (Enter או לחיצה כפולה). כמה עבודות שנבחרו ייפתחו כמסמך ממוזג אחד.",
     "mergeSelected": "מיזוג הנבחרים…",
     "mergeSelectedTip": "מיזוג העבודות שנבחרו, לפי סדר הרשימה, לקובץ PDF אחד ושמירתו",
     "saveAs": "שמירה בשם…",
@@ -75,11 +75,11 @@
     "adding": "מוסיף קובצי PDF…",
     "saving": "שומר…",
     "merging": "ממזג {{done}} מתוך {{count}}…",
-    "opening": "פותח ב-Open PDF Studio…",
+    "opening": "פותח ב-HB PDF Studio…",
     "deleting": "מוחק…",
     "saved": "נשמר בשם {{name}}",
     "merged": "מוזג ונשמר בשם {{name}}",
-    "opened": "נפתח ב-Open PDF Studio",
+    "opened": "נפתח ב-HB PDF Studio",
     "deleted": "נמחקו: {{count}}",
     "failed": "נכשל: {{message}}",
     "mergedFileName": "ממוזג",
@@ -452,7 +452,7 @@
   },
   "update": {
     "title": "עדכון תוכנה",
-    "newVersionAvailable": "גרסה חדשה של Open PDF Studio זמינה.",
+    "newVersionAvailable": "גרסה חדשה של HB PDF Studio זמינה.",
     "currentVersion": "גרסה נוכחית:",
     "newVersion": "גרסה חדשה:",
     "releaseNotes": "הערות שחרור:",
@@ -616,7 +616,7 @@
   },
   "defaultPdfApp": {
     "title": "יישום PDF ברירת מחדל",
-    "message": "Open PDF Studio אינו מוגדר כיישום ברירת המחדל לפתיחת קבצי PDF. האם ברצונך להגדיר אותו כברירת מחדל?",
+    "message": "HB PDF Studio אינו מוגדר כיישום ברירת המחדל לפתיחת קבצי PDF. האם ברצונך להגדיר אותו כברירת מחדל?",
     "setAsDefault": "הגדר כברירת מחדל",
     "dontAskAgain": "אל תשאל שוב",
     "notNow": "לא כעת"
@@ -1322,7 +1322,7 @@
   },
   "recovery": {
     "title": "שחזור עבודה שלא נשמרה",
-    "intro": "Open PDF Studio לא נסגר כרגיל בפעם הקודמת. עבודה שלא נשמרה במסמכים אלה נשמרה בצד:",
+    "intro": "HB PDF Studio לא נסגר כרגיל בפעם הקודמת. עבודה שלא נשמרה במסמכים אלה נשמרה בצד:",
     "savedAt": "נשמר ב-{{time}}",
     "pages": "עמודים: {{count}}",
     "untitled": "מסמך ללא שם",
@@ -1343,7 +1343,7 @@
     "deleteFailed": "המחיקה נכשלה: {{error}}",
     "tabLabel": "שוחזר",
     "tabTip": "שוחזר לאחר סגירה בלתי צפויה. השמירה כותבת לקובץ המקורי.",
-    "reloadStopped": "החלון של Open PDF Studio הפסיק לפעול כמה פעמים ברציפות ואינו נטען עוד מחדש באופן אוטומטי. שמור את עבודתך והפעל מחדש את היישום."
+    "reloadStopped": "החלון של HB PDF Studio הפסיק לפעול כמה פעמים ברציפות ואינו נטען עוד מחדש באופן אוטומטי. שמור את עבודתך והפעל מחדש את היישום."
   },
   "protectPdf": {
     "title": "אבטחת מסמך",
@@ -1919,7 +1919,7 @@
       "routing": "Routing",
       "howToRespond": "Reply to this mail with \"Approved\" or \"Rejected\" and keep {{ref}} in the subject.",
       "howToSign": "Signers: return the signed PDF and keep {{ref}} in the file name.",
-      "disclaimer": "The SHA-256 above identifies the exact document version. This mail was prepared in Open PDF Studio; it is not a legally binding signature service and does not verify identities."
+      "disclaimer": "The SHA-256 above identifies the exact document version. This mail was prepared in HB PDF Studio; it is not a legally binding signature service and does not verify identities."
     },
     "errors": {
       "CONFIGURE_ADAPTER_FIRST": "Enable the provider first.",

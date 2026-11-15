@@ -1,6 +1,6 @@
-# Open PDF Studio for Claude Desktop
+# HB PDF Studio for Claude Desktop
 
-Connects Claude to [Open PDF Studio](https://open-aec.com/open-pdf-studio/),
+Connects Claude to [HB PDF Studio](https://open-aec.com/open-pdf-studio/),
 the free, open-source PDF editor for the construction industry. Claude can open
 PDF drawings, navigate pages, place scale regions, measure areas and lengths,
 create and edit annotations, cut vector snippets from one drawing into another,
@@ -11,17 +11,17 @@ Everything runs on your own computer: the extension talks to the app on
 
 ## Setup
 
-1. Install Open PDF Studio (Windows, macOS, Linux) from
+1. Install HB PDF Studio (Windows, macOS, Linux) from
    [open-aec.com](https://open-aec.com/open-pdf-studio/#download).
 2. The AI link is on by default. To check it, open **Settings > General >
-   AI link (MCP)** in Open PDF Studio: *Allow AI assistants to operate this
+   AI link (MCP)** in HB PDF Studio: *Allow AI assistants to operate this
    app* is ticked and the status line shows *Active on 127.0.0.1:9223*.
 3. Install this extension in Claude Desktop (double-click
    `open-pdf-studio.mcpb`, or add it under **Settings > Extensions**).
 4. If you changed the port in the app, set the same port in the extension's
    settings.
 
-Keep Open PDF Studio running while you work with Claude. When the app is not
+Keep HB PDF Studio running while you work with Claude. When the app is not
 running, the tools still appear in Claude, and a tool call tells you to start
 the app and check the AI link.
 
@@ -59,7 +59,7 @@ title block fields by name and asks before saving.
 
 ## Troubleshooting
 
-- **"Open PDF Studio is not reachable"** — start the app and check
+- **"HB PDF Studio is not reachable"** — start the app and check
   Settings > General > AI link (MCP) (on by default). Check that the port matches.
 - **"Not started: … address in use"** in the app's status line — another
   program uses the port. Pick another port in the app and in the extension.
@@ -69,10 +69,10 @@ title block fields by name and asks before saving.
 The full policy is published at
 <https://open-aec.com/open-pdf-studio/privacy/>. In short:
 
-- **Data collection.** Neither this extension nor Open PDF Studio collects
+- **Data collection.** Neither this extension nor HB PDF Studio collects
   personal data, telemetry or usage statistics.
 - **Use and storage.** The extension only relays requests between Claude
-  Desktop and Open PDF Studio on your own computer (`127.0.0.1`). Your PDF
+  Desktop and HB PDF Studio on your own computer (`127.0.0.1`). Your PDF
   files stay on your computer; the extension stores nothing.
 - **Third-party sharing.** We share nothing with third parties. What Claude
   asks the app for — for example a picture of the current page view, a list

@@ -110,7 +110,7 @@
     "readOnly": {
       "title": "Opened read-only",
       "kenmerk": "{{name}} is read-only: it has the read-only attribute, or you only have read permission on this location.",
-      "in-gebruik": "{{name}} is open in another application or is being synchronized, so Open PDF Studio cannot reserve it.",
+      "in-gebruik": "{{name}} is open in another application or is being synchronized, so HB PDF Studio cannot reserve it.",
       "geweigerd": "{{name}} cannot be reserved: Windows denied it.",
       "mislukt": "{{name}} could not be reserved.",
       "saveAs": "It has been opened read-only. You can make changes; use Save As to save them to another file."
@@ -118,7 +118,7 @@
   },
   "hostOpenFailed": "Fișierul nu a putut fi citit din spațiul de stocare. Încercați din nou.",
   "hostInvalidPdf": "{{name}} nu este un fișier PDF valid și nu a putut fi deschis.",
-  "hostNoContact": "Pagina care conține Open PDF Studio nu răspunde, așa că fișierele nu pot fi deschise sau salvate. Reîncărcați pagina și încercați din nou.",
+  "hostNoContact": "Pagina care conține HB PDF Studio nu răspunde, așa că fișierele nu pot fi deschise sau salvate. Reîncărcați pagina și încercați din nou.",
   "hostSaveConflict": "Altcineva a salvat acest fișier între timp. Modificările dvs. au fost salvate ca o copie separată: {{name}}. Salvările următoare vor merge în acea copie.",
   "hostSaveNotLocked": "Acest fișier nu este rezervat pentru dvs., deci alții îl pot modifica în același timp. Modificările dvs. sunt salvate ca versiuni noi; nimic nu este suprascris.",
   "hostReadOnlySave": "Acest fișier este deschis doar pentru citire, deci modificările nu pot fi salvate în el. Folosiți Salvare ca pentru a descărca o copie.",
@@ -162,7 +162,7 @@
   "failedToReplacePage": "Pagina nu a putut fi înlocuită: {{error}}",
   "failedToMergeFile": "Îmbinarea a eșuat: {{file}}\n{{error}}",
   "invalidPageRange": "Interval de pagini invalid. Introduceti numere de pagina valide.",
-  "appName": "Open PDF Studio",
+  "appName": "HB PDF Studio",
   "noDocuments": "Niciun PDF selectat",
   "noDocumentsHint": "Faceti clic pe \"Deschide PDF\" pentru a naviga si adnota un PDF",
   "solid": "Continuu",
@@ -350,7 +350,7 @@
     "fileAssoc": "Această copie portabilă nu este înregistrată în Windows. Pentru a deschide fișiere PDF cu ea, faceți clic dreapta pe un PDF, alegeți Deschidere cu > Alegeți altă aplicație și selectați open-pdf-studio.exe din acest folder.",
     "explorerThumbnails": "Miniaturile PDF din Explorer sunt disponibile doar în versiunea instalată.",
     "virtualPrinter": "Imprimanta virtuală este disponibilă doar în versiunea instalată: este adăugată în Windows cu drepturi de administrator.",
-    "notWritable": "Open PDF Studio nu poate scrie în folderul {{dir}}, așa că de data aceasta setările sunt salvate în profilul dvs. de utilizator. Mutați folderul portabil într-o locație în care se poate scrie, de exemplu un stick USB sau folderul Documente."
+    "notWritable": "HB PDF Studio nu poate scrie în folderul {{dir}}, așa că de data aceasta setările sunt salvate în profilul dvs. de utilizator. Mutați folderul portabil într-o locație în care se poate scrie, de exemplu un stick USB sau folderul Documente."
   },
   "protectedPdfNoPrint": "Drepturile acestui document nu permit tipărirea.",
   "share": {

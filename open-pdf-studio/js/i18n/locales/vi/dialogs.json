@@ -35,7 +35,7 @@
   "printQueue": {
     "toolbarLabel": "Thao tác với lệnh in",
     "openInStudio": "Mở trong Studio",
-    "openInStudioTip": "Mở lệnh in đã chọn trong Open PDF Studio (Enter hoặc nhấp đúp). Nhiều lệnh in được chọn sẽ mở thành một tài liệu đã gộp.",
+    "openInStudioTip": "Mở lệnh in đã chọn trong HB PDF Studio (Enter hoặc nhấp đúp). Nhiều lệnh in được chọn sẽ mở thành một tài liệu đã gộp.",
     "mergeSelected": "Gộp mục đã chọn…",
     "mergeSelectedTip": "Gộp các lệnh in đã chọn, theo thứ tự trong danh sách, thành một PDF và lưu lại",
     "saveAs": "Lưu thành…",
@@ -75,11 +75,11 @@
     "adding": "Đang thêm tệp PDF…",
     "saving": "Đang lưu…",
     "merging": "Đang gộp {{done}}/{{count}}…",
-    "opening": "Đang mở trong Open PDF Studio…",
+    "opening": "Đang mở trong HB PDF Studio…",
     "deleting": "Đang xóa…",
     "saved": "Đã lưu thành {{name}}",
     "merged": "Đã gộp và lưu thành {{name}}",
-    "opened": "Đã mở trong Open PDF Studio",
+    "opened": "Đã mở trong HB PDF Studio",
     "deleted": "Đã xóa: {{count}}",
     "failed": "Thất bại: {{message}}",
     "mergedFileName": "Đã gộp",
@@ -452,7 +452,7 @@
   },
   "update": {
     "title": "Cập nhật Phần mềm",
-    "newVersionAvailable": "Đã có phiên bản mới của Open PDF Studio.",
+    "newVersionAvailable": "Đã có phiên bản mới của HB PDF Studio.",
     "currentVersion": "Phiên bản hiện tại:",
     "newVersion": "Phiên bản mới:",
     "releaseNotes": "Ghi chú Phát hành:",
@@ -616,7 +616,7 @@
   },
   "defaultPdfApp": {
     "title": "Ứng dụng PDF Mặc định",
-    "message": "Open PDF Studio chưa được đặt làm ứng dụng mặc định để mở tệp PDF. Bạn có muốn đặt làm mặc định không?",
+    "message": "HB PDF Studio chưa được đặt làm ứng dụng mặc định để mở tệp PDF. Bạn có muốn đặt làm mặc định không?",
     "setAsDefault": "Đặt làm Mặc định",
     "dontAskAgain": "Không Hỏi lại",
     "notNow": "Không phải Bây giờ"
@@ -1322,7 +1322,7 @@
   },
   "recovery": {
     "title": "Khôi phục công việc chưa lưu",
-    "intro": "Lần trước Open PDF Studio không được đóng bình thường. Công việc chưa lưu của các tài liệu này đã được giữ lại:",
+    "intro": "Lần trước HB PDF Studio không được đóng bình thường. Công việc chưa lưu của các tài liệu này đã được giữ lại:",
     "savedAt": "Giữ lại lúc {{time}}",
     "pages": "Số trang: {{count}}",
     "untitled": "Tài liệu không tên",
@@ -1343,7 +1343,7 @@
     "deleteFailed": "Xóa không thành công: {{error}}",
     "tabLabel": "đã khôi phục",
     "tabTip": "Đã khôi phục sau khi đóng bất ngờ. Lưu sẽ ghi vào tệp gốc.",
-    "reloadStopped": "Cửa sổ Open PDF Studio đã ngừng hoạt động nhiều lần liên tiếp và sẽ không còn được tải lại tự động. Hãy lưu công việc và khởi động lại ứng dụng."
+    "reloadStopped": "Cửa sổ HB PDF Studio đã ngừng hoạt động nhiều lần liên tiếp và sẽ không còn được tải lại tự động. Hãy lưu công việc và khởi động lại ứng dụng."
   },
   "protectPdf": {
     "title": "Bảo mật tài liệu",
@@ -1919,7 +1919,7 @@
       "routing": "Routing",
       "howToRespond": "Reply to this mail with \"Approved\" or \"Rejected\" and keep {{ref}} in the subject.",
       "howToSign": "Signers: return the signed PDF and keep {{ref}} in the file name.",
-      "disclaimer": "The SHA-256 above identifies the exact document version. This mail was prepared in Open PDF Studio; it is not a legally binding signature service and does not verify identities."
+      "disclaimer": "The SHA-256 above identifies the exact document version. This mail was prepared in HB PDF Studio; it is not a legally binding signature service and does not verify identities."
     },
     "errors": {
       "CONFIGURE_ADAPTER_FIRST": "Enable the provider first.",

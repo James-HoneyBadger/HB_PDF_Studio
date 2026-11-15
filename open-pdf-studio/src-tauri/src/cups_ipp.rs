@@ -378,7 +378,7 @@ pub fn decodeer(bytes: &[u8]) -> Result<Bericht, String> {
 pub fn http_kop(pad: &str, host: &str, lengte: u64) -> String {
     format!(
         "POST {pad} HTTP/1.1\r\nHost: {host}\r\nContent-Type: application/ipp\r\n\
-         Content-Length: {lengte}\r\nConnection: close\r\nUser-Agent: Open PDF Studio\r\n\r\n"
+         Content-Length: {lengte}\r\nConnection: close\r\nUser-Agent: HB PDF Studio\r\n\r\n"
     )
 }
 

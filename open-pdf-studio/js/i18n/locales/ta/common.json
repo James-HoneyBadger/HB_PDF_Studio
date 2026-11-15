@@ -110,7 +110,7 @@
     "readOnly": {
       "title": "Opened read-only",
       "kenmerk": "{{name}} is read-only: it has the read-only attribute, or you only have read permission on this location.",
-      "in-gebruik": "{{name}} is open in another application or is being synchronized, so Open PDF Studio cannot reserve it.",
+      "in-gebruik": "{{name}} is open in another application or is being synchronized, so HB PDF Studio cannot reserve it.",
       "geweigerd": "{{name}} cannot be reserved: Windows denied it.",
       "mislukt": "{{name}} could not be reserved.",
       "saveAs": "It has been opened read-only. You can make changes; use Save As to save them to another file."
@@ -118,7 +118,7 @@
   },
   "hostOpenFailed": "சேமிப்பகத்திலிருந்து கோப்பைப் படிக்க முடியவில்லை. மீண்டும் முயலவும்.",
   "hostInvalidPdf": "{{name}} சரியான PDF கோப்பு அல்ல, அதைத் திறக்க முடியவில்லை.",
-  "hostNoContact": "Open PDF Studio உள்ள பக்கம் பதிலளிக்கவில்லை, எனவே கோப்புகளைத் திறக்கவோ சேமிக்கவோ முடியாது. பக்கத்தை மீண்டும் ஏற்றி மீண்டும் முயலவும்.",
+  "hostNoContact": "HB PDF Studio உள்ள பக்கம் பதிலளிக்கவில்லை, எனவே கோப்புகளைத் திறக்கவோ சேமிக்கவோ முடியாது. பக்கத்தை மீண்டும் ஏற்றி மீண்டும் முயலவும்.",
   "hostSaveConflict": "இதற்கிடையில் வேறொருவர் இந்தக் கோப்பைச் சேமித்துள்ளார். உங்கள் மாற்றங்கள் தனி நகலாகச் சேமிக்கப்பட்டன: {{name}}. அடுத்த சேமிப்புகள் அந்த நகலுக்குச் செல்லும்.",
   "hostSaveNotLocked": "இந்தக் கோப்பு உங்களுக்காக ஒதுக்கப்படவில்லை, எனவே மற்றவர்களும் அதே நேரத்தில் இதை மாற்றலாம். உங்கள் மாற்றங்கள் புதிய பதிப்புகளாகச் சேமிக்கப்படும்; எதுவும் மேலெழுதப்படாது.",
   "hostReadOnlySave": "இந்தக் கோப்பு படிக்க மட்டும் திறக்கப்பட்டுள்ளது, எனவே இதில் மாற்றங்களைச் சேமிக்க முடியாது. நகலைப் பதிவிறக்க \"இவ்வாறு சேமி\" என்பதைப் பயன்படுத்தவும்.",
@@ -162,7 +162,7 @@
   "failedToReplacePage": "பக்கத்தை மாற்ற முடியவில்லை: {{error}}",
   "failedToMergeFile": "ஒன்றிணைக்க முடியவில்லை: {{file}}\n{{error}}",
   "invalidPageRange": "தவறான பக்க வரம்பு. சரியான பக்க எண்களை உள்ளிடவும்.",
-  "appName": "Open PDF Studio",
+  "appName": "HB PDF Studio",
   "noDocuments": "PDF தேர்ந்தெடுக்கப்படவில்லை",
   "noDocumentsHint": "PDF கோப்பை உலாவி குறிப்புரை இட \"PDF திற\" என்பதைக் கிளிக் செய்யவும்",
   "solid": "திடமான",
@@ -350,7 +350,7 @@
     "fileAssoc": "இந்தக் கையடக்க நகல் Windows இல் பதிவு செய்யப்படவில்லை. இதைக் கொண்டு PDF கோப்புகளைத் திறக்க, ஒரு PDF மீது வலது கிளிக் செய்து, Open with > Choose another app என்பதைத் தேர்ந்தெடுத்து, இந்தக் கோப்புறையில் உள்ள open-pdf-studio.exe ஐத் தேர்வுசெய்யவும்.",
     "explorerThumbnails": "File Explorer இல் PDF சிறுபடங்கள் நிறுவப்பட்ட பதிப்பில் மட்டுமே கிடைக்கும்.",
     "virtualPrinter": "மெய்நிகர் அச்சுப்பொறி நிறுவப்பட்ட பதிப்பில் மட்டுமே கிடைக்கும்: இது நிர்வாகி உரிமைகளுடன் Windows இல் சேர்க்கப்படுகிறது.",
-    "notWritable": "Open PDF Studio ஆல் {{dir}} கோப்புறையில் எழுத முடியவில்லை, எனவே இம்முறை உங்கள் அமைப்புகள் உங்கள் பயனர் சுயவிவரத்தில் சேமிக்கப்படுகின்றன. கையடக்கக் கோப்புறையை USB இயக்ககம் அல்லது உங்கள் Documents கோப்புறை போன்ற எழுதக்கூடிய இடத்திற்கு நகர்த்தவும்."
+    "notWritable": "HB PDF Studio ஆல் {{dir}} கோப்புறையில் எழுத முடியவில்லை, எனவே இம்முறை உங்கள் அமைப்புகள் உங்கள் பயனர் சுயவிவரத்தில் சேமிக்கப்படுகின்றன. கையடக்கக் கோப்புறையை USB இயக்ககம் அல்லது உங்கள் Documents கோப்புறை போன்ற எழுதக்கூடிய இடத்திற்கு நகர்த்தவும்."
   },
   "protectedPdfNoPrint": "இந்த ஆவணத்தின் அனுமதிகள் அச்சிட அனுமதிக்கவில்லை.",
   "share": {

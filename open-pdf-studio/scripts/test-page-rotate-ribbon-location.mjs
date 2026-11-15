@@ -8,7 +8,7 @@ try {
     .flatMap(context => context.pages())
     .find(candidate => candidate.url().startsWith('http://localhost:3041'));
 
-  assert.ok(page, 'Open PDF Studio dev page is not available on CDP port 9222');
+  assert.ok(page, 'HB PDF Studio dev page is not available on CDP port 9222');
 
   const original = await page.evaluate(async () => {
     const { activeTab, setActiveTab } = await import('/js/solid/stores/ribbonStore.js');

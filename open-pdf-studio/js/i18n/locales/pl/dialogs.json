@@ -35,7 +35,7 @@
   "printQueue": {
     "toolbarLabel": "Akcje zadań drukowania",
     "openInStudio": "Otwórz w Studio",
-    "openInStudioTip": "Otwórz zaznaczone zadanie w Open PDF Studio (Enter lub dwukrotne kliknięcie). Kilka zaznaczonych zadań otworzy się jako jeden scalony dokument.",
+    "openInStudioTip": "Otwórz zaznaczone zadanie w HB PDF Studio (Enter lub dwukrotne kliknięcie). Kilka zaznaczonych zadań otworzy się jako jeden scalony dokument.",
     "mergeSelected": "Scal zaznaczone…",
     "mergeSelectedTip": "Scal zaznaczone zadania, w kolejności z listy, w jeden plik PDF i zapisz go",
     "saveAs": "Zapisz jako…",
@@ -75,11 +75,11 @@
     "adding": "Dodawanie plików PDF…",
     "saving": "Zapisywanie…",
     "merging": "Scalanie {{done}} z {{count}}…",
-    "opening": "Otwieranie w Open PDF Studio…",
+    "opening": "Otwieranie w HB PDF Studio…",
     "deleting": "Usuwanie…",
     "saved": "Zapisano jako {{name}}",
     "merged": "Scalono i zapisano jako {{name}}",
-    "opened": "Otwarto w Open PDF Studio",
+    "opened": "Otwarto w HB PDF Studio",
     "deleted": "Usunięto: {{count}}",
     "failed": "Niepowodzenie: {{message}}",
     "mergedFileName": "Scalony",
@@ -452,7 +452,7 @@
   },
   "update": {
     "title": "Aktualizacja oprogramowania",
-    "newVersionAvailable": "Dostępna jest nowa wersja Open PDF Studio.",
+    "newVersionAvailable": "Dostępna jest nowa wersja HB PDF Studio.",
     "currentVersion": "Bieżąca wersja:",
     "newVersion": "Nowa wersja:",
     "releaseNotes": "Informacje o wydaniu:",
@@ -616,7 +616,7 @@
   },
   "defaultPdfApp": {
     "title": "Domyślna aplikacja PDF",
-    "message": "Open PDF Studio nie jest ustawiony jako domyślna aplikacja do otwierania plików PDF. Czy chcesz ustawić go jako domyślną aplikację?",
+    "message": "HB PDF Studio nie jest ustawiony jako domyślna aplikacja do otwierania plików PDF. Czy chcesz ustawić go jako domyślną aplikację?",
     "setAsDefault": "Ustaw jako domyślną",
     "dontAskAgain": "Nie pytaj ponownie",
     "notNow": "Nie teraz"
@@ -1322,7 +1322,7 @@
   },
   "recovery": {
     "title": "Odzyskaj niezapisaną pracę",
-    "intro": "Open PDF Studio nie został ostatnio zamknięty prawidłowo. Zachowano niezapisaną pracę z tych dokumentów:",
+    "intro": "HB PDF Studio nie został ostatnio zamknięty prawidłowo. Zachowano niezapisaną pracę z tych dokumentów:",
     "savedAt": "Zachowano {{time}}",
     "pages": "Strony: {{count}}",
     "untitled": "Dokument bez nazwy",
@@ -1343,7 +1343,7 @@
     "deleteFailed": "Usuwanie nie powiodło się: {{error}}",
     "tabLabel": "odzyskany",
     "tabTip": "Odzyskany po nieoczekiwanym zamknięciu. Zapisywanie zapisuje do oryginalnego pliku.",
-    "reloadStopped": "Okno Open PDF Studio kilka razy z rzędu przestało działać i nie jest już automatycznie ponownie ładowane. Zapisz swoją pracę i uruchom aplikację ponownie."
+    "reloadStopped": "Okno HB PDF Studio kilka razy z rzędu przestało działać i nie jest już automatycznie ponownie ładowane. Zapisz swoją pracę i uruchom aplikację ponownie."
   },
   "protectPdf": {
     "title": "Zabezpieczenia dokumentu",
@@ -1919,7 +1919,7 @@
       "routing": "Routing",
       "howToRespond": "Reply to this mail with \"Approved\" or \"Rejected\" and keep {{ref}} in the subject.",
       "howToSign": "Signers: return the signed PDF and keep {{ref}} in the file name.",
-      "disclaimer": "The SHA-256 above identifies the exact document version. This mail was prepared in Open PDF Studio; it is not a legally binding signature service and does not verify identities."
+      "disclaimer": "The SHA-256 above identifies the exact document version. This mail was prepared in HB PDF Studio; it is not a legally binding signature service and does not verify identities."
     },
     "errors": {
       "CONFIGURE_ADAPTER_FIRST": "Enable the provider first.",

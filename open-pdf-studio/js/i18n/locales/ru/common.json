@@ -110,7 +110,7 @@
     "readOnly": {
       "title": "Opened read-only",
       "kenmerk": "{{name}} is read-only: it has the read-only attribute, or you only have read permission on this location.",
-      "in-gebruik": "{{name}} is open in another application or is being synchronized, so Open PDF Studio cannot reserve it.",
+      "in-gebruik": "{{name}} is open in another application or is being synchronized, so HB PDF Studio cannot reserve it.",
       "geweigerd": "{{name}} cannot be reserved: Windows denied it.",
       "mislukt": "{{name}} could not be reserved.",
       "saveAs": "It has been opened read-only. You can make changes; use Save As to save them to another file."
@@ -118,7 +118,7 @@
   },
   "hostOpenFailed": "Не удалось прочитать файл из хранилища. Попробуйте ещё раз.",
   "hostInvalidPdf": "{{name}} не является допустимым PDF-файлом, и его не удалось открыть.",
-  "hostNoContact": "Страница, в которую встроен Open PDF Studio, не отвечает, поэтому файлы нельзя открыть или сохранить. Перезагрузите страницу и попробуйте ещё раз.",
+  "hostNoContact": "Страница, в которую встроен HB PDF Studio, не отвечает, поэтому файлы нельзя открыть или сохранить. Перезагрузите страницу и попробуйте ещё раз.",
   "hostSaveConflict": "Кто-то другой тем временем сохранил этот файл. Ваши изменения сохранены как отдельная копия: {{name}}. Следующие сохранения пойдут в эту копию.",
   "hostSaveNotLocked": "Этот файл не закреплён за вами, поэтому другие могут изменять его одновременно. Ваши изменения сохраняются как новые версии; ничего не перезаписывается.",
   "hostReadOnlySave": "Этот файл открыт только для чтения, поэтому сохранить в нём изменения нельзя. Используйте «Сохранить как», чтобы скачать копию.",
@@ -162,7 +162,7 @@
   "failedToReplacePage": "Не удалось заменить страницу: {{error}}",
   "failedToMergeFile": "Не удалось объединить: {{file}}\n{{error}}",
   "invalidPageRange": "Недопустимый диапазон страниц. Введите корректные номера страниц.",
-  "appName": "Open PDF Studio",
+  "appName": "HB PDF Studio",
   "noDocuments": "PDF не выбран",
   "noDocumentsHint": "Нажмите \"Открыть PDF\", чтобы просмотреть и аннотировать PDF",
   "solid": "Сплошная",
@@ -350,7 +350,7 @@
     "fileAssoc": "Эта портативная копия не зарегистрирована в Windows. Чтобы открывать ею PDF-файлы, щёлкните PDF правой кнопкой мыши, выберите Открыть с помощью > Выбрать другое приложение и укажите open-pdf-studio.exe в этой папке.",
     "explorerThumbnails": "Эскизы PDF в Проводнике доступны только в установленной версии.",
     "virtualPrinter": "Виртуальный принтер доступен только в установленной версии: он добавляется в Windows с правами администратора.",
-    "notWritable": "Open PDF Studio не может записывать в папку {{dir}}, поэтому в этот раз настройки сохраняются в вашем профиле пользователя. Переместите портативную папку в место, доступное для записи, например на USB-накопитель или в папку «Документы»."
+    "notWritable": "HB PDF Studio не может записывать в папку {{dir}}, поэтому в этот раз настройки сохраняются в вашем профиле пользователя. Переместите портативную папку в место, доступное для записи, например на USB-накопитель или в папку «Документы»."
   },
   "protectedPdfNoPrint": "Права этого документа не разрешают печать.",
   "share": {

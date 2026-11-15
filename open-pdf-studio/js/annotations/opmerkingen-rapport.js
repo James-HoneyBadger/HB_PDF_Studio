@@ -129,8 +129,8 @@ export async function bouwOpmerkingenRapport(invoer) {
 
   const pdf = await PDFDocument.create();
   pdf.setTitle(labels.titel);
-  pdf.setCreator('Open PDF Studio');
-  pdf.setProducer('Open PDF Studio');
+  pdf.setCreator('HB PDF Studio');
+  pdf.setProducer('HB PDF Studio');
 
   let fonts = null;
   if (invoer && invoer.kiesFonts) {

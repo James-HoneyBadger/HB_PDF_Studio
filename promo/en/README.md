@@ -1,4 +1,4 @@
-# Open PDF Studio — English promo
+# HB PDF Studio — English promo
 
 A 66-second, 1920 × 1080, 24 fps first cut with English narration, burned-in English captions and an original synthesized music bed.
 
@@ -20,7 +20,7 @@ Follow the same architectural drawing through opening, measurement, annotation a
 | 28–37 | Annotate | Make your mark. |
 | 37–46.5 | Compare | See what changed. |
 | 46.5–57 | Value | No subscription. No watermarks. Open source. |
-| 57–66 | Download | Open PDF Studio. Download it free. |
+| 57–66 | Download | HB PDF Studio. Download it free. |
 
 The complete English narration and scene durations are in `scenes.json`.
 

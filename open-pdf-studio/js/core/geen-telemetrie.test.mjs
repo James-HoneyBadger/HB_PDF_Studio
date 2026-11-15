@@ -130,7 +130,7 @@ test('het statistiekscript komt alleen in de publieke webdeploy', () => {
   assert.ok(!pkg.includes('web-statistics'), 'geen npm-script voegt het toe');
   const conf = JSON.parse(fs.readFileSync(path.join(app, 'src-tauri', 'tauri.conf.json'), 'utf8'));
   assert.ok(!JSON.stringify(conf.build || {}).includes('web-statistics'), 'de Tauri-bouw voegt het niet toe');
-  for (const s of ['pak-webbundel.mjs', 'draagbare-zip.mjs', 'webbundel.mjs']) {
+  for (const s of ['pak-webbundel.mjs', 'webbundel.mjs']) {
     const p = path.join(app, 'scripts', s);
     if (fs.existsSync(p)) assert.ok(!fs.readFileSync(p, 'utf8').includes('web-statistics'), s);
   }

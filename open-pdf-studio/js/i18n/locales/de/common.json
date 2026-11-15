@@ -110,7 +110,7 @@
     "readOnly": {
       "title": "Schreibgeschützt geöffnet",
       "kenmerk": "{{name}} ist schreibgeschützt: Die Datei hat das Attribut „Schreibgeschützt“, oder Sie haben an diesem Ort nur Leserechte.",
-      "in-gebruik": "{{name}} ist in einer anderen App geöffnet oder wird synchronisiert, daher kann Open PDF Studio sie nicht reservieren.",
+      "in-gebruik": "{{name}} ist in einer anderen App geöffnet oder wird synchronisiert, daher kann HB PDF Studio sie nicht reservieren.",
       "geweigerd": "{{name}} kann nicht reserviert werden: Windows hat das verweigert.",
       "mislukt": "{{name}} konnte nicht reserviert werden.",
       "saveAs": "Sie wurde schreibgeschützt geöffnet. Sie können Änderungen vornehmen; speichern Sie sie mit „Speichern unter“ in einer anderen Datei."
@@ -118,7 +118,7 @@
   },
   "hostOpenFailed": "Die Datei konnte nicht aus dem Speicher gelesen werden. Versuchen Sie es erneut.",
   "hostInvalidPdf": "{{name}} ist keine gültige PDF-Datei und konnte nicht geöffnet werden.",
-  "hostNoContact": "Die Seite um Open PDF Studio antwortet nicht, daher können Dateien nicht geöffnet oder gespeichert werden. Laden Sie die Seite neu und versuchen Sie es erneut.",
+  "hostNoContact": "Die Seite um HB PDF Studio antwortet nicht, daher können Dateien nicht geöffnet oder gespeichert werden. Laden Sie die Seite neu und versuchen Sie es erneut.",
   "hostSaveConflict": "Jemand anderes hat diese Datei inzwischen gespeichert. Ihre Änderungen wurden als separate Kopie gespeichert: {{name}}. Weitere Speichervorgänge gehen in diese Kopie.",
   "hostSaveNotLocked": "Diese Datei ist nicht für Sie reserviert, andere können sie also gleichzeitig ändern. Ihre Änderungen werden als neue Versionen gespeichert; nichts wird überschrieben.",
   "hostReadOnlySave": "Diese Datei ist schreibgeschützt geöffnet, Änderungen können nicht darin gespeichert werden. Verwenden Sie „Speichern unter“, um eine Kopie herunterzuladen.",
@@ -162,7 +162,7 @@
   "failedToReplacePage": "Seite konnte nicht ersetzt werden: {{error}}",
   "failedToMergeFile": "Zusammenführen fehlgeschlagen: {{file}}\n{{error}}",
   "invalidPageRange": "Ungültiger Seitenbereich. Bitte geben Sie gültige Seitennummern ein.",
-  "appName": "Open PDF Studio",
+  "appName": "HB PDF Studio",
   "noDocuments": "Kein PDF ausgewählt",
   "noDocumentsHint": "Klicken Sie auf „PDF öffnen“, um ein PDF anzuzeigen und zu kommentieren",
   "solid": "Durchgezogen",
@@ -350,7 +350,7 @@
     "fileAssoc": "Diese portable Version ist nicht bei Windows registriert. Um PDF-Dateien damit zu öffnen, klicken Sie mit der rechten Maustaste auf eine PDF, wählen Sie Öffnen mit > Andere App auswählen und wählen Sie open-pdf-studio.exe in diesem Ordner.",
     "explorerThumbnails": "PDF-Miniaturansichten im Datei-Explorer sind nur in der installierten Version verfügbar.",
     "virtualPrinter": "Der virtuelle Drucker ist nur in der installierten Version verfügbar: Er wird mit Administratorrechten zu Windows hinzugefügt.",
-    "notWritable": "Open PDF Studio kann nicht in den Ordner {{dir}} schreiben, daher werden Ihre Einstellungen diesmal in Ihrem Benutzerprofil gespeichert. Verschieben Sie den portablen Ordner an einen beschreibbaren Ort, z. B. einen USB-Stick oder Ihren Ordner Dokumente."
+    "notWritable": "HB PDF Studio kann nicht in den Ordner {{dir}} schreiben, daher werden Ihre Einstellungen diesmal in Ihrem Benutzerprofil gespeichert. Verschieben Sie den portablen Ordner an einen beschreibbaren Ort, z. B. einen USB-Stick oder Ihren Ordner Dokumente."
   },
   "protectedPdfNoPrint": "Die Berechtigungen dieses Dokuments erlauben kein Drucken.",
   "share": {

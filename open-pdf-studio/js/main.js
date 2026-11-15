@@ -119,8 +119,6 @@ import { startHostVoorkeuren } from './core/host-voorkeuren-start.js';
 import { installeerWorkerShim } from './core/blob-worker.js';
 import { installeerWerkmapDialogen } from './core/openaec-omgeving.js';
 import { sneltoetsActief } from './core/keybindings/app-shortcuts.js';
-// Verkenner-rechtermuisknop Combineren / Omzetten naar PDF (#945): luistert vanaf de start.
-import { startShellActies } from './core/shell-acties.js';
 
 // Open PDF files: tabs created instantly, loads serialized through ONE global
 // queue - also across separate openFiles() calls (the Windows single-instance
@@ -253,20 +251,7 @@ async function init() {
   import('./core/app-version.js').then((m) => m.initDevVersionSync()).catch(() => {});
   const mobile = isMobile();
 
-  // STANDALONE PRINT-QUEUE WINDOW (?view=printqueue): a separate Tauri window
-  // opened by the print-catch watcher. Renders ONLY the catch/merge UI — no
-  // ribbon, no document workspace, no worker pool usage — so it works as its
-  // own window beside the main app instead of as an integrated dialog.
-  if (new URLSearchParams(location.search).get('view') === 'printqueue') {
-    if (!mobile) disableDefaultContextMenu();
-    try { await loadPreferences(); } catch (_) {}
-    const { default: PrintQueueWindow } = await import('./solid/components/PrintQueueWindow.jsx');
-    render(() => PrintQueueWindow(), document.getElementById('app-root'));
-    recordStartupDiagnostic('frontend-ready');
-    return;
-  }
-
-  // Disable context menu on desktop only (long-press is expected on mobile)
+    // Disable context menu on desktop only (long-press is expected on mobile)
   if (!mobile) {
     disableDefaultContextMenu();
   }
@@ -347,20 +332,6 @@ async function init() {
     import('./mcp-bridge.js')
       .then(m => m.initMcpBridge())
       .catch(e => console.warn('initMcpBridge failed:', e));
-  }
-
-  // "Open PDF Printer" job queue: watch the spool so prints from ANY
-  // application pop the in-app sort/merge dialog. No-op when the virtual
-  // printer isn't installed.
-  if (taakToegestaan('printwachtrij', rol)) {
-    import('./solid/stores/printQueueStore.js')
-      .then(m => m.startPrintQueueWatcher())
-      .catch(() => {});
-    // The printer window ("Open printer settings") asks this window to show
-    // the Virtual printer tab of the preferences.
-    import('./solid/stores/printQueueStore.js')
-      .then(m => m.listenForPrinterSettingsRequests())
-      .catch(() => {});
   }
 
   // Lazy-load printer enumeration so the print dialog shows the OS default
@@ -450,7 +421,6 @@ async function init() {
   }
   pendingOpenFiles = [];
   appReady = true;
-  startShellActies({ openFiles }).catch(e => console.warn('[shell-action] failed:', e));
 
   // Als gast in de OpenAEC-site: het document dat de site meegeeft openen
   // via het opslagcontract van de site (#546). Zonder contract gebeurt niets.

@@ -29,7 +29,7 @@ pub(crate) fn pdfium() -> Result<&'static Pdfium> {
         //      in Contents/Resources staat;
         //   4. ../lib/<productName> t.o.v. de binary — de .deb en de AppImage
         //      zetten de sidecar in usr/bin en de resources (libpdfium.so) in
-        //      usr/lib/Open PDF Studio, Tauri's resource_dir op Linux (#923);
+        //      usr/lib/HB PDF Studio, Tauri's resource_dir op Linux (#923);
         //   5. de huidige werkdirectory (dev / handmatige runs).
         // Zonder 2-4 zou de worker op macOS/Linux geen bibliotheek vinden;
         // Ready komt dan nooit en de app rendert alles in-proc.
@@ -38,14 +38,14 @@ pub(crate) fn pdfium() -> Result<&'static Pdfium> {
             .and_then(|p| p.parent().map(std::path::Path::to_path_buf))
             .unwrap_or_else(|| std::path::PathBuf::from("."));
         let res_dir = exe_dir.join("../Resources");
-        let linux_res_dir = exe_dir.join("../lib/Open PDF Studio");
+        let linux_res_dir = exe_dir.join("../lib/HB PDF Studio");
         let bindings = Pdfium::bind_to_system_library()
             .or_else(|_| Pdfium::bind_to_library(Pdfium::pdfium_platform_library_name_at_path(&exe_dir)))
             .or_else(|_| Pdfium::bind_to_library(Pdfium::pdfium_platform_library_name_at_path(&res_dir)))
             .or_else(|_| Pdfium::bind_to_library(Pdfium::pdfium_platform_library_name_at_path(&linux_res_dir)))
             .or_else(|_| Pdfium::bind_to_library(Pdfium::pdfium_platform_library_name_at_path("./")))
             .or_else(|e| test_library().map_or(Err(e), Pdfium::bind_to_library))
-            .context("PDFium library not found (system, exe-dir, ../Resources, ../lib/Open PDF Studio, or ./)")?;
+            .context("PDFium library not found (system, exe-dir, ../Resources, ../lib/HB PDF Studio, or ./)")?;
         let _ = PDFIUM.set(Pdfium::new(bindings));
     }
     Ok(PDFIUM.get().expect("PDFIUM set above"))
@@ -56,16 +56,9 @@ pub(crate) fn pdfium() -> Result<&'static Pdfium> {
 /// draaien. Buiten tests nooit.
 #[cfg(test)]
 fn test_library() -> Option<std::path::PathBuf> {
-    let platform = if cfg!(windows) {
-        if cfg!(target_arch = "aarch64") { "win-arm64" } else { "win-x64" }
-    } else if cfg!(target_os = "macos") {
-        "macos-universal"
-    } else {
-        "linux-x64"
-    };
     let dir = std::path::Path::new(env!("CARGO_MANIFEST_DIR"))
         .join("../open-pdf-studio/src-tauri/binaries")
-        .join(platform);
+        .join("linux-arm64");
     Some(Pdfium::pdfium_platform_library_name_at_path(&dir)).filter(|p| p.exists())
 }
 

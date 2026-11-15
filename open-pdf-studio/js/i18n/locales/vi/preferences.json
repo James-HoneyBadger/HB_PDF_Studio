@@ -204,19 +204,19 @@
   "fileAssoc": {
     "defaultPdfApplication": "Ứng dụng PDF Mặc định",
     "currentDefault": "Mặc định hiện tại:",
-    "setDefault": "Đặt Open PDF Studio làm Trình xem PDF Mặc định",
-    "setDefaultHelp": "Thao tác này sẽ mở cài đặt hệ thống nơi bạn có thể chọn Open PDF Studio làm ứng dụng mặc định để mở tệp PDF.",
-    "windowsInstructions": "Đã mở Cài đặt Windows.\n\nĐể đặt Open PDF Studio làm mặc định:\n1. Cuộn xuống \"Chọn ứng dụng mặc định theo loại tệp\"\n2. Tìm .pdf\n3. Nhấp và chọn Open PDF Studio",
+    "setDefault": "Đặt HB PDF Studio làm Trình xem PDF Mặc định",
+    "setDefaultHelp": "Thao tác này sẽ mở cài đặt hệ thống nơi bạn có thể chọn HB PDF Studio làm ứng dụng mặc định để mở tệp PDF.",
+    "windowsInstructions": "Đã mở Cài đặt Windows.\n\nĐể đặt HB PDF Studio làm mặc định:\n1. Cuộn xuống \"Chọn ứng dụng mặc định theo loại tệp\"\n2. Tìm .pdf\n3. Nhấp và chọn HB PDF Studio",
     "windowsFailed": "Không thể mở Cài đặt Windows.\n\nVui lòng mở thủ công Cài đặt > Ứng dụng > Ứng dụng Mặc định.",
-    "macInstructions": "Để đặt Open PDF Studio làm trình xem PDF mặc định trên macOS:\n\n1. Nhấp chuột phải vào bất kỳ tệp PDF nào trong Finder\n2. Chọn \"Lấy Thông tin\"\n3. Trong \"Mở bằng\", chọn Open PDF Studio\n4. Nhấp \"Thay đổi Tất cả...\"",
-    "linuxInstructions": "Để đặt Open PDF Studio làm trình xem PDF mặc định trên Linux:\n\nChạy trong terminal:\nxdg-mime default openpdfstudio.desktop application/pdf",
+    "macInstructions": "Để đặt HB PDF Studio làm trình xem PDF mặc định trên macOS:\n\n1. Nhấp chuột phải vào bất kỳ tệp PDF nào trong Finder\n2. Chọn \"Lấy Thông tin\"\n3. Trong \"Mở bằng\", chọn HB PDF Studio\n4. Nhấp \"Thay đổi Tất cả...\"",
+    "linuxInstructions": "Để đặt HB PDF Studio làm trình xem PDF mặc định trên Linux:\n\nChạy trong terminal:\nxdg-mime default openpdfstudio.desktop application/pdf",
     "checkFinder": "Kiểm tra Finder > Lấy Thông tin",
     "notSet": "Chưa đặt",
     "chosenInSystemSettings": "Đã chọn trong cài đặt hệ thống",
-    "sandboxInstructions": "Open PDF Studio đang chạy dưới dạng gói {{package}} và không thể tự thay đổi ứng dụng PDF mặc định.\n\nHãy chọn Open PDF Studio trong cài đặt hệ thống ở mục Ứng dụng mặc định, hoặc nhấp chuột phải vào tệp PDF và dùng Mở bằng.",
-    "xdgMimeMissing": "xdg-mime (gói xdg-utils) chưa được cài đặt, vì vậy không thể đặt ứng dụng PDF mặc định từ đây.\n\nHãy cài đặt xdg-utils, hoặc chọn Open PDF Studio trong cài đặt hệ thống ở mục Ứng dụng mặc định.",
-    "linuxDone": "Open PDF Studio hiện là ứng dụng mặc định cho tệp PDF.",
-    "linuxFailed": "Không thể đặt Open PDF Studio làm ứng dụng PDF mặc định.\n\n{{error}}"
+    "sandboxInstructions": "HB PDF Studio đang chạy dưới dạng gói {{package}} và không thể tự thay đổi ứng dụng PDF mặc định.\n\nHãy chọn HB PDF Studio trong cài đặt hệ thống ở mục Ứng dụng mặc định, hoặc nhấp chuột phải vào tệp PDF và dùng Mở bằng.",
+    "xdgMimeMissing": "xdg-mime (gói xdg-utils) chưa được cài đặt, vì vậy không thể đặt ứng dụng PDF mặc định từ đây.\n\nHãy cài đặt xdg-utils, hoặc chọn HB PDF Studio trong cài đặt hệ thống ở mục Ứng dụng mặc định.",
+    "linuxDone": "HB PDF Studio hiện là ứng dụng mặc định cho tệp PDF.",
+    "linuxFailed": "Không thể đặt HB PDF Studio làm ứng dụng PDF mặc định.\n\n{{error}}"
   },
   "explorerThumbnails": {
     "title": "Trình khám phá tệp",
@@ -226,7 +226,7 @@
     "otherHandler": "Hình thu nhỏ PDF hiện do {{name}} cung cấp.",
     "defaultApp": "Ứng dụng PDF mặc định của bạn hiển thị hình thu nhỏ riêng ({{name}}). Windows dùng chúng chừng nào ứng dụng đó còn là ứng dụng PDF mặc định của bạn.",
     "replaceTitle": "Hình thu nhỏ PDF",
-    "replaceConfirm": "{{name}} đã cung cấp hình thu nhỏ PDF trong Trình khám phá tệp.\n\nHiển thị hình thu nhỏ của Open PDF Studio thay thế cho tài khoản Windows của bạn? Tắt tùy chọn này sẽ khôi phục hình thu nhỏ trước đó.",
+    "replaceConfirm": "{{name}} đã cung cấp hình thu nhỏ PDF trong Trình khám phá tệp.\n\nHiển thị hình thu nhỏ của HB PDF Studio thay thế cho tài khoản Windows của bạn? Tắt tùy chọn này sẽ khôi phục hình thu nhỏ trước đó.",
     "failed": "Không thể thay đổi thiết lập hình thu nhỏ của Trình khám phá tệp."
   },
   "virtualPrinter": {
@@ -251,7 +251,7 @@
     "stateUnknownDetail": "Không thể đọc trạng thái máy in.",
     "howTitle": "Cách hoạt động",
     "how1": "Trong bất kỳ chương trình nào, chọn In và chọn {{printer}}.",
-    "how2": "Bản in xuất hiện trong cửa sổ máy in của Open PDF Studio.",
+    "how2": "Bản in xuất hiện trong cửa sổ máy in của HB PDF Studio.",
     "how3": "Xem trước, sắp xếp lại, gộp và lưu các lệnh in thành một PDF, hoặc mở chúng trong Studio.",
     "openWindow": "Mở cửa sổ máy in",
     "openWindowTip": "Hiển thị các lệnh in đã bắt được"

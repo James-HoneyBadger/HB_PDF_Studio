@@ -35,7 +35,7 @@
   "printQueue": {
     "toolbarLabel": "عملیات کارهای چاپ",
     "openInStudio": "باز کردن در Studio",
-    "openInStudioTip": "باز کردن کار انتخاب‌شده در Open PDF Studio (Enter یا دوبار کلیک). اگر چند کار انتخاب شده باشد، به‌صورت یک سند ادغام‌شده باز می‌شوند.",
+    "openInStudioTip": "باز کردن کار انتخاب‌شده در HB PDF Studio (Enter یا دوبار کلیک). اگر چند کار انتخاب شده باشد، به‌صورت یک سند ادغام‌شده باز می‌شوند.",
     "mergeSelected": "ادغام انتخاب‌شده‌ها…",
     "mergeSelectedTip": "ادغام کارهای انتخاب‌شده، به ترتیب فهرست، در یک PDF و ذخیره آن",
     "saveAs": "ذخیره به‌عنوان…",
@@ -75,11 +75,11 @@
     "adding": "در حال افزودن فایل‌های PDF…",
     "saving": "در حال ذخیره…",
     "merging": "در حال ادغام {{done}} از {{count}}…",
-    "opening": "در حال باز کردن در Open PDF Studio…",
+    "opening": "در حال باز کردن در HB PDF Studio…",
     "deleting": "در حال حذف…",
     "saved": "با نام {{name}} ذخیره شد",
     "merged": "ادغام و با نام {{name}} ذخیره شد",
-    "opened": "در Open PDF Studio باز شد",
+    "opened": "در HB PDF Studio باز شد",
     "deleted": "حذف‌شده: {{count}}",
     "failed": "ناموفق: {{message}}",
     "mergedFileName": "ادغام‌شده",
@@ -452,7 +452,7 @@
   },
   "update": {
     "title": "به‌روزرسانی نرم‌افزار",
-    "newVersionAvailable": "نسخه جدیدی از Open PDF Studio در دسترس است.",
+    "newVersionAvailable": "نسخه جدیدی از HB PDF Studio در دسترس است.",
     "currentVersion": "نسخه فعلی:",
     "newVersion": "نسخه جدید:",
     "releaseNotes": "یادداشت‌های انتشار:",
@@ -616,7 +616,7 @@
   },
   "defaultPdfApp": {
     "title": "برنامه PDF پیش‌فرض",
-    "message": "Open PDF Studio به عنوان برنامه پیش‌فرض برای باز کردن فایل‌های PDF تنظیم نشده است. آیا می‌خواهید آن را به عنوان پیش‌فرض تنظیم کنید؟",
+    "message": "HB PDF Studio به عنوان برنامه پیش‌فرض برای باز کردن فایل‌های PDF تنظیم نشده است. آیا می‌خواهید آن را به عنوان پیش‌فرض تنظیم کنید؟",
     "setAsDefault": "تنظیم به عنوان پیش‌فرض",
     "dontAskAgain": "دیگر نپرس",
     "notNow": "الان نه"
@@ -1322,7 +1322,7 @@
   },
   "recovery": {
     "title": "بازیابی کار ذخیره‌نشده",
-    "intro": "Open PDF Studio دفعهٔ قبل به‌طور عادی بسته نشد. کار ذخیره‌نشدهٔ این اسناد نگه داشته شده است:",
+    "intro": "HB PDF Studio دفعهٔ قبل به‌طور عادی بسته نشد. کار ذخیره‌نشدهٔ این اسناد نگه داشته شده است:",
     "savedAt": "نگه داشته‌شده در {{time}}",
     "pages": "صفحه‌ها: {{count}}",
     "untitled": "سند بدون عنوان",
@@ -1343,7 +1343,7 @@
     "deleteFailed": "حذف ناموفق بود: {{error}}",
     "tabLabel": "بازیابی‌شده",
     "tabTip": "پس از یک بسته‌شدن غیرمنتظره بازیابی شد. ذخیره در فایل اصلی می‌نویسد.",
-    "reloadStopped": "پنجرهٔ Open PDF Studio چند بار پشت سر هم از کار افتاد و دیگر به‌طور خودکار دوباره بارگیری نمی‌شود. کار خود را ذخیره کنید و برنامه را دوباره اجرا کنید."
+    "reloadStopped": "پنجرهٔ HB PDF Studio چند بار پشت سر هم از کار افتاد و دیگر به‌طور خودکار دوباره بارگیری نمی‌شود. کار خود را ذخیره کنید و برنامه را دوباره اجرا کنید."
   },
   "protectPdf": {
     "title": "امنیت سند",
@@ -1919,7 +1919,7 @@
       "routing": "Routing",
       "howToRespond": "Reply to this mail with \"Approved\" or \"Rejected\" and keep {{ref}} in the subject.",
       "howToSign": "Signers: return the signed PDF and keep {{ref}} in the file name.",
-      "disclaimer": "The SHA-256 above identifies the exact document version. This mail was prepared in Open PDF Studio; it is not a legally binding signature service and does not verify identities."
+      "disclaimer": "The SHA-256 above identifies the exact document version. This mail was prepared in HB PDF Studio; it is not a legally binding signature service and does not verify identities."
     },
     "errors": {
       "CONFIGURE_ADAPTER_FIRST": "Enable the provider first.",

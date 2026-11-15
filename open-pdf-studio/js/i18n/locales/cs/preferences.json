@@ -204,19 +204,19 @@
   "fileAssoc": {
     "defaultPdfApplication": "Výchozí aplikace pro PDF",
     "currentDefault": "Aktuální výchozí:",
-    "setDefault": "Nastavit Open PDF Studio jako výchozí prohlížeč PDF",
-    "setDefaultHelp": "Tím se otevře nastavení systému, kde můžete vybrat Open PDF Studio jako výchozí aplikaci pro otevírání souborů PDF.",
-    "windowsInstructions": "Nastavení systému Windows otevřeno.\n\nPro nastavení Open PDF Studio jako výchozí:\n1. Přejděte dolů na \"Zvolit výchozí aplikace podle typu souboru\"\n2. Najděte .pdf\n3. Klikněte a vyberte Open PDF Studio",
+    "setDefault": "Nastavit HB PDF Studio jako výchozí prohlížeč PDF",
+    "setDefaultHelp": "Tím se otevře nastavení systému, kde můžete vybrat HB PDF Studio jako výchozí aplikaci pro otevírání souborů PDF.",
+    "windowsInstructions": "Nastavení systému Windows otevřeno.\n\nPro nastavení HB PDF Studio jako výchozí:\n1. Přejděte dolů na \"Zvolit výchozí aplikace podle typu souboru\"\n2. Najděte .pdf\n3. Klikněte a vyberte HB PDF Studio",
     "windowsFailed": "Nepodařilo se otevřít Nastavení systému Windows.\n\nOtevřete prosím ručně Nastavení > Aplikace > Výchozí aplikace.",
-    "macInstructions": "Pro nastavení Open PDF Studio jako výchozího prohlížeče PDF v macOS:\n\n1. Klikněte pravým tlačítkem na libovolný soubor PDF ve Finderu\n2. Vyberte \"Získat informace\"\n3. V části \"Otevřít v\" vyberte Open PDF Studio\n4. Klikněte na \"Změnit vše...\"",
-    "linuxInstructions": "Pro nastavení Open PDF Studio jako výchozího prohlížeče PDF v Linuxu:\n\nSpusťte v terminálu:\nxdg-mime default openpdfstudio.desktop application/pdf",
+    "macInstructions": "Pro nastavení HB PDF Studio jako výchozího prohlížeče PDF v macOS:\n\n1. Klikněte pravým tlačítkem na libovolný soubor PDF ve Finderu\n2. Vyberte \"Získat informace\"\n3. V části \"Otevřít v\" vyberte HB PDF Studio\n4. Klikněte na \"Změnit vše...\"",
+    "linuxInstructions": "Pro nastavení HB PDF Studio jako výchozího prohlížeče PDF v Linuxu:\n\nSpusťte v terminálu:\nxdg-mime default openpdfstudio.desktop application/pdf",
     "checkFinder": "Zkontrolujte Finder > Získat informace",
     "notSet": "Nenastaveno",
     "chosenInSystemSettings": "Zvoleno v nastavení systému",
-    "sandboxInstructions": "Open PDF Studio běží jako balíček {{package}} a nemůže samo změnit výchozí aplikaci pro PDF.\n\nZvolte Open PDF Studio v nastavení systému v části Výchozí aplikace, nebo klikněte pravým tlačítkem na soubor PDF a použijte Otevřít pomocí.",
-    "xdgMimeMissing": "xdg-mime (balíček xdg-utils) není nainstalován, takže výchozí aplikaci pro PDF nelze nastavit odsud.\n\nNainstalujte xdg-utils, nebo zvolte Open PDF Studio v nastavení systému v části Výchozí aplikace.",
-    "linuxDone": "Open PDF Studio je nyní výchozí aplikací pro soubory PDF.",
-    "linuxFailed": "Open PDF Studio se nepodařilo nastavit jako výchozí aplikaci pro PDF.\n\n{{error}}"
+    "sandboxInstructions": "HB PDF Studio běží jako balíček {{package}} a nemůže samo změnit výchozí aplikaci pro PDF.\n\nZvolte HB PDF Studio v nastavení systému v části Výchozí aplikace, nebo klikněte pravým tlačítkem na soubor PDF a použijte Otevřít pomocí.",
+    "xdgMimeMissing": "xdg-mime (balíček xdg-utils) není nainstalován, takže výchozí aplikaci pro PDF nelze nastavit odsud.\n\nNainstalujte xdg-utils, nebo zvolte HB PDF Studio v nastavení systému v části Výchozí aplikace.",
+    "linuxDone": "HB PDF Studio je nyní výchozí aplikací pro soubory PDF.",
+    "linuxFailed": "HB PDF Studio se nepodařilo nastavit jako výchozí aplikaci pro PDF.\n\n{{error}}"
   },
   "explorerThumbnails": {
     "title": "Průzkumník souborů",
@@ -226,7 +226,7 @@
     "otherHandler": "Miniatury PDF nyní poskytuje {{name}}.",
     "defaultApp": "Vaše výchozí aplikace pro PDF zobrazuje vlastní miniatury ({{name}}). Windows je používá, dokud je tato aplikace vaší výchozí aplikací pro PDF.",
     "replaceTitle": "Miniatury PDF",
-    "replaceConfirm": "{{name}} už poskytuje miniatury PDF v Průzkumníku souborů.\n\nZobrazovat místo nich pro váš účet Windows miniatury z Open PDF Studio? Vypnutím této možnosti se obnoví předchozí miniatury.",
+    "replaceConfirm": "{{name}} už poskytuje miniatury PDF v Průzkumníku souborů.\n\nZobrazovat místo nich pro váš účet Windows miniatury z HB PDF Studio? Vypnutím této možnosti se obnoví předchozí miniatury.",
     "failed": "Nastavení miniatur v Průzkumníku souborů se nepodařilo změnit."
   },
   "virtualPrinter": {
@@ -251,7 +251,7 @@
     "stateUnknownDetail": "Stav tiskárny se nepodařilo přečíst.",
     "howTitle": "Jak to funguje",
     "how1": "V libovolném programu zvolte Tisk a vyberte {{printer}}.",
-    "how2": "Výtisk se objeví v okně tiskárny aplikace Open PDF Studio.",
+    "how2": "Výtisk se objeví v okně tiskárny aplikace HB PDF Studio.",
     "how3": "Zobrazte úlohy v náhledu, změňte jejich pořadí, sloučte je a uložte jako jedno PDF, nebo je otevřete ve Studiu.",
     "openWindow": "Otevřít okno tiskárny",
     "openWindowTip": "Zobrazit zachycené tiskové úlohy"

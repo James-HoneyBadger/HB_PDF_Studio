@@ -110,7 +110,7 @@
     "readOnly": {
       "title": "Opened read-only",
       "kenmerk": "{{name}} is read-only: it has the read-only attribute, or you only have read permission on this location.",
-      "in-gebruik": "{{name}} is open in another application or is being synchronized, so Open PDF Studio cannot reserve it.",
+      "in-gebruik": "{{name}} is open in another application or is being synchronized, so HB PDF Studio cannot reserve it.",
       "geweigerd": "{{name}} cannot be reserved: Windows denied it.",
       "mislukt": "{{name}} could not be reserved.",
       "saveAs": "It has been opened read-only. You can make changes; use Save As to save them to another file."
@@ -118,7 +118,7 @@
   },
   "hostOpenFailed": "Filen kunne ikke leses fra lagringen. Prøv igjen.",
   "hostInvalidPdf": "{{name}} er ikke en gyldig PDF-fil og kunne ikke åpnes.",
-  "hostNoContact": "Siden rundt Open PDF Studio svarer ikke, så filer kan ikke åpnes eller lagres. Last inn siden på nytt og prøv igjen.",
+  "hostNoContact": "Siden rundt HB PDF Studio svarer ikke, så filer kan ikke åpnes eller lagres. Last inn siden på nytt og prøv igjen.",
   "hostSaveConflict": "Noen andre har lagret denne filen i mellomtiden. Endringene dine ble lagret som en egen kopi: {{name}}. Senere lagringer går til den kopien.",
   "hostSaveNotLocked": "Denne filen er ikke reservert for deg, så andre kan endre den samtidig. Endringene dine lagres som nye versjoner; ingenting blir overskrevet.",
   "hostReadOnlySave": "Denne filen er åpnet skrivebeskyttet, så endringer kan ikke lagres i den. Bruk Lagre som for å laste ned en kopi.",
@@ -162,7 +162,7 @@
   "failedToReplacePage": "Kunne ikke erstatte siden: {{error}}",
   "failedToMergeFile": "Sammenslåing mislyktes: {{file}}\n{{error}}",
   "invalidPageRange": "Ugyldig sideområde. Vennligst skriv inn gyldige sidetall.",
-  "appName": "Open PDF Studio",
+  "appName": "HB PDF Studio",
   "noDocuments": "Ingen PDF valgt",
   "noDocumentsHint": "Klikk \"Åpne PDF\" for å bla gjennom og kommentere en PDF",
   "solid": "Heltrukket",
@@ -350,7 +350,7 @@
     "fileAssoc": "Denne bærbare kopien er ikke registrert i Windows. For å åpne PDF-filer med den, høyreklikker du på en PDF, velger Åpne med > Velg en annen app og velger open-pdf-studio.exe i denne mappen.",
     "explorerThumbnails": "PDF-miniatyrbilder i Filutforsker er bare tilgjengelige i den installerte versjonen.",
     "virtualPrinter": "Den virtuelle skriveren er bare tilgjengelig i den installerte versjonen: den legges til i Windows med administratorrettigheter.",
-    "notWritable": "Open PDF Studio kan ikke skrive til mappen {{dir}}, så innstillingene dine lagres denne gangen i brukerprofilen din. Flytt den bærbare mappen til et sted med skrivetilgang, for eksempel en USB-pinne eller mappen Dokumenter."
+    "notWritable": "HB PDF Studio kan ikke skrive til mappen {{dir}}, så innstillingene dine lagres denne gangen i brukerprofilen din. Flytt den bærbare mappen til et sted med skrivetilgang, for eksempel en USB-pinne eller mappen Dokumenter."
   },
   "protectedPdfNoPrint": "Rettighetene til dette dokumentet tillater ikke utskrift.",
   "share": {

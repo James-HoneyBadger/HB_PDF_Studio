@@ -648,7 +648,7 @@ export function updateTabBar() {
  */
 export function updateWindowTitle() {
   const doc = getActiveDocument();
-  const baseTitle = `Open PDF Studio v${appVersion()}`;
+  const baseTitle = `HB PDF Studio v${appVersion()}`;
 
   // Update document.title (browser/OS window title)
   if (doc) {

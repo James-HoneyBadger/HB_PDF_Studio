@@ -460,7 +460,7 @@
     "extensionsTitle": "Bővítmények kezelése",
     "extensions": "Bővítmények",
     "information": "Információ",
-    "aboutTitle": "A Open PDF Studio névjegye",
+    "aboutTitle": "A HB PDF Studio névjegye",
     "about": "Névjegy",
     "whatsNewTitle": "A verzió újdonságai",
     "whatsNew": "Újdonságok",
@@ -477,7 +477,7 @@
     "fileAssociation": "Fájltársítás",
     "setDefaultPdf": "Alapértelmezett PDF alkalmazás beállítása",
     "fileAssociations": "Fájltársítások",
-    "previousVersionTitle": "Az Open PDF Studio előző verziójának telepítése",
+    "previousVersionTitle": "Az HB PDF Studio előző verziójának telepítése",
     "previousVersion": "Előző verzió"
   },
   "format": {

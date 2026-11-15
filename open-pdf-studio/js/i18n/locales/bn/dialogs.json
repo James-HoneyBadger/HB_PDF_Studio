@@ -35,7 +35,7 @@
   "printQueue": {
     "toolbarLabel": "মুদ্রণ কাজের কার্যক্রম",
     "openInStudio": "Studio-তে খুলুন",
-    "openInStudioTip": "নির্বাচিত কাজটি Open PDF Studio-তে খুলুন (Enter বা ডাবল-ক্লিক)। একাধিক কাজ নির্বাচিত থাকলে সেগুলো একটি একত্রিত নথি হিসেবে খুলবে।",
+    "openInStudioTip": "নির্বাচিত কাজটি HB PDF Studio-তে খুলুন (Enter বা ডাবল-ক্লিক)। একাধিক কাজ নির্বাচিত থাকলে সেগুলো একটি একত্রিত নথি হিসেবে খুলবে।",
     "mergeSelected": "নির্বাচিতগুলো একত্রিত করুন…",
     "mergeSelectedTip": "নির্বাচিত কাজগুলো তালিকার ক্রম অনুযায়ী একটি PDF-এ একত্রিত করে সংরক্ষণ করুন",
     "saveAs": "এভাবে সংরক্ষণ করুন…",
@@ -75,11 +75,11 @@
     "adding": "PDF ফাইল যোগ হচ্ছে…",
     "saving": "সংরক্ষণ হচ্ছে…",
     "merging": "{{count}}-এর মধ্যে {{done}} একত্রিত হচ্ছে…",
-    "opening": "Open PDF Studio-তে খুলছে…",
+    "opening": "HB PDF Studio-তে খুলছে…",
     "deleting": "মুছে ফেলা হচ্ছে…",
     "saved": "{{name}} নামে সংরক্ষিত হয়েছে",
     "merged": "একত্রিত করে {{name}} নামে সংরক্ষিত হয়েছে",
-    "opened": "Open PDF Studio-তে খোলা হয়েছে",
+    "opened": "HB PDF Studio-তে খোলা হয়েছে",
     "deleted": "মুছে ফেলা হয়েছে: {{count}}",
     "failed": "ব্যর্থ: {{message}}",
     "mergedFileName": "একত্রিত",
@@ -452,7 +452,7 @@
   },
   "update": {
     "title": "সফটওয়্যার আপডেট",
-    "newVersionAvailable": "Open PDF Studio-এর একটি নতুন সংস্করণ উপলব্ধ।",
+    "newVersionAvailable": "HB PDF Studio-এর একটি নতুন সংস্করণ উপলব্ধ।",
     "currentVersion": "বর্তমান সংস্করণ:",
     "newVersion": "নতুন সংস্করণ:",
     "releaseNotes": "প্রকাশ নোট:",
@@ -616,7 +616,7 @@
   },
   "defaultPdfApp": {
     "title": "ডিফল্ট PDF অ্যাপ",
-    "message": "Open PDF Studio PDF ফাইল খোলার জন্য ডিফল্ট অ্যাপ হিসেবে সেট করা নেই। আপনি কি এটি ডিফল্ট হিসেবে সেট করতে চান?",
+    "message": "HB PDF Studio PDF ফাইল খোলার জন্য ডিফল্ট অ্যাপ হিসেবে সেট করা নেই। আপনি কি এটি ডিফল্ট হিসেবে সেট করতে চান?",
     "setAsDefault": "ডিফল্ট হিসেবে সেট করুন",
     "dontAskAgain": "আর জিজ্ঞাসা করবেন না",
     "notNow": "এখন নয়"
@@ -1322,7 +1322,7 @@
   },
   "recovery": {
     "title": "অসংরক্ষিত কাজ পুনরুদ্ধার করুন",
-    "intro": "গতবার Open PDF Studio স্বাভাবিকভাবে বন্ধ হয়নি। এই নথিগুলির অসংরক্ষিত কাজ রেখে দেওয়া হয়েছে:",
+    "intro": "গতবার HB PDF Studio স্বাভাবিকভাবে বন্ধ হয়নি। এই নথিগুলির অসংরক্ষিত কাজ রেখে দেওয়া হয়েছে:",
     "savedAt": "{{time}}-এ রাখা হয়েছে",
     "pages": "পৃষ্ঠা: {{count}}",
     "untitled": "শিরোনামহীন নথি",
@@ -1343,7 +1343,7 @@
     "deleteFailed": "মুছে ফেলা ব্যর্থ হয়েছে: {{error}}",
     "tabLabel": "পুনরুদ্ধারকৃত",
     "tabTip": "অপ্রত্যাশিতভাবে বন্ধ হওয়ার পরে পুনরুদ্ধার করা হয়েছে। সংরক্ষণ মূল ফাইলে লেখে।",
-    "reloadStopped": "Open PDF Studio-এর উইন্ডো পরপর কয়েকবার কাজ করা বন্ধ করেছে এবং আর স্বয়ংক্রিয়ভাবে পুনরায় লোড হয় না। আপনার কাজ সংরক্ষণ করুন এবং অ্যাপটি আবার চালু করুন।"
+    "reloadStopped": "HB PDF Studio-এর উইন্ডো পরপর কয়েকবার কাজ করা বন্ধ করেছে এবং আর স্বয়ংক্রিয়ভাবে পুনরায় লোড হয় না। আপনার কাজ সংরক্ষণ করুন এবং অ্যাপটি আবার চালু করুন।"
   },
   "protectPdf": {
     "title": "নথির সুরক্ষা",
@@ -1919,7 +1919,7 @@
       "routing": "Routing",
       "howToRespond": "Reply to this mail with \"Approved\" or \"Rejected\" and keep {{ref}} in the subject.",
       "howToSign": "Signers: return the signed PDF and keep {{ref}} in the file name.",
-      "disclaimer": "The SHA-256 above identifies the exact document version. This mail was prepared in Open PDF Studio; it is not a legally binding signature service and does not verify identities."
+      "disclaimer": "The SHA-256 above identifies the exact document version. This mail was prepared in HB PDF Studio; it is not a legally binding signature service and does not verify identities."
     },
     "errors": {
       "CONFIGURE_ADAPTER_FIRST": "Enable the provider first.",

@@ -46,7 +46,7 @@
   </g>
 
   <!-- App name -->
-  <text x="200" y="100" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="38" font-weight="600" fill="#eaeaea" letter-spacing="0.5">Open PDF Studio</text>
+  <text x="200" y="100" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="38" font-weight="600" fill="#eaeaea" letter-spacing="0.5">HB PDF Studio</text>
 
   <!-- Tagline -->
   <text x="200" y="135" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="16" fill="#8b8b8b" letter-spacing="0.3">Free, open-source PDF editor and annotator</text>

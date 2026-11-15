@@ -35,7 +35,7 @@
   "printQueue": {
     "toolbarLabel": "Radnje za zadatke ispisa",
     "openInStudio": "Otvori u Studiju",
-    "openInStudioTip": "Otvorite odabrani zadatak u programu Open PDF Studio (Enter ili dvostruki klik). Više odabranih zadataka otvara se kao jedan spojeni dokument.",
+    "openInStudioTip": "Otvorite odabrani zadatak u programu HB PDF Studio (Enter ili dvostruki klik). Više odabranih zadataka otvara se kao jedan spojeni dokument.",
     "mergeSelected": "Spoji odabrane…",
     "mergeSelectedTip": "Spojite odabrane zadatke, redoslijedom s popisa, u jedan PDF i spremite ga",
     "saveAs": "Spremi kao…",
@@ -75,11 +75,11 @@
     "adding": "Dodavanje PDF datoteka…",
     "saving": "Spremanje…",
     "merging": "Spajanje {{done}} od {{count}}…",
-    "opening": "Otvaranje u programu Open PDF Studio…",
+    "opening": "Otvaranje u programu HB PDF Studio…",
     "deleting": "Brisanje…",
     "saved": "Spremljeno kao {{name}}",
     "merged": "Spojeno i spremljeno kao {{name}}",
-    "opened": "Otvoreno u programu Open PDF Studio",
+    "opened": "Otvoreno u programu HB PDF Studio",
     "deleted": "Obrisano: {{count}}",
     "failed": "Neuspjelo: {{message}}",
     "mergedFileName": "Spojeno",
@@ -452,7 +452,7 @@
   },
   "update": {
     "title": "Ažuriranje softvera",
-    "newVersionAvailable": "Nova verzija programa Open PDF Studio je dostupna.",
+    "newVersionAvailable": "Nova verzija programa HB PDF Studio je dostupna.",
     "currentVersion": "Trenutna verzija:",
     "newVersion": "Nova verzija:",
     "releaseNotes": "Bilješke o izdanju:",
@@ -616,7 +616,7 @@
   },
   "defaultPdfApp": {
     "title": "Zadana PDF aplikacija",
-    "message": "Open PDF Studio nije postavljen kao zadana aplikacija za otvaranje PDF datoteka. Želite li ga postaviti kao zadanu aplikaciju?",
+    "message": "HB PDF Studio nije postavljen kao zadana aplikacija za otvaranje PDF datoteka. Želite li ga postaviti kao zadanu aplikaciju?",
     "setAsDefault": "Postavi kao zadano",
     "dontAskAgain": "Ne pitaj ponovo",
     "notNow": "Ne sada"
@@ -1322,7 +1322,7 @@
   },
   "recovery": {
     "title": "Vraćanje nespremljenog rada",
-    "intro": "Open PDF Studio prošli put nije normalno zatvoren. Nespremljeni rad iz ovih dokumenata je sačuvan:",
+    "intro": "HB PDF Studio prošli put nije normalno zatvoren. Nespremljeni rad iz ovih dokumenata je sačuvan:",
     "savedAt": "Sačuvano {{time}}",
     "pages": "Stranice: {{count}}",
     "untitled": "Dokument bez naslova",
@@ -1343,7 +1343,7 @@
     "deleteFailed": "Brisanje nije uspjelo: {{error}}",
     "tabLabel": "vraćeno",
     "tabTip": "Vraćeno nakon neočekivanog zatvaranja. Spremanje zapisuje u izvornu datoteku.",
-    "reloadStopped": "Prozor programa Open PDF Studio nekoliko je puta zaredom prestao raditi i više se ne učitava ponovno automatski. Spremite svoj rad i ponovno pokrenite aplikaciju."
+    "reloadStopped": "Prozor programa HB PDF Studio nekoliko je puta zaredom prestao raditi i više se ne učitava ponovno automatski. Spremite svoj rad i ponovno pokrenite aplikaciju."
   },
   "protectPdf": {
     "title": "Sigurnost dokumenta",
@@ -1919,7 +1919,7 @@
       "routing": "Routing",
       "howToRespond": "Reply to this mail with \"Approved\" or \"Rejected\" and keep {{ref}} in the subject.",
       "howToSign": "Signers: return the signed PDF and keep {{ref}} in the file name.",
-      "disclaimer": "The SHA-256 above identifies the exact document version. This mail was prepared in Open PDF Studio; it is not a legally binding signature service and does not verify identities."
+      "disclaimer": "The SHA-256 above identifies the exact document version. This mail was prepared in HB PDF Studio; it is not a legally binding signature service and does not verify identities."
     },
     "errors": {
       "CONFIGURE_ADAPTER_FIRST": "Enable the provider first.",

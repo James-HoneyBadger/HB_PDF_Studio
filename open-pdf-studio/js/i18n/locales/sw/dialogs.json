@@ -35,7 +35,7 @@
   "printQueue": {
     "toolbarLabel": "Vitendo vya kazi ya uchapishaji",
     "openInStudio": "Fungua katika Studio",
-    "openInStudioTip": "Fungua kazi iliyochaguliwa katika Open PDF Studio (Enter au bofya mara mbili). Kazi kadhaa zilizochaguliwa hufunguka kama hati moja iliyounganishwa.",
+    "openInStudioTip": "Fungua kazi iliyochaguliwa katika HB PDF Studio (Enter au bofya mara mbili). Kazi kadhaa zilizochaguliwa hufunguka kama hati moja iliyounganishwa.",
     "mergeSelected": "Unganisha zilizochaguliwa…",
     "mergeSelectedTip": "Unganisha kazi zilizochaguliwa, kwa mpangilio wa orodha, kuwa PDF moja na uihifadhi",
     "saveAs": "Hifadhi kama…",
@@ -75,11 +75,11 @@
     "adding": "Inaongeza faili za PDF…",
     "saving": "Inahifadhi…",
     "merging": "Inaunganisha {{done}} kati ya {{count}}…",
-    "opening": "Inafungua katika Open PDF Studio…",
+    "opening": "Inafungua katika HB PDF Studio…",
     "deleting": "Inafuta…",
     "saved": "Imehifadhiwa kama {{name}}",
     "merged": "Imeunganishwa na kuhifadhiwa kama {{name}}",
-    "opened": "Imefunguliwa katika Open PDF Studio",
+    "opened": "Imefunguliwa katika HB PDF Studio",
     "deleted": "Zilizofutwa: {{count}}",
     "failed": "Imeshindwa: {{message}}",
     "mergedFileName": "Imeunganishwa",
@@ -452,7 +452,7 @@
   },
   "update": {
     "title": "Sasisha Programu",
-    "newVersionAvailable": "Toleo jipya la Open PDF Studio linapatikana.",
+    "newVersionAvailable": "Toleo jipya la HB PDF Studio linapatikana.",
     "currentVersion": "Toleo la sasa:",
     "newVersion": "Toleo jipya:",
     "releaseNotes": "Maelezo ya Toleo:",
@@ -616,7 +616,7 @@
   },
   "defaultPdfApp": {
     "title": "Programu Chaguo-msingi ya PDF",
-    "message": "Open PDF Studio haijawekwa kama programu chaguo-msingi ya kufungua faili za PDF. Je, ungependa kuiweka kama chaguo-msingi?",
+    "message": "HB PDF Studio haijawekwa kama programu chaguo-msingi ya kufungua faili za PDF. Je, ungependa kuiweka kama chaguo-msingi?",
     "setAsDefault": "Weka kama Chaguo-msingi",
     "dontAskAgain": "Usiulize Tena",
     "notNow": "Si Sasa"
@@ -1322,7 +1322,7 @@
   },
   "recovery": {
     "title": "Rejesha kazi ambayo haijahifadhiwa",
-    "intro": "Open PDF Studio haikufungwa kwa kawaida mara ya mwisho. Kazi ambayo haijahifadhiwa ya hati hizi imetunzwa:",
+    "intro": "HB PDF Studio haikufungwa kwa kawaida mara ya mwisho. Kazi ambayo haijahifadhiwa ya hati hizi imetunzwa:",
     "savedAt": "Imetunzwa {{time}}",
     "pages": "Kurasa: {{count}}",
     "untitled": "Hati isiyo na jina",
@@ -1343,7 +1343,7 @@
     "deleteFailed": "Kufuta kumeshindikana: {{error}}",
     "tabLabel": "imerejeshwa",
     "tabTip": "Imerejeshwa baada ya kufungwa bila kutarajia. Kuhifadhi kunaandika kwenye faili asili.",
-    "reloadStopped": "Dirisha la Open PDF Studio liliacha kufanya kazi mara kadhaa mfululizo na halipakiwi tena kiotomatiki. Hifadhi kazi yako na uanzishe programu upya."
+    "reloadStopped": "Dirisha la HB PDF Studio liliacha kufanya kazi mara kadhaa mfululizo na halipakiwi tena kiotomatiki. Hifadhi kazi yako na uanzishe programu upya."
   },
   "protectPdf": {
     "title": "Usalama wa Hati",
@@ -1919,7 +1919,7 @@
       "routing": "Routing",
       "howToRespond": "Reply to this mail with \"Approved\" or \"Rejected\" and keep {{ref}} in the subject.",
       "howToSign": "Signers: return the signed PDF and keep {{ref}} in the file name.",
-      "disclaimer": "The SHA-256 above identifies the exact document version. This mail was prepared in Open PDF Studio; it is not a legally binding signature service and does not verify identities."
+      "disclaimer": "The SHA-256 above identifies the exact document version. This mail was prepared in HB PDF Studio; it is not a legally binding signature service and does not verify identities."
     },
     "errors": {
       "CONFIGURE_ADAPTER_FIRST": "Enable the provider first.",

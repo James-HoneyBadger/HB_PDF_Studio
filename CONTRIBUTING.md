@@ -1,6 +1,6 @@
-# Contributing to Open PDF Studio
+# Contributing to HB PDF Studio
 
-Thanks for wanting to help improve Open PDF Studio! This project is developed at
+Thanks for wanting to help improve HB PDF Studio! This project is developed at
 a fast pace with AI-assisted tooling, and that shapes how contributions work best
 here. Please take two minutes to read this before you start — it will make your
 contribution land faster.
@@ -137,4 +137,4 @@ run it yourself, see [docs/building.md](docs/building.md) for the prerequisites 
 ---
 
 A well-written issue with a clear description is worth its weight in gold — thank
-you for helping make Open PDF Studio better.
+you for helping make HB PDF Studio better.

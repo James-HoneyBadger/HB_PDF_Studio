@@ -460,7 +460,7 @@
     "extensionsTitle": "拡張機能を管理",
     "extensions": "拡張機能",
     "information": "情報",
-    "aboutTitle": "Open PDF Studio について",
+    "aboutTitle": "HB PDF Studio について",
     "about": "バージョン情報",
     "whatsNewTitle": "このバージョンの新機能",
     "whatsNew": "新機能",
@@ -477,7 +477,7 @@
     "fileAssociation": "ファイルの関連付け",
     "setDefaultPdf": "既定の PDF アプリケーションに設定",
     "fileAssociations": "ファイルの関連付け",
-    "previousVersionTitle": "Open PDF Studio の以前のバージョンをインストール",
+    "previousVersionTitle": "HB PDF Studio の以前のバージョンをインストール",
     "previousVersion": "以前のバージョン"
   },
   "format": {

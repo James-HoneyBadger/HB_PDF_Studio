@@ -1,4 +1,4 @@
-"""Find the Open PDF Studio executable and start a headless instance of it.
+"""Find the HB PDF Studio executable and start a headless instance of it.
 
 The instance is a test instance in the app's own sense (see
 ``src-tauri/src/headless.rs``): ``--mcp-server --mcp-port <port>`` with
@@ -50,17 +50,23 @@ def candidate_paths(platform: str = sys.platform, env: Optional[Mapping[str, str
         exe = f"{BINARY}.exe"
         for var in ("ProgramFiles", "ProgramW6432", "ProgramFiles(x86)"):
             if env.get(var):
+                paths.append(join(env[var], "HB PDF Studio", exe))
                 paths.append(join(env[var], "Open PDF Studio", exe))
         if env.get("LOCALAPPDATA"):
             # The per-user NSIS installer.
+            paths.append(join(env["LOCALAPPDATA"], "HB PDF Studio", exe))
             paths.append(join(env["LOCALAPPDATA"], "Open PDF Studio", exe))
+            paths.append(join(env["LOCALAPPDATA"], "Programs", "HB PDF Studio", exe))
             paths.append(join(env["LOCALAPPDATA"], "Programs", "Open PDF Studio", exe))
     elif platform == "darwin":
         join = posixpath.join
-        rel = join("Open PDF Studio.app", "Contents", "MacOS", BINARY)
+        rel = join("HB PDF Studio.app", "Contents", "MacOS", BINARY)
+        legacy_rel = join("Open PDF Studio.app", "Contents", "MacOS", BINARY)
         paths.append(join("/Applications", rel))
+        paths.append(join("/Applications", legacy_rel))
         if env.get("HOME"):
             paths.append(join(env["HOME"], "Applications", rel))
+            paths.append(join(env["HOME"], "Applications", legacy_rel))
     else:
         paths += [f"/usr/bin/{BINARY}", f"/usr/local/bin/{BINARY}", f"/snap/bin/{BINARY}", f"/opt/open-pdf-studio/{BINARY}"]
     # dict.fromkeys: keep order, drop duplicates (ProgramFiles == ProgramW6432).
@@ -91,7 +97,7 @@ def find_app(
             return path
         tried.append(path)
     raise AppNotFoundError(
-        "Open PDF Studio was not found. Install it, or set "
+        "HB PDF Studio was not found. Install it, or set "
         f"{APP_ENV} to the executable (or an AppImage). Tried:\n  " + "\n  ".join(tried)
     )
 
@@ -122,7 +128,7 @@ def build_command(
     runner = which("xvfb-run")
     if not runner:
         raise AppLaunchError(
-            "Open PDF Studio needs a display on Linux and none is set (DISPLAY / WAYLAND_DISPLAY). "
+            "HB PDF Studio needs a display on Linux and none is set (DISPLAY / WAYLAND_DISPLAY). "
             "Install xvfb (e.g. `apt install xvfb`) so the app can run under xvfb-run, "
             "or start an X server yourself."
         )
@@ -223,10 +229,10 @@ def launch(
     webview_timeout: Optional[float] = None,
     timeout: float = 120.0,
 ) -> Client:
-    """Start an own Open PDF Studio instance and return a connected client.
+    """Start an own HB PDF Studio instance and return a connected client.
 
     ``app`` is the executable (default: :func:`find_app`) or a command prefix
-    such as ``["/path/Open_PDF_Studio.AppImage"]``. The instance gets a free
+    such as ``["/path/HB PDF Studio.AppImage"]``. The instance gets a free
     port and a temporary data directory unless ``port`` / ``data_dir`` are
     given. ``startup_timeout`` bounds the whole startup; ``webview_timeout``
     (default: the rest of ``startup_timeout``) bounds the wait for the WebView
@@ -276,7 +282,7 @@ def _wait_until_ready(client: Client, proc: AppProcess, startup_timeout: float, 
     def check_alive() -> None:
         if not proc.running():
             time.sleep(0.2)  # let the reader threads collect the last output
-            raise AppLaunchError(f"Open PDF Studio exited during startup (code {proc.popen.returncode})", output=proc.output)
+            raise AppLaunchError(f"HB PDF Studio exited during startup (code {proc.popen.returncode})", output=proc.output)
 
     # 1. The HTTP server is up.
     while True:

@@ -9,7 +9,7 @@
 
 /** Meldingen die in de beheerde modus wegblijven. */
 export const ONDERDRUKT_IN_BEHEERDE_MODUS = Object.freeze([
-  // De balk "Open PDF Studio als standaard-PDF-app instellen" (bestandskoppeling).
+  // De balk "HB PDF Studio als standaard-PDF-app instellen" (bestandskoppeling).
   'standaard-app',
   // Het venster "Wat is er nieuw" na een update (haalt ook release-notes op).
   'wat-is-nieuw',
