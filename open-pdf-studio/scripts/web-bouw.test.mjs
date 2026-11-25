@@ -62,9 +62,10 @@ test('vite.config.js applies the web aliases with the build mode', () => {
   assert.match(cfg, /\.\.\.webAliassen\(APP, mode\)/);
 });
 
-test('the live web deploy builds as a web build', () => {
+test('legacy public deployment remains disabled', () => {
   const yml = lees('../.github/workflows/live.yml');
-  assert.match(yml, /build_command: .*OPDS_WEB_BUILD=1 npx vite build/);
+  assert.match(yml, /^on: workflow_dispatch$/m);
+  assert.doesNotMatch(yml, /build_command:|pages: write|deploy-pages|web-statistics/);
 });
 
 test('only the desktop module imports the drag plugin', () => {
