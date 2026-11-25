@@ -26,6 +26,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Restore optional regression corpus
+        working-directory: .
+        run: sh scripts/restore-large-pdf-fixtures.sh
 
       - name: Setup Node.js
         uses: actions/setup-node@v6
