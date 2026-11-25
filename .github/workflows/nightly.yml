@@ -27,6 +27,7 @@ concurrency:
 
 jobs:
   prepare-release:
+    if: ${{ false }}
     runs-on: ubuntu-latest
     outputs:
       version: ${{ steps.version.outputs.version }}

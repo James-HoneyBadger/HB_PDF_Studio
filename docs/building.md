@@ -9,6 +9,10 @@
 - **Linux AArch64** system dependencies:
   `libwebkit2gtk-4.1-dev libappindicator3-dev librsvg2-dev patchelf`
 
+## Supported target
+
+Native desktop builds are supported only on Linux AArch64 (`uname -m` must report `aarch64`). The inherited web tooling remains available for internal tests, not as a supported HB product.
+
 ## Development
 
 ```bash
@@ -30,9 +34,7 @@ npm run tauri:build
 
 The build downloads the pinned Linux AArch64 PDFium runtime and verifies its
 SHA-256 checksums. Build artifacts are written to the workspace-level
-`target/release/bundle/` directory. The release workflow
-([`.github/workflows/release.yml`](../.github/workflows/release.yml)) is the
-reference for the supported desktop target.
+`target/release/bundle/` directory. The inherited release workflow still requires independent HB signing and packaging qualification. Do not publish upstream-signed artifacts as HB releases.
 
 ## Web version
 
@@ -42,7 +44,7 @@ npm ci
 OPDS_WEB_BUILD=1 npx vite build
 ```
 
-`live.yml` deploys this bundle to the public site. `npm run build:hosted`
+The inherited public-site deployment is disabled on this development branch. `npm run build:hosted`
 builds it for hosting under any sub-path; `npm run pack:hosted` packs it into
 an archive. Neither is part of a release: releases ship the Linux AArch64
 desktop app only.

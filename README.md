@@ -6,13 +6,11 @@
 
 **A free, open-source PDF editor for people who work with drawings: markup, measuring to scale, revision compare and CAD import, with a Linux AArch64 desktop app.**
 
-[![Release](https://img.shields.io/github/v/release/OpenAEC-Foundation/open-pdf-studio?label=release&color=D97706)](https://github.com/OpenAEC-Foundation/open-pdf-studio/releases/latest)
-[![CI](https://github.com/OpenAEC-Foundation/open-pdf-studio/actions/workflows/ci.yml/badge.svg)](https://github.com/OpenAEC-Foundation/open-pdf-studio/actions/workflows/ci.yml)
 [![License](https://img.shields.io/badge/license-LGPL--3.0--or--later-blue)](#license)
 [![Languages](https://img.shields.io/badge/languages-40-informational)](open-pdf-studio/js/i18n/locales/)
 [![MCP tools](https://img.shields.io/badge/MCP%20tools-94-informational)](mcp-stdio/tools.json)
 
-### [Download](https://github.com/OpenAEC-Foundation/open-pdf-studio/releases/latest)
+### [Download](https://github.com/James-HoneyBadger/HB_PDF_Studio/releases)
 
 ![A floor plan with a revision cloud, a callout and a measured distance; the Format tab and the properties of the selected callout are open](docs/images/readme/hero.png)
 
@@ -22,18 +20,11 @@ HB PDF Studio is a PDF editor for architects, engineers, contractors and everyon
 
 The desktop app supports Linux on AArch64 only. It brings what needs your computer: printing, OCR, DWG and DXF import and export, digital signatures and a local AI connection (MCP).
 
-## Download
+## Download and support
 
-Every release is on the [releases page](https://github.com/OpenAEC-Foundation/open-pdf-studio/releases/latest).
+**Supported platform: Linux AArch64 (ARM64) only.** No Windows, macOS, Android or x86-64 Linux support is offered. See [HB PDF Studio releases](https://github.com/James-HoneyBadger/HB_PDF_Studio/releases) for available packages. Upstream OpenAEC packages are not HB releases. Build from source using [docs/building.md](docs/building.md) if a verified HB package is not available.
 
-| Platform | Files |
-|----------|-------|
-| **Linux AArch64** | `.deb`, `.AppImage` and `.snap`, also in the [Snap Store](https://snapcraft.io/open-pdf-studio). See [docs/install-linux.md](docs/install-linux.md) |
-| **Other** | `open-pdf-studio.mcpb` (AI connection for MCP clients), the Python library (`.whl` and `.tar.gz`) |
-
-**Updates.** The `.deb` and the AppImage check for updates and install them through the built-in updater, which only accepts updates signed with the project's update key. The snap updates through the Snap Store.
-
-**Signing.** The `.deb`, the AppImage and the snap each have a detached OpenPGP signature (`.asc`) of the OpenAEC Foundation release key, fingerprint `13F6D414ADEE4ED4CD09AC60601D86C93C504D29`, and `SHA256SUMS` with `SHA256SUMS.asc` covers the Linux files; check them with `gpg --verify <file>.asc <file>` against [`docs/keys/openaec-signing-public-key.asc`](docs/keys/openaec-signing-public-key.asc) (see [docs/install-linux.md](docs/install-linux.md#verifying-the-download-openpgp)). The `.sig` files are the update signatures that the built-in updater checks.
+Automatic update checks are disabled in this development branch; release signing and packaging must be independently qualified before publication.
 
 ## Why use it?
 
@@ -127,9 +118,9 @@ You stay in control. The server is on for a new installation and listens only on
 ## Testing and reliability
 
 - **798 unit test files** run with `npm run test:unit` on Linux AArch64 in [CI](.github/workflows/ci.yml) for every pull request, plus 3 quality regression test files (`npm run test:quality`).
-- **CI builds and starts the Linux AArch64 app**: the AppImage on Debian 13, Fedora 44 and in OpenAEC Linux conditions. It also tests the Python library and lints the Flatpak when it changes.
+- **Inherited CI is designed to build and start the Linux AArch64 app**: the AppImage on Debian 13, Fedora 44 and in OpenAEC Linux conditions. It also tests the Python library and lints the Flatpak when it changes.
 - **Pull requests that touch rendering** also run a render regression on a large-format drawing and keep the report ([render-regression.yml](.github/workflows/render-regression.yml)).
-- **Releases are checked before they are published.** The release workflow builds Linux AArch64 packages and verifies their OpenPGP signatures against the public key in the repository.
+- **Release qualification is pending.** The inherited workflow and signing keys require HB-specific configuration; do not treat upstream signatures as HB release signatures.
 - **Privacy is tested.** A unit test fails when the shipped source contains an internet address that [PRIVACY.md](PRIVACY.md) does not list, or when a telemetry package is added.
 - **README images are checked.** `node open-pdf-studio/scripts/check-readme-images.mjs` fails when an image is missing, unused or larger than 150 kB.
 
@@ -143,7 +134,7 @@ Count sources: unit test files are the non-comment lines of [`open-pdf-studio/sc
 - **The Flatpak is not on Flathub yet** ([docs/flathub.md](docs/flathub.md)).
 - **The Table button on the Drawing tab is not available yet.** Place a quantities schedule as a table instead.
 
-Found something? [Open an issue](https://github.com/OpenAEC-Foundation/open-pdf-studio/issues).
+Found something? [Open an HB issue](https://github.com/James-HoneyBadger/HB_PDF_Studio/issues).
 
 ## Under the hood
 
@@ -151,7 +142,7 @@ The app is a [Tauri 2](https://tauri.app/) desktop app with a Rust back end and 
 
 ## Contributing
 
-- **Report a bug or ask for a feature** as an [issue](https://github.com/OpenAEC-Foundation/open-pdf-studio/issues/new). Describe what you did, what you expected and what happened. Because the code moves quickly, a precise issue is often more useful than a pull request.
+- **Report a bug or ask for a feature** as an [issue](https://github.com/James-HoneyBadger/HB_PDF_Studio/issues/new). Describe what you did, what you expected and what happened. Because the code moves quickly, a precise issue is often more useful than a pull request.
 - **Share symbol libraries and other content.** Pull requests with symbol sets, hatch patterns and similar content from your country or discipline are very welcome.
 - **Write code.** Read [CONTRIBUTING.md](CONTRIBUTING.md) first.
 
@@ -160,8 +151,8 @@ We are looking for someone to maintain the extensions and the content repository
 ## Quick start (developers)
 
 ```bash
-git clone https://github.com/OpenAEC-Foundation/open-pdf-studio.git
-cd open-pdf-studio/open-pdf-studio
+git clone https://github.com/James-HoneyBadger/HB_PDF_Studio.git
+cd HB_PDF_Studio/open-pdf-studio
 npm ci
 npm run tauri:dev
 ```
@@ -170,7 +161,7 @@ Requires Node.js 22, Rust stable, CMake and a C/C++ toolchain, plus the WebKitGT
 
 Versions follow the OpenAEC scheme `YYYY.W.N`: year, ISO week without a leading zero, and a number within the week that starts at 0, such as `2026.44.8`.
 
-HB PDF Studio is part of the [OpenAEC Foundation](https://github.com/OpenAEC-Foundation) family of apps.
+HB PDF Studio is a Honey Badger Universe fork of [OpenAEC Foundation's Open PDF Studio](https://github.com/OpenAEC-Foundation/open-pdf-studio). Upstream copyright and license notices remain applicable.
 
 ## License
 

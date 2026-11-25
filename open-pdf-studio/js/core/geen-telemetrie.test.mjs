@@ -100,8 +100,8 @@ test('geen telemetrie- of analysepakket tussen de npm-afhankelijkheden', () => {
 });
 
 test('geen telemetrie- of analysekrat tussen de Rust-afhankelijkheden', () => {
-  const kratten = ['open-pdf-studio/src-tauri', 'pdfium-worker', 'open-pdf-thumbnails', 'open-pdf-render', 'open-pdf-cad',
-    'open-pdf-cmyk', 'open-pdf-signatures', 'open-pdf-security'];
+  const kratten = ['open-pdf-studio/src-tauri', 'pdfium-worker', 'open-pdf-render', 'open-pdf-cad',
+    'open-pdf-cmyk', 'open-pdf-signatures', 'open-pdf-security', 'open-pdf-monochrome', 'open-pdf-scan'];
   for (const krat of kratten) {
     const toml = fs.readFileSync(path.join(repo, krat, 'Cargo.toml'), 'utf8');
     const namen = [...toml.matchAll(/^([A-Za-z0-9_-]+)\s*=/gm)].map((m) => m[1]);
@@ -120,11 +120,11 @@ test('de meegeleverde bron laadt geen analysescript en stuurt geen bakens', () =
 
 // ── 3. het statistiekscript van de website ─────────────────────────────────
 
-test('het statistiekscript komt alleen in de publieke webdeploy', () => {
+test('no workflow injects the website statistics script', () => {
   const workflows = path.join(repo, '.github', 'workflows');
   const gebruikers = fs.readdirSync(workflows)
     .filter((n) => fs.readFileSync(path.join(workflows, n), 'utf8').includes('web-statistics'));
-  assert.deepEqual(gebruikers, ['live.yml']);
+  assert.deepEqual(gebruikers, []);
 
   const pkg = fs.readFileSync(path.join(app, 'package.json'), 'utf8');
   assert.ok(!pkg.includes('web-statistics'), 'geen npm-script voegt het toe');
