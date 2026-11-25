@@ -36,10 +36,10 @@ test('test.res wordt niet meer via rustflags gelinkt (dat raakte elk build-scrip
   }
 });
 
-test('build.rs permits only Linux AArch64 desktop and Android targets', () => {
+test('build.rs permits only Linux AArch64 desktop targets', () => {
   const bron = readFileSync(join(tauri, 'build.rs'), 'utf8');
   assert.match(bron, /"aarch64-unknown-linux-gnu" => copy_pdfium_worker/);
-  assert.match(bron, /target\.starts_with\("aarch64-linux-android"\)/);
+  assert.doesNotMatch(bron, /aarch64-linux-android/);
   assert.match(bron, /desktop builds only support Linux AArch64/);
   assert.doesNotMatch(bron, /windows-gnu|mapi32|open_pdf_thumbnails/);
 });
