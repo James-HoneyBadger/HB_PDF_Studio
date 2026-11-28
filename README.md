@@ -1,5 +1,7 @@
 **English** · [Nederlands](README.nl.md)
 
+<p align="center"><img src="hb-classic-banner.svg" alt="HB PDF Studio — PDF markup and drawing workflows; Honey Badger Universe" width="960"></p>
+
 <div align="center">
 
 # HB PDF Studio
